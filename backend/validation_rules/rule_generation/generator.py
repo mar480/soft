@@ -10,6 +10,7 @@ from .rule_ids import build_rule_id
 from .rule_schema import CandidateRule
 
 RULE_FAMILY_LAYOUT = {
+    "topic_note_presence": (1, "Topic note presence"),
     "hypercube_conformity": (2, "Hypercube conformity"),
     "expected_dimension_usage": (3, "Expected dimension usage"),
     "dimension_member_validity": (4, "Member validity"),
@@ -91,6 +92,10 @@ _ROLLUP_TOPIC_BLOCKLIST = {
 
 def _load_topics(topics_path: Path) -> dict:
     return json.loads(topics_path.read_text(encoding="utf-8"))
+
+
+def _load_pfs_note_review(review_path: Path) -> dict:
+    return json.loads(review_path.read_text(encoding="utf-8"))
 
 
 def _topic_primary_items(topic: dict) -> list[str]:
@@ -320,8 +325,52 @@ def _modelling_suggestion_rule(topic: dict) -> CandidateRule | None:
     )
 
 
-def _topic_rules(topic: dict) -> list[dict]:
+def _pfs_note_presence_rule(topic: dict, review_entry: dict) -> CandidateRule:
+    statement_concepts = sorted({review_entry["qname"]})
+    source_statement_roles = sorted(review_entry.get("source_statement_roles", []))
+    headline_statement_roles = sorted(review_entry.get("headline_statement_roles", []))
+    topic_primary_items = _topic_primary_items(topic)
+    topic_dimensions = [dimension["dimension_qname"] for dimension in _topic_dimensions(topic)]
+    source_hypercubes = sorted({cube["cube_qname"] for cube in topic["hypercubes"]})
+    return CandidateRule(
+        id=build_rule_id(topic_id=topic["topic_id"], rule_kind="TOPIC_NOTE", index=1),
+        type="topic_note_presence",
+        topic=topic["topic_id"],
+        severity="info",
+        confidence="medium",
+        requires_review=True,
+        payload={
+            "trigger": {
+                "statement_concepts_present": {
+                    "minimum_count": 1,
+                    "concepts": statement_concepts,
+                    "source_statement_roles": source_statement_roles,
+                    "headline_statement_roles": headline_statement_roles,
+                }
+            },
+            "expect": {
+                "topic_note_present": True,
+                "topic_primary_items": topic_primary_items,
+                "topic_hypercubes": source_hypercubes,
+            },
+            "taxonomy_basis": {
+                "matched_topic_label": topic["topic_label"],
+                "matched_statement_concept_label": review_entry["label"],
+                "allowed_non_statement_presentation_roles": review_entry["allowed_non_statement_presentation_roles"],
+                "supplementary_non_statement_presentation_roles": review_entry[
+                    "supplementary_non_statement_presentation_roles"
+                ],
+                "topic_dimensions": topic_dimensions,
+            },
+        },
+    )
+
+
+def _topic_rules(topic: dict, *, pfs_note_review_index: dict[str, dict]) -> list[dict]:
     rules: list[CandidateRule] = []
+    review_entry = pfs_note_review_index.get(topic["topic_id"])
+    if review_entry:
+        rules.append(_pfs_note_presence_rule(topic, review_entry))
     rules.extend(_cube_conformity_rules(topic))
     expected = _expected_dimension_usage_rule(topic)
     if expected:
@@ -334,8 +383,19 @@ def _topic_rules(topic: dict) -> list[dict]:
     return [rule.to_dict() for rule in rules]
 
 
-def generate_candidate_pack(*, topics_payload: dict, selected_topic_ids: list[str]) -> dict:
+def _pfs_note_review_index(review_payload: dict) -> dict[str, dict]:
+    index: dict[str, dict] = {}
+    for entry in review_payload.get("bucket_1_exact_topic_candidates", []):
+        for match in entry.get("exact_topic_label_matches", []):
+            topic_id = match.get("topic_id")
+            if topic_id:
+                index[topic_id] = entry
+    return index
+
+
+def generate_candidate_pack(*, topics_payload: dict, selected_topic_ids: list[str], pfs_note_review_payload: dict) -> dict:
     topic_lookup = {topic["topic_id"]: topic for topic in topics_payload["topics"]}
+    pfs_note_review_index = _pfs_note_review_index(pfs_note_review_payload)
     selected_topics = [
         topic_lookup[topic_id]
         for topic_id in selected_topic_ids
@@ -361,7 +421,7 @@ def generate_candidate_pack(*, topics_payload: dict, selected_topic_ids: list[st
                 "topic_label": topic["topic_label"],
                 "source_hypercubes": source_hypercubes,
                 "source_hypercube_occurrences": source_hypercube_occurrences,
-                "candidate_rules": _topic_rules(topic),
+                "candidate_rules": _topic_rules(topic, pfs_note_review_index=pfs_note_review_index),
             }
         )
 
@@ -474,6 +534,10 @@ def write_split_candidate_pack(*, candidate_pack: dict, output_root: Path) -> No
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate starter candidate rules from discovered topics.")
     parser.add_argument("--topics", default="backend/validation_rules/generated/2026/frs102/topics.json")
+    parser.add_argument(
+        "--pfs-note-review",
+        default="backend/validation_rules/generated/2026/frs102/pfs_note_linkages_review.json",
+    )
     parser.add_argument("--output", default="backend/validation_rules/rule_packs/2026/auto/frs102_candidates.json")
     parser.add_argument("--split-output-dir", default=None)
     parser.add_argument("--topic", action="append", dest="topics_filter", default=None)
@@ -484,8 +548,13 @@ def main() -> int:
     args = parse_args()
     topics_path = Path(args.topics)
     payload = _load_topics(topics_path)
+    pfs_note_review_payload = _load_pfs_note_review(Path(args.pfs_note_review))
     selected = args.topics_filter or [topic["topic_id"] for topic in payload["topics"]]
-    candidate_pack = generate_candidate_pack(topics_payload=payload, selected_topic_ids=selected)
+    candidate_pack = generate_candidate_pack(
+        topics_payload=payload,
+        selected_topic_ids=selected,
+        pfs_note_review_payload=pfs_note_review_payload,
+    )
 
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)

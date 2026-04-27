@@ -6749,6 +6749,89 @@
       ],
       "candidate_rules": [
         {
+          "id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+          "type": "topic_note_presence",
+          "topic": "creditors",
+          "severity": "info",
+          "confidence": "medium",
+          "requires_review": true,
+          "trigger": {
+            "statement_concepts_present": {
+              "minimum_count": 1,
+              "concepts": [
+                "core:Creditors"
+              ],
+              "source_statement_roles": [
+                "balance_sheet"
+              ],
+              "headline_statement_roles": [
+                "balance_sheet"
+              ]
+            }
+          },
+          "expect": {
+            "topic_note_present": true,
+            "topic_primary_items": [
+              "core:Creditors-AssociatesPrimaryItems",
+              "core:Creditors-FinanceLeasesPrimaryItems",
+              "core:Creditors-JointVenturesPrimaryItems",
+              "core:Creditors-OtherPartiesPrimaryItems",
+              "core:Creditors-ParentsPrimaryItems",
+              "core:Creditors-SegmentsPrimaryItems",
+              "core:Creditors-SubsidiariesPrimaryItems",
+              "core:CreditorsPrimaryItems"
+            ],
+            "topic_hypercubes": [
+              "core:Creditors-AssociatesHypercube",
+              "core:Creditors-FinanceLeasesHypercube",
+              "core:Creditors-JointVenturesHypercube",
+              "core:Creditors-OtherPartiesHypercube",
+              "core:Creditors-ParentsHypercube",
+              "core:Creditors-SegmentsHypercube",
+              "core:Creditors-SubsidiariesHypercube",
+              "core:CreditorsHypercube"
+            ]
+          },
+          "taxonomy_basis": {
+            "matched_topic_label": "Creditors",
+            "matched_statement_concept_label": "Creditors",
+            "allowed_non_statement_presentation_roles": [
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+                "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+                "classification": "notes_and_detailed_disclosures"
+              }
+            ],
+            "supplementary_non_statement_presentation_roles": [],
+            "topic_dimensions": [
+              "bus:GroupCompanyDataDimension",
+              "bus:OriginalRevisedDataDimension",
+              "common:X-AnalysisDimension",
+              "core:AssociatesDimension",
+              "core:ContinuingDiscontinuedOperationsDimension",
+              "core:CurrencyDenominationFinancialInstrumentsDimension",
+              "core:FinanceLeaseContractTypeDimension",
+              "core:FinancialInstrumentCurrentNon-currentDimension",
+              "core:FinancialInstrumentLevelDimension",
+              "core:FinancialInstrumentValueTypeDimension",
+              "core:FinancialInstrumentsClassesCategoriesDimension",
+              "core:FinancialInstrumentsHeldForSaleDimension",
+              "core:GeographicSegmentsDimension",
+              "core:JointVenturesDimension",
+              "core:MajorCustomersDimension",
+              "core:MaturitiesOrExpirationPeriodsDimension",
+              "core:OperatingSegmentsDimension",
+              "core:OtherRelatedPartyTypeDimension",
+              "core:ParentEntitiesDimension",
+              "core:ProductsServicesDimension",
+              "core:RegionCountryIssuerRiskDimension",
+              "core:RestatementsFirstTimeAdoptionDimension",
+              "core:SegmentReconciliationDimension",
+              "core:SubsidiariesDimension"
+            ]
+          }
+        },
+        {
           "id": "AUTO.CREDITORS.CUBE_CONFORMITY.001",
           "type": "hypercube_conformity",
           "topic": "creditors",
@@ -7914,6 +7997,90 @@
         }
       ],
       "candidate_rules": [
+        {
+          "id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+          "type": "topic_note_presence",
+          "topic": "debtors",
+          "severity": "info",
+          "confidence": "medium",
+          "requires_review": true,
+          "trigger": {
+            "statement_concepts_present": {
+              "minimum_count": 1,
+              "concepts": [
+                "core:Debtors"
+              ],
+              "source_statement_roles": [
+                "balance_sheet"
+              ],
+              "headline_statement_roles": []
+            }
+          },
+          "expect": {
+            "topic_note_present": true,
+            "topic_primary_items": [
+              "core:Debtors-AssociatesPrimaryItems",
+              "core:Debtors-FinanceLeasesPrimaryItems",
+              "core:Debtors-JointVenturesPrimaryItems",
+              "core:Debtors-OtherPartiesPrimaryItems",
+              "core:Debtors-ParentsPrimaryItems",
+              "core:Debtors-SegmentsPrimaryItems",
+              "core:Debtors-SubsidiariesPrimaryItems",
+              "core:DebtorsPrimaryItems"
+            ],
+            "topic_hypercubes": [
+              "core:Debtors-AssociatesHypercube",
+              "core:Debtors-FinanceLeasesHypercube",
+              "core:Debtors-JointVenturesHypercube",
+              "core:Debtors-OtherPartiesHypercube",
+              "core:Debtors-ParentsHypercube",
+              "core:Debtors-SegmentsHypercube",
+              "core:Debtors-SubsidiariesHypercube",
+              "core:DebtorsHypercube"
+            ]
+          },
+          "taxonomy_basis": {
+            "matched_topic_label": "Debtors",
+            "matched_statement_concept_label": "Debtors",
+            "allowed_non_statement_presentation_roles": [
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+                "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+                "classification": "notes_and_detailed_disclosures"
+              }
+            ],
+            "supplementary_non_statement_presentation_roles": [],
+            "topic_dimensions": [
+              "bus:GroupCompanyDataDimension",
+              "bus:OriginalRevisedDataDimension",
+              "common:X-AnalysisDimension",
+              "core:AllowanceAccountMeasurementTypeDimension",
+              "core:AllowanceForImpairmentDimension",
+              "core:AssociatesDimension",
+              "core:ContinuingDiscontinuedOperationsDimension",
+              "core:CurrencyDenominationFinancialInstrumentsDimension",
+              "core:FinanceLeaseContractTypeDimension",
+              "core:FinancialAssetsImpairmentStageDimension",
+              "core:FinancialInstrumentCurrentNon-currentDimension",
+              "core:FinancialInstrumentLevelDimension",
+              "core:FinancialInstrumentValueTypeDimension",
+              "core:FinancialInstrumentsClassesCategoriesDimension",
+              "core:FinancialInstrumentsHeldForSaleDimension",
+              "core:GeographicSegmentsDimension",
+              "core:JointVenturesDimension",
+              "core:MajorCustomersDimension",
+              "core:MaturitiesOrExpirationPeriodsDimension",
+              "core:OperatingSegmentsDimension",
+              "core:OtherRelatedPartyTypeDimension",
+              "core:ParentEntitiesDimension",
+              "core:ProductsServicesDimension",
+              "core:RegionCountryIssuerRiskDimension",
+              "core:RestatementsFirstTimeAdoptionDimension",
+              "core:SegmentReconciliationDimension",
+              "core:SubsidiariesDimension"
+            ]
+          }
+        },
         {
           "id": "AUTO.DEBTORS.CUBE_CONFORMITY.001",
           "type": "hypercube_conformity",
@@ -26836,6 +27003,65 @@
       ],
       "candidate_rules": [
         {
+          "id": "AUTO.INVESTMENTPROPERTY.TOPIC_NOTE.001",
+          "type": "topic_note_presence",
+          "topic": "investment_property",
+          "severity": "info",
+          "confidence": "medium",
+          "requires_review": true,
+          "trigger": {
+            "statement_concepts_present": {
+              "minimum_count": 1,
+              "concepts": [
+                "core:InvestmentProperty"
+              ],
+              "source_statement_roles": [
+                "balance_sheet"
+              ],
+              "headline_statement_roles": []
+            }
+          },
+          "expect": {
+            "topic_note_present": true,
+            "topic_primary_items": [
+              "core:InvestmentProperty-RangePrimaryItems",
+              "core:InvestmentProperty-SegmentsPrimaryItems",
+              "core:InvestmentPropertyPrimaryItems"
+            ],
+            "topic_hypercubes": [
+              "core:InvestmentProperty-RangeHypercube",
+              "core:InvestmentProperty-SegmentsHypercube",
+              "core:InvestmentPropertyHypercube"
+            ]
+          },
+          "taxonomy_basis": {
+            "matched_topic_label": "Investment Property",
+            "matched_statement_concept_label": "Investment property",
+            "allowed_non_statement_presentation_roles": [
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+                "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+                "classification": "notes_and_detailed_disclosures"
+              }
+            ],
+            "supplementary_non_statement_presentation_roles": [],
+            "topic_dimensions": [
+              "bus:GroupCompanyDataDimension",
+              "bus:OriginalRevisedDataDimension",
+              "common:X-AnalysisDimension",
+              "core:ContinuingDiscontinuedOperationsDimension",
+              "core:GeographicSegmentsDimension",
+              "core:InvestmentPropertyOwnershipTypeDimension",
+              "core:MajorCustomersDimension",
+              "core:OperatingSegmentsDimension",
+              "core:ProductsServicesDimension",
+              "core:RangeDimension",
+              "core:RestatementsFirstTimeAdoptionDimension",
+              "core:SegmentReconciliationDimension"
+            ]
+          }
+        },
+        {
           "id": "AUTO.INVESTMENTPROPERTY.CUBE_CONFORMITY.001",
           "type": "hypercube_conformity",
           "topic": "investment_property",
@@ -29929,6 +30155,77 @@
         }
       ],
       "candidate_rules": [
+        {
+          "id": "AUTO.PPE.TOPIC_NOTE.001",
+          "type": "topic_note_presence",
+          "topic": "property_plant_equipment",
+          "severity": "info",
+          "confidence": "medium",
+          "requires_review": true,
+          "trigger": {
+            "statement_concepts_present": {
+              "minimum_count": 1,
+              "concepts": [
+                "core:PropertyPlantEquipment"
+              ],
+              "source_statement_roles": [
+                "balance_sheet"
+              ],
+              "headline_statement_roles": []
+            }
+          },
+          "expect": {
+            "topic_note_present": true,
+            "topic_primary_items": [
+              "core:PPE-RangePrimaryItems",
+              "core:PPE-SegmentsPrimaryItems",
+              "core:PPEPrimaryItems"
+            ],
+            "topic_hypercubes": [
+              "core:PPE-RangeHypercube",
+              "core:PPE-SegmentsHypercube",
+              "core:PPEHypercube"
+            ]
+          },
+          "taxonomy_basis": {
+            "matched_topic_label": "Property, plant and equipment",
+            "matched_statement_concept_label": "Property, plant and equipment",
+            "allowed_non_statement_presentation_roles": [
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+                "definition": "402 - Additional Industry Sector Data (FRS 102)",
+                "classification": "additional_industry_sector_data"
+              },
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+                "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+                "classification": "notes_and_detailed_disclosures"
+              }
+            ],
+            "supplementary_non_statement_presentation_roles": [
+              {
+                "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+                "definition": "402 - Additional Industry Sector Data (FRS 102)",
+                "classification": "additional_industry_sector_data"
+              }
+            ],
+            "topic_dimensions": [
+              "bus:GroupCompanyDataDimension",
+              "bus:OriginalRevisedDataDimension",
+              "common:X-AnalysisDimension",
+              "core:ContinuingDiscontinuedOperationsDimension",
+              "core:GeographicSegmentsDimension",
+              "core:MajorCustomersDimension",
+              "core:OperatingSegmentsDimension",
+              "core:PPEOwnershipDimension",
+              "core:ProductsServicesDimension",
+              "core:PropertyPlantEquipmentClassesDimension",
+              "core:RangeDimension",
+              "core:RestatementsFirstTimeAdoptionDimension",
+              "core:SegmentReconciliationDimension"
+            ]
+          }
+        },
         {
           "id": "AUTO.PPE.CUBE_CONFORMITY.001",
           "type": "hypercube_conformity",

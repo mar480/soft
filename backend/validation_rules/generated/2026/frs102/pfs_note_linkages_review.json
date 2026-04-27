@@ -1,0 +1,973 @@
+{
+  "taxonomy_year": 2026,
+  "entrypoint": "FRS-102",
+  "review_scope": {
+    "primary_required_role_classification": "notes_and_detailed_disclosures",
+    "supplementary_role_classifications": [
+      "additional_industry_sector_data",
+      "directors_report"
+    ],
+    "excluded_role_classifications_from_family_1_review": [
+      "detailed_profit_and_loss",
+      "other_presentation_role"
+    ]
+  },
+  "bucket_1_exact_topic_candidates": [
+    {
+      "qname": "core:Creditors",
+      "label": "Creditors",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [
+        "balance_sheet"
+      ],
+      "allowed_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": [
+        {
+          "topic_id": "creditors",
+          "topic_label": "Creditors",
+          "priority": "normal",
+          "topic_kind": "disclosure_family"
+        }
+      ]
+    },
+    {
+      "qname": "core:Debtors",
+      "label": "Debtors",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "allowed_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": [
+        {
+          "topic_id": "debtors",
+          "topic_label": "Debtors",
+          "priority": "normal",
+          "topic_kind": "disclosure_family"
+        }
+      ]
+    },
+    {
+      "qname": "core:InvestmentProperty",
+      "label": "Investment property",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "allowed_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": [
+        {
+          "topic_id": "investment_property",
+          "topic_label": "Investment Property",
+          "priority": "normal",
+          "topic_kind": "disclosure_family"
+        }
+      ]
+    },
+    {
+      "qname": "core:PropertyPlantEquipment",
+      "label": "Property, plant and equipment",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "allowed_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        },
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": [
+        {
+          "topic_id": "property_plant_equipment",
+          "topic_label": "Property, plant and equipment",
+          "priority": "normal",
+          "topic_kind": "disclosure_family"
+        }
+      ]
+    }
+  ],
+  "bucket_2_notes_linked_candidates_without_exact_topic_match": [
+    {
+      "qname": "core:AccruedLiabilitiesDeferredIncome",
+      "label": "Accrued liabilities and deferred income",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:AmountsOwedByAssociatesJointVenturesParticipatingInterests",
+      "label": "Amounts owed by associates and joint ventures / participating interests",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:AmountsOwedByGroupUndertakings",
+      "label": "Amounts owed by group undertakings",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:AmountsOwedToAssociatesJointVenturesParticipatingInterests",
+      "label": "Amounts owed to associates and joint ventures / participating interests",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:AmountsOwedToGroupUndertakings",
+      "label": "Amounts owed to group undertakings",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:BankBorrowingsOverdrafts",
+      "label": "Bank borrowings and overdrafts",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:BillsExchangePayable",
+      "label": "Bills of exchange payable",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:CashBankOnHand",
+      "label": "Cash at bank and on hand",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:ContractLiabilities",
+      "label": "Contract liabilities",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:CurrentTaxExpenseCreditOnShare-basedPaymentArrangementRecognisedInEquity",
+      "label": "Current tax expense (credit) on share-based payment arrangement, recognised in equity",
+      "source_statement_roles": [
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:DebenturesInIssue",
+      "label": "Debentures in issue",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:DeferredTaxAssetDebtors",
+      "label": "Deferred tax asset, debtors",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:DeferredTaxExpenseCreditOnShare-basedPaymentArrangementRecognisedInEquity",
+      "label": "Deferred tax expense (credit) on share-based payment arrangement, recognised in equity",
+      "source_statement_roles": [
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:DepreciationAmortisationImpairmentExpense",
+      "label": "Depreciation, amortisation and impairment expense",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:Equity",
+      "label": "Equity",
+      "source_statement_roles": [
+        "balance_sheet",
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [
+        "balance_sheet",
+        "statement_changes_equity"
+      ],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:GainLossFromFairValueCashFlowHedgesBeforeTaxRecognisedInOtherComprehensiveIncome",
+      "label": "Gain (loss) from fair value of cash flow hedges, before tax, recognised in other comprehensive income",
+      "source_statement_roles": [
+        "statement_changes_equity",
+        "statement_comprehensive_income"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:GainLossOnHedgeInvestmentsInForeignOperationsBeforeTaxInOtherComprehensiveIncome",
+      "label": "Gain (loss) on hedge of investments in foreign operations, before tax, in other comprehensive income",
+      "source_statement_roles": [
+        "statement_changes_equity",
+        "statement_comprehensive_income"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:GainLossOnReclassificationCashFlowHedgesToProfitOrLossFromEquityBeforeTax",
+      "label": "Gain (loss) on reclassification of cash flow hedges to profit or loss from equity, before tax",
+      "source_statement_roles": [
+        "statement_changes_equity",
+        "statement_comprehensive_income"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:ImpairmentLossReversalOnInvestments",
+      "label": "Impairment loss (reversal) on investments",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:IncomeTaxExpenseCreditOnComponentsOtherComprehensiveIncome",
+      "label": "Income tax expense (credit) on components of other comprehensive income",
+      "source_statement_roles": [
+        "statement_changes_equity",
+        "statement_comprehensive_income"
+      ],
+      "headline_statement_roles": [
+        "statement_comprehensive_income"
+      ],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:IncreaseDecreaseInCashCashEquivalentsBeforeForeignExchangeDifferencesChangesInConsolidation",
+      "label": "Increase (decrease) in cash and cash equivalents, before foreign exchange differences and changes in consolidation",
+      "source_statement_roles": [
+        "cash_flow_statement"
+      ],
+      "headline_statement_roles": [
+        "cash_flow_statement"
+      ],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:IncreaseDecreaseInCashCashEquivalentsFromChangesInConsolidation",
+      "label": "Increase (decrease) in cash and cash equivalents from changes in consolidation",
+      "source_statement_roles": [
+        "cash_flow_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:IntangibleAssets",
+      "label": "Intangible assets",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:InterestPayableSimilarChargesFinanceCosts",
+      "label": "Interest payable and similar charges / finance costs",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:InvestmentsInAssociatesJointVenturesParticipatingInterests",
+      "label": "Investments in associates and joint ventures / participating interests",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:InvestmentsInGroupUndertakings",
+      "label": "Investments in group undertakings",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:LoansToAssociatesJointVenturesParticipatingInterests",
+      "label": "Loans to associates and joint ventures / participating interests",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:LoansToGroupUndertakings",
+      "label": "Loans to group undertakings",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:MaintenanceReserve",
+      "label": "Maintenance reserve",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:OtherCreditorsIncludingTaxationSocialSecurityBalanceSheetSubtotal",
+      "label": "Other creditors including taxation and social security, balance sheet subtotal",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:OtherInterestReceivableSimilarIncomeFinanceIncome",
+      "label": "Other interest receivable and similar income / finance income",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:OtherInvestmentsOtherThanLoans",
+      "label": "Other investments other than loans",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:OtherLoansClassifiedUnderInvestments",
+      "label": "Other loans classified under investments",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:PaymentsReceivedOnAccount",
+      "label": "Payments received on account",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:PrepaymentsAccruedIncome",
+      "label": "Prepayments and accrued income",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:ProfitLossAttributableToNon-controllingInterests",
+      "label": "Profit (loss), attributable to non-controlling interests",
+      "source_statement_roles": [
+        "income_statement",
+        "statement_changes_equity",
+        "statement_comprehensive_income"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:RetirementBenefitObligationsSurplus",
+      "label": "Retirement benefit obligations (surplus)",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:SecurityDeposit",
+      "label": "Security deposit",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:StaffCostsEmployeeBenefitsExpense",
+      "label": "Staff costs / employee benefits expense",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+          "definition": "402 - Additional Industry Sector Data (FRS 102)",
+          "classification": "additional_industry_sector_data"
+        },
+        {
+          "role_uri": "http://xbrl.frc.org.uk/direp/roles/DirectorsReport",
+          "definition": "010 - Directors'/Strategic Report",
+          "classification": "directors_report"
+        }
+      ],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TaxExpenseCreditOnConvertibleNotesRecognisedInEquity",
+      "label": "Tax expense (credit) on convertible notes, recognised in equity",
+      "source_statement_roles": [
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TaxExpenseCreditOnDepreciationTransferRevaluationSurplusRecognisedInEquity",
+      "label": "Tax expense (credit) on depreciation transfer of revaluation surplus, recognised in equity",
+      "source_statement_roles": [
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TaxExpenseCreditOnShare-basedPaymentArrangementRecognisedInEquity",
+      "label": "Tax expense (credit) on share-based payment arrangement, recognised in equity",
+      "source_statement_roles": [
+        "statement_changes_equity"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TaxTaxCreditOnProfitOrLossOnOrdinaryActivities",
+      "label": "Tax (tax credit) on profit or loss on ordinary activities",
+      "source_statement_roles": [
+        "income_statement"
+      ],
+      "headline_statement_roles": [
+        "income_statement"
+      ],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TotalInventories",
+      "label": "Total inventories",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TradeCreditorsTradePayables",
+      "label": "Trade creditors / trade payables",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    },
+    {
+      "qname": "core:TradeDebtorsTradeReceivables",
+      "label": "Trade debtors / trade receivables",
+      "source_statement_roles": [
+        "balance_sheet"
+      ],
+      "headline_statement_roles": [],
+      "notes_and_detailed_disclosures_roles": [
+        {
+          "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+          "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+          "classification": "notes_and_detailed_disclosures"
+        }
+      ],
+      "supplementary_non_statement_presentation_roles": [],
+      "exact_topic_label_matches": []
+    }
+  ]
+}

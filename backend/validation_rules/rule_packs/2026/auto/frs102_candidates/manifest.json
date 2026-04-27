@@ -353,8 +353,9 @@
       "topic_id": "creditors",
       "topic_label": "Creditors",
       "directory": "Creditors",
-      "rule_count": 36,
+      "rule_count": 37,
       "families": [
+        "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
@@ -390,8 +391,9 @@
       "topic_id": "debtors",
       "topic_label": "Debtors",
       "directory": "Debtors",
-      "rule_count": 39,
+      "rule_count": 40,
       "families": [
+        "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
@@ -936,8 +938,9 @@
       "topic_id": "investment_property",
       "topic_label": "Investment Property",
       "directory": "Investment Property",
-      "rule_count": 19,
+      "rule_count": 20,
       "families": [
+        "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
@@ -1070,8 +1073,9 @@
       "topic_id": "property_plant_equipment",
       "topic_label": "Property, plant and equipment",
       "directory": "Property, plant and equipment",
-      "rule_count": 21,
+      "rule_count": 22,
       "families": [
+        "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
