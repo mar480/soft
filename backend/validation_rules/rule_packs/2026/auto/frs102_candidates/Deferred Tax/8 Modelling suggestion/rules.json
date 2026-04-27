@@ -1,0 +1,43 @@
+{
+  "topic_id": "deferred_tax",
+  "topic_label": "Deferred Tax",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DEFERREDTAX.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "deferred_tax",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:DeferredTaxHypercube",
+          "core:DeferredTaxHypercube",
+          "core:DeferredTaxHypercube",
+          "core:DeferredTax-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:DeferredTaxAssetLiabilityClassesDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:TaxJurisdictionDimension",
+          "core:X-SpecificDeferredTaxAssetGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Deferred Tax. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}
