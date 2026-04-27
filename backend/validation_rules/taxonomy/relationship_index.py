@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 LINK_NS = "http://www.xbrl.org/2003/linkbase"
 XLINK_NS = "http://www.w3.org/1999/xlink"
 
-ARCROLES_OF_INTEREST = {
+ARCROLES = {
     "http://www.xbrl.org/2003/arcrole/parent-child": "parent_child",
     "http://xbrl.org/int/dim/arcrole/all": "all",
     "http://xbrl.org/int/dim/arcrole/notAll": "not_all",
@@ -32,20 +32,22 @@ class RelationshipStats:
     dimension_count: int
     domain_member_relationship_count: int
     arcrole_counts: dict[str, int]
-    role_definitions: list[RoleDefinitionRecord]
 
 
-def build_relationship_stats(files: set[Path]) -> RelationshipStats:
+def _iter_xml_files(root_dir: Path) -> list[Path]:
+    candidates = list(root_dir.rglob("*.xml"))
+    candidates.extend(root_dir.rglob("*.xsd"))
+    return sorted(set(candidates))
+
+
+def build_relationship_stats(root_dir: Path) -> RelationshipStats:
     roles: set[str] = set()
-    role_definitions: dict[str, str] = {}
     hypercubes = 0
     dimensions = 0
     domain_members = 0
-    counts: dict[str, int] = {v: 0 for v in ARCROLES_OF_INTEREST.values()}
+    counts: dict[str, int] = {v: 0 for v in ARCROLES.values()}
 
-    for xml_file in sorted(files):
-        if xml_file.suffix.lower() not in {".xsd", ".xml"}:
-            continue
+    for xml_file in _iter_xml_files(root_dir):
         try:
             root = ET.parse(xml_file).getroot()
         except ET.ParseError:
@@ -66,18 +68,19 @@ def build_relationship_stats(files: set[Path]) -> RelationshipStats:
             if role:
                 roles.add(role)
 
-        for arc in root.findall(f".//{{{LINK_NS}}}definitionArc") + root.findall(f".//{{{LINK_NS}}}presentationArc"):
+        for arc in root.findall(f".//{{{LINK_NS}}}definitionArc") + root.findall(
+            f".//{{{LINK_NS}}}presentationArc"
+        ):
             arcrole = arc.attrib.get(f"{{{XLINK_NS}}}arcrole")
-            if arcrole not in ARCROLES_OF_INTEREST:
-                continue
-            key = ARCROLES_OF_INTEREST[arcrole]
-            counts[key] += 1
-            if key == "all":
-                hypercubes += 1
-            elif key == "hypercube_dimension":
-                dimensions += 1
-            elif key == "domain_member":
-                domain_members += 1
+            if arcrole in ARCROLES:
+                key = ARCROLES[arcrole]
+                counts[key] += 1
+                if key == "all":
+                    hypercubes += 1
+                elif key == "hypercube_dimension":
+                    dimensions += 1
+                elif key == "domain_member":
+                    domain_members += 1
 
     return RelationshipStats(
         role_count=len(roles),
