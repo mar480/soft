@@ -14,7 +14,10 @@ _TRAILING_VARIANT_PATTERNS: list[tuple[re.Pattern[str], str, str]] = [
     (re.compile(r"^(?P<family>.+?)\s*-\s*(?P<label>Basic|Main|Full|Assets|Liabilities|Parents|Subsidiaries|Associates|Joint Ventures|Other Parties|Finance Leases|Equities)$", re.I), "variant", "{label}"),
 ]
 _FAMILY_ALIASES = {
-    "ppe": "Property Plant Equipment",
+    "ppe": ("property_plant_equipment", "Property, plant and equipment"),
+    "equity and soci": ("equity_and_soci", "Equity and SOCI"),
+    "property plant equipment": ("property_plant_equipment", "Property, plant and equipment"),
+    "income st and lv operating leases": ("income_st_and_lv_operating_leases", "Income ST and LV operating leases"),
 }
 _DEPRIORITISED_FAMILIES = {
     "basic",
@@ -47,10 +50,12 @@ def classify_topic(*, cube_qname: str, cube_label: str | None, elr_definition: s
         variant_label = label_template.format(**{k: v for k, v in match.groupdict().items() if v is not None})
         break
 
-    family_text = _FAMILY_ALIASES.get(family_text.lower(), family_text)
-
-    family_topic_id = topic_id_from_name(family_text) or topic_id_from_name(strip_qname_prefix(cube_qname))
-    family_topic_label = humanize_topic_label(family_text) or family_text or cube_qname
+    alias = _FAMILY_ALIASES.get(family_text.lower())
+    if alias:
+        family_topic_id, family_topic_label = alias
+    else:
+        family_topic_id = topic_id_from_name(family_text) or topic_id_from_name(strip_qname_prefix(cube_qname))
+        family_topic_label = humanize_topic_label(family_text) or family_text or cube_qname
 
     validation = validate_occurrence_type(
         occurrence_type=occurrence_type,

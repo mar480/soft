@@ -989,8 +989,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "hypercube_count": 5,
@@ -1001,16 +1001,16 @@
       },
       "source_families": [
         [
-          "equity_and_s_o_c_i",
-          "Equity and S O C I"
-        ],
-        [
           "equity_and_s_o_c_i_p_p_e",
           "Equity and S O C I P P E"
         ],
         [
           "equity_and_s_o_c_i_shares",
           "Equity and S O C I Shares"
+        ],
+        [
+          "equity_and_soci",
+          "Equity and SOCI"
         ]
       ],
       "cube_elr_definitions": [
@@ -1947,7 +1947,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "hypercube_count": 4,
@@ -1960,7 +1960,7 @@
       "source_families": [
         [
           "property_plant_equipment",
-          "Property Plant Equipment"
+          "Property, plant and equipment"
         ]
       ],
       "cube_elr_definitions": [
@@ -5113,8 +5113,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCIHypercube",
@@ -5139,8 +5139,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCIHypercube",
@@ -5162,8 +5162,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCI-PPEHypercube",
@@ -5186,8 +5186,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCI-SharesHypercube",
@@ -5211,8 +5211,8 @@
       ]
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCI-SegmentsHypercube",
@@ -8504,7 +8504,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:PPEHypercube",
@@ -8531,7 +8531,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:PPEHypercube",
@@ -8555,7 +8555,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:PPE-RangeHypercube",
@@ -8582,7 +8582,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "core:PPE-SegmentsHypercube",

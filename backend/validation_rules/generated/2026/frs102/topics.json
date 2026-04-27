@@ -149468,8 +149468,8 @@
       "candidate_rules": []
     },
     {
-      "topic_id": "equity_and_s_o_c_i",
-      "topic_label": "Equity and S O C I",
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
       "taxonomy_year": 2026,
       "entrypoint": "FRS-102",
       "priority": "normal",
@@ -149496,7 +149496,7 @@
       "source_families": [
         "equity_and_s_o_c_i_p_p_e|Equity and S O C I P P E",
         "equity_and_s_o_c_i_shares|Equity and S O C I Shares",
-        "equity_and_s_o_c_i|Equity and S O C I"
+        "equity_and_soci|Equity and SOCI"
       ],
       "hypercubes": [
         {
@@ -149504,10 +149504,10 @@
           "cube_label": "Equity and SOCI [Hypercube]",
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Analysis1",
           "elr_definition": "92401 - Hypercube - Equity and SOCI Analysis 1",
-          "source_family_topic_id": "equity_and_s_o_c_i",
-          "source_family_topic_label": "Equity and S O C I",
-          "family_topic_id": "equity_and_s_o_c_i",
-          "family_topic_label": "Equity and S O C I",
+          "source_family_topic_id": "equity_and_soci",
+          "source_family_topic_label": "Equity and SOCI",
+          "family_topic_id": "equity_and_soci",
+          "family_topic_label": "Equity and SOCI",
           "occurrence_type": "analysis",
           "variant_label": "Analysis 1",
           "variant_validation": {
@@ -150110,10 +150110,10 @@
           "cube_label": "Equity and SOCI [Hypercube]",
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI",
           "elr_definition": "9240 - Hypercube - Equity and SOCI",
-          "source_family_topic_id": "equity_and_s_o_c_i",
-          "source_family_topic_label": "Equity and S O C I",
-          "family_topic_id": "equity_and_s_o_c_i",
-          "family_topic_label": "Equity and S O C I",
+          "source_family_topic_id": "equity_and_soci",
+          "source_family_topic_label": "Equity and SOCI",
+          "family_topic_id": "equity_and_soci",
+          "family_topic_label": "Equity and SOCI",
           "occurrence_type": "base",
           "variant_label": null,
           "variant_validation": {
@@ -150709,8 +150709,8 @@
           "elr_definition": "9241 - Hypercube - Equity and SOCI - PPE",
           "source_family_topic_id": "equity_and_s_o_c_i_p_p_e",
           "source_family_topic_label": "Equity and S O C I P P E",
-          "family_topic_id": "equity_and_s_o_c_i",
-          "family_topic_label": "Equity and S O C I",
+          "family_topic_id": "equity_and_soci",
+          "family_topic_label": "Equity and SOCI",
           "occurrence_type": "base",
           "variant_label": null,
           "variant_validation": {
@@ -151524,8 +151524,8 @@
           "elr_definition": "9242 - Hypercube - Equity and SOCI - Shares",
           "source_family_topic_id": "equity_and_s_o_c_i_shares",
           "source_family_topic_label": "Equity and S O C I Shares",
-          "family_topic_id": "equity_and_s_o_c_i",
-          "family_topic_label": "Equity and S O C I",
+          "family_topic_id": "equity_and_soci",
+          "family_topic_label": "Equity and SOCI",
           "occurrence_type": "base",
           "variant_label": null,
           "variant_validation": {
@@ -152312,10 +152312,10 @@
           "cube_label": "Equity and SOCI - segments [Hypercube]",
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Segments",
           "elr_definition": "9243 - Hypercube - Equity and SOCI - Segments",
-          "source_family_topic_id": "equity_and_s_o_c_i",
-          "source_family_topic_label": "Equity and S O C I",
-          "family_topic_id": "equity_and_s_o_c_i",
-          "family_topic_label": "Equity and S O C I",
+          "source_family_topic_id": "equity_and_soci",
+          "source_family_topic_label": "Equity and SOCI",
+          "family_topic_id": "equity_and_soci",
+          "family_topic_label": "Equity and SOCI",
           "occurrence_type": "segments",
           "variant_label": "Segments",
           "variant_validation": {
@@ -353731,7 +353731,7 @@
     },
     {
       "topic_id": "property_plant_equipment",
-      "topic_label": "Property Plant Equipment",
+      "topic_label": "Property, plant and equipment",
       "taxonomy_year": 2026,
       "entrypoint": "FRS-102",
       "priority": "normal",
@@ -353755,7 +353755,7 @@
         "core:SegmentReconciliationDimension"
       ],
       "source_families": [
-        "property_plant_equipment|Property Plant Equipment"
+        "property_plant_equipment|Property, plant and equipment"
       ],
       "hypercubes": [
         {
@@ -353764,9 +353764,9 @@
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Analysis1",
           "elr_definition": "90301 - Hypercube - PPE Analysis 1",
           "source_family_topic_id": "property_plant_equipment",
-          "source_family_topic_label": "Property Plant Equipment",
+          "source_family_topic_label": "Property, plant and equipment",
           "family_topic_id": "property_plant_equipment",
-          "family_topic_label": "Property Plant Equipment",
+          "family_topic_label": "Property, plant and equipment",
           "occurrence_type": "analysis",
           "variant_label": "Analysis 1",
           "variant_validation": {
@@ -354286,9 +354286,9 @@
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE",
           "elr_definition": "9030 - Hypercube - PPE",
           "source_family_topic_id": "property_plant_equipment",
-          "source_family_topic_label": "Property Plant Equipment",
+          "source_family_topic_label": "Property, plant and equipment",
           "family_topic_id": "property_plant_equipment",
-          "family_topic_label": "Property Plant Equipment",
+          "family_topic_label": "Property, plant and equipment",
           "occurrence_type": "base",
           "variant_label": null,
           "variant_validation": {
@@ -354799,9 +354799,9 @@
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Range",
           "elr_definition": "9031 - Hypercube - PPE - Range",
           "source_family_topic_id": "property_plant_equipment",
-          "source_family_topic_label": "Property Plant Equipment",
+          "source_family_topic_label": "Property, plant and equipment",
           "family_topic_id": "property_plant_equipment",
-          "family_topic_label": "Property Plant Equipment",
+          "family_topic_label": "Property, plant and equipment",
           "occurrence_type": "range",
           "variant_label": "Range",
           "variant_validation": {
@@ -355340,9 +355340,9 @@
           "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Segments",
           "elr_definition": "9032 - Hypercube - PPE - Segments",
           "source_family_topic_id": "property_plant_equipment",
-          "source_family_topic_label": "Property Plant Equipment",
+          "source_family_topic_label": "Property, plant and equipment",
           "family_topic_id": "property_plant_equipment",
-          "family_topic_label": "Property Plant Equipment",
+          "family_topic_label": "Property, plant and equipment",
           "occurrence_type": "segments",
           "variant_label": "Segments",
           "variant_validation": {
