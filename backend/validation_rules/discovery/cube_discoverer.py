@@ -8,8 +8,16 @@ from ..taxonomy.concept_index import format_qname
 from ..taxonomy.relationship_index import is_reportable_primary_item
 from .cube_model import CubeModel, DimensionModel
 from .member_tree import MemberNode
-from .topic_classifier import classify_topic
+from .topic_classifier import classify_topic, classify_topic_priority
 from .topic_model import TopicModel
+
+
+def _apply_topic_hierarchy(topic_id: str, topic_label: str) -> tuple[str, str]:
+    if topic_id.startswith("financial_assets_"):
+        return "financial_assets", "Financial Assets"
+    if topic_id.startswith("financial_liabilities_"):
+        return "financial_liabilities", "Financial Liabilities"
+    return topic_id, topic_label
 
 
 def _concept_label(concept: object | None) -> str | None:
@@ -145,6 +153,13 @@ def discover_cubes(model_xbrl: object) -> list[CubeModel]:
                         cube_label=_concept_label(cube),
                         elr=role_uri,
                         elr_definition=_role_definition(model_xbrl, role_uri),
+                        source_family_topic_id="",
+                        source_family_topic_label="",
+                        family_topic_id="",
+                        family_topic_label="",
+                        occurrence_type="base",
+                        variant_label=None,
+                        variant_validation={},
                         closed=(relationship.arcElement.get("{http://xbrl.org/2005/xbrldt}closed", "false").lower() == "true"),
                         primary_items=sorted(primary_items.values(), key=lambda item: item["qname"]),
                         dimensions=dimensions,
@@ -158,13 +173,25 @@ def discover_topics(*, model_xbrl: object, taxonomy_year: int, entrypoint: str) 
     topic_labels: dict[str, str] = {}
 
     for cube in discover_cubes(model_xbrl):
-        topic_id, topic_label = classify_topic(
+        classification = classify_topic(
             cube_qname=cube.cube_qname,
             cube_label=cube.cube_label,
             elr_definition=cube.elr_definition,
+            dimension_qnames=[dimension.dimension_qname for dimension in cube.dimensions],
         )
-        topic_groups[topic_id].append(cube)
-        topic_labels.setdefault(topic_id, topic_label)
+        cube.source_family_topic_id = classification["topic_id"]
+        cube.source_family_topic_label = classification["topic_label"]
+        family_topic_id, family_topic_label = _apply_topic_hierarchy(
+            classification["topic_id"],
+            classification["topic_label"],
+        )
+        cube.family_topic_id = family_topic_id
+        cube.family_topic_label = family_topic_label
+        cube.occurrence_type = classification["occurrence_type"]
+        cube.variant_label = classification["variant_label"]
+        cube.variant_validation = classification["variant_validation"]
+        topic_groups[family_topic_id].append(cube)
+        topic_labels.setdefault(family_topic_id, family_topic_label)
 
     topics = [
         TopicModel(
@@ -172,7 +199,17 @@ def discover_topics(*, model_xbrl: object, taxonomy_year: int, entrypoint: str) 
             topic_label=topic_labels[topic_id],
             taxonomy_year=taxonomy_year,
             entrypoint=entrypoint,
-            hypercubes=sorted(cubes, key=lambda cube: (cube.elr_definition or cube.cube_label or cube.cube_qname)),
+            priority=classify_topic_priority(topic_id=topic_id, topic_label=topic_labels[topic_id])[0],
+            topic_kind=classify_topic_priority(topic_id=topic_id, topic_label=topic_labels[topic_id])[1],
+            hypercubes=sorted(
+                cubes,
+                key=lambda cube: (
+                    cube.family_topic_label,
+                    cube.occurrence_type,
+                    cube.variant_label or "",
+                    cube.elr_definition or cube.cube_label or cube.cube_qname,
+                ),
+            ),
             candidate_rules=[],
         )
         for topic_id, cubes in topic_groups.items()

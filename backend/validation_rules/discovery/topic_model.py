@@ -11,6 +11,8 @@ class TopicModel:
     topic_label: str
     taxonomy_year: int
     entrypoint: str
+    priority: str
+    topic_kind: str
     hypercubes: list[CubeModel]
     candidate_rules: list[dict]
 
@@ -30,10 +32,18 @@ class TopicModel:
             "topic_label": self.topic_label,
             "taxonomy_year": self.taxonomy_year,
             "entrypoint": self.entrypoint,
+            "priority": self.priority,
+            "topic_kind": self.topic_kind,
             "hypercube_count": len(self.hypercubes),
             "primary_item_count": len(primary_items),
             "dimension_count": len(dimensions),
             "dimensions": sorted(dimensions),
+            "source_families": sorted(
+                {
+                    f"{cube.source_family_topic_id}|{cube.source_family_topic_label}"
+                    for cube in self.hypercubes
+                }
+            ),
             "hypercubes": [cube.to_dict() for cube in self.hypercubes],
             "candidate_rules": self.candidate_rules,
         }
