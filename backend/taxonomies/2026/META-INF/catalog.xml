@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI rewritePrefix="../FRS-101/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/FRS-101/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../FRS-102/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/FRS-102/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../IFRS/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/IFRS/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../fr/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/fr/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../cd/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/cd/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../general/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/general/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../reports/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/reports/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../dpl/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/dpl/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../cic/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/cic/2026-01-01/"/>
+  <rewriteURI rewritePrefix="../dsep/2026-01-01/" uriStartString="https://xbrl.frc.org.uk/dsep/2026-01-01/"/>
+</catalog>
