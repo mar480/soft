@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .entrypoints import generated_output_dir
 from .taxonomy_loader import load_taxonomy_entrypoint, load_taxonomy_entrypoint_from_path
 from .taxonomy_repository import index_taxonomy
 
@@ -34,8 +35,16 @@ def main() -> int:
             taxonomy_root=args.taxonomy_root,
         )
 
-    output_dir = Path(args.output_dir) if args.output_dir else None
-    summary = index_taxonomy(model, output_dir=output_dir)
+    output_dir = Path(args.output_dir) if args.output_dir else generated_output_dir(
+        taxonomy_year=args.taxonomy_year,
+        entrypoint_name=model.entrypoint_name,
+    )
+
+    try:
+        summary = index_taxonomy(model, output_dir=output_dir)
+    finally:
+        model.close()
+
     print(json.dumps(summary.__dict__, indent=2))
     return 0
 
