@@ -1,7 +1,7 @@
 {
   "taxonomy_year": 2026,
   "entrypoint": "FRS-102",
-  "family_count": 116,
+  "family_count": 108,
   "cube_count": 241,
   "families": [
     {
@@ -515,64 +515,36 @@
       "topic_label": "Cash Flow",
       "priority": "normal",
       "topic_kind": "disclosure_family",
-      "hypercube_count": 7,
+      "hypercube_count": 9,
       "occurrence_counts": {
         "analysis": 1,
-        "base": 1,
+        "base": 3,
         "variant": 5
       },
       "source_families": [
         [
           "cash_flow",
           "Cash Flow"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "92501 - Hypercube - Cash Flow Analysis 1",
-        "9250 - Hypercube - Cash Flow",
-        "9253 - Hypercube - Cash Flow - Associates",
-        "9256 - Hypercube - Cash Flow - Finance Leases",
-        "9254 - Hypercube - Cash Flow - Joint Ventures",
-        "9251 - Hypercube - Cash Flow - Parents",
-        "9252 - Hypercube - Cash Flow - Subsidiaries"
-      ]
-    },
-    {
-      "topic_id": "cash_flow_other_related_parties",
-      "topic_label": "Cash Flow Other Related Parties",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "cash_flow_other_related_parties",
           "Cash Flow Other Related Parties"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "9255 - Hypercube - Cash Flow - Other Related Parties"
-      ]
-    },
-    {
-      "topic_id": "cash_flow_share_classes",
-      "topic_label": "Cash Flow Share Classes",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "cash_flow_share_classes",
           "Cash Flow Share Classes"
         ]
       ],
       "cube_elr_definitions": [
-        "9257 - Hypercube - Cash Flow - Share Classes"
+        "92501 - Hypercube - Cash Flow Analysis 1",
+        "9250 - Hypercube - Cash Flow",
+        "9255 - Hypercube - Cash Flow - Other Related Parties",
+        "9257 - Hypercube - Cash Flow - Share Classes",
+        "9253 - Hypercube - Cash Flow - Associates",
+        "9256 - Hypercube - Cash Flow - Finance Leases",
+        "9254 - Hypercube - Cash Flow - Joint Ventures",
+        "9251 - Hypercube - Cash Flow - Parents",
+        "9252 - Hypercube - Cash Flow - Subsidiaries"
       ]
     },
     {
@@ -1021,60 +993,32 @@
       "topic_label": "Equity and S O C I",
       "priority": "normal",
       "topic_kind": "disclosure_family",
-      "hypercube_count": 3,
+      "hypercube_count": 5,
       "occurrence_counts": {
         "analysis": 1,
-        "base": 1,
+        "base": 3,
         "segments": 1
       },
       "source_families": [
         [
           "equity_and_s_o_c_i",
           "Equity and S O C I"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "92401 - Hypercube - Equity and SOCI Analysis 1",
-        "9240 - Hypercube - Equity and SOCI",
-        "9243 - Hypercube - Equity and SOCI - Segments"
-      ]
-    },
-    {
-      "topic_id": "equity_and_s_o_c_i_p_p_e",
-      "topic_label": "Equity and S O C I P P E",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "equity_and_s_o_c_i_p_p_e",
           "Equity and S O C I P P E"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "9241 - Hypercube - Equity and SOCI - PPE"
-      ]
-    },
-    {
-      "topic_id": "equity_and_s_o_c_i_shares",
-      "topic_label": "Equity and S O C I Shares",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "equity_and_s_o_c_i_shares",
           "Equity and S O C I Shares"
         ]
       ],
       "cube_elr_definitions": [
-        "9242 - Hypercube - Equity and SOCI - Shares"
+        "92401 - Hypercube - Equity and SOCI Analysis 1",
+        "9240 - Hypercube - Equity and SOCI",
+        "9241 - Hypercube - Equity and SOCI - PPE",
+        "9242 - Hypercube - Equity and SOCI - Shares",
+        "9243 - Hypercube - Equity and SOCI - Segments"
       ]
     },
     {
@@ -2271,88 +2215,29 @@
       "topic_label": "Streamlined Energy and Carbon Reporting",
       "priority": "normal",
       "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
+      "hypercube_count": 6,
       "occurrence_counts": {
+        "base": 3,
+        "grouping": 2,
         "variant": 1
       },
       "source_families": [
         [
           "streamlined_energy_and_carbon_reporting",
           "Streamlined Energy and Carbon Reporting"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "9500 - Hypercube - Streamlined Energy and Carbon Reporting - Basic"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_basic",
-      "topic_label": "Streamlined Energy and Carbon Reporting Basic",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "grouping": 1
-      },
-      "source_families": [
+        ],
         [
           "streamlined_energy_and_carbon_reporting_basic",
           "Streamlined Energy and Carbon Reporting Basic"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "95001 - Hypercube - Streamlined Energy and Carbon Reporting - Basic Grouping 1"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_dual_reporting_type",
-      "topic_label": "Streamlined Energy and Carbon Reporting Dual Reporting Type",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "streamlined_energy_and_carbon_reporting_dual_reporting_type",
           "Streamlined Energy and Carbon Reporting Dual Reporting Type"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "9511 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_dual_reporting_type_emissions_source",
-      "topic_label": "Streamlined Energy and Carbon Reporting Dual Reporting Type Emissions Source",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 1,
-      "occurrence_counts": {
-        "base": 1
-      },
-      "source_families": [
+        ],
         [
           "streamlined_energy_and_carbon_reporting_dual_reporting_type_emissions_source",
           "Streamlined Energy and Carbon Reporting Dual Reporting Type Emissions Source"
-        ]
-      ],
-      "cube_elr_definitions": [
-        "9512 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type - Emissions Source"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_reporting_region",
-      "topic_label": "Streamlined Energy and Carbon Reporting Reporting Region",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "hypercube_count": 2,
-      "occurrence_counts": {
-        "base": 1,
-        "grouping": 1
-      },
-      "source_families": [
+        ],
         [
           "streamlined_energy_and_carbon_reporting_reporting_region",
           "Streamlined Energy and Carbon Reporting Reporting Region"
@@ -2360,7 +2245,11 @@
       ],
       "cube_elr_definitions": [
         "9510 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region",
-        "95101 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region Grouping 1"
+        "9511 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type",
+        "9512 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type - Emissions Source",
+        "95001 - Hypercube - Streamlined Energy and Carbon Reporting - Basic Grouping 1",
+        "95101 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region Grouping 1",
+        "9500 - Hypercube - Streamlined Energy and Carbon Reporting - Basic"
       ]
     },
     {
@@ -3632,6 +3521,65 @@
       "topic_label": "Cash Flow",
       "priority": "normal",
       "topic_kind": "disclosure_family",
+      "cube_qname": "core:CashFlow-OtherRelatedPartiesHypercube",
+      "cube_label": "Cash flow - other related parties [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-OtherRelatedParties",
+      "elr_definition": "9255 - Hypercube - Cash Flow - Other Related Parties",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 11,
+      "primary_item_count": 1,
+      "dimensions": [
+        "core:OtherRelatedPartyTypeDimension",
+        "core:ContinuingDiscontinuedOperationsDimension",
+        "core:ExceptionalsDimension",
+        "core:GeographicSegmentsDimension",
+        "core:OperatingSegmentsDimension",
+        "core:ProductsServicesDimension",
+        "core:MajorCustomersDimension",
+        "core:SegmentReconciliationDimension",
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension"
+      ]
+    },
+    {
+      "topic_id": "cash_flow",
+      "topic_label": "Cash Flow",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
+      "cube_qname": "core:CashFlow-ShareClassesHypercube",
+      "cube_label": "Cash flow - share classes [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-ShareClasses",
+      "elr_definition": "9257 - Hypercube - Cash Flow - Share Classes",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 12,
+      "primary_item_count": 1,
+      "dimensions": [
+        "bus:EntityShareClassesDimension",
+        "bus:ShareTypesDimension",
+        "core:ContinuingDiscontinuedOperationsDimension",
+        "core:ExceptionalsDimension",
+        "core:GeographicSegmentsDimension",
+        "core:OperatingSegmentsDimension",
+        "core:ProductsServicesDimension",
+        "core:MajorCustomersDimension",
+        "core:SegmentReconciliationDimension",
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension"
+      ]
+    },
+    {
+      "topic_id": "cash_flow",
+      "topic_label": "Cash Flow",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
       "cube_qname": "core:CashFlow-AssociatesHypercube",
       "cube_label": "Cash flow - associates [Hypercube]",
       "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-Associates",
@@ -3760,65 +3708,6 @@
       "primary_item_count": 1,
       "dimensions": [
         "core:SubsidiariesDimension",
-        "core:ContinuingDiscontinuedOperationsDimension",
-        "core:ExceptionalsDimension",
-        "core:GeographicSegmentsDimension",
-        "core:OperatingSegmentsDimension",
-        "core:ProductsServicesDimension",
-        "core:MajorCustomersDimension",
-        "core:SegmentReconciliationDimension",
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension"
-      ]
-    },
-    {
-      "topic_id": "cash_flow_other_related_parties",
-      "topic_label": "Cash Flow Other Related Parties",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "core:CashFlow-OtherRelatedPartiesHypercube",
-      "cube_label": "Cash flow - other related parties [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-OtherRelatedParties",
-      "elr_definition": "9255 - Hypercube - Cash Flow - Other Related Parties",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 11,
-      "primary_item_count": 1,
-      "dimensions": [
-        "core:OtherRelatedPartyTypeDimension",
-        "core:ContinuingDiscontinuedOperationsDimension",
-        "core:ExceptionalsDimension",
-        "core:GeographicSegmentsDimension",
-        "core:OperatingSegmentsDimension",
-        "core:ProductsServicesDimension",
-        "core:MajorCustomersDimension",
-        "core:SegmentReconciliationDimension",
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension"
-      ]
-    },
-    {
-      "topic_id": "cash_flow_share_classes",
-      "topic_label": "Cash Flow Share Classes",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "core:CashFlow-ShareClassesHypercube",
-      "cube_label": "Cash flow - share classes [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-ShareClasses",
-      "elr_definition": "9257 - Hypercube - Cash Flow - Share Classes",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 12,
-      "primary_item_count": 1,
-      "dimensions": [
-        "bus:EntityShareClassesDimension",
-        "bus:ShareTypesDimension",
         "core:ContinuingDiscontinuedOperationsDimension",
         "core:ExceptionalsDimension",
         "core:GeographicSegmentsDimension",
@@ -5277,6 +5166,55 @@
       "topic_label": "Equity and S O C I",
       "priority": "normal",
       "topic_kind": "disclosure_family",
+      "cube_qname": "core:EquitySOCI-PPEHypercube",
+      "cube_label": "Equity and SOCI - PPE [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-PPE",
+      "elr_definition": "9241 - Hypercube - Equity and SOCI - PPE",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 6,
+      "primary_item_count": 1,
+      "dimensions": [
+        "core:EquityClassesDimension",
+        "core:PropertyPlantEquipmentClassesDimension",
+        "core:ContinuingDiscontinuedOperationsDimension",
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension"
+      ]
+    },
+    {
+      "topic_id": "equity_and_s_o_c_i",
+      "topic_label": "Equity and S O C I",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
+      "cube_qname": "core:EquitySOCI-SharesHypercube",
+      "cube_label": "Equity and SOCI - shares [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Shares",
+      "elr_definition": "9242 - Hypercube - Equity and SOCI - Shares",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 7,
+      "primary_item_count": 1,
+      "dimensions": [
+        "core:EquityClassesDimension",
+        "bus:EntityShareClassesDimension",
+        "bus:ShareTypesDimension",
+        "core:ContinuingDiscontinuedOperationsDimension",
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension"
+      ]
+    },
+    {
+      "topic_id": "equity_and_s_o_c_i",
+      "topic_label": "Equity and S O C I",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
       "cube_qname": "core:EquitySOCI-SegmentsHypercube",
       "cube_label": "Equity and SOCI - segments [Hypercube]",
       "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Segments",
@@ -5300,55 +5238,6 @@
         "core:ProductsServicesDimension",
         "core:MajorCustomersDimension",
         "core:SegmentReconciliationDimension",
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension"
-      ]
-    },
-    {
-      "topic_id": "equity_and_s_o_c_i_p_p_e",
-      "topic_label": "Equity and S O C I P P E",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "core:EquitySOCI-PPEHypercube",
-      "cube_label": "Equity and SOCI - PPE [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-PPE",
-      "elr_definition": "9241 - Hypercube - Equity and SOCI - PPE",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 6,
-      "primary_item_count": 1,
-      "dimensions": [
-        "core:EquityClassesDimension",
-        "core:PropertyPlantEquipmentClassesDimension",
-        "core:ContinuingDiscontinuedOperationsDimension",
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension"
-      ]
-    },
-    {
-      "topic_id": "equity_and_s_o_c_i_shares",
-      "topic_label": "Equity and S O C I Shares",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "core:EquitySOCI-SharesHypercube",
-      "cube_label": "Equity and SOCI - shares [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Shares",
-      "elr_definition": "9242 - Hypercube - Equity and SOCI - Shares",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 7,
-      "primary_item_count": 1,
-      "dimensions": [
-        "core:EquityClassesDimension",
-        "bus:EntityShareClassesDimension",
-        "bus:ShareTypesDimension",
-        "core:ContinuingDiscontinuedOperationsDimension",
         "bus:GroupCompanyDataDimension",
         "core:RestatementsFirstTimeAdoptionDimension",
         "bus:OriginalRevisedDataDimension"
@@ -9166,25 +9055,73 @@
       "topic_label": "Streamlined Energy and Carbon Reporting",
       "priority": "normal",
       "topic_kind": "disclosure_family",
-      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
-      "cube_label": "Streamlined energy and carbon reporting - basic [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-Basic",
-      "elr_definition": "9500 - Hypercube - Streamlined Energy and Carbon Reporting - Basic",
-      "occurrence_type": "variant",
-      "variant_label": "Basic",
+      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube",
+      "cube_label": "Streamlined energy and carbon reporting - reporting region [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-ReportingRegion",
+      "elr_definition": "9510 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region",
+      "occurrence_type": "base",
+      "variant_label": null,
       "variant_dimension_validation": true,
       "variant_evidence_dimensions": [],
-      "dimension_count": 3,
+      "dimension_count": 4,
       "primary_item_count": 1,
       "dimensions": [
         "bus:GroupCompanyDataDimension",
         "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension"
+        "bus:OriginalRevisedDataDimension",
+        "direp:ReportingRegionDimension"
       ]
     },
     {
-      "topic_id": "streamlined_energy_and_carbon_reporting_basic",
-      "topic_label": "Streamlined Energy and Carbon Reporting Basic",
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
+      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-DualReportingHypercube",
+      "cube_label": "Streamlined energy and carbon reporting - dual reporting [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType",
+      "elr_definition": "9511 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 5,
+      "primary_item_count": 1,
+      "dimensions": [
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension",
+        "direp:ReportingRegionDimension",
+        "direp:DualReportingTypeDimension"
+      ]
+    },
+    {
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
+      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-DualReporting-EmissionsSourceHypercube",
+      "cube_label": "Streamlined energy and carbon reporting - dual reporting - emissions source [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType-EmissionsSource",
+      "elr_definition": "9512 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type - Emissions Source",
+      "occurrence_type": "base",
+      "variant_label": null,
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 6,
+      "primary_item_count": 1,
+      "dimensions": [
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension",
+        "direp:ReportingRegionDimension",
+        "direp:DualReportingTypeDimension",
+        "direp:EmissionsSourceDimension"
+      ]
+    },
+    {
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
@@ -9208,77 +9145,8 @@
       ]
     },
     {
-      "topic_id": "streamlined_energy_and_carbon_reporting_dual_reporting_type",
-      "topic_label": "Streamlined Energy and Carbon Reporting Dual Reporting Type",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-DualReportingHypercube",
-      "cube_label": "Streamlined energy and carbon reporting - dual reporting [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType",
-      "elr_definition": "9511 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 5,
-      "primary_item_count": 1,
-      "dimensions": [
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension",
-        "direp:ReportingRegionDimension",
-        "direp:DualReportingTypeDimension"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_dual_reporting_type_emissions_source",
-      "topic_label": "Streamlined Energy and Carbon Reporting Dual Reporting Type Emissions Source",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-DualReporting-EmissionsSourceHypercube",
-      "cube_label": "Streamlined energy and carbon reporting - dual reporting - emissions source [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType-EmissionsSource",
-      "elr_definition": "9512 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type - Emissions Source",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 6,
-      "primary_item_count": 1,
-      "dimensions": [
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension",
-        "direp:ReportingRegionDimension",
-        "direp:DualReportingTypeDimension",
-        "direp:EmissionsSourceDimension"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_reporting_region",
-      "topic_label": "Streamlined Energy and Carbon Reporting Reporting Region",
-      "priority": "normal",
-      "topic_kind": "disclosure_family",
-      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube",
-      "cube_label": "Streamlined energy and carbon reporting - reporting region [Hypercube]",
-      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-ReportingRegion",
-      "elr_definition": "9510 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region",
-      "occurrence_type": "base",
-      "variant_label": null,
-      "variant_dimension_validation": true,
-      "variant_evidence_dimensions": [],
-      "dimension_count": 4,
-      "primary_item_count": 1,
-      "dimensions": [
-        "bus:GroupCompanyDataDimension",
-        "core:RestatementsFirstTimeAdoptionDimension",
-        "bus:OriginalRevisedDataDimension",
-        "direp:ReportingRegionDimension"
-      ]
-    },
-    {
-      "topic_id": "streamlined_energy_and_carbon_reporting_reporting_region",
-      "topic_label": "Streamlined Energy and Carbon Reporting Reporting Region",
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
       "priority": "normal",
       "topic_kind": "disclosure_family",
       "cube_qname": "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube",
@@ -9300,6 +9168,27 @@
         "bus:OriginalRevisedDataDimension",
         "direp:ReportingRegionDimension",
         "direp:X-IntensityRatioGroupingDimension"
+      ]
+    },
+    {
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
+      "priority": "normal",
+      "topic_kind": "disclosure_family",
+      "cube_qname": "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
+      "cube_label": "Streamlined energy and carbon reporting - basic [Hypercube]",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-Basic",
+      "elr_definition": "9500 - Hypercube - Streamlined Energy and Carbon Reporting - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic",
+      "variant_dimension_validation": true,
+      "variant_evidence_dimensions": [],
+      "dimension_count": 3,
+      "primary_item_count": 1,
+      "dimensions": [
+        "bus:GroupCompanyDataDimension",
+        "core:RestatementsFirstTimeAdoptionDimension",
+        "bus:OriginalRevisedDataDimension"
       ]
     },
     {

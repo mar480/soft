@@ -17,6 +17,12 @@ def _apply_topic_hierarchy(topic_id: str, topic_label: str) -> tuple[str, str]:
         return "financial_assets", "Financial Assets"
     if topic_id.startswith("financial_liabilities_"):
         return "financial_liabilities", "Financial Liabilities"
+    if topic_id.startswith("cash_flow_"):
+        return "cash_flow", "Cash Flow"
+    if topic_id.startswith("equity_and_s_o_c_i_"):
+        return "equity_and_s_o_c_i", "Equity and S O C I"
+    if topic_id.startswith("streamlined_energy_and_carbon_reporting_"):
+        return "streamlined_energy_and_carbon_reporting", "Streamlined Energy and Carbon Reporting"
     return topic_id, topic_label
 
 
