@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Rule Admin | Soft Validation Engine{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Rule Admin Foundation</p>
+        <h2>Browse published rule packs by topic and family</h2>
+        <p class="muted">This first admin slice is manifest-driven, read-only for published rules, and introduces persisted draft creation for later edit and publish workflows.</p>
+    </div>
+</section>
+
+<section class="summary-grid">
+    <div class="panel">
+        <h3>Topic inventory</h3>
+        <div class="score-copy">
+            <strong>{{ topics|length }}</strong>
+            <span>topics in current view</span>
+        </div>
+    </div>
+    <div class="panel">
+        <h3>Rule family filter</h3>
+        <form method="get" class="stack-md">
+            <select name="family">
+                <option value="">All families</option>
+                {% for family in families %}
+                    <option value="{{ family }}" {% if family_filter == family %}selected{% endif %}>{{ family }}</option>
+                {% endfor %}
+            </select>
+            <div class="actions">
+                <button type="submit">Apply Filter</button>
+            </div>
+        </form>
+    </div>
+    <div class="panel">
+        <h3>Draft coverage</h3>
+        <div class="table-shell compact">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Family</th>
+                        <th>Published</th>
+                        <th>Drafts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in family_stats %}
+                        <tr>
+                            <td>{{ item.family }}</td>
+                            <td>{{ item.published_topics }}</td>
+                            <td>{{ item.draft_topics }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Topics</h3>
+        <p class="muted">Topics are grouped by the existing manifest. A family badge is marked when a draft already exists.</p>
+    </div>
+    <div class="topic-grid">
+        {% for topic in topics %}
+            <article class="topic-card">
+                <div class="section-heading">
+                    <h4>{{ topic.topic_label }}</h4>
+                    <p class="muted">{{ topic.rule_count }} published rules</p>
+                </div>
+                <div class="badge-stack">
+                    {% for family in topic.families %}
+                        <a class="family-chip {% if family.has_draft %}draft{% endif %}" href="{{ url_for('web.admin_topic', topic_id=topic.topic_id, family=family.name) }}">
+                            {{ family.name }}
+                            {% if family.has_draft %}
+                                <span>Draft</span>
+                            {% endif %}
+                        </a>
+                    {% endfor %}
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

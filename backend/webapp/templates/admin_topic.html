@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}{{ view.topic.topic_label }} | Rule Admin{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Published Rule Family</p>
+        <h2>{{ view.topic.topic_label }} · {{ view.family_name }}</h2>
+        <p class="muted">{{ view.published_payload.rule_count }} rules in the published family. Source path: {{ view.published_path }}</p>
+    </div>
+    <div class="hero-actions">
+        {% if view.active_draft %}
+            <a class="button-link" href="{{ url_for('web.admin_draft', draft_id=view.active_draft.id) }}">Open Active Draft</a>
+        {% else %}
+            <form method="post" action="{{ url_for('web.admin_create_draft', topic_id=view.topic.topic_id) }}">
+                <input type="hidden" name="family_name" value="{{ view.family_name }}">
+                <button type="submit">Create Draft</button>
+            </form>
+        {% endif %}
+        <a class="button-link secondary" href="{{ url_for('web.admin') }}">Back To Inventory</a>
+    </div>
+</section>
+
+<section class="summary-grid">
+    <div class="panel">
+        <h3>Topic metadata</h3>
+        <dl class="meta-list">
+            <div><dt>Topic ID</dt><dd>{{ view.topic.topic_id }}</dd></div>
+            <div><dt>Source hypercubes</dt><dd>{{ view.topic_metadata.source_hypercubes|join(", ") }}</dd></div>
+        </dl>
+    </div>
+    <div class="panel">
+        <h3>Current published record</h3>
+        {% if view.current_published %}
+            <dl class="meta-list">
+                <div><dt>Version</dt><dd>{{ view.current_published.version_number }}</dd></div>
+                <div><dt>Changed by</dt><dd>{{ view.current_published.changed_by }}</dd></div>
+                <div><dt>Changed at</dt><dd>{{ view.current_published.changed_at }}</dd></div>
+            </dl>
+        {% else %}
+            <p class="muted">No database-published version exists yet. This family is still at baseline production state.</p>
+        {% endif %}
+    </div>
+    <div class="panel">
+        <h3>Archived versions</h3>
+        <p class="muted">{{ view.archives|length }} archived versions currently stored.</p>
+    </div>
+</section>
+
+{% if view.archives %}
+<section class="panel">
+    <div class="section-heading">
+        <h3>Archive History</h3>
+        <p class="muted">Restoring an archive moves the current production family into a new archive first, then restores the selected snapshot.</p>
+    </div>
+    <div class="table-shell">
+        <table>
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Changed At</th>
+                    <th>Notes</th>
+                    <th>Path</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for archive in view.archives %}
+                    <tr>
+                        <td>{{ archive.version_number }}</td>
+                        <td>{{ archive.changed_at }}</td>
+                        <td>{{ archive.notes }}</td>
+                        <td>{{ archive.source_json_path }}</td>
+                        <td>
+                            <form method="post" action="{{ url_for('web.admin_restore_archive', archive_id=archive.id) }}">
+                                <button type="submit">Restore</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endif %}
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Published rules</h3>
+        <p class="muted">This view is read-only. Draft editing and publish/archive workflows build on this production family.</p>
+    </div>
+    <div class="stack-md">
+        {% for rule in view.published_payload.rules %}
+            <article class="rule-card">
+                <div class="rule-header">
+                    <div>
+                        <h4>{{ rule.id }}</h4>
+                        <p class="muted">{{ rule.type }} · severity {{ rule.severity }} · confidence {{ rule.confidence }}</p>
+                    </div>
+                    {% if rule.requires_review %}
+                        <span class="pill warning-pill">Requires review</span>
+                    {% endif %}
+                </div>
+                <div class="table-shell">
+                    <table>
+                        <tbody>
+                            <tr><th>Topic</th><td>{{ rule.topic }}</td></tr>
+                            <tr><th>Taxonomy basis</th><td><pre>{{ rule.taxonomy_basis | tojson(indent=2) }}</pre></td></tr>
+                            {% if rule.trigger is defined %}
+                                <tr><th>Trigger</th><td><pre>{{ rule.trigger | tojson(indent=2) }}</pre></td></tr>
+                            {% endif %}
+                            {% if rule.expect is defined %}
+                                <tr><th>Expectation</th><td><pre>{{ rule.expect | tojson(indent=2) }}</pre></td></tr>
+                            {% endif %}
+                            {% if rule.check is defined %}
+                                <tr><th>Check</th><td><pre>{{ rule.check | tojson(indent=2) }}</pre></td></tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

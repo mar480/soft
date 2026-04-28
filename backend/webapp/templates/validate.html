@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Validate | Soft Validation Engine{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Phase 1</p>
+        <h2>Run validation on synthetic or local files</h2>
+        <p class="muted">This first slice uses the real rule engine and stores runs, reports, source files, and immutable rule-pack snapshots locally.</p>
+    </div>
+    <div class="hero-stat">
+        <span>Available synthetic examples</span>
+        <strong>{{ synthetic_examples|length }}</strong>
+    </div>
+</section>
+
+<section class="panel">
+    <form method="post" enctype="multipart/form-data" class="stack-lg">
+        <div class="grid-2">
+            <div class="panel nested-panel">
+                <div class="section-heading">
+                    <h3>Synthetic example</h3>
+                    <p class="muted">Pick one generated example from the backend and validate it directly.</p>
+                </div>
+                <label for="synthetic_path">Synthetic file</label>
+                <select id="synthetic_path" name="synthetic_path">
+                    <option value="">No synthetic file selected</option>
+                    {% for path in synthetic_examples %}
+                        <option value="{{ path }}">{{ path.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="panel nested-panel">
+                <div class="section-heading">
+                    <h3>Real or stored files</h3>
+                    <p class="muted">Upload one or more local files for single or batch validation, or reuse a stored file. The app infers the mode from the fields you populate.</p>
+                </div>
+                <label for="upload_files">Upload local files</label>
+                <input id="upload_files" name="upload_files" type="file" accept=".html,.htm,.xhtml" multiple>
+                <label for="stored_source_id">Stored source</label>
+                <select id="stored_source_id" name="stored_source_id">
+                    <option value="">No stored source selected</option>
+                    {% for source in stored_sources %}
+                        <option value="{{ source.id }}">{{ source.display_name }} ({{ source.source_type }})</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="inline-meta">
+            <span>Rule-pack snapshot</span>
+            <strong>Immutable copy stored per run</strong>
+            <span>Results scope</span>
+            <strong>Relevant topics only</strong>
+            <span>Batch handling</span>
+            <strong>Multi-file uploads grouped as Batch TIMESTAMP</strong>
+        </div>
+
+        <div class="actions">
+            <button type="submit">Start Validation</button>
+        </div>
+    </form>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Stored source files</h3>
+        <p class="muted">Uploads and reused sources remain available locally for later runs.</p>
+    </div>
+    <div class="table-shell">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for source in stored_sources %}
+                    <tr>
+                        <td>{{ source.display_name }}</td>
+                        <td>{{ source.source_type }}</td>
+                        <td>{{ source.created_at }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="muted">No stored source files yet.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

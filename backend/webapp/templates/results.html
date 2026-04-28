@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Results | Soft Validation Engine{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Validation Results</p>
+        <h2>{{ run.report_name }}</h2>
+        <p class="muted">{{ run.source_name }} · {{ run.taxonomy_year }} {{ run.taxonomy_entrypoint }} · {{ run.created_at }}</p>
+    </div>
+    <div class="hero-actions">
+        <a class="button-link" href="{{ url_for('web.download_report', run_id=run.id) }}">Download HTML Report</a>
+        <a class="button-link secondary" href="{{ url_for('web.reports') }}">Open Report Library</a>
+    </div>
+</section>
+
+<section class="summary-grid">
+    <div class="panel score-panel">
+        <h3>Validation score</h3>
+        <div class="gauge">
+            {% for segment in run.gauge_segments %}
+                <span class="gauge-segment {{ segment.name }} {% if segment.active %}active{% endif %}"></span>
+            {% endfor %}
+        </div>
+        <div class="score-copy">
+            <strong>{{ "%.1f"|format(run.score_percent) }}%</strong>
+            <span>{{ run.total_pass }} pass / {{ run.total_fail }} fail</span>
+        </div>
+    </div>
+    <div class="panel">
+        <h3>Run metadata</h3>
+        <dl class="meta-list">
+            <div><dt>Rule-pack version</dt><dd>{{ run.rule_pack_version }}</dd></div>
+            <div><dt>Source type</dt><dd>{{ run.source_type }}</dd></div>
+            <div><dt>Rule snapshot</dt><dd>{{ run.rule_snapshot_path }}</dd></div>
+        </dl>
+    </div>
+    <div class="panel">
+        <h3>Family breakdown</h3>
+        <div class="table-shell compact">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Family</th>
+                        <th>Pass</th>
+                        <th>Fail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for family in run.family_breakdown %}
+                        <tr>
+                            <td>{{ family.family }}</td>
+                            <td>{{ family.pass }}</td>
+                            <td>{{ family.fail }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="stack-lg">
+    {% for topic in run.grouped_results %}
+        <details class="panel accordion" {% if loop.first %}open{% endif %}>
+            <summary>
+                <div>
+                    <h3>{{ topic.topic }}</h3>
+                    <p class="muted">{{ topic.families|length }} rule families</p>
+                </div>
+            </summary>
+            <div class="stack-md">
+                {% for family in topic.families %}
+                    <div class="panel nested-panel">
+                        <div class="section-heading">
+                            <h4>{{ family.family }}</h4>
+                            <p class="muted">{{ family.results|length }} tests</p>
+                        </div>
+                        <div class="table-shell">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Rule ID</th>
+                                        <th>Type</th>
+                                        <th>Message</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for result in family.results %}
+                                        <tr>
+                                            <td><span class="status {{ result.status }}">{{ result.status }}</span></td>
+                                            <td>{{ result.rule_id }}</td>
+                                            <td>{{ result.type }}</td>
+                                            <td>{{ result.message }}</td>
+                                        </tr>
+                                        <tr class="support-row">
+                                            <td colspan="4">
+                                                <div class="support-card">
+                                                    <strong>Supporting information</strong>
+                                                    <p>This test checks the rule family behaviour for the selected topic and records the engine message and evidence payload from the backend.</p>
+                                                    <pre>{{ result.evidence | tojson(indent=2) }}</pre>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </details>
+    {% endfor %}
+</section>
+{% endblock %}

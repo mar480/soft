@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ run.report_name }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; color: #111827; }
+        h1, h2, h3 { margin-bottom: 0.5rem; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 1.5rem; }
+        th, td { border: 1px solid #d1d5db; padding: 0.55rem; text-align: left; vertical-align: top; }
+        .meta { margin-bottom: 1.5rem; }
+        .status-pass { color: #166534; }
+        .status-fail { color: #991b1b; }
+        pre { white-space: pre-wrap; background: #f3f4f6; padding: 0.75rem; }
+    </style>
+</head>
+<body>
+    <h1>{{ run.report_name }}</h1>
+    <div class="meta">
+        <p>Source: {{ run.source_name }}</p>
+        <p>Taxonomy: {{ run.taxonomy_year }} {{ run.taxonomy_entrypoint }}</p>
+        <p>Created: {{ run.created_at }}</p>
+        <p>Score: {{ "%.1f"|format(run.score_percent) }}%</p>
+        <p>Summary: {{ run.summary.pass }} pass / {{ run.summary.fail }} fail</p>
+    </div>
+
+    <h2>Family breakdown</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Family</th>
+                <th>Pass</th>
+                <th>Fail</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for family in run.family_breakdown %}
+                <tr>
+                    <td>{{ family.family }}</td>
+                    <td>{{ family.pass }}</td>
+                    <td>{{ family.fail }}</td>
+                    <td>{{ family.total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% for topic in run.grouped_results %}
+        <h2>{{ topic.topic }}</h2>
+        {% for family in topic.families %}
+            <h3>{{ family.family }}</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Rule ID</th>
+                        <th>Type</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in family.results %}
+                        <tr>
+                            <td class="status-{{ result.status }}">{{ result.status }}</td>
+                            <td>{{ result.rule_id }}</td>
+                            <td>{{ result.type }}</td>
+                            <td>{{ result.message }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Processing | Soft Validation Engine{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Validation In Progress</p>
+        <h2>Processing {{ job.source_name or "selected file" }}</h2>
+        <p class="muted">The validation engine is running in the background. This page updates automatically and will take you to the results when the run is complete.</p>
+    </div>
+    <div class="hero-stat">
+        <span>Job status</span>
+        <strong id="job-status">{{ job.status }}</strong>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="progress-shell">
+        <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill" style="width: {{ job.progress_percent }}%;"></div>
+        </div>
+        <div class="progress-meta">
+            <strong id="progress-percent">{{ job.progress_percent }}%</strong>
+            <span id="progress-message">{{ job.progress_message }}</span>
+        </div>
+    </div>
+    <div id="job-error" class="flash error hidden"></div>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Processing stages</h3>
+        <p class="muted">This will evolve into richer live progress as we add more background workflows.</p>
+    </div>
+    <div class="stage-list">
+        <div class="stage-item"><span>1</span><div><strong>Queue job</strong><p>Record request and file selection.</p></div></div>
+        <div class="stage-item"><span>2</span><div><strong>Snapshot rules</strong><p>Create immutable rule-pack copy for this run.</p></div></div>
+        <div class="stage-item"><span>3</span><div><strong>Execute engine</strong><p>Load report model and evaluate the rule pack.</p></div></div>
+        <div class="stage-item"><span>4</span><div><strong>Build outputs</strong><p>Persist JSON results and render HTML report.</p></div></div>
+    </div>
+</section>
+
+<script>
+const statusUrl = "{{ url_for('web.job_status', job_id=job.id) }}";
+
+async function pollJob() {
+    const response = await fetch(statusUrl, { cache: "no-store" });
+    if (!response.ok) {
+        return;
+    }
+
+    const job = await response.json();
+    document.getElementById("job-status").textContent = job.status;
+    document.getElementById("progress-percent").textContent = `${job.progress_percent}%`;
+    document.getElementById("progress-message").textContent = job.progress_message;
+    document.getElementById("progress-fill").style.width = `${job.progress_percent}%`;
+
+    const errorBox = document.getElementById("job-error");
+    if (job.status === "failed") {
+        errorBox.textContent = job.error_message || "Validation failed.";
+        errorBox.classList.remove("hidden");
+        return;
+    }
+
+    if (job.status === "completed" && job.results_url) {
+        window.location.assign(job.results_url);
+        return;
+    }
+
+    window.setTimeout(pollJob, 1200);
+}
+
+window.setTimeout(pollJob, 1200);
+</script>
+{% endblock %}

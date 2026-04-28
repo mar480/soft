@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Reports | Soft Validation Engine{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Report Library</p>
+        <h2>Stored validation reports</h2>
+        <p class="muted">Reports persist locally and can be reopened or downloaded as HTML.</p>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Batch folders</h3>
+        <p class="muted">Batch validations are grouped here and contain their individual report runs.</p>
+    </div>
+    <div class="table-shell">
+        <table>
+            <thead>
+                <tr>
+                    <th>Batch</th>
+                    <th>Created</th>
+                    <th>Runs</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for batch in batches %}
+                    <tr>
+                        <td>{{ batch.display_name }}</td>
+                        <td>{{ batch.created_at }}</td>
+                        <td>{{ batch.run_count }}</td>
+                        <td class="actions-cell">
+                            <a href="{{ url_for('web.batch_reports', batch_group_id=batch.id) }}">Open Batch</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="4" class="muted">No batch validations yet.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Single reports</h3>
+        <p class="muted">Individual validations remain listed separately when they are not part of a batch.</p>
+    </div>
+    <div class="table-shell">
+        <table>
+            <thead>
+                <tr>
+                    <th>Report</th>
+                    <th>Source</th>
+                    <th>Taxonomy</th>
+                    <th>Score</th>
+                    <th>Pass</th>
+                    <th>Fail</th>
+                    <th>Created</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in reports %}
+                    {% if not report.batch_group_id %}
+                        <tr>
+                            <td>{{ report.report_name }}</td>
+                            <td>{{ report.source_name }}</td>
+                            <td>{{ report.taxonomy_year }} {{ report.taxonomy_entrypoint }}</td>
+                            <td>{{ "%.1f"|format(report.score_percent) }}%</td>
+                            <td>{{ report.total_pass }}</td>
+                            <td>{{ report.total_fail }}</td>
+                            <td>{{ report.created_at }}</td>
+                            <td class="actions-cell">
+                                <a href="{{ url_for('web.results', run_id=report.id) }}">Open</a>
+                                <a href="{{ url_for('web.download_report', run_id=report.id) }}">Download</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% else %}
+                    <tr>
+                        <td colspan="8" class="muted">No reports have been generated yet.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

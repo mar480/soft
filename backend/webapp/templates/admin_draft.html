@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Draft {{ draft.rule_family }} | Rule Admin{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Active Draft</p>
+        <h2>{{ draft.topic_label }} · {{ draft.rule_family }}</h2>
+        <p class="muted">Draft version {{ draft.version_number }} is now editable. Save keeps the draft separate from production and validates the JSON structure before persisting it.</p>
+    </div>
+    <div class="hero-actions">
+        <form method="post" action="{{ url_for('web.admin_publish_draft', draft_id=draft.id) }}">
+            <button type="submit">Publish Draft</button>
+        </form>
+        <a class="button-link secondary" href="{{ url_for('web.admin_topic', topic_id=draft.topic_id, family=draft.rule_family) }}">Back To Published View</a>
+    </div>
+</section>
+
+<section class="summary-grid">
+    <div class="panel">
+        <h3>Draft metadata</h3>
+        <dl class="meta-list">
+            <div><dt>Changed by</dt><dd>{{ draft.changed_by }}</dd></div>
+            <div><dt>Changed at</dt><dd>{{ draft.changed_at }}</dd></div>
+            <div><dt>Stored path</dt><dd>{{ draft.source_json_path }}</dd></div>
+        </dl>
+    </div>
+    <div class="panel">
+        <h3>Editing scope</h3>
+        <p class="muted">This first edit workflow is raw JSON with structural validation. Publish and archive will build on the saved draft state next.</p>
+    </div>
+    <div class="panel">
+        <h3>Published comparison</h3>
+        <p class="muted">Published rule count: {{ draft.published_payload.rule_count }} · Draft rule count: {{ draft.payload.rule_count }}</p>
+    </div>
+</section>
+
+<section class="grid-2">
+    <div class="panel">
+        <div class="section-heading">
+            <h3>Draft JSON Editor</h3>
+            <p class="muted">Edit the draft JSON directly. Validation checks topic consistency, family consistency, required fields, and rule count before save.</p>
+        </div>
+        <form method="post" action="{{ url_for('web.admin_save_draft', draft_id=draft.id) }}" class="stack-md">
+            <textarea class="json-editor" name="draft_json" spellcheck="false">{{ draft.draft_json }}</textarea>
+            <div class="actions">
+                <button type="submit">Save Draft</button>
+            </div>
+        </form>
+    </div>
+    <div class="panel">
+        <div class="section-heading">
+            <h3>Published JSON</h3>
+            <p class="muted">Current production family used by the engine.</p>
+        </div>
+        <pre class="json-block">{{ draft.published_json }}</pre>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="section-heading">
+        <h3>Published vs Draft Diff</h3>
+        <p class="muted">Unified diff against the currently published family. This will become the basis for the publish review step.</p>
+    </div>
+    {% if draft.diff_lines %}
+        <pre class="diff-block">{% for line in draft.diff_lines %}<span class="diff-line {% if line.startswith('+') and not line.startswith('+++') %}diff-add{% elif line.startswith('-') and not line.startswith('---') %}diff-remove{% elif line.startswith('@@') %}diff-hunk{% endif %}">{{ line }}</span>
+{% endfor %}</pre>
+    {% else %}
+        <p class="muted">No changes between published and draft content.</p>
+    {% endif %}
+</section>
+{% endblock %}

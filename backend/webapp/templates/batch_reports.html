@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ batch.display_name }} | Reports{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Batch Reports</p>
+        <h2>{{ batch.display_name }}</h2>
+        <p class="muted">{{ batch.created_at }} · {{ batch.runs|length }} validation runs</p>
+    </div>
+    <div class="hero-actions">
+        <a class="button-link secondary" href="{{ url_for('web.reports') }}">Back To Reports</a>
+    </div>
+</section>
+
+<section class="panel">
+    <div class="table-shell">
+        <table>
+            <thead>
+                <tr>
+                    <th>Report</th>
+                    <th>Source</th>
+                    <th>Taxonomy</th>
+                    <th>Score</th>
+                    <th>Pass</th>
+                    <th>Fail</th>
+                    <th>Created</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in batch.runs %}
+                    <tr>
+                        <td>{{ report.report_name }}</td>
+                        <td>{{ report.source_name }}</td>
+                        <td>{{ report.taxonomy_year }} {{ report.taxonomy_entrypoint }}</td>
+                        <td>{{ "%.1f"|format(report.score_percent) }}%</td>
+                        <td>{{ report.total_pass }}</td>
+                        <td>{{ report.total_fail }}</td>
+                        <td>{{ report.created_at }}</td>
+                        <td class="actions-cell">
+                            <a href="{{ url_for('web.results', run_id=report.id) }}">Open</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="8" class="muted">No runs recorded in this batch.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

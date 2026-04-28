@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Soft Validation Engine{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div>
+                <p class="eyebrow">Local Validation Workspace</p>
+                <h1>Soft Validation Engine</h1>
+                <p class="muted">UK iXBRL rule analysis for synthetic and local report files.</p>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('web.validate') }}" class="{% if request.endpoint == 'web.validate' %}active{% endif %}">Validate</a>
+                <a href="{{ url_for('web.reports') }}" class="{% if request.endpoint == 'web.reports' %}active{% endif %}">Reports</a>
+                <a href="{{ url_for('web.admin') }}" class="{% if request.endpoint == 'web.admin' %}active{% endif %}">Rule Admin</a>
+                <a href="{{ url_for('web.synthetic_lab') }}" class="{% if request.endpoint == 'web.synthetic_lab' %}active{% endif %}">Synthetic Lab</a>
+            </nav>
+            <div class="sidebar-footer">
+                <span>Taxonomy</span>
+                <strong>2026 FRS 102</strong>
+            </div>
+        </aside>
+        <main class="content">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-stack">
+                        {% for category, message in messages %}
+                            <div class="flash {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
