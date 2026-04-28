@@ -23,6 +23,8 @@
                     <th>Batch</th>
                     <th>Created</th>
                     <th>Runs</th>
+                    <th>Coverage</th>
+                    <th>Not Applied</th>
                     <th></th>
                 </tr>
             </thead>
@@ -32,13 +34,15 @@
                         <td>{{ batch.display_name }}</td>
                         <td>{{ batch.created_at }}</td>
                         <td>{{ batch.run_count }}</td>
+                        <td>{{ "%.1f"|format(batch.coverage_summary.coverage_percent) }}%</td>
+                        <td>{{ batch.outcome_summary.not_applied }}</td>
                         <td class="actions-cell">
                             <a href="{{ url_for('web.batch_reports', batch_group_id=batch.id) }}">Open Batch</a>
                         </td>
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="4" class="muted">No batch validations yet.</td>
+                        <td colspan="6" class="muted">No batch validations yet.</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -61,6 +65,8 @@
                     <th>Score</th>
                     <th>Pass</th>
                     <th>Fail</th>
+                    <th>Not Applied</th>
+                    <th>Coverage</th>
                     <th>Created</th>
                     <th></th>
                 </tr>
@@ -75,6 +81,8 @@
                             <td>{{ "%.1f"|format(report.score_percent) }}%</td>
                             <td>{{ report.total_pass }}</td>
                             <td>{{ report.total_fail }}</td>
+                            <td>{{ report.total_not_applied }}</td>
+                            <td>{{ "%.1f"|format(report.coverage_summary.coverage_percent) }}%</td>
                             <td>{{ report.created_at }}</td>
                             <td class="actions-cell">
                                 <a href="{{ url_for('web.results', run_id=report.id) }}">Open</a>
@@ -84,7 +92,7 @@
                     {% endif %}
                 {% else %}
                     <tr>
-                        <td colspan="8" class="muted">No reports have been generated yet.</td>
+                        <td colspan="10" class="muted">No reports have been generated yet.</td>
                     </tr>
                 {% endfor %}
             </tbody>

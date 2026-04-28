@@ -59,7 +59,15 @@ def recent_batch_groups() -> list[dict[str, Any]]:
         ORDER BY batch_groups.created_at DESC
         """
     ).fetchall()
-    return [dict(row) for row in rows]
+    groups: list[dict[str, Any]] = []
+    for row in rows:
+        group = dict(row)
+        runs = batch_runs(group["id"])
+        group["runs"] = runs
+        group["outcome_summary"] = aggregate_outcome_summary(runs)
+        group["coverage_summary"] = aggregate_coverage_summary(runs)
+        groups.append(group)
+    return groups
 
 
 def recent_validation_runs() -> list[dict[str, Any]]:
@@ -74,9 +82,11 @@ def recent_validation_runs() -> list[dict[str, Any]]:
             validation_runs.total_pass,
             validation_runs.total_fail,
             validation_runs.score_percent,
+            validation_runs.result_json_path,
             validation_runs.created_at,
             validation_runs.html_report_path,
             source_files.display_name AS source_name,
+            source_files.stored_path AS source_path,
             batch_groups.display_name AS batch_name
         FROM validation_runs
         JOIN source_files ON source_files.id = validation_runs.source_file_id
@@ -84,7 +94,7 @@ def recent_validation_runs() -> list[dict[str, Any]]:
         ORDER BY validation_runs.created_at DESC
         """
     ).fetchall()
-    return [dict(row) for row in rows]
+    return [with_run_metrics(dict(row)) for row in rows]
 
 
 def get_validation_run(run_id: str) -> dict[str, Any] | None:
@@ -108,11 +118,17 @@ def get_validation_run(run_id: str) -> dict[str, Any] | None:
 
     payload = json.loads(Path(row["result_json_path"]).read_text(encoding="utf-8"))
     report = load_report_model(Path(row["source_path"]))
+    concept_balances = load_concept_balances()
     result = dict(row)
     result["payload"] = payload
-    enriched_results = enrich_results(payload["results"], report)
+    enriched_results = enrich_results(payload["results"], report, concept_balances)
     result["grouped_results"] = group_results(enriched_results)
-    result["family_breakdown"] = family_breakdown(payload["results"])
+    result["family_breakdown"] = family_breakdown(enriched_results)
+    result["outcome_summary"] = outcome_summary(enriched_results)
+    result["coverage_summary"] = coverage_summary(enriched_results)
+    result["total_pass"] = result["outcome_summary"]["pass"]
+    result["total_fail"] = result["outcome_summary"]["fail"]
+    result["score_percent"] = compute_score(result["outcome_summary"])
     result["gauge_segments"] = gauge_segments(result["score_percent"])
     return result
 
@@ -130,6 +146,8 @@ def get_batch_group(batch_group_id: str) -> dict[str, Any] | None:
         return None
     group = dict(row)
     group["runs"] = batch_runs(batch_group_id)
+    group["outcome_summary"] = aggregate_outcome_summary(group["runs"])
+    group["coverage_summary"] = aggregate_coverage_summary(group["runs"])
     return group
 
 
@@ -144,8 +162,10 @@ def batch_runs(batch_group_id: str) -> list[dict[str, Any]]:
             validation_runs.total_pass,
             validation_runs.total_fail,
             validation_runs.score_percent,
+            validation_runs.result_json_path,
             validation_runs.created_at,
-            source_files.display_name AS source_name
+            source_files.display_name AS source_name,
+            source_files.stored_path AS source_path
         FROM validation_runs
         JOIN source_files ON source_files.id = validation_runs.source_file_id
         WHERE validation_runs.batch_group_id = ?
@@ -153,7 +173,7 @@ def batch_runs(batch_group_id: str) -> list[dict[str, Any]]:
         """,
         (batch_group_id,),
     ).fetchall()
-    return [dict(row) for row in rows]
+    return [with_run_metrics(dict(row)) for row in rows]
 
 
 def prepare_submission(
@@ -223,7 +243,10 @@ def perform_validation_run(
     notify_progress(progress_callback, 35, "Loading report model.")
     payload = evaluate_source_file(source_record["stored_path"], validation_selection=validation_selection)
     notify_progress(progress_callback, 70, "Compiling validation results.")
-    score_percent = compute_score(payload["summary"])
+    report = load_report_model(Path(source_record["stored_path"]))
+    enriched_results = enrich_results(payload["results"], report, load_concept_balances())
+    summarized_outcomes = outcome_summary(enriched_results)
+    score_percent = compute_score(summarized_outcomes)
     result_json_path = report_dir / "results.json"
     result_json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
@@ -239,9 +262,11 @@ def perform_validation_run(
                 "score_percent": score_percent,
                 "source_name": source_record["display_name"],
                 "created_at": timestamp,
-                "family_breakdown": family_breakdown(payload["results"]),
-                "grouped_results": group_results(payload["results"]),
-                "summary": payload["summary"],
+                "family_breakdown": family_breakdown(enriched_results),
+                "grouped_results": group_results(enriched_results),
+                "outcome_summary": summarized_outcomes,
+                "coverage_summary": coverage_summary(enriched_results),
+                "summary": summarized_outcomes,
             },
         ),
         encoding="utf-8",
@@ -279,8 +304,8 @@ def perform_validation_run(
             f"{current_app.config['TAXONOMY_YEAR']} {current_app.config['TAXONOMY_ENTRYPOINT']}",
             str(rule_snapshot_path),
             0,
-            payload["summary"]["pass"],
-            payload["summary"]["fail"],
+            summarized_outcomes["pass"],
+            summarized_outcomes["fail"],
             score_percent,
             str(result_json_path),
             str(html_report_path),
@@ -391,6 +416,7 @@ def evaluate_source_file(source_path: str, validation_selection: dict[str, Any] 
         report=report,
         split_output_dir=Path(current_app.config["SPLIT_OUTPUT_DIR"]),
         topics_payload=_load_json(Path(current_app.config["TOPICS_FILE"])),
+        concepts_payload=_load_json(Path(current_app.config["CONCEPTS_FILE"])),
         include_all_topics=validation_selection["scope"] == "all",
         selected_topics=set(validation_selection["selected_topics"]) if validation_selection["scope"] == "selected" else None,
         selected_families_by_topic=validation_selection["selected_families_by_topic"] if validation_selection["scope"] == "selected" else None,
@@ -412,19 +438,77 @@ def compute_score(summary: dict[str, int]) -> float:
 
 
 def family_breakdown(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    counts: dict[str, dict[str, int]] = defaultdict(lambda: {"pass": 0, "fail": 0})
+    counts: dict[str, dict[str, int]] = defaultdict(lambda: {"pass": 0, "fail": 0, "not_applied": 0})
     for result in results:
         bucket = counts[result["type"]]
-        bucket[result["status"]] += 1
+        bucket[result.get("outcome_status", result["status"])] += 1
     return [
         {
             "family": family,
             "pass": values["pass"],
             "fail": values["fail"],
-            "total": values["pass"] + values["fail"],
+            "not_applied": values["not_applied"],
+            "total": values["pass"] + values["fail"] + values["not_applied"],
         }
         for family, values in sorted(counts.items())
     ]
+
+
+def outcome_summary(results: list[dict[str, Any]]) -> dict[str, int]:
+    summary = {"pass": 0, "fail": 0, "not_applied": 0, "total": len(results)}
+    for result in results:
+        summary[result.get("outcome_status", result["status"])] += 1
+    return summary
+
+
+def coverage_summary(results: list[dict[str, Any]]) -> dict[str, float | int]:
+    summary = outcome_summary(results)
+    applied = summary["pass"] + summary["fail"]
+    total = summary["total"]
+    coverage_percent = round((applied / total) * 100, 1) if total else 0.0
+    return {
+        "applied": applied,
+        "not_applied": summary["not_applied"],
+        "total": total,
+        "coverage_percent": coverage_percent,
+    }
+
+
+def with_run_metrics(run: dict[str, Any]) -> dict[str, Any]:
+    payload = json.loads(Path(run["result_json_path"]).read_text(encoding="utf-8"))
+    report = load_report_model(Path(run["source_path"]))
+    enriched_results = enrich_results(payload["results"], report, load_concept_balances())
+    run["outcome_summary"] = outcome_summary(enriched_results)
+    run["coverage_summary"] = coverage_summary(enriched_results)
+    run["total_pass"] = run["outcome_summary"]["pass"]
+    run["total_fail"] = run["outcome_summary"]["fail"]
+    run["total_not_applied"] = run["outcome_summary"]["not_applied"]
+    run["score_percent"] = compute_score(run["outcome_summary"])
+    return run
+
+
+def aggregate_outcome_summary(runs: list[dict[str, Any]]) -> dict[str, int]:
+    summary = {"pass": 0, "fail": 0, "not_applied": 0, "total": 0}
+    for run in runs:
+        run_summary = run.get("outcome_summary", {})
+        summary["pass"] += run_summary.get("pass", 0)
+        summary["fail"] += run_summary.get("fail", 0)
+        summary["not_applied"] += run_summary.get("not_applied", 0)
+        summary["total"] += run_summary.get("total", 0)
+    return summary
+
+
+def aggregate_coverage_summary(runs: list[dict[str, Any]]) -> dict[str, float | int]:
+    summary = aggregate_outcome_summary(runs)
+    applied = summary["pass"] + summary["fail"]
+    total = summary["total"]
+    coverage_percent = round((applied / total) * 100, 1) if total else 0.0
+    return {
+        "applied": applied,
+        "not_applied": summary["not_applied"],
+        "total": total,
+        "coverage_percent": coverage_percent,
+    }
 
 
 def group_results(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -437,7 +521,11 @@ def group_results(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
             {
                 "topic": topic,
                 "families": [
-                    {"family": family, "results": entries}
+                    {
+                        "family": family,
+                        "results": entries,
+                        "outcome_sections": build_outcome_sections(entries),
+                    }
                     for family, entries in sorted(families.items())
                 ],
             }
@@ -445,12 +533,29 @@ def group_results(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return grouped
 
 
-def enrich_results(results: list[dict[str, Any]], report: ReportModel) -> list[dict[str, Any]]:
+def build_outcome_sections(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    order = ["pass", "fail", "not_applied"]
+    labels = {"pass": "Passes", "fail": "Fails", "not_applied": "Not Applied"}
+    sections: list[dict[str, Any]] = []
+    for status in order:
+        items = [result for result in results if result.get("outcome_status") == status]
+        if items:
+            sections.append({"status": status, "label": labels[status], "results": items})
+    return sections
+
+
+def load_concept_balances() -> dict[str, str | None]:
+    concepts = _load_json(Path(current_app.config["CONCEPTS_FILE"]))
+    return {concept["qname"]: concept.get("balance") for concept in concepts if concept.get("qname")}
+
+
+def enrich_results(results: list[dict[str, Any]], report: ReportModel, concept_balances: dict[str, str | None]) -> list[dict[str, Any]]:
     fact_index = {fact.fact_id: fact for fact in report.facts}
     enriched: list[dict[str, Any]] = []
     for result in results:
         result_copy = dict(result)
-        result_copy["evidence"] = enrich_evidence(result.get("evidence", {}), fact_index, report.contexts)
+        result_copy["evidence"] = enrich_evidence(result.get("evidence", {}), fact_index, report.contexts, concept_balances)
+        result_copy["outcome_status"] = classify_outcome_status(result_copy)
         result_copy["support"] = build_support_information(result_copy)
         enriched.append(result_copy)
     return enriched
@@ -460,22 +565,23 @@ def enrich_evidence(
     evidence: dict[str, Any],
     fact_index: dict[str, ReportFact],
     contexts: dict[str, ReportContext],
+    concept_balances: dict[str, str | None],
 ) -> dict[str, Any]:
     enriched = dict(evidence)
 
     if "trigger_fact_ids" in evidence:
-        enriched["trigger_facts"] = [fact_summary(fact_index[fact_id], contexts) for fact_id in evidence["trigger_fact_ids"] if fact_id in fact_index]
+        enriched["trigger_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["trigger_fact_ids"] if fact_id in fact_index]
     if "topic_fact_ids" in evidence:
-        enriched["topic_facts"] = [fact_summary(fact_index[fact_id], contexts) for fact_id in evidence["topic_fact_ids"] if fact_id in fact_index]
+        enriched["topic_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["topic_fact_ids"] if fact_id in fact_index]
     if "invalid_fact_ids" in evidence:
-        enriched["invalid_facts"] = [fact_summary(fact_index[fact_id], contexts) for fact_id in evidence["invalid_fact_ids"] if fact_id in fact_index]
+        enriched["invalid_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["invalid_fact_ids"] if fact_id in fact_index]
     if "valid_fact_ids" in evidence:
-        enriched["valid_facts"] = [fact_summary(fact_index[fact_id], contexts) for fact_id in evidence["valid_fact_ids"] if fact_id in fact_index]
+        enriched["valid_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["valid_fact_ids"] if fact_id in fact_index]
     if "invalid_dimension_members" in evidence:
         enriched["invalid_dimension_member_details"] = [
             {
                 **entry,
-                "fact": fact_summary(fact_index[entry["fact_id"]], contexts) if entry["fact_id"] in fact_index else None,
+                "fact": fact_summary(fact_index[entry["fact_id"]], contexts, concept_balances) if entry["fact_id"] in fact_index else None,
             }
             for entry in evidence["invalid_dimension_members"]
         ]
@@ -483,25 +589,25 @@ def enrich_evidence(
         enriched["checked_dimension_member_details"] = [
             {
                 **entry,
-                "fact": fact_summary(fact_index[entry["fact_id"]], contexts) if entry["fact_id"] in fact_index else None,
+                "fact": fact_summary(fact_index[entry["fact_id"]], contexts, concept_balances) if entry["fact_id"] in fact_index else None,
             }
             for entry in evidence["checked_dimension_members"]
         ]
     if "topic_fact_reasons" in evidence:
         enriched["topic_fact_reason_details"] = [
             {
-                "fact": fact_summary(fact_index[fact_id], contexts),
+                "fact": fact_summary(fact_index[fact_id], contexts, concept_balances),
                 "reasons": reasons,
             }
             for fact_id, reasons in evidence["topic_fact_reasons"].items()
             if fact_id in fact_index
         ]
     if "matching_fact_ids" in evidence:
-        enriched["matching_facts"] = [fact_summary(fact_index[fact_id], contexts) for fact_id in evidence["matching_fact_ids"] if fact_id in fact_index]
+        enriched["matching_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["matching_fact_ids"] if fact_id in fact_index]
     if "comparisons" in evidence:
-        enriched["comparison_details"] = [rollup_comparison_summary(item, fact_index, contexts) for item in evidence["comparisons"]]
+        enriched["comparison_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["comparisons"]]
     if "mismatches" in evidence:
-        enriched["mismatch_details"] = [rollup_comparison_summary(item, fact_index, contexts) for item in evidence["mismatches"]]
+        enriched["mismatch_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["mismatches"]]
     return enriched
 
 
@@ -509,21 +615,29 @@ def rollup_comparison_summary(
     comparison: dict[str, Any],
     fact_index: dict[str, ReportFact],
     contexts: dict[str, ReportContext],
+    concept_balances: dict[str, str | None],
 ) -> dict[str, Any]:
     return {
         **comparison,
-        "head_fact": fact_summary(fact_index[comparison["head_fact_id"]], contexts) if comparison["head_fact_id"] in fact_index else None,
+        "head_fact": fact_summary(fact_index[comparison["head_fact_id"]], contexts, concept_balances) if comparison["head_fact_id"] in fact_index else None,
+        "sign_error_candidates": [
+            {
+                **candidate,
+                "fact": fact_summary(fact_index[candidate["fact_id"]], contexts, concept_balances) if candidate.get("fact_id") in fact_index else None,
+            }
+            for candidate in comparison.get("sign_error_candidates", [])
+        ],
         "component_details": [
             {
                 **component,
-                "fact": fact_summary(fact_index[component["fact_id"]], contexts) if component["fact_id"] in fact_index else None,
+                "fact": fact_summary(fact_index[component["fact_id"]], contexts, concept_balances) if component["fact_id"] in fact_index else None,
             }
             for component in comparison.get("component_facts", [])
         ],
     }
 
 
-def fact_summary(fact: ReportFact, contexts: dict[str, ReportContext]) -> dict[str, Any]:
+def fact_summary(fact: ReportFact, contexts: dict[str, ReportContext], concept_balances: dict[str, str | None]) -> dict[str, Any]:
     context = contexts.get(fact.context_id or "")
     return {
         "fact_id": fact.fact_id,
@@ -533,6 +647,7 @@ def fact_summary(fact: ReportFact, contexts: dict[str, ReportContext]) -> dict[s
         "period_type": context.period_type if context else None,
         "dimensions": dict(sorted(context.dimensions.items())) if context else {},
         "unit": fact.unit,
+        "balance": concept_balances.get(fact.concept_qname or ""),
     }
 
 
@@ -550,13 +665,17 @@ def build_support_information(result: dict[str, Any]) -> dict[str, Any]:
 
 def support_topic_note_presence(result: dict[str, Any]) -> dict[str, Any]:
     evidence = result["evidence"]
+    trigger_count = evidence.get("trigger_fact_count", len(evidence.get("trigger_facts", [])))
+    topic_count = evidence.get("topic_fact_count", len(evidence.get("topic_facts", [])))
     return {
         "what_test_is": "Checks whether statement-level trigger concepts imply that a supporting disclosure note should exist for this topic.",
         "what_it_proves": "A pass shows that when the statement trigger appeared, the engine also found evidence of the corresponding note topic in the report.",
         "outcome_summary": (
-            f"Found {evidence.get('trigger_fact_count', 0)} trigger fact(s) and {evidence.get('topic_fact_count', 0)} topic fact(s)."
-            if result["status"] == "pass"
-            else f"Found {evidence.get('trigger_fact_count', 0)} trigger fact(s) but no topic facts."
+            "No statement trigger facts were found, so this rule was not applied."
+            if result["outcome_status"] == "not_applied"
+            else f"Found {trigger_count} trigger fact(s) and {topic_count} topic fact(s)."
+            if result["outcome_status"] == "pass"
+            else f"Found {trigger_count} trigger fact(s) but only {topic_count} topic fact(s), so the expected note evidence was not established."
         ),
     }
 
@@ -568,8 +687,11 @@ def support_hypercube_conformity(result: dict[str, Any]) -> dict[str, Any]:
         "what_test_is": "Checks that the dimensional combinations actually used by topic facts fit at least one allowed taxonomy hypercube for the topic.",
         "what_it_proves": "A pass shows that each checked fact uses only dimension combinations permitted by the discovered topic hypercubes.",
         "outcome_summary": (
+            "No dimensional topic facts were available to check against the allowed hypercubes, so this rule was not applied."
+            if result["outcome_status"] == "not_applied"
+            else
             f"Checked {checked} fact(s) against {evidence.get('allowed_hypercube_count', 0)} allowed hypercube shape(s); all checked facts conformed."
-            if result["status"] == "pass"
+            if result["outcome_status"] == "pass"
             else f"Checked {checked} fact(s); at least one fact used dimensions outside the allowed hypercube shapes."
         ),
     }
@@ -577,26 +699,35 @@ def support_hypercube_conformity(result: dict[str, Any]) -> dict[str, Any]:
 
 def support_expected_dimension_usage(result: dict[str, Any]) -> dict[str, Any]:
     evidence = result["evidence"]
+    topic_count = evidence.get("topic_fact_count", len(evidence.get("topic_facts", [])))
+    matching_count = evidence.get("matching_fact_count", len(evidence.get("matching_facts", [])))
     return {
         "what_test_is": "Checks whether facts for the topic actually use one of the dimensions the taxonomy suggests should appear for that disclosure.",
-        "what_it_proves": "A pass shows either that no topic facts were present to test, or that at least one topic fact used an expected topic dimension.",
+        "what_it_proves": "A pass shows that at least one topic fact used one of the expected taxonomy dimensions for that disclosure.",
         "outcome_summary": (
-            f"Found {evidence.get('matching_fact_count', 0)} matching fact(s) out of {evidence.get('topic_fact_count', 0)} topic fact(s)."
-            if evidence.get("topic_fact_count", 0)
-            else "No topic facts were present, so there was no dimensional usage to test."
+            "No topic facts were present, so this rule was not applied."
+            if result["outcome_status"] == "not_applied"
+            else f"Found {matching_count} fact(s) using expected dimensions out of {topic_count} topic fact(s)."
+            if result["outcome_status"] == "pass"
+            else f"Found {topic_count} topic fact(s), but none used the expected dimensions."
         ),
     }
 
 
 def support_member_validity(result: dict[str, Any]) -> dict[str, Any]:
     evidence = result["evidence"]
+    checked_count = evidence.get("checked_dimension_member_count", len(evidence.get("checked_dimension_member_details", [])))
+    checked_fact_count = evidence.get("checked_fact_count", len({item["fact"]["fact_id"] for item in evidence.get("checked_dimension_member_details", []) if item.get("fact")}))
+    invalid_count = len(evidence.get("invalid_dimension_member_details", []))
     return {
         "what_test_is": "Checks that the members used on topic dimensions belong to the allowed taxonomy member trees for those dimensions.",
         "what_it_proves": "A pass shows that every checked dimension-member combination matched the discovered taxonomy domain structure, not merely that no invalid list was returned.",
         "outcome_summary": (
-            f"Checked {evidence.get('checked_dimension_member_count', 0)} dimension-member use(s) across {evidence.get('checked_fact_count', 0)} fact(s); all were valid."
-            if result["status"] == "pass"
-            else f"Checked {evidence.get('checked_dimension_member_count', 0)} valid use(s) and found {len(evidence.get('invalid_dimension_member_details', []))} invalid member use(s)."
+            "No dimension-member uses were available to check for this topic, so this rule was not applied."
+            if result["outcome_status"] == "not_applied"
+            else f"Checked {checked_count} dimension-member use(s) across {checked_fact_count} fact(s); all were valid."
+            if result["outcome_status"] == "pass"
+            else f"Found {invalid_count} invalid dimension-member use(s) alongside {checked_count} valid checked use(s)."
         ),
     }
 
@@ -604,13 +735,17 @@ def support_member_validity(result: dict[str, Any]) -> dict[str, Any]:
 def support_rollup_candidate(result: dict[str, Any]) -> dict[str, Any]:
     comparisons = result["evidence"].get("comparison_details", [])
     mismatches = result["evidence"].get("mismatch_details", [])
+    likely_sign_error_count = result["evidence"].get("likely_sign_error_count", 0)
+    skipped_count = len(result["evidence"].get("skipped_comparisons", []))
     return {
         "what_test_is": "Checks a safe taxonomy-derived roll-up candidate: for the same primary item, period, unit, and all other dimensions, the head member should reconcile to the sum of its component members.",
-        "what_it_proves": "This rule is trying to prove that the disclosure behaves like a dimensional total/subtotal relationship suggested by the member tree, without assuming missing values are zero.",
+        "what_it_proves": "This rule is trying to prove that the disclosure behaves like a dimensional total/subtotal relationship suggested by the member tree, without assuming missing values are zero, and it now also diagnoses likely sign inversions against taxonomy balance expectations.",
         "outcome_summary": (
-            f"Observed {len(comparisons)} comparable head/component roll-up case(s); {len(comparisons) - len(mismatches)} reconciled."
-            if comparisons
-            else "No comparable head/component pairs were present in the report, so this run did not positively prove or disprove the suggested roll-up."
+            f"No comparable head/component pairs were present in the report, so this rule was not applied. {skipped_count} candidate bucket(s) were skipped."
+            if result["outcome_status"] == "not_applied"
+            else f"Observed {len(comparisons)} comparable head/component roll-up case(s); {len(comparisons) - len(mismatches)} reconciled."
+            if result["outcome_status"] == "pass"
+            else f"Observed {len(comparisons)} comparable head/component roll-up case(s); {len(mismatches)} did not reconcile and {likely_sign_error_count} mismatch(es) look like likely sign inversions."
         ),
     }
 
@@ -621,6 +756,24 @@ def support_generic(result: dict[str, Any]) -> dict[str, Any]:
         "what_it_proves": "A pass means the observed facts were consistent with the rule condition; a fail means the rule condition was contradicted.",
         "outcome_summary": result.get("message", ""),
     }
+
+
+def classify_outcome_status(result: dict[str, Any]) -> str:
+    evidence = result.get("evidence", {})
+    if result["type"] == "topic_note_presence":
+        return "not_applied" if not evidence.get("trigger_facts") else result["status"]
+    if result["type"] == "expected_dimension_usage":
+        return "not_applied" if not evidence.get("topic_facts") else result["status"]
+    if result["type"] == "hypercube_conformity":
+        checked = evidence.get("checked_fact_count", len(evidence.get("valid_facts", [])) + len(evidence.get("invalid_facts", [])))
+        return "not_applied" if checked == 0 else result["status"]
+    if result["type"] == "dimension_member_validity":
+        checked = evidence.get("checked_dimension_member_count", len(evidence.get("checked_dimension_member_details", [])))
+        invalid = len(evidence.get("invalid_dimension_member_details", []))
+        return "not_applied" if checked == 0 and invalid == 0 else result["status"]
+    if result["type"] == "dimension_member_rollup_candidate":
+        return "not_applied" if not evidence.get("comparison_details") else result["status"]
+    return result["status"]
 
 
 def gauge_segments(score_percent: float) -> list[dict[str, Any]]:

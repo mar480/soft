@@ -7,10 +7,29 @@
     <div>
         <p class="eyebrow">Batch Reports</p>
         <h2>{{ batch.display_name }}</h2>
-        <p class="muted">{{ batch.created_at }} · {{ batch.runs|length }} validation runs</p>
+        <p class="muted">{{ batch.created_at }} | {{ batch.runs|length }} validation runs</p>
     </div>
     <div class="hero-actions">
         <a class="button-link secondary" href="{{ url_for('web.reports') }}">Back To Reports</a>
+    </div>
+</section>
+
+<section class="summary-grid">
+    <div class="panel">
+        <h3>Batch outcome summary</h3>
+        <dl class="meta-list">
+            <div><dt>Pass</dt><dd>{{ batch.outcome_summary.pass }}</dd></div>
+            <div><dt>Fail</dt><dd>{{ batch.outcome_summary.fail }}</dd></div>
+            <div><dt>Not applied</dt><dd>{{ batch.outcome_summary.not_applied }}</dd></div>
+        </dl>
+    </div>
+    <div class="panel">
+        <h3>Tagging coverage</h3>
+        <dl class="meta-list">
+            <div><dt>Applied tests</dt><dd>{{ batch.coverage_summary.applied }} / {{ batch.coverage_summary.total }}</dd></div>
+            <div><dt>Coverage</dt><dd>{{ "%.1f"|format(batch.coverage_summary.coverage_percent) }}%</dd></div>
+            <div><dt>Not applied</dt><dd>{{ batch.coverage_summary.not_applied }}</dd></div>
+        </dl>
     </div>
 </section>
 
@@ -25,6 +44,8 @@
                     <th>Score</th>
                     <th>Pass</th>
                     <th>Fail</th>
+                    <th>Not Applied</th>
+                    <th>Coverage</th>
                     <th>Created</th>
                     <th></th>
                 </tr>
@@ -38,6 +59,8 @@
                         <td>{{ "%.1f"|format(report.score_percent) }}%</td>
                         <td>{{ report.total_pass }}</td>
                         <td>{{ report.total_fail }}</td>
+                        <td>{{ report.total_not_applied }}</td>
+                        <td>{{ "%.1f"|format(report.coverage_summary.coverage_percent) }}%</td>
                         <td>{{ report.created_at }}</td>
                         <td class="actions-cell">
                             <a href="{{ url_for('web.results', run_id=report.id) }}">Open</a>
@@ -45,7 +68,7 @@
                     </tr>
                 {% else %}
                     <tr>
-                        <td colspan="8" class="muted">No runs recorded in this batch.</td>
+                        <td colspan="10" class="muted">No runs recorded in this batch.</td>
                     </tr>
                 {% endfor %}
             </tbody>

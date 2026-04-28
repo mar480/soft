@@ -11,6 +11,7 @@
         .meta { margin-bottom: 1.5rem; }
         .status-pass { color: #166534; }
         .status-fail { color: #991b1b; }
+        .status-not_applied { color: #475569; }
         pre { white-space: pre-wrap; background: #f3f4f6; padding: 0.75rem; }
     </style>
 </head>
@@ -21,7 +22,9 @@
         <p>Taxonomy: {{ run.taxonomy_year }} {{ run.taxonomy_entrypoint }}</p>
         <p>Created: {{ run.created_at }}</p>
         <p>Score: {{ "%.1f"|format(run.score_percent) }}%</p>
-        <p>Summary: {{ run.summary.pass }} pass / {{ run.summary.fail }} fail</p>
+        <p>Summary: {{ run.outcome_summary.pass }} pass / {{ run.outcome_summary.fail }} fail</p>
+        <p>Not applied: {{ run.outcome_summary.not_applied }}</p>
+        <p>Coverage: {{ run.coverage_summary.applied }} applied out of {{ run.coverage_summary.total }} tests ({{ "%.1f"|format(run.coverage_summary.coverage_percent) }}%)</p>
     </div>
 
     <h2>Family breakdown</h2>
@@ -31,6 +34,7 @@
                 <th>Family</th>
                 <th>Pass</th>
                 <th>Fail</th>
+                <th>Not Applied</th>
                 <th>Total</th>
             </tr>
         </thead>
@@ -40,6 +44,7 @@
                     <td>{{ family.family }}</td>
                     <td>{{ family.pass }}</td>
                     <td>{{ family.fail }}</td>
+                    <td>{{ family.not_applied }}</td>
                     <td>{{ family.total }}</td>
                 </tr>
             {% endfor %}
@@ -50,26 +55,29 @@
         <h2>{{ topic.topic }}</h2>
         {% for family in topic.families %}
             <h3>{{ family.family }}</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Status</th>
-                        <th>Rule ID</th>
-                        <th>Type</th>
-                        <th>Message</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for result in family.results %}
+            {% for section in family.outcome_sections %}
+                <h4>{{ section.label }}</h4>
+                <table>
+                    <thead>
                         <tr>
-                            <td class="status-{{ result.status }}">{{ result.status }}</td>
-                            <td>{{ result.rule_id }}</td>
-                            <td>{{ result.type }}</td>
-                            <td>{{ result.message }}</td>
+                            <th>Status</th>
+                            <th>Rule ID</th>
+                            <th>Type</th>
+                            <th>Message</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {% for result in section.results %}
+                            <tr>
+                                <td class="status-{{ result.outcome_status }}">{{ result.outcome_status|replace("_", " ") }}</td>
+                                <td>{{ result.rule_id }}</td>
+                                <td>{{ result.type }}</td>
+                                <td>{{ result.message }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endfor %}
         {% endfor %}
     {% endfor %}
 </body>

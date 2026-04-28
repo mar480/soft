@@ -4,13 +4,37 @@ import argparse
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
 from .report_loader_core import load_report_model
 from .report_model import ReportContext, ReportFact, ReportModel
 
 
+STRONG_TOPIC_REASONS = {
+    "synthetic_topic_id",
+    "topic_primary_item_concept",
+    "synthetic_anchor_primary_item",
+    "topic_specific_dimensions",
+}
+
+GENERIC_TOPIC_DIMENSIONS = {
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension",
+}
+
+
 def _load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _concept_balance_map(concepts_payload: list[dict[str, Any]] | None) -> dict[str, str | None]:
+    if not concepts_payload:
+        return {}
+    return {concept["qname"]: concept.get("balance") for concept in concepts_payload if concept.get("qname")}
 
 
 def _load_rule_pack(split_output_dir: Path) -> tuple[dict, dict[str, dict]]:
@@ -119,6 +143,9 @@ def _topic_fact_reason_map(report: ReportModel, topic_id: str, topic_rules: dict
             overlapping_dimensions = sorted(set(context.dimensions) & topic_dimensions)
             if overlapping_dimensions:
                 reasons.append(f"topic_dimensions:{'|'.join(overlapping_dimensions)}")
+                specific_dimensions = [dimension for dimension in overlapping_dimensions if dimension not in GENERIC_TOPIC_DIMENSIONS]
+                if specific_dimensions:
+                    reasons.append(f"topic_specific_dimensions:{'|'.join(specific_dimensions)}")
                 if fact.concept_qname in trigger_concepts:
                     reasons.append("trigger_concept_with_topic_dimensions")
 
@@ -127,19 +154,23 @@ def _topic_fact_reason_map(report: ReportModel, topic_id: str, topic_rules: dict
     return reason_map
 
 
-def _topic_facts(report: ReportModel, topic_id: str, topic_rules: dict) -> list[ReportFact]:
+def _topic_facts(report: ReportModel, topic_id: str, topic_rules: dict, *, attribution: str = "all") -> list[ReportFact]:
     reason_map = _topic_fact_reason_map(report, topic_id, topic_rules)
-    return [fact for fact in report.facts if fact.fact_id in reason_map]
+    selected_ids: set[str] = set()
+    for fact_id, reasons in reason_map.items():
+        if attribution == "all":
+            selected_ids.add(fact_id)
+        elif attribution == "strong":
+            if any(reason in STRONG_TOPIC_REASONS or reason.startswith("topic_specific_dimensions:") for reason in reasons):
+                selected_ids.add(fact_id)
+        else:
+            raise ValueError(f"Unknown attribution mode: {attribution}")
+    return [fact for fact in report.facts if fact.fact_id in selected_ids]
 
 
 def _has_strong_topic_fact_evidence(report: ReportModel, topic_id: str, topic_rules: dict) -> bool:
-    strong_reasons = {
-        "synthetic_topic_id",
-        "topic_primary_item_concept",
-        "synthetic_anchor_primary_item",
-    }
     for reasons in _topic_fact_reason_map(report, topic_id, topic_rules).values():
-        if any(reason in strong_reasons for reason in reasons):
+        if any(reason in STRONG_TOPIC_REASONS or reason.startswith("topic_specific_dimensions:") for reason in reasons):
             return True
     return False
 
@@ -160,7 +191,7 @@ def _topic_is_relevant(report: ReportModel, topic_id: str, topic_rules: dict) ->
 
 
 def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules)
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="all")
     reason_map = _topic_fact_reason_map(report, topic_id, topic_rules)
     results: list[dict] = []
     for rule in topic_rules["families"].get("1 Topic note presence", []):
@@ -190,7 +221,7 @@ def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules
 
 
 def _expected_dimension_usage_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules)
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
     results: list[dict] = []
     for rule in topic_rules["families"].get("3 Expected dimension usage", []):
         allowed_dimensions = set(rule["taxonomy_basis"]["dimensions"])
@@ -227,7 +258,7 @@ def _expected_dimension_usage_results(report: ReportModel, topic_id: str, topic_
 
 
 def _hypercube_conformity_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules)
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
     allowed_sets = [set(rule["taxonomy_basis"]["dimensions"]) for rule in topic_rules["families"].get("2 Hypercube conformity", [])]
     invalid_fact_ids: list[str] = []
     valid_fact_ids: list[str] = []
@@ -262,7 +293,7 @@ def _hypercube_conformity_results(report: ReportModel, topic_id: str, topic_rule
 
 
 def _member_validity_results(report: ReportModel, topic_id: str, topic_rules: dict, allowed_members_by_topic: dict[str, dict[str, set[str]]]) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules)
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
     allowed_map = allowed_members_by_topic.get(topic_id, {})
     invalid_dimension_members: list[dict] = []
     checked_dimension_members: list[dict] = []
@@ -302,8 +333,13 @@ def _context_signature(context: ReportContext, *, excluding_dimension: str) -> t
     return (context.entity, context.period_type, context.instant, remaining_dimensions)
 
 
-def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules)
+def _rollup_results(
+    report: ReportModel,
+    topic_id: str,
+    topic_rules: dict,
+    concept_balances: dict[str, str | None],
+) -> list[dict]:
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
     results: list[dict] = []
     for rule in topic_rules["families"].get("6 Dimension member roll-up", []):
         grouped: dict[tuple, list[tuple[ReportFact, ReportContext]]] = defaultdict(list)
@@ -315,16 +351,22 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
             grouped[signature].append((fact, context))
 
         comparisons: list[dict] = []
+        skipped_comparisons: list[dict] = []
         component_members = set(rule["component_members"]["members"])
         for signature, entries in grouped.items():
             head_fact = None
+            extra_head_fact_ids: list[str] = []
             component_total = 0.0
             component_count = 0
             component_facts: list[dict] = []
+            skipped_components: list[dict] = []
             for fact, context in entries:
                 member = context.dimensions.get(rule["dimension"])
                 if member == rule["head_member"]:
-                    head_fact = fact
+                    if head_fact is None:
+                        head_fact = fact
+                    else:
+                        extra_head_fact_ids.append(fact.fact_id)
                 elif member in component_members:
                     numeric_value = fact.numeric_value()
                     if numeric_value is not None:
@@ -335,26 +377,88 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
                                 "fact_id": fact.fact_id,
                                 "member": member,
                                 "value": numeric_value,
+                                "balance": concept_balances.get(fact.concept_qname or ""),
                             }
                         )
-            if head_fact is None or component_count == 0:
+                    else:
+                        skipped_components.append({"fact_id": fact.fact_id, "member": member, "reason": "non_numeric_component"})
+            if head_fact is None:
+                skipped_comparisons.append(
+                    {
+                        "signature": list(signature),
+                        "reason": "missing_head_fact",
+                        "component_fact_count": component_count,
+                    }
+                )
+                continue
+            if component_count == 0:
+                skipped_comparisons.append(
+                    {
+                        "signature": list(signature),
+                        "reason": "missing_numeric_component_facts",
+                        "head_fact_id": head_fact.fact_id,
+                        "skipped_components": skipped_components,
+                    }
+                )
                 continue
             head_value = head_fact.numeric_value()
             if head_value is None:
+                skipped_comparisons.append(
+                    {
+                        "signature": list(signature),
+                        "reason": "non_numeric_head_fact",
+                        "head_fact_id": head_fact.fact_id,
+                        "component_fact_count": component_count,
+                    }
+                )
                 continue
+            sign_error_candidates: list[dict[str, Any]] = []
+            difference = round(head_value - component_total, 6)
+            matches = abs(difference) <= 0.0001
+            if not matches:
+                for component in component_facts:
+                    flipped_total = component_total - (2 * component["value"])
+                    flipped_difference = round(head_value - flipped_total, 6)
+                    if abs(flipped_difference) <= 0.0001:
+                        sign_error_candidates.append(
+                            {
+                                "kind": "component_sign_inversion",
+                                "fact_id": component["fact_id"],
+                                "member": component["member"],
+                                "raw_value": component["value"],
+                                "difference_explained": round(2 * component["value"], 6),
+                            }
+                        )
+                flipped_head_difference = round((-head_value) - component_total, 6)
+                if abs(flipped_head_difference) <= 0.0001:
+                    sign_error_candidates.append(
+                        {
+                            "kind": "head_sign_inversion",
+                            "fact_id": head_fact.fact_id,
+                            "member": rule["head_member"],
+                            "raw_value": head_value,
+                            "difference_explained": round(2 * head_value, 6),
+                        }
+                    )
             comparisons.append(
                 {
                     "head_fact_id": head_fact.fact_id,
                     "head_member": rule["head_member"],
                     "head_value": head_value,
+                    "head_balance": concept_balances.get(head_fact.concept_qname or ""),
                     "component_total": component_total,
-                    "difference": round(head_value - component_total, 6),
+                    "difference": difference,
                     "component_facts": component_facts,
-                    "matches": abs(head_value - component_total) <= 0.0001,
+                    "matches": matches,
+                    "match_status": "matches" if matches else "likely_sign_error" if sign_error_candidates else "mismatch",
+                    "sign_error_candidates": sign_error_candidates,
+                    "extra_head_fact_ids": extra_head_fact_ids,
+                    "skipped_components": skipped_components,
                 }
             )
 
         mismatches = [comparison for comparison in comparisons if not comparison["matches"]]
+        likely_sign_errors = [comparison for comparison in mismatches if comparison["sign_error_candidates"]]
 
         results.append(
             {
@@ -363,11 +467,20 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
                 "status": "pass" if not mismatches else "fail",
                 "topic": topic_id,
                 "message": (
-                    "Observed roll-up candidates reconcile where head and component facts are present."
+                    "No comparable head/component pairs were available for this roll-up candidate."
+                    if not comparisons
+                    else "Observed roll-up candidates reconcile where head and component facts are present."
                     if not mismatches
+                    else "Observed roll-up candidates do not reconcile; at least one mismatch may be explained by sign inversion."
+                    if likely_sign_errors
                     else "Observed roll-up candidates do not reconcile."
                 ),
-                "evidence": {"comparisons": comparisons, "mismatches": mismatches},
+                "evidence": {
+                    "comparisons": comparisons,
+                    "mismatches": mismatches,
+                    "skipped_comparisons": skipped_comparisons,
+                    "likely_sign_error_count": len(likely_sign_errors),
+                },
             }
         )
     return results
@@ -378,12 +491,14 @@ def evaluate_rule_pack(
     report: ReportModel,
     split_output_dir: Path,
     topics_payload: dict,
+    concepts_payload: list[dict[str, Any]] | None = None,
     include_all_topics: bool = False,
     selected_topics: set[str] | None = None,
     selected_families_by_topic: dict[str, set[str]] | None = None,
 ) -> dict:
     manifest, rules_by_topic = _load_rule_pack(split_output_dir)
     allowed_members_by_topic = _allowed_members_by_topic(topics_payload)
+    concept_balances = _concept_balance_map(concepts_payload)
     _augment_allowed_members_from_rules(allowed_members_by_topic, rules_by_topic)
     results: list[dict] = []
     evaluated_topics: list[dict] = []
@@ -401,7 +516,8 @@ def evaluate_rule_pack(
                 "topic_label": topic_rules["topic_label"],
                 "relevant": relevant,
                 "trigger_fact_count": len(_topic_trigger_facts(report, topic_rules)),
-                "topic_fact_count": len(_topic_facts(report, topic_id, topic_rules)),
+                "topic_fact_count": len(_topic_facts(report, topic_id, topic_rules, attribution="all")),
+                "strong_topic_fact_count": len(_topic_facts(report, topic_id, topic_rules, attribution="strong")),
             }
         )
         allowed_families = selected_families_by_topic.get(topic_id) if selected_families_by_topic else None
@@ -414,7 +530,7 @@ def evaluate_rule_pack(
         if _family_enabled("4 Member validity", allowed_families):
             results.extend(_member_validity_results(report, topic_id, topic_rules, allowed_members_by_topic))
         if _family_enabled("6 Dimension member roll-up", allowed_families):
-            results.extend(_rollup_results(report, topic_id, topic_rules))
+            results.extend(_rollup_results(report, topic_id, topic_rules, concept_balances))
     return {
         "source_path": report.source_path,
         "entrypoint": manifest["entrypoint"],
@@ -446,6 +562,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--input-file", required=True)
     parser.add_argument("--split-output-dir", default="backend/validation_rules/rule_packs/2026/auto/frs102_candidates")
     parser.add_argument("--topics", default="backend/validation_rules/generated/2026/frs102/topics.json")
+    parser.add_argument("--concepts", default="backend/validation_rules/generated/2026/frs102/concepts.json")
     parser.add_argument("--output", default=None)
     parser.add_argument("--include-all-topics", action="store_true")
     return parser.parse_args()
@@ -458,6 +575,7 @@ def main() -> int:
         report=report,
         split_output_dir=Path(args.split_output_dir),
         topics_payload=_load_json(Path(args.topics)),
+        concepts_payload=_load_json(Path(args.concepts)),
         include_all_topics=args.include_all_topics,
     )
     if args.output:

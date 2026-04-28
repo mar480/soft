@@ -321,6 +321,30 @@ th {
     color: #fca5a5;
 }
 
+.status.not_applied {
+    background: rgba(148, 163, 184, 0.14);
+    color: #cbd5e1;
+}
+
+.outcome-group + .outcome-group {
+    margin-top: 1.1rem;
+}
+
+.outcome-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin: 0 0 0.75rem;
+}
+
+.outcome-heading h5 {
+    margin: 0;
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 .support-row td {
     padding-top: 0;
 }
