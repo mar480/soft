@@ -1,0 +1,183 @@
+{
+  "topic_id": "business_combinations_provisions",
+  "topic_label": "Business Combinations Provisions",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_provisions",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "member_descendants": {
+          "core:TotalIndividuallyImmaterialBusinessCombinations": [],
+          "core:SpecificBusinessCombination1": [],
+          "core:SpecificBusinessCombination2": [],
+          "core:SpecificBusinessCombination3": [],
+          "core:SpecificBusinessCombination4": [],
+          "core:SpecificBusinessCombination5": [],
+          "core:SpecificBusinessCombination6": [],
+          "core:SpecificBusinessCombination7": [],
+          "core:SpecificBusinessCombination8": [],
+          "core:SpecificBusinessCombination9": [],
+          "core:SpecificBusinessCombination10": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_provisions",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ProvisionsClassesDimension",
+      "head_member": "core:TotalProvisionsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:AcceptancesEndorsements",
+          "core:BadDebts",
+          "core:CommissionClawback",
+          "core:ContingentLiabilityOnBusinessCombination",
+          "core:DecommissioningRestorationDilapidations",
+          "core:DeferredConsiderations",
+          "core:DeferredTaxation",
+          "core:EmployeeBenefits",
+          "core:EnvironmentalCosts",
+          "core:FinancialGuarantees",
+          "core:FinancialPenaltiesLevies",
+          "core:FurtherSpecificTypeProvisionContingentLiability1ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability2ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability3ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability4ComponentTotalProvisionsContingentLiabilities",
+          "core:InventoryObsolescence",
+          "core:LegalProceedings",
+          "core:LegislativeChanges",
+          "core:OnerousContractsExcludingVacantProperties",
+          "core:OperatingLeases",
+          "core:OtherProvisionsContingentLiabilities",
+          "core:OtherRegulatoryMatters",
+          "core:Pensions",
+          "core:Post-employmentBenefits",
+          "core:ProfitSharingBonuses",
+          "core:Refunds",
+          "core:RegulatoryMatters",
+          "core:RestructuringOrReorganisation",
+          "core:SocialSecurityContributions",
+          "core:TaxationIncludingDeferredTaxation",
+          "core:VacantProperties",
+          "core:Warranties",
+          "core:WasteDisposal"
+        ],
+        "domain_root": "core:TotalProvisionsDefault",
+        "member_descendants": {
+          "core:Warranties": [],
+          "core:RestructuringOrReorganisation": [],
+          "core:LegalProceedings": [],
+          "core:LegislativeChanges": [],
+          "core:OtherRegulatoryMatters": [],
+          "core:RegulatoryMatters": [
+            "core:LegislativeChanges",
+            "core:OtherRegulatoryMatters"
+          ],
+          "core:OnerousContractsExcludingVacantProperties": [],
+          "core:VacantProperties": [],
+          "core:DecommissioningRestorationDilapidations": [],
+          "core:DeferredTaxation": [],
+          "core:TaxationIncludingDeferredTaxation": [
+            "core:DeferredTaxation"
+          ],
+          "core:SocialSecurityContributions": [],
+          "core:Post-employmentBenefits": [],
+          "core:Pensions": [],
+          "core:EmployeeBenefits": [
+            "core:Pensions",
+            "core:Post-employmentBenefits",
+            "core:SocialSecurityContributions"
+          ],
+          "core:BadDebts": [],
+          "core:FinancialGuarantees": [],
+          "core:InventoryObsolescence": [],
+          "core:WasteDisposal": [],
+          "core:EnvironmentalCosts": [
+            "core:WasteDisposal"
+          ],
+          "core:DeferredConsiderations": [],
+          "core:ProfitSharingBonuses": [],
+          "core:OperatingLeases": [],
+          "core:Refunds": [],
+          "core:FinancialPenaltiesLevies": [],
+          "core:AcceptancesEndorsements": [],
+          "core:CommissionClawback": [],
+          "core:ContingentLiabilityOnBusinessCombination": [],
+          "core:FurtherSpecificTypeProvisionContingentLiability1ComponentTotalProvisionsContingentLiabilities": [],
+          "core:FurtherSpecificTypeProvisionContingentLiability2ComponentTotalProvisionsContingentLiabilities": [],
+          "core:FurtherSpecificTypeProvisionContingentLiability3ComponentTotalProvisionsContingentLiabilities": [],
+          "core:FurtherSpecificTypeProvisionContingentLiability4ComponentTotalProvisionsContingentLiabilities": [],
+          "core:OtherProvisionsContingentLiabilities": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Provisions classes [Dimension]",
+        "default_member": "core:TotalProvisionsDefault",
+        "domain_root": "core:TotalProvisionsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

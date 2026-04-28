@@ -31,6 +31,9 @@ def _collect_contexts(root: ET.Element) -> dict[str, ReportContext]:
             continue
         identifier = context.findtext("./xbrli:entity/xbrli:identifier", default="", namespaces=NS)
         instant = context.findtext("./xbrli:period/xbrli:instant", default="", namespaces=NS)
+        start_date = context.findtext("./xbrli:period/xbrli:startDate", default="", namespaces=NS)
+        end_date = context.findtext("./xbrli:period/xbrli:endDate", default="", namespaces=NS)
+        period_type = "instant" if instant else "duration" if start_date or end_date else "forever"
         dimensions: dict[str, str] = {}
         for member in context.findall(".//xbrldi:explicitMember", NS):
             dimension_name = member.attrib.get("dimension")
@@ -39,8 +42,10 @@ def _collect_contexts(root: ET.Element) -> dict[str, ReportContext]:
         contexts[context_id] = ReportContext(
             context_id=context_id,
             entity=identifier,
-            period_type="instant",
+            period_type=period_type,
             instant=instant,
+            start_date=start_date,
+            end_date=end_date,
             dimensions=dimensions,
         )
     return contexts

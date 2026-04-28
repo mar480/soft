@@ -9,13 +9,20 @@ class ReportContext:
     entity: str
     period_type: str
     instant: str
+    start_date: str
+    end_date: str
     dimensions: dict[str, str]
 
     def to_dict(self) -> dict:
         return {
             "context_id": self.context_id,
             "entity": self.entity,
-            "period": {"type": self.period_type, "instant": self.instant},
+            "period": {
+                "type": self.period_type,
+                "instant": self.instant,
+                "start_date": self.start_date,
+                "end_date": self.end_date,
+            },
             "dimensions": dict(sorted(self.dimensions.items())),
         }
 

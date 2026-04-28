@@ -417,6 +417,7 @@ def evaluate_source_file(source_path: str, validation_selection: dict[str, Any] 
         split_output_dir=Path(current_app.config["SPLIT_OUTPUT_DIR"]),
         topics_payload=_load_json(Path(current_app.config["TOPICS_FILE"])),
         concepts_payload=_load_json(Path(current_app.config["CONCEPTS_FILE"])),
+        roles_payload=_load_json(Path(current_app.config["ROLES_FILE"])),
         include_all_topics=validation_selection["scope"] == "all",
         selected_topics=set(validation_selection["selected_topics"]) if validation_selection["scope"] == "selected" else None,
         selected_families_by_topic=validation_selection["selected_families_by_topic"] if validation_selection["scope"] == "selected" else None,
@@ -605,9 +606,25 @@ def enrich_evidence(
     if "matching_fact_ids" in evidence:
         enriched["matching_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["matching_fact_ids"] if fact_id in fact_index]
     if "comparisons" in evidence:
-        enriched["comparison_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["comparisons"]]
+        if evidence.get("taxonomy_basis", {}).get("reason_type") == "movement_bridge":
+            enriched["comparison_details"] = [movement_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["comparisons"]]
+        else:
+            enriched["comparison_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["comparisons"]]
     if "mismatches" in evidence:
-        enriched["mismatch_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["mismatches"]]
+        if evidence.get("taxonomy_basis", {}).get("reason_type") == "movement_bridge":
+            enriched["mismatch_details"] = [movement_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["mismatches"]]
+        else:
+            enriched["mismatch_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["mismatches"]]
+    if "scope_ambiguous" in evidence:
+        enriched["scope_ambiguous_details"] = [rollup_comparison_summary(item, fact_index, contexts, concept_balances) for item in evidence["scope_ambiguous"]]
+    if "skipped_comparisons" in evidence:
+        reason_counts: dict[str, int] = defaultdict(int)
+        for item in evidence["skipped_comparisons"]:
+            reason_counts[item.get("reason", "unknown")] += 1
+        enriched["skipped_reason_counts"] = [
+            {"reason": reason, "count": count}
+            for reason, count in sorted(reason_counts.items())
+        ]
     return enriched
 
 
@@ -634,16 +651,70 @@ def rollup_comparison_summary(
             }
             for component in comparison.get("component_facts", [])
         ],
+        "cross_dimension_same_concept_details": [
+            {
+                **item,
+                "fact": fact_summary(fact_index[item["fact_id"]], contexts, concept_balances) if item.get("fact_id") in fact_index else None,
+            }
+            for item in comparison.get("cross_dimension_same_concept_facts", [])
+        ],
+        "scope_adjustment_details": [
+            {
+                **adjustment,
+                "excluded_facts": [
+                    {
+                        **item,
+                        "fact": fact_summary(fact_index[item["fact_id"]], contexts, concept_balances) if item.get("fact_id") in fact_index else None,
+                    }
+                    for item in adjustment.get("excluded_facts", [])
+                ],
+            }
+            for adjustment in comparison.get("scope_adjustments", [])
+        ],
+    }
+
+
+def movement_comparison_summary(
+    comparison: dict[str, Any],
+    fact_index: dict[str, ReportFact],
+    contexts: dict[str, ReportContext],
+    concept_balances: dict[str, str | None],
+) -> dict[str, Any]:
+    return {
+        **comparison,
+        "head_fact": fact_summary(fact_index[comparison["head_fact_id"]], contexts, concept_balances) if comparison.get("head_fact_id") in fact_index else None,
+        "start_fact": fact_summary(fact_index[comparison["start_fact_id"]], contexts, concept_balances) if comparison.get("start_fact_id") in fact_index else None,
+        "end_fact": fact_summary(fact_index[comparison["end_fact_id"]], contexts, concept_balances) if comparison.get("end_fact_id") in fact_index else None,
+        "sign_error_candidates": [
+            {
+                **candidate,
+                "fact": fact_summary(fact_index[candidate["fact_id"]], contexts, concept_balances) if candidate.get("fact_id") in fact_index else None,
+            }
+            for candidate in comparison.get("sign_error_candidates", [])
+        ],
+        "component_details": [
+            {
+                **component,
+                "fact": fact_summary(fact_index[component["fact_id"]], contexts, concept_balances) if component["fact_id"] in fact_index else None,
+            }
+            for component in comparison.get("movement_facts", [])
+        ],
     }
 
 
 def fact_summary(fact: ReportFact, contexts: dict[str, ReportContext], concept_balances: dict[str, str | None]) -> dict[str, Any]:
     context = contexts.get(fact.context_id or "")
+    period = None
+    if context:
+        if context.period_type == "duration":
+            period = f"{context.start_date} to {context.end_date}".strip()
+        else:
+            period = context.instant
     return {
         "fact_id": fact.fact_id,
         "name": fact.concept_qname or fact.tag,
         "value": fact.value,
-        "period": context.instant if context else None,
+        "period": period,
         "period_type": context.period_type if context else None,
         "dimensions": dict(sorted(context.dimensions.items())) if context else {},
         "unit": fact.unit,
@@ -657,6 +728,9 @@ def build_support_information(result: dict[str, Any]) -> dict[str, Any]:
         "hypercube_conformity": support_hypercube_conformity,
         "expected_dimension_usage": support_expected_dimension_usage,
         "dimension_member_validity": support_member_validity,
+        "dimensional_aggregation_relationship": support_dimensional_aggregation_relationship,
+        "movement_reconciliation": support_movement_reconciliation,
+        "concept_arithmetic_relationship": support_concept_arithmetic_relationship,
         "dimension_member_rollup_candidate": support_rollup_candidate,
     }
     builder = builders.get(result["type"], support_generic)
@@ -750,6 +824,78 @@ def support_rollup_candidate(result: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def support_concept_arithmetic_relationship(result: dict[str, Any]) -> dict[str, Any]:
+    comparisons = result["evidence"].get("comparison_details", [])
+    mismatches = result["evidence"].get("mismatch_details", [])
+    likely_sign_error_count = result["evidence"].get("likely_sign_error_count", 0)
+    skipped_count = len(result["evidence"].get("skipped_comparisons", []))
+    return {
+        "what_test_is": "Checks a taxonomy-derived concept arithmetic candidate: for the same period, unit, and full dimensional context, the head concept should reconcile to the sum of its component concepts.",
+        "what_it_proves": "A pass shows that the observed concept set behaves like a subtotal or arithmetic composition implied by the taxonomy presentation structure, without treating missing components as zero.",
+        "outcome_summary": (
+            f"No comparable head/component concept sets were present in the report, so this rule was not applied. {skipped_count} candidate bucket(s) were skipped."
+            if result["outcome_status"] == "not_applied"
+            else f"Observed {len(comparisons)} comparable concept arithmetic case(s); {len(comparisons) - len(mismatches)} reconciled."
+            if result["outcome_status"] == "pass"
+            else f"Observed {len(comparisons)} comparable concept arithmetic case(s); {len(mismatches)} did not reconcile and {likely_sign_error_count} mismatch(es) look like likely sign inversions."
+        ),
+    }
+
+
+def support_dimensional_aggregation_relationship(result: dict[str, Any]) -> dict[str, Any]:
+    comparisons = result["evidence"].get("comparison_details", [])
+    mismatches = result["evidence"].get("mismatch_details", [])
+    scope_ambiguous = result["evidence"].get("scope_ambiguous_details", [])
+    likely_sign_error_count = result["evidence"].get("likely_sign_error_count", 0)
+    skipped_count = len(result["evidence"].get("skipped_comparisons", []))
+    dimension = result["evidence"].get("dimension")
+    head_member = result["evidence"].get("head_member")
+    aggregation_type = result["evidence"].get("aggregation_type", "plain")
+    scope_dimensions = result["evidence"].get("scope_dimensions", [])
+    scoped_summary = ""
+    if aggregation_type == "scoped" and scope_dimensions:
+        scope_bits = []
+        for scope in scope_dimensions:
+            members = ", ".join(scope.get("excluded_members", []))
+            scope_bits.append(f"{scope.get('dimension')} excluding {members}")
+        scoped_summary = " Scope applied: " + "; ".join(scope_bits) + "."
+    return {
+        "what_test_is": "Checks a taxonomy-derived dimensional aggregation candidate: for the same concept, period, unit, and all other dimensions, the total/default member should reconcile to the sum of its component members."
+        if aggregation_type == "plain"
+        else "Checks a taxonomy-derived scoped dimensional aggregation candidate: for the same concept, period, unit, and all other relevant dimensions, the scoped total/default member should reconcile to the sum of its component members after applying the declared scope exclusions.",
+        "what_it_proves": "A pass shows that the disclosure behaves like a dimensional aggregation relationship supported by the taxonomy member tree, without treating missing members as zero."
+        if aggregation_type == "plain"
+        else "A pass shows that the disclosure behaves like a scoped dimensional aggregation relationship supported by the taxonomy member tree and scope exclusions, without treating missing members as zero.",
+        "outcome_summary": (
+            f"No comparable dimensional aggregation sets were present in the report for {dimension or 'the target dimension'}, so this rule was not applied. {skipped_count} candidate bucket(s) were skipped.{scoped_summary}"
+            if result["outcome_status"] == "not_applied"
+            else f"Observed {len(comparisons)} dimensional aggregation case(s), but all apparent mismatches were explained by same-concept facts in other dimensional scopes, so this candidate was treated as ambiguous rather than failed."
+            if scope_ambiguous and not mismatches
+            else f"Observed {len(comparisons)} comparable dimensional aggregation case(s) for {dimension or 'the target dimension'} using head member {head_member or '-'}; {len(comparisons) - len(mismatches)} reconciled.{scoped_summary}"
+            if result["outcome_status"] == "pass"
+            else f"Observed {len(comparisons)} comparable dimensional aggregation case(s) for {dimension or 'the target dimension'}; {len(mismatches)} did not reconcile and {likely_sign_error_count} mismatch(es) look like likely sign inversions.{scoped_summary}"
+        ),
+    }
+
+
+def support_movement_reconciliation(result: dict[str, Any]) -> dict[str, Any]:
+    comparisons = result["evidence"].get("comparison_details", [])
+    mismatches = result["evidence"].get("mismatch_details", [])
+    likely_sign_error_count = result["evidence"].get("likely_sign_error_count", 0)
+    skipped_count = len(result["evidence"].get("skipped_comparisons", []))
+    return {
+        "what_test_is": "Checks a movement bridge candidate: for the same concept, unit, entity, and dimensional context, the signed movement facts for the duration should reconcile to the closing instant minus the opening instant.",
+        "what_it_proves": "A pass shows that the disclosure behaves like a movement reconciliation, with opening and closing balances bridged by signed duration movements using taxonomy balance semantics.",
+        "outcome_summary": (
+            f"No comparable opening/closing movement bridges were present in the report, so this rule was not applied. {skipped_count} candidate bridge(s) were skipped."
+            if result["outcome_status"] == "not_applied"
+            else f"Observed {len(comparisons)} comparable movement bridge(s); {len(comparisons) - len(mismatches)} reconciled."
+            if result["outcome_status"] == "pass"
+            else f"Observed {len(comparisons)} comparable movement bridge(s); {len(mismatches)} did not reconcile and {likely_sign_error_count} mismatch(es) look like likely sign inversions."
+        ),
+    }
+
+
 def support_generic(result: dict[str, Any]) -> dict[str, Any]:
     return {
         "what_test_is": "Checks the rule condition for the current topic and family.",
@@ -772,6 +918,16 @@ def classify_outcome_status(result: dict[str, Any]) -> str:
         invalid = len(evidence.get("invalid_dimension_member_details", []))
         return "not_applied" if checked == 0 and invalid == 0 else result["status"]
     if result["type"] == "dimension_member_rollup_candidate":
+        return "not_applied" if not evidence.get("comparison_details") else result["status"]
+    if result["type"] == "dimensional_aggregation_relationship":
+        if not evidence.get("comparison_details"):
+            return "not_applied"
+        if evidence.get("scope_ambiguous_details") and not evidence.get("mismatch_details"):
+            return "not_applied"
+        return result["status"]
+    if result["type"] == "concept_arithmetic_relationship":
+        return "not_applied" if not evidence.get("comparison_details") else result["status"]
+    if result["type"] == "movement_reconciliation":
         return "not_applied" if not evidence.get("comparison_details") else result["status"]
     return result["status"]
 

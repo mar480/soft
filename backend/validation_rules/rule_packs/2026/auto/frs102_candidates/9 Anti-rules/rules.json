@@ -7,7 +7,7 @@
     {
       "id": "ANTI.PRESENTATION_SUM.001",
       "type": "blocked_inference",
-      "reason": "Do not assume presentation children sum to parent."
+      "reason": "Do not assume every presentation child sums to parent without an explicit generated arithmetic candidate."
     },
     {
       "id": "ANTI.MISSING_ZERO.001",

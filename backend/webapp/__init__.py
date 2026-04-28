@@ -19,6 +19,7 @@ def create_app() -> Flask:
         SPLIT_OUTPUT_DIR="backend/validation_rules/rule_packs/2026/auto/frs102_candidates",
         TOPICS_FILE="backend/validation_rules/generated/2026/frs102/topics.json",
         CONCEPTS_FILE="backend/validation_rules/generated/2026/frs102/concepts.json",
+        ROLES_FILE="backend/validation_rules/generated/2026/frs102/roles.json",
         SYNTHETIC_EXAMPLES_DIR="backend/validation_rules/generated/2026/frs102/synthetic_examples",
         TAXONOMY_YEAR=2026,
         TAXONOMY_ENTRYPOINT="FRS 102",

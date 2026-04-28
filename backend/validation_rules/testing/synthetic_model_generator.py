@@ -63,12 +63,6 @@ PROFILE_PRESETS = {
         "concept_qname": "core:PropertyPlantEquipment",
         "row_mode": "invalid_hypercube",
     },
-    "ppe_note_rollup_mismatch": {
-        "kind": "topic",
-        "topic_id": "property_plant_equipment",
-        "concept_qname": "core:PropertyPlantEquipment",
-        "row_mode": "rollup_mismatch",
-    },
     "creditors_note_minimal": {
         "kind": "topic",
         "topic_id": "creditors",
@@ -133,19 +127,6 @@ def _leaf_members(dimension: dict) -> list[dict]:
     if default_member:
         leaves = [leaf for leaf in leaves if leaf["qname"] != default_member]
     return leaves
-
-
-def _preferred_rollup_members(dimension_qname: str, members: list[dict]) -> list[dict]:
-    if dimension_qname == "core:PPEOwnershipDimension":
-        preferred_order = [
-            "core:OwnedOrFreeholdAssets",
-            "core:LeasedAssetsHeldAsLessee",
-        ]
-        member_index = {member["qname"]: member for member in members}
-        preferred = [member_index[qname] for qname in preferred_order if qname in member_index]
-        if len(preferred) >= 2:
-            return preferred
-    return members
 
 
 def _choose_note_dimensions(topic: dict) -> list[dict]:
@@ -300,37 +281,6 @@ def _build_topic_row_specs(selected_dimensions: list[dict], *, row_mode: str) ->
             },
         ]
 
-    if row_mode == "rollup_mismatch":
-        target_dimension = second_dimension or first_dimension
-        target_members = second_members if second_dimension else first_members
-        target_members = _preferred_rollup_members(target_dimension["dimension_qname"], target_members)
-        fixed_dimension_members: dict[str, str] = {}
-        if second_dimension and first_members:
-            fixed_dimension_members[first_dimension["dimension_qname"]] = first_members[0]["qname"]
-        return [
-            {
-                "row_label": "Total",
-                "dimension_members": {
-                    **fixed_dimension_members,
-                    target_dimension["dimension_qname"]: target_dimension["default_member"].removesuffix("Default"),
-                },
-            },
-            {
-                "row_label": target_members[0]["label"],
-                "dimension_members": {
-                    **fixed_dimension_members,
-                    target_dimension["dimension_qname"]: target_members[0]["qname"],
-                },
-            },
-            {
-                "row_label": target_members[1]["label"],
-                "dimension_members": {
-                    **fixed_dimension_members,
-                    target_dimension["dimension_qname"]: target_members[1]["qname"],
-                },
-            },
-        ]
-
     row_specs = [{"row_label": "Total", "dimension_members": {}}]
     for member in first_members[:2]:
         row_spec = {
@@ -371,10 +321,7 @@ def _build_topic_example(
             "dimensions": row_spec["dimension_members"],
         }
         contexts.append(context)
-        if row_mode == "rollup_mismatch":
-            value = [120000, 60000, 45000][idx - 1]
-        else:
-            value = 100000 if idx == 1 else 60000 - (idx - 2) * 15000
+        value = 100000 if idx == 1 else 60000 - (idx - 2) * 15000
         facts.append(
             {
                 "fact_id": _fact_id(idx),

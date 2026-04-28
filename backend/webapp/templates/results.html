@@ -242,28 +242,165 @@
                                                             {% endif %}
                                                             {% if result.evidence.comparison_details %}
                                                                 <div class="evidence-group">
-                                                                    <h5>Roll-up comparisons</h5>
-                                                                    {% for comparison in result.evidence.comparison_details %}
-                                                                        <div class="rollup-card">
-                                                                            <p class="muted">
-                                                                                Head: {{ comparison.head_fact.name if comparison.head_fact else comparison.head_fact_id }}
-                                                                                | total {{ comparison.head_value }}
-                                                                                | components {{ comparison.component_total }}
-                                                                                | difference {{ comparison.difference }}
-                                                                            </p>
-                                                                            <p class="muted">
-                                                                                Status: {{ comparison.match_status|replace("_", " ") }}
+                                                                    <h5>
+                                                                        {% if result.type == "concept_arithmetic_relationship" %}
+                                                                            Concept arithmetic comparisons
+                                                                        {% elif result.type == "movement_reconciliation" %}
+                                                                            Movement reconciliation comparisons
+                                                                        {% elif result.type == "dimensional_aggregation_relationship" %}
+                                                                            Dimensional aggregation comparisons
+                                                                        {% else %}
+                                                                            Roll-up comparisons
+                                                                        {% endif %}
+                                                                    </h5>
+                                                                        {% for comparison in result.evidence.comparison_details %}
+                                                                            <div class="rollup-card">
+                                                                                {% if result.type == "movement_reconciliation" %}
+                                                                                <p class="muted">
+                                                                                    Concept: {{ comparison.head_fact.name if comparison.head_fact else comparison.concept_qname }}
+                                                                                    | movement {{ comparison.movement_total }}
+                                                                                    | start {{ comparison.opening_value }}
+                                                                                    | end {{ comparison.closing_value }}
+                                                                                    | selected movements {{ comparison.component_total }}
+                                                                                    | difference {{ comparison.difference }}
+                                                                                </p>
+                                                                                <p class="muted">
+                                                                                    Status: {{ comparison.match_status|replace("_", " ") }}
+                                                                                    {% if comparison.head_balance %}
+                                                                                        | concept balance {{ comparison.head_balance }}
+                                                                                    {% endif %}
+                                                                                </p>
+                                                                                <div class="table-shell compact">
+                                                                                    <table>
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th>Bridge point</th>
+                                                                                                <th>Fact</th>
+                                                                                                <th>Value</th>
+                                                                                                <th>Period</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td>Opening</td>
+                                                                                                <td>{{ comparison.start_fact.name if comparison.start_fact else comparison.start_fact_id }}</td>
+                                                                                                <td>{{ comparison.opening_value }}</td>
+                                                                                                <td>{{ comparison.start_fact.period if comparison.start_fact else "" }}</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td>Closing</td>
+                                                                                                <td>{{ comparison.end_fact.name if comparison.end_fact else comparison.end_fact_id }}</td>
+                                                                                                <td>{{ comparison.closing_value }}</td>
+                                                                                                <td>{{ comparison.end_fact.period if comparison.end_fact else "" }}</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                                {% if comparison.component_details %}
+                                                                                    <div class="table-shell compact">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Movement fact</th>
+                                                                                                    <th>Signed value</th>
+                                                                                                    <th>Raw value</th>
+                                                                                                    <th>Balance</th>
+                                                                                                    <th>Period</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                {% for component in comparison.component_details %}
+                                                                                                    <tr>
+                                                                                                        <td>{{ component.fact.name if component.fact else component.fact_id }}</td>
+                                                                                                        <td>{{ component.signed_value }}</td>
+                                                                                                        <td>{{ component.value }}</td>
+                                                                                                        <td>{{ component.balance or "-" }}</td>
+                                                                                                        <td>{{ component.fact.period if component.fact else "" }}</td>
+                                                                                                    </tr>
+                                                                                                {% endfor %}
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                {% endif %}
+                                                                                {% if comparison.sign_error_candidates %}
+                                                                                    <div class="table-shell compact">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Likely sign issue</th>
+                                                                                                    <th>Fact</th>
+                                                                                                    <th>Raw value</th>
+                                                                                                    <th>Difference explained</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                {% for candidate in comparison.sign_error_candidates %}
+                                                                                                    <tr>
+                                                                                                        <td>{{ candidate.kind|replace("_", " ") }}</td>
+                                                                                                        <td>{{ candidate.fact.name if candidate.fact else candidate.fact_id }}</td>
+                                                                                                        <td>{{ candidate.raw_value }}</td>
+                                                                                                        <td>{{ candidate.difference_explained }}</td>
+                                                                                                    </tr>
+                                                                                                {% endfor %}
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                {% endif %}
+                                                                                {% else %}
+                                                                                <p class="muted">
+                                                                                    Head: {{ comparison.head_fact.name if comparison.head_fact else comparison.head_fact_id }}
+                                                                                    | total {{ comparison.head_value }}
+                                                                                    {% if comparison.effective_head_value is defined and comparison.effective_head_value != comparison.head_value %}
+                                                                                        | scoped total {{ comparison.effective_head_value }}
+                                                                                    {% endif %}
+                                                                                    | components {{ comparison.component_total }}
+                                                                                    | difference {{ comparison.difference }}
+                                                                                </p>
+                                                                                <p class="muted">
+                                                                                    Status: {{ comparison.match_status|replace("_", " ") }}
                                                                                 {% if comparison.head_balance %}
                                                                                     | head balance {{ comparison.head_balance }}
                                                                                 {% endif %}
-                                                                            </p>
+                                                                                {% if comparison.dimension %}
+                                                                                    | dimension {{ comparison.dimension }}
+                                                                                {% endif %}
+                                                                                    {% if comparison.head_member %}
+                                                                                        | head member {{ comparison.head_member }}
+                                                                                    {% endif %}
+                                                                                </p>
+                                                                                {% if comparison.scope_adjustment_details %}
+                                                                                    <p class="muted">Scoped exclusions were applied to the head total before comparison.</p>
+                                                                                    <div class="table-shell compact">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <th>Scope dimension</th>
+                                                                                                    <th>Excluded members</th>
+                                                                                                    <th>Excluded total</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                {% for adjustment in comparison.scope_adjustment_details %}
+                                                                                                    <tr>
+                                                                                                        <td>{{ adjustment.dimension }}</td>
+                                                                                                        <td>{{ adjustment.excluded_members|join(", ") }}</td>
+                                                                                                        <td>{{ adjustment.excluded_total }}</td>
+                                                                                                    </tr>
+                                                                                                {% endfor %}
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                {% endif %}
+                                                                                {% if comparison.cross_dimension_explained %}
+                                                                                    <p class="muted">A same-concept fact in another dimensional scope appears to explain this difference, so this comparison is treated as ambiguous rather than a direct arithmetic failure.</p>
+                                                                                {% endif %}
                                                                             {% if comparison.component_details %}
                                                                                 <div class="table-shell compact">
                                                                                     <table>
                                                                                         <thead>
                                                                                             <tr>
                                                                                                 <th>Component</th>
-                                                                                                <th>Member</th>
+                                                                                                <th>Concept / Member</th>
                                                                                                 <th>Value</th>
                                                                                                 <th>Balance</th>
                                                                                                 <th>Period</th>
@@ -273,7 +410,7 @@
                                                                                             {% for component in comparison.component_details %}
                                                                                                 <tr>
                                                                                                     <td>{{ component.fact.name if component.fact else component.fact_id }}</td>
-                                                                                                    <td>{{ component.member }}</td>
+                                                                                                    <td>{{ component.concept_qname or component.member or "-" }}</td>
                                                                                                     <td>{{ component.value }}</td>
                                                                                                     <td>{{ component.balance or "-" }}</td>
                                                                                                     <td>{{ component.fact.period if component.fact else "" }}</td>
@@ -290,7 +427,7 @@
                                                                                             <tr>
                                                                                                 <th>Likely sign issue</th>
                                                                                                 <th>Fact</th>
-                                                                                                <th>Member</th>
+                                                                                                <th>Concept / Member</th>
                                                                                                 <th>Raw value</th>
                                                                                                 <th>Difference explained</th>
                                                                                             </tr>
@@ -300,9 +437,69 @@
                                                                                                 <tr>
                                                                                                     <td>{{ candidate.kind|replace("_", " ") }}</td>
                                                                                                     <td>{{ candidate.fact.name if candidate.fact else candidate.fact_id }}</td>
-                                                                                                    <td>{{ candidate.member }}</td>
+                                                                                                    <td>{{ candidate.concept_qname or candidate.member or "-" }}</td>
                                                                                                     <td>{{ candidate.raw_value }}</td>
                                                                                                     <td>{{ candidate.difference_explained }}</td>
+                                                                                                </tr>
+                                                                                            {% endfor %}
+                                                                                        </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                {% endif %}
+                                                                                {% if comparison.scope_adjustment_details %}
+                                                                                    {% for adjustment in comparison.scope_adjustment_details %}
+                                                                                        {% if adjustment.excluded_facts %}
+                                                                                            <div class="table-shell compact">
+                                                                                                <table>
+                                                                                                    <thead>
+                                                                                                        <tr>
+                                                                                                            <th>Excluded scope fact</th>
+                                                                                                            <th>Scope member</th>
+                                                                                                            <th>Value</th>
+                                                                                                            <th>Period</th>
+                                                                                                        </tr>
+                                                                                                    </thead>
+                                                                                                    <tbody>
+                                                                                                        {% for item in adjustment.excluded_facts %}
+                                                                                                            <tr>
+                                                                                                                <td>{{ item.fact.name if item.fact else item.fact_id }}</td>
+                                                                                                                <td>{{ item.scope_member or "-" }}</td>
+                                                                                                                <td>{{ item.value }}</td>
+                                                                                                                <td>{{ item.fact.period if item.fact else "" }}</td>
+                                                                                                            </tr>
+                                                                                                        {% endfor %}
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        {% endif %}
+                                                                                    {% endfor %}
+                                                                                {% endif %}
+                                                                                {% if comparison.cross_dimension_same_concept_details %}
+                                                                                    <div class="table-shell compact">
+                                                                                        <table>
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th>Same-concept fact in other scope</th>
+                                                                                                <th>Value</th>
+                                                                                                <th>Period</th>
+                                                                                                <th>Dimensions</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            {% for item in comparison.cross_dimension_same_concept_details %}
+                                                                                                <tr>
+                                                                                                    <td>{{ item.fact.name if item.fact else item.fact_id }}</td>
+                                                                                                    <td>{{ item.value }}</td>
+                                                                                                    <td>{{ item.fact.period if item.fact else "" }}</td>
+                                                                                                    <td>
+                                                                                                        {% if item.fact and item.fact.dimensions %}
+                                                                                                            {% for key, value in item.fact.dimensions.items() %}
+                                                                                                                {{ key }}={{ value }}{% if not loop.last %}, {% endif %}
+                                                                                                            {% endfor %}
+                                                                                                        {% else %}
+                                                                                                            -
+                                                                                                        {% endif %}
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                             {% endfor %}
                                                                                         </tbody>
@@ -310,32 +507,84 @@
                                                                                 </div>
                                                                             {% endif %}
                                                                         </div>
+                                                                        {% endif %}
                                                                     {% endfor %}
                                                                 </div>
                                                             {% endif %}
                                                             {% if result.evidence.skipped_comparisons %}
                                                                 <div class="evidence-group">
-                                                                    <h5>Skipped roll-up candidates</h5>
-                                                                    <div class="table-shell compact">
-                                                                        <table>
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th>Reason</th>
-                                                                                    <th>Head Fact</th>
-                                                                                    <th>Component Facts</th>
-                                                                                </tr>
-                                                                            </thead>
-                                                                            <tbody>
-                                                                                {% for item in result.evidence.skipped_comparisons %}
+                                                                    <h5>
+                                                                        {% if result.type == "concept_arithmetic_relationship" %}
+                                                                            Skipped concept arithmetic candidates
+                                                                        {% elif result.type == "movement_reconciliation" %}
+                                                                            Skipped movement reconciliation candidates
+                                                                        {% elif result.type == "dimensional_aggregation_relationship" %}
+                                                                            Skipped dimensional aggregation candidates
+                                                                        {% else %}
+                                                                            Skipped roll-up candidates
+                                                                        {% endif %}
+                                                                    </h5>
+                                                                    {% if result.outcome_status == 'not_applied' and not result.evidence.comparison_details %}
+                                                                        <div class="table-shell compact">
+                                                                            <table>
+                                                                                <thead>
                                                                                     <tr>
-                                                                                        <td>{{ item.reason|replace("_", " ") }}</td>
-                                                                                        <td>{{ item.head_fact_id or "-" }}</td>
-                                                                                        <td>{{ item.component_fact_count or "-" }}</td>
+                                                                                        <th>Reason</th>
+                                                                                        <th>Count</th>
                                                                                     </tr>
-                                                                                {% endfor %}
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    {% for item in result.evidence.skipped_reason_counts %}
+                                                                                        <tr>
+                                                                                            <td>{{ item.reason|replace("_", " ") }}</td>
+                                                                                            <td>{{ item.count }}</td>
+                                                                                        </tr>
+                                                                                    {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    {% else %}
+                                                                        <div class="table-shell compact">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Reason</th>
+                                                                                        <th>Head</th>
+                                                                                        <th>Details</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    {% for item in result.evidence.skipped_comparisons %}
+                                                                                        <tr>
+                                                                                            <td>{{ item.reason|replace("_", " ") }}</td>
+                                                                                            <td>{{ item.head_fact_id or item.head_concept or item.concept_qname or "-" }}</td>
+                                                                                            <td>
+                                                                                                {{ item.component_fact_count or "-" }}
+                                                                                                {% if item.observed_component_members %}
+                                                                                                    | observed {{ item.observed_component_members|join(", ") }}
+                                                                                                {% endif %}
+                                                                                                {% if item.missing_component_members %}
+                                                                                                    | missing {{ item.missing_component_members|join(", ") }}
+                                                                                                {% endif %}
+                                                                                                {% if item.duplicate_component_members %}
+                                                                                                    | duplicates {{ item.duplicate_component_members|join(", ") }}
+                                                                                                {% endif %}
+                                                                                                {% if item.missing_component_concepts %}
+                                                                                                    | missing {{ item.missing_component_concepts|join(", ") }}
+                                                                                                {% endif %}
+                                                                                                {% if item.duplicate_component_concepts %}
+                                                                                                    | duplicates {{ item.duplicate_component_concepts|join(", ") }}
+                                                                                                {% endif %}
+                                                                                                {% if item.non_numeric_component_concepts %}
+                                                                                                    | non-numeric {{ item.non_numeric_component_concepts|join(", ") }}
+                                                                                                {% endif %}
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    {% endif %}
                                                                 </div>
                                                             {% endif %}
                                                             <details class="raw-evidence">

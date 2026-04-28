@@ -28,6 +28,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--split-output-dir", default="backend/validation_rules/rule_packs/2026/auto/frs102_candidates")
     parser.add_argument("--topics", default="backend/validation_rules/generated/2026/frs102/topics.json")
     parser.add_argument("--concepts", default="backend/validation_rules/generated/2026/frs102/concepts.json")
+    parser.add_argument("--roles", default="backend/validation_rules/generated/2026/frs102/roles.json")
     parser.add_argument("--output", default=None)
     parser.add_argument("--results-dir", default=None)
     parser.add_argument("--include-all-topics", action="store_true")
@@ -41,6 +42,7 @@ def main() -> int:
     files = _iter_input_files(input_dir, recursive=args.recursive)
     topics_payload = _load_json(Path(args.topics))
     concepts_payload = _load_json(Path(args.concepts))
+    roles_payload = _load_json(Path(args.roles))
 
     results_dir = Path(args.results_dir) if args.results_dir else None
     if results_dir:
@@ -54,6 +56,7 @@ def main() -> int:
             split_output_dir=Path(args.split_output_dir),
             topics_payload=topics_payload,
             concepts_payload=concepts_payload,
+            roles_payload=roles_payload,
             include_all_topics=args.include_all_topics,
         )
         failing_rules = [result for result in payload["results"] if result["status"] == "fail"]
