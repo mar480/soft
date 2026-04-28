@@ -1,0 +1,131 @@
+{
+  "taxonomy_year": 2026,
+  "entrypoint": "FRS-102",
+  "entity": "synthetic:ExampleEntity",
+  "generated_for_rule_testing_only": true,
+  "valid_ixbrl_not_required": true,
+  "example": {
+    "example_kind": "statement",
+    "statement_role": "balance_sheet",
+    "statement_definition": "222 - Balance Sheet (FRS 102)",
+    "contexts": [
+      {
+        "context_id": "c001",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {}
+      }
+    ],
+    "facts": [
+      {
+        "fact_id": "f001",
+        "concept_qname": "core:FixedAssets",
+        "label": "Fixed assets",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 150000
+      },
+      {
+        "fact_id": "f002",
+        "concept_qname": "core:CurrentAssets",
+        "label": "Current assets",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 90000
+      },
+      {
+        "fact_id": "f003",
+        "concept_qname": "core:Creditors",
+        "label": "Creditors",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 40000
+      },
+      {
+        "fact_id": "f004",
+        "concept_qname": "core:NetCurrentAssetsLiabilities",
+        "label": "Net current assets (liabilities)",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 50000
+      },
+      {
+        "fact_id": "f005",
+        "concept_qname": "core:TotalAssetsLessCurrentLiabilities",
+        "label": "Total assets less current liabilities",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 200000
+      },
+      {
+        "fact_id": "f006",
+        "concept_qname": "core:NetAssetsLiabilities",
+        "label": "Net assets (liabilities)",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 180000
+      },
+      {
+        "fact_id": "f007",
+        "concept_qname": "core:Equity",
+        "label": "Equity",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 180000
+      }
+    ],
+    "tables": [
+      {
+        "table_id": "balance_sheet",
+        "kind": "statement",
+        "rows": [
+          {
+            "concept_qname": "core:FixedAssets",
+            "label": "Fixed assets",
+            "value": 150000
+          },
+          {
+            "concept_qname": "core:CurrentAssets",
+            "label": "Current assets",
+            "value": 90000
+          },
+          {
+            "concept_qname": "core:Creditors",
+            "label": "Creditors",
+            "value": 40000
+          },
+          {
+            "concept_qname": "core:NetCurrentAssetsLiabilities",
+            "label": "Net current assets (liabilities)",
+            "value": 50000
+          },
+          {
+            "concept_qname": "core:TotalAssetsLessCurrentLiabilities",
+            "label": "Total assets less current liabilities",
+            "value": 200000
+          },
+          {
+            "concept_qname": "core:NetAssetsLiabilities",
+            "label": "Net assets (liabilities)",
+            "value": 180000
+          },
+          {
+            "concept_qname": "core:Equity",
+            "label": "Equity",
+            "value": 180000
+          }
+        ]
+      }
+    ]
+  }
+}

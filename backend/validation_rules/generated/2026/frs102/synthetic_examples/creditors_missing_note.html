@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ix="http://www.xbrl.org/2013/inlineXBRL" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+  <head>
+    <title>222 - Balance Sheet (FRS 102)</title>
+  </head>
+  <body>
+    <h1>222 - Balance Sheet (FRS 102)</h1>
+    <ix:header>
+      <ix:hidden>
+      <xbrli:context id="c001">
+        <xbrli:entity>
+          <xbrli:identifier scheme="https://example.test/entity">synthetic:ExampleEntity</xbrli:identifier>
+        </xbrli:entity>
+        <xbrli:period>
+          <xbrli:instant>2026-12-31</xbrli:instant>
+        </xbrli:period>
+      </xbrli:context>
+        <xbrli:unit id="uGBP">
+          <xbrli:measure>iso4217:GBP</xbrli:measure>
+        </xbrli:unit>
+      </ix:hidden>
+    </ix:header>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Row</th>
+          <th>Tagged value</th>
+          <th>Dimensions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Current assets</td>
+          <td><ix:nonFraction id="f001" name="core:CurrentAssets" contextRef="c001" unitRef="uGBP" decimals="0">90000</ix:nonFraction></td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>Creditors</td>
+          <td><ix:nonFraction id="f002" name="core:Creditors" contextRef="c001" unitRef="uGBP" decimals="0">40000</ix:nonFraction></td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>Net assets (liabilities)</td>
+          <td><ix:nonFraction id="f003" name="core:NetAssetsLiabilities" contextRef="c001" unitRef="uGBP" decimals="0">50000</ix:nonFraction></td>
+          <td>none</td>
+        </tr>
+        <tr>
+          <td>Equity</td>
+          <td><ix:nonFraction id="f004" name="core:Equity" contextRef="c001" unitRef="uGBP" decimals="0">50000</ix:nonFraction></td>
+          <td>none</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

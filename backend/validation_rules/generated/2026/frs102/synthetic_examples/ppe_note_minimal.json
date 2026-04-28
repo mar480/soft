@@ -1,0 +1,137 @@
+{
+  "taxonomy_year": 2026,
+  "entrypoint": "FRS-102",
+  "entity": "synthetic:ExampleEntity",
+  "generated_for_rule_testing_only": true,
+  "valid_ixbrl_not_required": true,
+  "example": {
+    "example_kind": "topic_note",
+    "topic_id": "property_plant_equipment",
+    "topic_label": "Property, plant and equipment",
+    "concept_qname": "core:PropertyPlantEquipment",
+    "concept_label": "Property, plant and equipment",
+    "selected_dimensions": [
+      {
+        "dimension_qname": "core:PropertyPlantEquipmentClassesDimension",
+        "dimension_label": "Property, plant and equipment classes [Dimension]",
+        "default_member": "core:TotalPropertyPlantEquipmentDefault"
+      },
+      {
+        "dimension_qname": "core:PPEOwnershipDimension",
+        "dimension_label": "PPE ownership [Dimension]",
+        "default_member": "core:TotalOwnedLeasedPPEAssetsDefault"
+      }
+    ],
+    "contexts": [
+      {
+        "context_id": "c001",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {}
+      },
+      {
+        "context_id": "c002",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {
+          "core:PropertyPlantEquipmentClassesDimension": "core:Land",
+          "core:PPEOwnershipDimension": "core:OwnedOrFreeholdAssets"
+        }
+      },
+      {
+        "context_id": "c003",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {
+          "core:PropertyPlantEquipmentClassesDimension": "core:Buildings",
+          "core:PPEOwnershipDimension": "core:OwnedOrFreeholdAssets"
+        }
+      }
+    ],
+    "facts": [
+      {
+        "fact_id": "f001",
+        "concept_qname": "core:PropertyPlantEquipment",
+        "label": "Property, plant and equipment",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 100000,
+        "anchor_primary_item_qnames": [
+          "core:PPE-RangePrimaryItems",
+          "core:PPE-SegmentsPrimaryItems",
+          "core:PPEPrimaryItems"
+        ]
+      },
+      {
+        "fact_id": "f002",
+        "concept_qname": "core:PropertyPlantEquipment",
+        "label": "Property, plant and equipment",
+        "context_id": "c002",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 60000,
+        "anchor_primary_item_qnames": [
+          "core:PPE-RangePrimaryItems",
+          "core:PPE-SegmentsPrimaryItems",
+          "core:PPEPrimaryItems"
+        ]
+      },
+      {
+        "fact_id": "f003",
+        "concept_qname": "core:PropertyPlantEquipment",
+        "label": "Property, plant and equipment",
+        "context_id": "c003",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 45000,
+        "anchor_primary_item_qnames": [
+          "core:PPE-RangePrimaryItems",
+          "core:PPE-SegmentsPrimaryItems",
+          "core:PPEPrimaryItems"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "table_id": "property_plant_equipment",
+        "kind": "topic_note",
+        "rows": [
+          {
+            "row_label": "Total",
+            "concept_qname": "core:PropertyPlantEquipment",
+            "value": 100000,
+            "dimensions": {}
+          },
+          {
+            "row_label": "Land",
+            "concept_qname": "core:PropertyPlantEquipment",
+            "value": 60000,
+            "dimensions": {
+              "core:PropertyPlantEquipmentClassesDimension": "core:Land",
+              "core:PPEOwnershipDimension": "core:OwnedOrFreeholdAssets"
+            }
+          },
+          {
+            "row_label": "Buildings",
+            "concept_qname": "core:PropertyPlantEquipment",
+            "value": 45000,
+            "dimensions": {
+              "core:PropertyPlantEquipmentClassesDimension": "core:Buildings",
+              "core:PPEOwnershipDimension": "core:OwnedOrFreeholdAssets"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ix="http://www.xbrl.org/2013/inlineXBRL" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi">
+  <head>
+    <title>Property, plant and equipment</title>
+  </head>
+  <body>
+    <h1>Property, plant and equipment</h1>
+    <ix:header>
+      <ix:hidden>
+      <xbrli:context id="c001">
+        <xbrli:entity>
+          <xbrli:identifier scheme="https://example.test/entity">synthetic:ExampleEntity</xbrli:identifier>
+        <xbrli:segment>
+          <xbrldi:explicitMember dimension="core:PPEOwnershipDimension">core:TotalOwnedLeasedPPEAssets</xbrldi:explicitMember>
+          <xbrldi:explicitMember dimension="core:PropertyPlantEquipmentClassesDimension">core:Land</xbrldi:explicitMember>
+        </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+          <xbrli:instant>2026-12-31</xbrli:instant>
+        </xbrli:period>
+      </xbrli:context>
+      <xbrli:context id="c002">
+        <xbrli:entity>
+          <xbrli:identifier scheme="https://example.test/entity">synthetic:ExampleEntity</xbrli:identifier>
+        <xbrli:segment>
+          <xbrldi:explicitMember dimension="core:PPEOwnershipDimension">core:OwnedOrFreeholdAssets</xbrldi:explicitMember>
+          <xbrldi:explicitMember dimension="core:PropertyPlantEquipmentClassesDimension">core:Land</xbrldi:explicitMember>
+        </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+          <xbrli:instant>2026-12-31</xbrli:instant>
+        </xbrli:period>
+      </xbrli:context>
+      <xbrli:context id="c003">
+        <xbrli:entity>
+          <xbrli:identifier scheme="https://example.test/entity">synthetic:ExampleEntity</xbrli:identifier>
+        <xbrli:segment>
+          <xbrldi:explicitMember dimension="core:PPEOwnershipDimension">core:ShortLeaseholdAssets</xbrldi:explicitMember>
+          <xbrldi:explicitMember dimension="core:PropertyPlantEquipmentClassesDimension">core:Land</xbrldi:explicitMember>
+        </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+          <xbrli:instant>2026-12-31</xbrli:instant>
+        </xbrli:period>
+      </xbrli:context>
+        <xbrli:unit id="uGBP">
+          <xbrli:measure>iso4217:GBP</xbrli:measure>
+        </xbrli:unit>
+      </ix:hidden>
+    </ix:header>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Row</th>
+          <th>Tagged value</th>
+          <th>Dimensions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total</td>
+          <td><ix:nonFraction id="f001" name="core:PropertyPlantEquipment" contextRef="c001" unitRef="uGBP" decimals="0" data-topic-id="property_plant_equipment" data-anchor-primary-items="core:PPE-RangePrimaryItems|core:PPE-SegmentsPrimaryItems|core:PPEPrimaryItems">120000</ix:nonFraction></td>
+          <td>core:PPEOwnershipDimension=core:TotalOwnedLeasedPPEAssets, core:PropertyPlantEquipmentClassesDimension=core:Land</td>
+        </tr>
+        <tr>
+          <td>Owned or freehold assets</td>
+          <td><ix:nonFraction id="f002" name="core:PropertyPlantEquipment" contextRef="c002" unitRef="uGBP" decimals="0" data-topic-id="property_plant_equipment" data-anchor-primary-items="core:PPE-RangePrimaryItems|core:PPE-SegmentsPrimaryItems|core:PPEPrimaryItems">60000</ix:nonFraction></td>
+          <td>core:PPEOwnershipDimension=core:OwnedOrFreeholdAssets, core:PropertyPlantEquipmentClassesDimension=core:Land</td>
+        </tr>
+        <tr>
+          <td>Short leasehold assets</td>
+          <td><ix:nonFraction id="f003" name="core:PropertyPlantEquipment" contextRef="c003" unitRef="uGBP" decimals="0" data-topic-id="property_plant_equipment" data-anchor-primary-items="core:PPE-RangePrimaryItems|core:PPE-SegmentsPrimaryItems|core:PPEPrimaryItems">45000</ix:nonFraction></td>
+          <td>core:PPEOwnershipDimension=core:ShortLeaseholdAssets, core:PropertyPlantEquipmentClassesDimension=core:Land</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

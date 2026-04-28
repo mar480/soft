@@ -1,0 +1,152 @@
+{
+  "taxonomy_year": 2026,
+  "entrypoint": "FRS-102",
+  "entity": "synthetic:ExampleEntity",
+  "generated_for_rule_testing_only": true,
+  "valid_ixbrl_not_required": true,
+  "example": {
+    "example_kind": "topic_note",
+    "topic_id": "creditors",
+    "topic_label": "Creditors",
+    "concept_qname": "core:Creditors",
+    "concept_label": "Creditors",
+    "selected_dimensions": [
+      {
+        "dimension_qname": "core:FinancialInstrumentsClassesCategoriesDimension",
+        "dimension_label": "Financial instruments classes and categories [Dimension]",
+        "default_member": "core:TotalFinancialInstrumentsDefault"
+      },
+      {
+        "dimension_qname": "core:FinanceLeaseContractTypeDimension",
+        "dimension_label": "Finance lease contract type [Dimension]",
+        "default_member": "core:AllContractTypesDefault"
+      }
+    ],
+    "contexts": [
+      {
+        "context_id": "c001",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {}
+      },
+      {
+        "context_id": "c002",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {
+          "core:FinancialInstrumentsClassesCategoriesDimension": "core:FinancialLiabilitiesAmortisedCost",
+          "core:FinanceLeaseContractTypeDimension": "core:FinanceLeases"
+        }
+      },
+      {
+        "context_id": "c003",
+        "entity": "synthetic:ExampleEntity",
+        "period": {
+          "type": "instant",
+          "instant": "2026-12-31"
+        },
+        "dimensions": {
+          "core:FinancialInstrumentsClassesCategoriesDimension": "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss",
+          "core:FinanceLeaseContractTypeDimension": "core:FinanceLeases"
+        }
+      }
+    ],
+    "facts": [
+      {
+        "fact_id": "f001",
+        "concept_qname": "core:Creditors",
+        "label": "Creditors",
+        "context_id": "c001",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 100000,
+        "anchor_primary_item_qnames": [
+          "core:Creditors-AssociatesPrimaryItems",
+          "core:Creditors-FinanceLeasesPrimaryItems",
+          "core:Creditors-JointVenturesPrimaryItems",
+          "core:Creditors-OtherPartiesPrimaryItems",
+          "core:Creditors-ParentsPrimaryItems",
+          "core:Creditors-SegmentsPrimaryItems",
+          "core:Creditors-SubsidiariesPrimaryItems",
+          "core:CreditorsPrimaryItems"
+        ]
+      },
+      {
+        "fact_id": "f002",
+        "concept_qname": "core:Creditors",
+        "label": "Creditors",
+        "context_id": "c002",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 60000,
+        "anchor_primary_item_qnames": [
+          "core:Creditors-AssociatesPrimaryItems",
+          "core:Creditors-FinanceLeasesPrimaryItems",
+          "core:Creditors-JointVenturesPrimaryItems",
+          "core:Creditors-OtherPartiesPrimaryItems",
+          "core:Creditors-ParentsPrimaryItems",
+          "core:Creditors-SegmentsPrimaryItems",
+          "core:Creditors-SubsidiariesPrimaryItems",
+          "core:CreditorsPrimaryItems"
+        ]
+      },
+      {
+        "fact_id": "f003",
+        "concept_qname": "core:Creditors",
+        "label": "Creditors",
+        "context_id": "c003",
+        "unit": "iso4217:GBP",
+        "decimals": 0,
+        "value": 45000,
+        "anchor_primary_item_qnames": [
+          "core:Creditors-AssociatesPrimaryItems",
+          "core:Creditors-FinanceLeasesPrimaryItems",
+          "core:Creditors-JointVenturesPrimaryItems",
+          "core:Creditors-OtherPartiesPrimaryItems",
+          "core:Creditors-ParentsPrimaryItems",
+          "core:Creditors-SegmentsPrimaryItems",
+          "core:Creditors-SubsidiariesPrimaryItems",
+          "core:CreditorsPrimaryItems"
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "table_id": "creditors",
+        "kind": "topic_note",
+        "rows": [
+          {
+            "row_label": "Total",
+            "concept_qname": "core:Creditors",
+            "value": 100000,
+            "dimensions": {}
+          },
+          {
+            "row_label": "Financial liabilities at amortised cost",
+            "concept_qname": "core:Creditors",
+            "value": 60000,
+            "dimensions": {
+              "core:FinancialInstrumentsClassesCategoriesDimension": "core:FinancialLiabilitiesAmortisedCost",
+              "core:FinanceLeaseContractTypeDimension": "core:FinanceLeases"
+            }
+          },
+          {
+            "row_label": "Financial instruments mandatorily measured at fair value through profit or loss",
+            "concept_qname": "core:Creditors",
+            "value": 45000,
+            "dimensions": {
+              "core:FinancialInstrumentsClassesCategoriesDimension": "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss",
+              "core:FinanceLeaseContractTypeDimension": "core:FinanceLeases"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
