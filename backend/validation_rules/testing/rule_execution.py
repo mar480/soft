@@ -6,6 +6,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from itertools import combinations
 from pathlib import Path
+import re
 from typing import Any
 
 from .report_loader_core import load_report_model
@@ -24,6 +25,7 @@ GENERIC_TOPIC_DIMENSIONS = {
     "bus:OriginalRevisedDataDimension",
     "common:X-AnalysisDimension",
     "core:ContinuingDiscontinuedOperationsDimension",
+    "core:FinancialInstrumentCurrentNon-currentDimension",
     "core:GeographicSegmentsDimension",
     "core:MajorCustomersDimension",
     "core:OperatingSegmentsDimension",
@@ -33,6 +35,16 @@ GENERIC_TOPIC_DIMENSIONS = {
 }
 
 MAX_ARITHMETIC_COMPONENT_CONCEPTS = 8
+
+CONCEPT_ARITHMETIC_COMPONENT_ALIASES = {
+    "core:CashBankOnHand": {"core:CashCashEquivalents"},
+    "core:Creditors": {"core:TradeOtherPayables"},
+    "core:Debtors": {"core:TradeOtherReceivables"},
+    "core:FixedAssets": {"core:Non-currentAssets"},
+    "core:IntangibleAssets": {"core:IntangibleAssetsIncludingRight-of-useAssets"},
+    "core:OtherDebtorsBalanceSheetSubtotal": {"core:TradeOtherReceivables"},
+    "core:PropertyPlantEquipment": {"core:PropertyPlantEquipmentIncludingRight-of-useAssets"},
+}
 
 
 def _load_json(path: Path) -> dict:
@@ -63,6 +75,22 @@ def _presentation_parent_child_graph(roles_payload: dict[str, Any] | None) -> di
         if not parent or not child or parent == child:
             continue
         graph[parent].add(child)
+    return graph
+
+
+def _presentation_role_graph(roles_payload: dict[str, Any] | None) -> dict[str, dict[str, set[str]]]:
+    if not roles_payload:
+        return {}
+    graph: dict[str, dict[str, set[str]]] = defaultdict(lambda: defaultdict(set))
+    for relationship in roles_payload.get("relationships", []):
+        if relationship.get("arcrole_name") != "parent_child":
+            continue
+        role_uri = relationship.get("role_uri")
+        parent = relationship.get("from_qname")
+        child = relationship.get("to_qname")
+        if not role_uri or not parent or not child or parent == child:
+            continue
+        graph[role_uri][parent].add(child)
     return graph
 
 
@@ -127,6 +155,14 @@ def _trigger_concepts(topic_rules: dict) -> set[str]:
     for rule in topic_rules["families"].get("1 Topic note presence", []):
         concepts.update(rule["trigger"]["statement_concepts_present"]["concepts"])
     return concepts
+
+
+def _topic_anchor_concepts(topic_rules: dict) -> set[str]:
+    anchors = set(_trigger_concepts(topic_rules))
+    for concept in _topic_primary_items(topic_rules):
+        if concept and "PrimaryItems" not in concept:
+            anchors.add(concept)
+    return anchors
 
 
 def _topic_primary_items(topic_rules: dict) -> set[str]:
@@ -207,10 +243,39 @@ def _topic_trigger_facts(report: ReportModel, topic_rules: dict) -> list[ReportF
     return [fact for fact in report.facts if fact.concept_qname in concepts]
 
 
-def _topic_is_relevant(report: ReportModel, topic_id: str, topic_rules: dict) -> bool:
+def _has_concept_arithmetic_topic_evidence(
+    report: ReportModel,
+    topic_rules: dict,
+    concept_metadata: dict[str, dict[str, Any]],
+    role_graph: dict[str, dict[str, set[str]]],
+) -> bool:
+    if not topic_rules["families"].get("5 Concept arithmetic relationships"):
+        return False
+    topic_pool = _topic_role_concept_pool(topic_rules, role_graph)
+    if not topic_pool:
+        return False
+    for fact in report.facts:
+        if not fact.concept_qname or fact.numeric_value() is None or fact.concept_qname not in topic_pool:
+            continue
+        if _candidate_component_concepts_for_head(fact.concept_qname, role_graph, concept_metadata):
+            return True
+        if _semantic_component_candidates_for_head(fact.concept_qname, concept_metadata):
+            return True
+    return False
+
+
+def _topic_is_relevant(
+    report: ReportModel,
+    topic_id: str,
+    topic_rules: dict,
+    concept_metadata: dict[str, dict[str, Any]],
+    role_graph: dict[str, dict[str, set[str]]],
+) -> bool:
     if _has_strong_topic_fact_evidence(report, topic_id, topic_rules):
         return True
     if _topic_trigger_facts(report, topic_rules):
+        return True
+    if _has_concept_arithmetic_topic_evidence(report, topic_rules, concept_metadata, role_graph):
         return True
     return False
 
@@ -478,6 +543,20 @@ def _duration_matches_instant_bridge(
     return duration_start_date == start_date or duration_start_date == start_date + timedelta(days=1)
 
 
+def _context_signature_excluding(
+    context: ReportContext,
+    excluded_dimensions: set[str],
+) -> tuple:
+    return (
+        context.entity,
+        context.period_type,
+        context.instant,
+        context.start_date,
+        context.end_date,
+        tuple(sorted((dimension, member) for dimension, member in context.dimensions.items() if dimension not in excluded_dimensions)),
+    )
+
+
 def _choose_signed_subset(
     candidates: list[dict[str, Any]],
     target: float,
@@ -503,6 +582,350 @@ def _choose_signed_subset(
             if not best_match or abs(round(total - target, 6)) < abs(round(sum(item["signed_value"] for item in best_match) - target, 6)):
                 best_match = list(subset)
     return best_match, False
+
+
+def _descendant_map_for_role(role_graph: dict[str, dict[str, set[str]]], role_uri: str, root: str) -> dict[str, set[str]]:
+    graph = role_graph.get(role_uri, {})
+    descendants: dict[str, set[str]] = {}
+
+    def visit(node: str) -> set[str]:
+        children = graph.get(node, set())
+        all_descendants: set[str] = set()
+        for child in children:
+            all_descendants.add(child)
+            all_descendants.update(visit(child))
+        descendants[node] = all_descendants
+        return all_descendants
+
+    visit(root)
+    return descendants
+
+
+def _candidate_component_concepts_for_head(
+    head_concept: str,
+    role_graph: dict[str, dict[str, set[str]]],
+    concept_metadata: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    candidates: list[dict[str, Any]] = []
+    seen_keys: set[tuple[str, tuple[str, ...]]] = set()
+    for role_uri, graph in role_graph.items():
+        if head_concept not in graph:
+            continue
+        descendants = _descendant_map_for_role(role_graph, role_uri, head_concept)
+        candidate_concepts = sorted(
+            concept
+            for concept in descendants.get(head_concept, set())
+            if not concept_metadata.get(concept, {}).get("abstract")
+        )
+        if not candidate_concepts:
+            continue
+        key = (role_uri, tuple(candidate_concepts))
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        candidates.append(
+            {
+                "role_uri": role_uri,
+                "component_concepts": candidate_concepts,
+                "descendant_map": {concept: sorted(descendants.get(concept, set())) for concept in candidate_concepts},
+            }
+        )
+    return candidates
+
+
+def _semantic_component_candidates_for_head(
+    head_concept: str,
+    concept_metadata: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    explicit_candidates = {
+        "core:Non-currentAssets": [
+            {
+                "role_uri": "semantic_noncurrent_assets_full_ifrs",
+                "components": [
+                    {"concept_qname": "core:PropertyPlantEquipmentIncludingRight-of-useAssets", "expected_sign": 1},
+                    {"concept_qname": "core:IntangibleAssetsIncludingRight-of-useAssets", "expected_sign": 1},
+                    {"concept_qname": "core:TradeOtherReceivables", "expected_sign": 1},
+                ],
+            }
+        ],
+        "core:NetAssetsLiabilities": [
+            {
+                "role_uri": "semantic_net_assets_liabilities_bridge",
+                "components": [
+                    {"concept_qname": "core:TotalAssets", "expected_sign": 1},
+                    {"concept_qname": "core:CurrentLiabilities", "expected_sign": -1},
+                    {"concept_qname": "core:Non-currentLiabilities", "expected_sign": -1},
+                ],
+            }
+        ],
+    }
+    if head_concept in explicit_candidates:
+        candidates: list[dict[str, Any]] = []
+        for candidate in explicit_candidates[head_concept]:
+            present = [
+                component
+                for component in candidate["components"]
+                if concept_metadata.get(component["concept_qname"], {}).get("is_numeric")
+                and not concept_metadata.get(component["concept_qname"], {}).get("abstract")
+            ]
+            if len(present) >= 2:
+                candidates.append(
+                    {
+                        "role_uri": candidate["role_uri"],
+                        "component_concepts": [component["concept_qname"] for component in present],
+                        "component_signs": {
+                            component["concept_qname"]: component["expected_sign"] for component in present
+                        },
+                        "descendant_map": {component["concept_qname"]: [] for component in present},
+                    }
+                )
+        if candidates:
+            return candidates
+
+    local_name = head_concept.split(":", 1)[-1]
+    prefix = head_concept.split(":", 1)[0]
+    non_current_prefixes = [f"{prefix}:Non-current{local_name}", f"{prefix}:NonCurrent{local_name}"]
+    current_name = f"{prefix}:Current{local_name}"
+    candidates = [current_name, *non_current_prefixes]
+    present = [
+        concept
+        for concept in candidates
+        if concept_metadata.get(concept, {}).get("is_numeric") and not concept_metadata.get(concept, {}).get("abstract")
+    ]
+    if len(present) >= 2:
+        return [
+            {
+                "role_uri": "semantic_current_noncurrent_pair",
+                "component_concepts": sorted(present),
+                "descendant_map": {concept: [] for concept in present},
+            }
+        ]
+    return []
+
+
+def _component_concept_aliases(component_concept: str) -> set[str]:
+    return {component_concept, *CONCEPT_ARITHMETIC_COMPONENT_ALIASES.get(component_concept, set())}
+
+
+def _local_name_tokens(qname: str | None) -> set[str]:
+    if not qname:
+        return set()
+    local = qname.split(":", 1)[-1]
+    words = re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?![a-z])|\d+", local)
+    return {word.lower() for word in words if len(word) >= 4}
+
+
+def _further_item_component_total_qname(head_concept: str) -> str:
+    prefix, local = head_concept.split(":", 1)
+    return f"{prefix}:FurtherItem{local}ComponentTotal{local}"
+
+
+def _further_item_component_candidates_for_head(
+    head_concept: str,
+    concept_metadata: dict[str, dict[str, Any]],
+    observed_same_context_concepts: set[str],
+    topic_concept_pool: set[str],
+    head_balance: str | None,
+) -> list[dict[str, Any]]:
+    further_item_qname = _further_item_component_total_qname(head_concept)
+    if further_item_qname not in concept_metadata and further_item_qname not in observed_same_context_concepts:
+        return []
+
+    head_tokens = _local_name_tokens(head_concept)
+    component_concepts: set[str] = set()
+    for concept in observed_same_context_concepts:
+        if concept == head_concept:
+            continue
+        concept_balance = concept_metadata.get(concept, {}).get("balance")
+        if concept in topic_concept_pool:
+            if head_balance and concept_balance and concept_balance != head_balance:
+                continue
+            component_concepts.add(concept)
+            continue
+        if (_local_name_tokens(concept) & head_tokens) and (not head_balance or not concept_balance or concept_balance == head_balance):
+            component_concepts.add(concept)
+    if further_item_qname in observed_same_context_concepts:
+        component_concepts.add(further_item_qname)
+    if len(component_concepts) < 2:
+        return []
+    return [
+        {
+            "role_uri": "semantic_further_item_component_total",
+            "component_concepts": sorted(component_concepts),
+            "descendant_map": {concept: [] for concept in component_concepts},
+        }
+    ]
+
+
+def _head_has_component_total_motif(
+    head_concept: str,
+    concept_metadata: dict[str, dict[str, Any]],
+    report_facts_by_concept: dict[str, list[tuple[ReportFact, ReportContext]]],
+) -> bool:
+    further_item_qname = _further_item_component_total_qname(head_concept)
+    return further_item_qname in concept_metadata or further_item_qname in report_facts_by_concept
+
+
+def _concept_semantically_overlaps_topic_pool(
+    concept_qname: str,
+    topic_concept_pool: set[str],
+) -> bool:
+    concept_tokens = _local_name_tokens(concept_qname)
+    if not concept_tokens:
+        return False
+    return any(_local_name_tokens(topic_concept) & concept_tokens for topic_concept in topic_concept_pool)
+
+
+def _topic_role_concept_pool(
+    topic_rules: dict,
+    role_graph: dict[str, dict[str, set[str]]],
+) -> set[str]:
+    pool: set[str] = set()
+    for anchor in _topic_anchor_concepts(topic_rules):
+        pool.add(anchor)
+        for role_uri, graph in role_graph.items():
+            if anchor not in graph:
+                continue
+            descendants = _descendant_map_for_role(role_graph, role_uri, anchor)
+            pool.update(descendants.get(anchor, set()))
+    if pool:
+        return pool
+
+    topic_tokens = _local_name_tokens(topic_rules.get("topic_label"))
+    topic_metadata = topic_rules.get("topic_metadata", {})
+    for cube_qname in topic_metadata.get("source_hypercubes", []):
+        topic_tokens.update(_local_name_tokens(cube_qname))
+    if not topic_tokens:
+        return pool
+
+    for role_uri, graph in role_graph.items():
+        role_tokens = {token.lower() for token in re.findall(r"[A-Z]?[a-z]+|[A-Z]+(?![a-z])|\d+", role_uri) if len(token) >= 4}
+        if not (role_tokens & topic_tokens):
+            continue
+        pool.update(graph.keys())
+        for children in graph.values():
+            pool.update(children)
+    return pool
+
+
+def _dedupe_concept_arithmetic_comparisons(comparisons: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: list[dict[str, Any]] = []
+    seen: set[tuple[Any, ...]] = set()
+    for comparison in comparisons:
+        component_facts = comparison.get("component_facts", [])
+        component_fact_ids = tuple(
+            sorted(
+                fact_id
+                for component in component_facts
+                for fact_id in component.get("fact_ids", [])
+            )
+        )
+        key = (
+            comparison.get("concept_qname"),
+            comparison.get("head_value"),
+            comparison.get("component_total"),
+            comparison.get("role_uri"),
+            component_fact_ids,
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(comparison)
+    return deduped
+
+
+def _prune_observed_component_concepts(
+    observed_components: list[dict[str, Any]],
+    descendant_map: dict[str, set[str]],
+) -> list[dict[str, Any]]:
+    by_concept = {item["concept_qname"]: item for item in observed_components}
+    removed: set[str] = set()
+
+    concepts = list(by_concept)
+    for concept in concepts:
+        for other in concepts:
+            if concept == other or concept in removed or other in removed:
+                continue
+            if concept in descendant_map.get(other, set()):
+                removed.add(concept)
+
+    fact_id_groups: dict[tuple[str, ...], list[dict[str, Any]]] = defaultdict(list)
+    for item in observed_components:
+        if item["concept_qname"] in removed:
+            continue
+        fact_id_groups[tuple(sorted(item.get("fact_ids", [])))].append(item)
+
+    for duplicates in fact_id_groups.values():
+        if len(duplicates) < 2:
+            continue
+        winner = min(duplicates, key=lambda item: (len(item["concept_qname"]), item["concept_qname"]))
+        for item in duplicates:
+            if item is not winner:
+                removed.add(item["concept_qname"])
+
+    return [item for item in observed_components if item["concept_qname"] not in removed]
+
+
+def _dedupe_equivalent_fact_matches(
+    matching_facts: list[tuple[ReportFact, ReportContext]],
+    allowed_variance_dimensions: set[str],
+) -> list[tuple[ReportFact, ReportContext]]:
+    deduped: list[tuple[ReportFact, ReportContext]] = []
+    seen: set[tuple[Any, ...]] = set()
+    for fact, context in matching_facts:
+        key = (
+            fact.concept_qname,
+            fact.unit,
+            round(fact.numeric_value() or 0.0, 6),
+            _context_signature_excluding(context, allowed_variance_dimensions),
+        )
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append((fact, context))
+    return deduped
+
+
+def _choose_signed_assignment(
+    components: list[dict[str, Any]],
+    head_value: float,
+    head_balance: str | None,
+) -> tuple[list[dict[str, Any]], bool]:
+    if not components:
+        return [], False
+    best_exact: list[dict[str, Any]] | None = None
+    best_exact_penalty: int | None = None
+    best_near: list[dict[str, Any]] | None = None
+    best_near_distance: float | None = None
+    component_count = len(components)
+    for mask in range(1 << component_count):
+        assigned: list[dict[str, Any]] = []
+        total = 0.0
+        penalty = 0
+        for index, component in enumerate(components):
+            sign = -1 if (mask & (1 << index)) else 1
+            contribution = round(sign * component["value"], 6)
+            expected_sign = component.get("expected_sign")
+            if expected_sign is None:
+                expected_sign = 1
+                component_balance = component.get("balance")
+                if head_balance and component_balance and component_balance != head_balance:
+                    expected_sign = -1
+            if sign != expected_sign:
+                penalty += 1
+            assigned.append({**component, "contribution_sign": sign, "contribution_value": contribution})
+            total += contribution
+        distance = abs(round(head_value - total, 6))
+        if distance <= 0.0001:
+            if best_exact is None or penalty < (best_exact_penalty or 10**9):
+                best_exact = assigned
+                best_exact_penalty = penalty
+        elif best_near is None or distance < (best_near_distance or 10**9):
+            best_near = assigned
+            best_near_distance = distance
+    if best_exact is not None:
+        return best_exact, True
+    return best_near or [], False
 
 
 def _matching_scope_exclusion_facts(
@@ -567,13 +990,6 @@ def _dimensional_aggregation_results(
             if fact.concept_qname and member in component_member_set:
                 eligible_concepts.add(fact.concept_qname)
 
-        if not eligible_concepts:
-            eligible_concepts = {
-                fact.concept_qname
-                for fact, context, _ in strong_entries
-                if fact.concept_qname and _head_mode_matches(context, dimension, head_member, head_modes)
-            }
-
         for fact in report.facts:
             context = _fact_context(report, fact)
             if context is None or fact.numeric_value() is None or fact.concept_qname not in eligible_concepts:
@@ -592,6 +1008,8 @@ def _dimensional_aggregation_results(
         skipped_comparisons: list[dict] = []
         for signature, payload in grouped.items():
             entries = payload["entries"]
+            if not any(member in component_member_set for _, _, member in entries):
+                continue
             head_facts = [
                 (fact, context, member)
                 for fact, context, member in entries
@@ -1055,6 +1473,274 @@ def _movement_reconciliation_results(
     return results
 
 
+def _concept_arithmetic_results(
+    report: ReportModel,
+    topic_id: str,
+    topic_rules: dict,
+    concept_balances: dict[str, str | None],
+    concept_metadata: dict[str, dict[str, Any]],
+    role_graph: dict[str, dict[str, set[str]]],
+) -> list[dict]:
+    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
+    topic_has_strong_evidence = bool(topic_facts)
+    results: list[dict] = []
+    topic_concept_pool = _topic_role_concept_pool(topic_rules, role_graph)
+    report_facts_by_concept: dict[str, list[tuple[ReportFact, ReportContext]]] = defaultdict(list)
+    candidate_head_facts: list[ReportFact] = []
+    candidate_head_ids: set[str] = set()
+    for fact in report.facts:
+        context = _fact_context(report, fact)
+        if context is None or fact.numeric_value() is None or not fact.concept_qname:
+            continue
+        report_facts_by_concept[fact.concept_qname].append((fact, context))
+    for fact in topic_facts:
+        if fact.fact_id not in candidate_head_ids and fact.numeric_value() is not None and fact.concept_qname:
+            candidate_head_facts.append(fact)
+            candidate_head_ids.add(fact.fact_id)
+    if topic_concept_pool:
+        for fact in report.facts:
+            if (
+                fact.fact_id not in candidate_head_ids
+                and fact.concept_qname in topic_concept_pool
+                and fact.numeric_value() is not None
+            ):
+                candidate_head_facts.append(fact)
+                candidate_head_ids.add(fact.fact_id)
+        if not topic_has_strong_evidence:
+            for fact in report.facts:
+                if (
+                    fact.fact_id in candidate_head_ids
+                    or not fact.concept_qname
+                    or fact.numeric_value() is None
+                    or not _semantic_component_candidates_for_head(fact.concept_qname, concept_metadata)
+                    or not _concept_semantically_overlaps_topic_pool(fact.concept_qname, topic_concept_pool)
+                ):
+                    continue
+                candidate_head_facts.append(fact)
+                candidate_head_ids.add(fact.fact_id)
+        if topic_has_strong_evidence:
+            for fact in report.facts:
+                if (
+                    fact.fact_id in candidate_head_ids
+                    or not fact.concept_qname
+                    or fact.numeric_value() is None
+                    or not _head_has_component_total_motif(fact.concept_qname, concept_metadata, report_facts_by_concept)
+                ):
+                    continue
+                context = _fact_context(report, fact)
+                if context is None:
+                    continue
+                signature = _context_signature_excluding(context, {"common:X-AnalysisDimension"})
+                head_tokens = _local_name_tokens(fact.concept_qname)
+                supporting_semantic_overlap = False
+                if not _concept_semantically_overlaps_topic_pool(fact.concept_qname, topic_concept_pool):
+                    continue
+                for concept, entries in report_facts_by_concept.items():
+                    if concept not in topic_concept_pool:
+                        continue
+                    if any(_context_signature_excluding(entry_context, {"common:X-AnalysisDimension"}) == signature for _, entry_context in entries):
+                        if _local_name_tokens(concept) & head_tokens:
+                            supporting_semantic_overlap = True
+                            break
+                if supporting_semantic_overlap:
+                    candidate_head_facts.append(fact)
+                    candidate_head_ids.add(fact.fact_id)
+
+    for rule in topic_rules["families"].get("5 Concept arithmetic relationships", []):
+        allowed_variance_dimensions = set(rule.get("allowed_component_dimension_variance", []))
+        min_components = rule.get("candidate_requirements", {}).get("minimum_component_concepts", 1)
+        max_components = rule.get("candidate_requirements", {}).get("maximum_component_concepts", MAX_ARITHMETIC_COMPONENT_CONCEPTS)
+        comparisons: list[dict] = []
+        mismatches: list[dict] = []
+        skipped_comparisons: list[dict] = []
+
+        for head_fact in candidate_head_facts:
+            head_context = _fact_context(report, head_fact)
+            head_value = head_fact.numeric_value()
+            if head_context is None or head_value is None or not head_fact.concept_qname:
+                continue
+
+            head_signature = _context_signature_excluding(head_context, allowed_variance_dimensions)
+            observed_same_context_concepts = {
+                fact.concept_qname
+                for fact in report.facts
+                if fact.concept_qname
+                and fact.numeric_value() is not None
+                and fact.unit == head_fact.unit
+                and (
+                    (context := _fact_context(report, fact)) is not None
+                    and _context_signature_excluding(context, allowed_variance_dimensions) == head_signature
+                )
+            }
+            candidate_groups = _candidate_component_concepts_for_head(head_fact.concept_qname, role_graph, concept_metadata)
+            candidate_groups.extend(_semantic_component_candidates_for_head(head_fact.concept_qname, concept_metadata))
+            if topic_has_strong_evidence:
+                candidate_groups.extend(
+                    _further_item_component_candidates_for_head(
+                        head_fact.concept_qname,
+                        concept_metadata,
+                        observed_same_context_concepts,
+                        topic_concept_pool,
+                        concept_balances.get(head_fact.concept_qname),
+                    )
+                )
+            if not candidate_groups:
+                continue
+
+            best_exact: dict[str, Any] | None = None
+            best_near: dict[str, Any] | None = None
+
+            for group in candidate_groups:
+                observed_components: list[dict[str, Any]] = []
+                for component_concept in group["component_concepts"]:
+                    matching_facts: list[tuple[ReportFact, ReportContext]] = []
+                    for candidate_concept in _component_concept_aliases(component_concept):
+                        for fact, context in report_facts_by_concept.get(candidate_concept, []):
+                            if fact.unit != head_fact.unit:
+                                continue
+                            if _context_signature_excluding(context, allowed_variance_dimensions) != head_signature:
+                                continue
+                            matching_facts.append((fact, context))
+                    matching_facts = _dedupe_equivalent_fact_matches(matching_facts, allowed_variance_dimensions)
+                    if not matching_facts:
+                        continue
+                    total_value = round(sum(fact.numeric_value() or 0.0 for fact, _ in matching_facts), 6)
+                    observed_components.append(
+                        {
+                            "concept_qname": component_concept,
+                            "fact_ids": [fact.fact_id for fact, _ in matching_facts],
+                            "value": total_value,
+                            "balance": concept_balances.get(component_concept),
+                            "expected_sign": group.get("component_signs", {}).get(component_concept),
+                        }
+                    )
+
+                if len(observed_components) < min_components or len(observed_components) > max_components:
+                    continue
+                if (
+                    topic_concept_pool
+                    and not group["role_uri"].startswith("semantic_")
+                    and not all(item["concept_qname"] in topic_concept_pool for item in observed_components)
+                ):
+                    continue
+
+                descendant_map = {key: set(value) for key, value in group.get("descendant_map", {}).items()}
+                observed_components = _prune_observed_component_concepts(observed_components, descendant_map)
+                if len(observed_components) < min_components or len(observed_components) > max_components:
+                    continue
+                if not topic_has_strong_evidence and len(observed_components) < 2:
+                    continue
+
+                observed_concepts = [item["concept_qname"] for item in observed_components]
+                overlapping_pairs: list[tuple[str, str]] = []
+                for concept in observed_concepts:
+                    descendants = descendant_map.get(concept, set())
+                    for other in observed_concepts:
+                        if concept != other and other in descendants:
+                            overlapping_pairs.append((concept, other))
+                if overlapping_pairs:
+                    skipped_comparisons.append(
+                        {
+                            "reason": "overlapping_component_concepts",
+                            "head_fact_id": head_fact.fact_id,
+                            "role_uri": group["role_uri"],
+                            "overlapping_component_pairs": overlapping_pairs,
+                        }
+                    )
+                    continue
+
+                assigned_components, exact_match = _choose_signed_assignment(
+                    observed_components,
+                    head_value,
+                    concept_balances.get(head_fact.concept_qname),
+                )
+                if not assigned_components:
+                    continue
+                component_total = round(sum(item["contribution_value"] for item in assigned_components), 6)
+                difference = round(head_value - component_total, 6)
+                sign_error_candidates: list[dict[str, Any]] = []
+                if not exact_match:
+                    for component in assigned_components:
+                        explained = round(2 * abs(component["value"]), 6)
+                        if abs(abs(difference) - explained) <= 0.0001:
+                            sign_error_candidates.append(
+                                {
+                                    "kind": "component_sign_inversion",
+                                    "fact_id": component["fact_ids"][0],
+                                    "concept_qname": component["concept_qname"],
+                                    "raw_value": component["value"],
+                                    "difference_explained": explained,
+                                }
+                            )
+                comparison = {
+                    "head_fact_id": head_fact.fact_id,
+                    "concept_qname": head_fact.concept_qname,
+                    "head_value": head_value,
+                    "head_balance": concept_balances.get(head_fact.concept_qname),
+                    "component_total": component_total,
+                    "difference": difference,
+                    "matches": exact_match,
+                    "match_status": "matches" if exact_match else "likely_sign_error" if sign_error_candidates else "mismatch",
+                    "component_facts": [
+                        {
+                            "fact_id": component["fact_ids"][0],
+                            "fact_ids": component["fact_ids"],
+                            "concept_qname": component["concept_qname"],
+                            "value": component["value"],
+                            "balance": component["balance"],
+                            "contribution_sign": component["contribution_sign"],
+                            "contribution_value": component["contribution_value"],
+                        }
+                        for component in assigned_components
+                    ],
+                    "role_uri": group["role_uri"],
+                    "sign_error_candidates": sign_error_candidates,
+                }
+                if exact_match:
+                    score = (len(assigned_components), -sum(1 for c in assigned_components if c["contribution_sign"] < 0))
+                    if best_exact is None or score > best_exact["score"]:
+                        best_exact = {"score": score, "comparison": comparison}
+                else:
+                    score = (abs(difference), -len(assigned_components))
+                    if best_near is None or score < best_near["score"]:
+                        best_near = {"score": score, "comparison": comparison}
+
+            if best_exact:
+                comparisons.append(best_exact["comparison"])
+            elif best_near:
+                comparisons.append(best_near["comparison"])
+                mismatches.append(best_near["comparison"])
+
+        comparisons = _dedupe_concept_arithmetic_comparisons(comparisons)
+        mismatches = _dedupe_concept_arithmetic_comparisons(mismatches)
+        likely_sign_errors = [comparison for comparison in mismatches if comparison["sign_error_candidates"]]
+        results.append(
+            {
+                "rule_id": rule["id"],
+                "type": rule["type"],
+                "status": "pass" if not mismatches else "fail",
+                "topic": topic_id,
+                "message": (
+                    "No comparable concept arithmetic sets were available for this candidate."
+                    if not comparisons
+                    else "Observed concept arithmetic candidates reconcile where head and component facts are present."
+                    if not mismatches
+                    else "Observed concept arithmetic candidates do not reconcile; at least one mismatch may be explained by sign inversion."
+                    if likely_sign_errors
+                    else "Observed concept arithmetic candidates do not reconcile."
+                ),
+                "evidence": {
+                    "comparisons": comparisons,
+                    "mismatches": mismatches,
+                    "skipped_comparisons": skipped_comparisons,
+                    "likely_sign_error_count": len(likely_sign_errors),
+                    "taxonomy_basis": rule.get("taxonomy_basis", {}),
+                },
+            }
+        )
+    return results
+
+
 def evaluate_rule_pack(
     *,
     report: ReportModel,
@@ -1069,6 +1755,8 @@ def evaluate_rule_pack(
     manifest, rules_by_topic = _load_rule_pack(split_output_dir)
     allowed_members_by_topic = _allowed_members_by_topic(topics_payload)
     concept_balances = _concept_balance_map(concepts_payload)
+    concept_metadata = _concept_metadata_map(concepts_payload)
+    role_graph = _presentation_role_graph(roles_payload)
     _augment_allowed_members_from_rules(allowed_members_by_topic, rules_by_topic)
     results: list[dict] = []
     evaluated_topics: list[dict] = []
@@ -1076,7 +1764,7 @@ def evaluate_rule_pack(
     for topic_id, topic_rules in rules_by_topic.items():
         if selected_topics is not None and topic_id not in selected_topics:
             continue
-        relevant = _topic_is_relevant(report, topic_id, topic_rules)
+        relevant = _topic_is_relevant(report, topic_id, topic_rules, concept_metadata, role_graph)
         if not include_all_topics and not relevant:
             if selected_topics is None:
                 continue
@@ -1099,6 +1787,17 @@ def evaluate_rule_pack(
             results.extend(_expected_dimension_usage_results(report, topic_id, topic_rules))
         if _family_enabled("4 Member validity", allowed_families):
             results.extend(_member_validity_results(report, topic_id, topic_rules, allowed_members_by_topic))
+        if _family_enabled("5 Concept arithmetic relationships", allowed_families):
+            results.extend(
+                _concept_arithmetic_results(
+                    report,
+                    topic_id,
+                    topic_rules,
+                    concept_balances,
+                    concept_metadata,
+                    role_graph,
+                )
+            )
         if _family_enabled("6 Dimensional aggregation relationships", allowed_families):
             results.extend(
                 _dimensional_aggregation_results(

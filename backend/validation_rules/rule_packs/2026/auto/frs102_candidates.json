@@ -112,6 +112,37 @@
           }
         },
         {
+          "id": "AUTO.ACCOUNTINGSTANDARDSAPPLIED.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "accounting_standards_applied",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ACCOUNTINGSTANDARDSAPPLIED.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "accounting_standards_applied",
@@ -270,6 +301,37 @@
           }
         },
         {
+          "id": "AUTO.ACCOUNTSSTATUS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "accounts_status",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ACCOUNTSSTATUS.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "accounts_status",
@@ -425,6 +487,37 @@
             "domain_roots": [
               "bus:CurrentlyStatedDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.ACCOUNTSTYPE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "accounts_type",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -668,6 +761,37 @@
             "domain_roots": [
               "direp:TypeGrowthRateHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "alternative_performance_measures_reconciliation",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -928,6 +1052,37 @@
           }
         },
         {
+          "id": "AUTO.APPLICABLELEGISLATION.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "applicable_legislation",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.APPLICABLELEGISLATION.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "applicable_legislation",
@@ -1163,6 +1318,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.ASSOCIATES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "associates",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -1596,6 +1782,37 @@
           }
         },
         {
+          "id": "AUTO.ASSOCIATESCOUNTRIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "associates_countries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ASSOCIATESCOUNTRIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "associates_countries",
@@ -1944,6 +2161,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.AUDITFEES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "audit_fees",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -2352,6 +2600,37 @@
             "domain_roots": [
               "countries:CountriesRegionsHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.AUDITFIRMCONTACTINFO.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "audit_firm_contact_info",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -2868,6 +3147,37 @@
           }
         },
         {
+          "id": "AUTO.BALANCESHEET.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "balance_sheet",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BALANCESHEET.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "balance_sheet",
@@ -3262,6 +3572,37 @@
           }
         },
         {
+          "id": "AUTO.BALANCESHEETCURRENTANDNONCURRENT.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "balance_sheet_current_and_non_current",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BALANCESHEETCURRENTANDNONCURRENT.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "balance_sheet_current_and_non_current",
@@ -3629,6 +3970,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BALANCESHEETOWNSHARES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "balance_sheet_own_shares",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -4324,6 +4696,37 @@
           }
         },
         {
+          "id": "AUTO.BIOLOGICALASSETS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "biological_assets",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BIOLOGICALASSETS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "biological_assets",
@@ -4722,6 +5125,37 @@
           }
         },
         {
+          "id": "AUTO.BONUSPAYINFORMATION.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "bonus_pay_information",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BONUSPAYINFORMATION.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "bonus_pay_information",
@@ -5006,6 +5440,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -5356,6 +5821,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_contingent_liabilities",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -5776,6 +6272,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_derivatives",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -6272,6 +6799,37 @@
           }
         },
         {
+          "id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_fin_instruments",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "business_combinations_fin_instruments",
@@ -6631,6 +7189,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_financial_assets",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -7076,6 +7665,37 @@
           }
         },
         {
+          "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_financial_liabilities",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "business_combinations_financial_liabilities",
@@ -7442,6 +8062,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_intangibles",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -7867,6 +8518,37 @@
           }
         },
         {
+          "id": "AUTO.BUSINESSCOMBINATIONSINVENTORIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_inventories",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.BUSINESSCOMBINATIONSINVENTORIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "business_combinations_inventories",
@@ -8160,6 +8842,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSPPE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_p_p_e",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -8572,6 +9285,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "business_combinations_provisions",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -9479,6 +10223,37 @@
             "domain_roots": [
               "core:TotalSubsidiariesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.CASHFLOW.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "cash_flow",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -10939,6 +11714,37 @@
           }
         },
         {
+          "id": "AUTO.CONTINGENTLIABILITIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "contingent_liabilities",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.CONTINGENTLIABILITIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "contingent_liabilities",
@@ -11392,6 +12198,37 @@
           }
         },
         {
+          "id": "AUTO.CONTINUINGDISCONTINUED.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "continuing_discontinued",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.CONTINUINGDISCONTINUED.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "continuing_discontinued",
@@ -11667,6 +12504,37 @@
             "domain_roots": [
               "countries:CountriesRegionsHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.COUNTRIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "countries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -12582,6 +13450,37 @@
             "domain_roots": [
               "core:TotalSubsidiariesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.CREDITORS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "creditors",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -14155,6 +15054,37 @@
           }
         },
         {
+          "id": "AUTO.CURRENCIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "currencies",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.CURRENCIES.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "currencies",
@@ -14326,6 +15256,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.DSEPSUBSIDIARIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "d_s_e_p_subsidiaries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -15317,6 +16278,37 @@
             "domain_roots": [
               "core:TotalSubsidiariesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.DEBTORS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "debtors",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -17355,6 +18347,37 @@
           }
         },
         {
+          "id": "AUTO.DEBTORSOPERATINGLEASES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "debtors_operating_leases",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "debtors_operating_leases",
@@ -18509,6 +19532,37 @@
           }
         },
         {
+          "id": "AUTO.DEFERREDTAX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "deferred_tax",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DEFERREDTAX.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "deferred_tax",
@@ -19555,6 +20609,37 @@
           }
         },
         {
+          "id": "AUTO.DERIVATIVES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "derivatives",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DERIVATIVES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "derivatives",
@@ -20431,6 +21516,37 @@
           }
         },
         {
+          "id": "AUTO.DERIVATIVESSIMPLE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "derivatives_simple",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DERIVATIVESSIMPLE.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "derivatives_simple",
@@ -21042,6 +22158,37 @@
             "domain_roots": [
               "dpl:TotalTransactionsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.DETAILEDPROFITANDLOSS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "detailed_profit_and_loss",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -21710,6 +22857,37 @@
           }
         },
         {
+          "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYETHNICITY.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYETHNICITY.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
@@ -21886,6 +23064,37 @@
           }
         },
         {
+          "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYGENDER.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYGENDER.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
@@ -22059,6 +23268,37 @@
             "domain_roots": [
               "direp:SexHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYSEX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -22269,6 +23509,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.EPS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "e_p_s",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -22780,6 +24051,37 @@
           }
         },
         {
+          "id": "AUTO.ENTITYCONTACTINFO.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "entity_contact_info",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ENTITYCONTACTINFO.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "entity_contact_info",
@@ -23254,6 +24556,37 @@
           }
         },
         {
+          "id": "AUTO.ENTITYOFFICERS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "entity_officers",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ENTITYOFFICERS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "entity_officers",
@@ -23679,6 +25012,37 @@
           }
         },
         {
+          "id": "AUTO.ENTITYSPECIALLEGALSTATUS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "entity_special_legal_status",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.ENTITYSPECIALLEGALSTATUS.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "entity_special_legal_status",
@@ -23852,6 +25216,37 @@
             "domain_roots": [
               "countries:CountriesRegionsHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.ENTITYTRADINGSTATUS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "entity_trading_status",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -24326,6 +25721,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.EQUITYANDSOCI.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "equity_and_soci",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -25198,6 +26624,37 @@
           }
         },
         {
+          "id": "AUTO.FAIRVALUEMOVEMENT.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "fair_value_movement",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.FAIRVALUEMOVEMENT.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "fair_value_movement",
@@ -25850,6 +27307,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.FINANCELEASES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "finance_leases",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -28311,6 +29799,37 @@
           }
         },
         {
+          "id": "AUTO.FINANCIALASSETS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "financial_assets",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.FINANCIALASSETS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "financial_assets",
@@ -30281,6 +31800,37 @@
           }
         },
         {
+          "id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "financial_instruments_simple",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "financial_instruments_simple",
@@ -31435,6 +32985,37 @@
           }
         },
         {
+          "id": "AUTO.FINANCIALLIABILITIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "financial_liabilities",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.FINANCIALLIABILITIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "financial_liabilities",
@@ -32081,6 +33662,37 @@
             "domain_roots": [
               "direp:QuartilesHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.HOURLYPAYINFORMATION.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "hourly_pay_information",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -32878,6 +34490,37 @@
             "domain_roots": [
               "core:TotalSubsidiariesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOME.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -34352,6 +35995,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEBIOLOGICALASSETS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_biological_assets",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_biological_assets",
@@ -35059,6 +36733,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEBUSINESSCOMBINATIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_business_combinations",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -35795,6 +37500,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.INCOMEINTANGIBLES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_intangibles",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -36647,6 +38383,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEINVESTMENTPROPERTY.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_investment_property",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEINVESTMENTPROPERTY.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_investment_property",
@@ -37256,6 +39023,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEMAIN.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEMAIN.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_main",
@@ -37820,6 +39618,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEMAINBYETHNICITY.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_ethnicity",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEMAINBYETHNICITY.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_main_by_ethnicity",
@@ -38345,6 +40174,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_ethnicity_main",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -38910,6 +40770,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEMAINBYGENDER.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_gender",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEMAINBYGENDER.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_main_by_gender",
@@ -39435,6 +41326,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEMAINBYGENDERMAIN.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_gender_main",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -40000,6 +41922,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEMAINBYSEX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_sex",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEMAINBYSEX.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_main_by_sex",
@@ -40525,6 +42478,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEMAINBYSEXMAIN.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_main_by_sex_main",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -41070,6 +43054,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEOPERATINGLEASES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_operating_leases",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -41665,6 +43680,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMEOTHERRELATEDPARTIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_other_related_parties",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -42409,6 +44455,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.INCOMEPPE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_p_p_e",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -43165,6 +45242,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMEPROVISIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_provisions",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMEPROVISIONS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_provisions",
@@ -43843,6 +45951,37 @@
           }
         },
         {
+          "id": "AUTO.INCOMESTANDLVOPERATINGLEASES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_s_t_and_l_v_operating_leases",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INCOMESTANDLVOPERATINGLEASES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "income_s_t_and_l_v_operating_leases",
@@ -44415,6 +46554,37 @@
             "domain_roots": [
               "core:TotalTaxDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INCOMETAX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "income_tax",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -45171,6 +47341,37 @@
           }
         },
         {
+          "id": "AUTO.INTANGIBLES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "intangibles",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INTANGIBLES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "intangibles",
@@ -45725,6 +47926,37 @@
           }
         },
         {
+          "id": "AUTO.INTERMEDIARYPAYMENT.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "intermediary_payment",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.INTERMEDIARYPAYMENT.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "intermediary_payment",
@@ -46128,6 +48360,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INVENTORIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "inventories",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -46564,6 +48827,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INVENTORIESSEGMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "inventories_segments",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -47036,6 +49330,37 @@
             "domain_roots": [
               "core:SecuredStatusHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INVESTMENTMOVEMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "investment_movements",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -47767,6 +50092,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INVESTMENTPROPERTY.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "investment_property",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -48507,6 +50863,37 @@
             "domain_roots": [
               "core:TotalSubsidiariesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.INVESTMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "investments",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -50034,6 +52421,37 @@
           }
         },
         {
+          "id": "AUTO.JOINTVENTURES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "joint_ventures",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.JOINTVENTURES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "joint_ventures",
@@ -50464,6 +52882,37 @@
           }
         },
         {
+          "id": "AUTO.JOINTVENTURESCOUNTRIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "joint_ventures_countries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.JOINTVENTURESCOUNTRIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "joint_ventures_countries",
@@ -50764,6 +53213,37 @@
           }
         },
         {
+          "id": "AUTO.LANGUAGES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "languages",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.LANGUAGES.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "languages",
@@ -50922,6 +53402,37 @@
           }
         },
         {
+          "id": "AUTO.LEGALFORMOFENTITY.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "legal_form_of_entity",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.LEGALFORMOFENTITY.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "legal_form_of_entity",
@@ -51077,6 +53588,37 @@
             "domain_roots": [
               "bus:CurrentlyStatedDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.MAININDUSTRYSECTOR.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "main_industry_sector",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -51399,6 +53941,37 @@
             "domain_roots": [
               "core:RestatementsFirstTimeAdoptionHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.MARKETRISK.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "market_risk",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -52053,6 +54626,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.OPERATINGLEASES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "operating_leases",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -52836,6 +55440,37 @@
           }
         },
         {
+          "id": "AUTO.PAYRATIOINFORMATION.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "pay_ratio_information",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.PAYRATIOINFORMATION.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "pay_ratio_information",
@@ -53216,6 +55851,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.PENSIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "pensions",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -53784,6 +56450,37 @@
             "domain_roots": [
               "core:EntityReportedValueAfterAdjustmentsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.PPE.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "property_plant_equipment",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -54480,6 +57177,37 @@
           }
         },
         {
+          "id": "AUTO.PROVISIONS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "provisions",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.PROVISIONS.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "provisions",
@@ -54934,6 +57662,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.RELATEDPARTIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "related_parties",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -56408,6 +59167,37 @@
           }
         },
         {
+          "id": "AUTO.RELATEDPARTIESBALANCES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "related_parties_balances",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.RELATEDPARTIESBALANCES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "related_parties_balances",
@@ -57869,6 +60659,37 @@
           }
         },
         {
+          "id": "AUTO.REPORTPERIOD.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "report_period",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.REPORTPERIOD.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "report_period",
@@ -58122,6 +60943,37 @@
             "domain_roots": [
               "core:TotalTaxDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.SOCITAX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "s_o_c_i_tax",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -58649,6 +61501,37 @@
           }
         },
         {
+          "id": "AUTO.SORPSAPPLIED.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "s_o_r_ps_applied",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SORPSAPPLIED.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "s_o_r_ps_applied",
@@ -58787,6 +61670,37 @@
             "domain_roots": [
               "bus:CompanyAccountsDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.SCOPEOFACCOUNTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "scope_of_accounts",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -58998,6 +61912,37 @@
           }
         },
         {
+          "id": "AUTO.SEGMENTSTEXT.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "segments_text",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SEGMENTSTEXT.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "segments_text",
@@ -59190,6 +62135,37 @@
             "domain_roots": [
               "core:TotalGrantsForShare-basedPaymentArrangementDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.SHAREBASEDPAYMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "share_based_payments",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -59591,6 +62567,37 @@
           }
         },
         {
+          "id": "AUTO.SHARES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "shares",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SHARES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "shares",
@@ -59940,6 +62947,37 @@
           }
         },
         {
+          "id": "AUTO.STAFFBYGENDER.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "staff_by_gender",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.STAFFBYGENDER.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "staff_by_gender",
@@ -60113,6 +63151,37 @@
             "domain_roots": [
               "direp:SexHeading"
             ]
+          }
+        },
+        {
+          "id": "AUTO.STAFFBYSEX.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "staff_by_sex",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -60511,6 +63580,37 @@
           }
         },
         {
+          "id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "streamlined_energy_and_carbon_reporting",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "streamlined_energy_and_carbon_reporting",
@@ -60893,6 +63993,37 @@
           "allowed_members": {
             "from_domain_member_tree": true,
             "domain_roots": []
+          }
+        },
+        {
+          "id": "AUTO.SUBSIDIARIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "subsidiaries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -61628,6 +64759,37 @@
           }
         },
         {
+          "id": "AUTO.SUBSIDIARIESCOUNTRIES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "subsidiaries_countries",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SUBSIDIARIESCOUNTRIES.DIMAGG.001",
           "type": "dimensional_aggregation_relationship",
           "topic": "subsidiaries_countries",
@@ -62247,6 +65409,37 @@
           }
         },
         {
+          "id": "AUTO.SUPPLIERFINANCEARRANGEMENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "supplier_finance_arrangements",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SUPPLIERFINANCEARRANGEMENTS.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "supplier_finance_arrangements",
@@ -62440,6 +65633,37 @@
           }
         },
         {
+          "id": "AUTO.SUPPLIERFINANCEARRANGEMENTSCARRYINGAMOUNTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "supplier_finance_arrangements_carrying_amounts",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+          }
+        },
+        {
           "id": "AUTO.SUPPLIERFINANCEARRANGEMENTSCARRYINGAMOUNTS.MOVE.001",
           "type": "movement_reconciliation",
           "topic": "supplier_finance_arrangements_carrying_amounts",
@@ -62614,6 +65838,37 @@
             "domain_roots": [
               "core:ContinuingDiscontinuedOperationsTotalDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.THIRDPARTYAGENTS.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "third_party_agents",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {
@@ -62961,6 +66216,37 @@
             "domain_roots": [
               "core:TotalUnconsolidatedStructuredEntitiesDefault"
             ]
+          }
+        },
+        {
+          "id": "AUTO.USES.ARITH.001",
+          "type": "concept_arithmetic_relationship",
+          "topic": "u_s_es",
+          "severity": "warning",
+          "confidence": "medium",
+          "requires_review": true,
+          "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+          "candidate_requirements": {
+            "minimum_component_concepts": 1,
+            "maximum_component_concepts": 8,
+            "numeric_only": true,
+            "same_period_type": true,
+            "same_unit_kind": true,
+            "allow_intermediate_totals": true
+          },
+          "match": {
+            "period": "same",
+            "unit": "same",
+            "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+          },
+          "allowed_component_dimension_variance": [
+            "common:X-AnalysisDimension"
+          ],
+          "missing_policy": "do_not_treat_missing_as_zero",
+          "taxonomy_basis": {
+            "reason_type": "presentation_subtotal",
+            "topic_source": "role_aware_presentation_descendants",
+            "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
           }
         },
         {

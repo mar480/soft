@@ -401,6 +401,9 @@
                                                                                             <tr>
                                                                                                 <th>Component</th>
                                                                                                 <th>Concept / Member</th>
+                                                                                                {% if result.type == "concept_arithmetic_relationship" %}
+                                                                                                    <th>Contribution</th>
+                                                                                                {% endif %}
                                                                                                 <th>Value</th>
                                                                                                 <th>Balance</th>
                                                                                                 <th>Period</th>
@@ -411,6 +414,9 @@
                                                                                                 <tr>
                                                                                                     <td>{{ component.fact.name if component.fact else component.fact_id }}</td>
                                                                                                     <td>{{ component.concept_qname or component.member or "-" }}</td>
+                                                                                                    {% if result.type == "concept_arithmetic_relationship" %}
+                                                                                                        <td>{{ component.contribution_value }}</td>
+                                                                                                    {% endif %}
                                                                                                     <td>{{ component.value }}</td>
                                                                                                     <td>{{ component.balance or "-" }}</td>
                                                                                                     <td>{{ component.fact.period if component.fact else "" }}</td>

@@ -40,9 +40,19 @@ class ReportFact:
 
     def numeric_value(self) -> float | None:
         try:
-            return float(self.value.replace(",", ""))
+            numeric = float(self.value.replace(",", ""))
         except (ValueError, AttributeError):
             return None
+        sign = self.attributes.get("sign")
+        if sign == "-":
+            numeric = -numeric
+        scale = self.attributes.get("scale")
+        if scale:
+            try:
+                numeric *= 10 ** int(scale)
+            except ValueError:
+                pass
+        return numeric
 
     def to_dict(self) -> dict:
         payload = asdict(self)

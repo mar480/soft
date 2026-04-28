@@ -7,11 +7,12 @@
       "topic_id": "accounting_standards_applied",
       "topic_label": "Accounting Standards Applied",
       "directory": "Accounting Standards Applied",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -20,11 +21,12 @@
       "topic_id": "accounts_status",
       "topic_label": "Accounts Status",
       "directory": "Accounts Status",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -33,11 +35,12 @@
       "topic_id": "accounts_type",
       "topic_label": "Accounts Type",
       "directory": "Accounts Type",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -46,11 +49,12 @@
       "topic_id": "alternative_performance_measures_reconciliation",
       "topic_label": "Alternative Performance Measures Reconciliation",
       "directory": "Alternative Performance Measures Reconciliation",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -60,11 +64,12 @@
       "topic_id": "applicable_legislation",
       "topic_label": "Applicable Legislation",
       "directory": "Applicable Legislation",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -73,11 +78,12 @@
       "topic_id": "associates",
       "topic_label": "Associates",
       "directory": "Associates",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -87,11 +93,12 @@
       "topic_id": "associates_countries",
       "topic_label": "Associates Countries",
       "directory": "Associates Countries",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -101,11 +108,12 @@
       "topic_id": "audit_fees",
       "topic_label": "Audit Fees",
       "directory": "Audit Fees",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -115,11 +123,12 @@
       "topic_id": "audit_firm_contact_info",
       "topic_label": "Audit Firm Contact Info",
       "directory": "Audit Firm Contact Info",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -129,11 +138,12 @@
       "topic_id": "balance_sheet",
       "topic_label": "Balance Sheet",
       "directory": "Balance Sheet",
-      "rule_count": 16,
+      "rule_count": 17,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -143,11 +153,12 @@
       "topic_id": "balance_sheet_current_and_non_current",
       "topic_label": "Balance sheet Current And Non Current",
       "directory": "Balance sheet Current And Non Current",
-      "rule_count": 17,
+      "rule_count": 18,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -157,11 +168,12 @@
       "topic_id": "balance_sheet_own_shares",
       "topic_label": "Balance Sheet Own Shares",
       "directory": "Balance Sheet Own Shares",
-      "rule_count": 14,
+      "rule_count": 15,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -171,11 +183,12 @@
       "topic_id": "biological_assets",
       "topic_label": "Biological Assets",
       "directory": "Biological Assets",
-      "rule_count": 23,
+      "rule_count": 24,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -185,11 +198,12 @@
       "topic_id": "bonus_pay_information",
       "topic_label": "Bonus Pay Information",
       "directory": "Bonus Pay Information",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -198,11 +212,12 @@
       "topic_id": "business_combinations",
       "topic_label": "Business Combinations",
       "directory": "Business Combinations",
-      "rule_count": 16,
+      "rule_count": 17,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -212,11 +227,12 @@
       "topic_id": "business_combinations_contingent_liabilities",
       "topic_label": "Business Combinations Contingent Liabilities",
       "directory": "Business Combinations Contingent Liabilities",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -226,11 +242,12 @@
       "topic_id": "business_combinations_derivatives",
       "topic_label": "Business Combinations Derivatives",
       "directory": "Business Combinations Derivatives",
-      "rule_count": 16,
+      "rule_count": 17,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -240,11 +257,12 @@
       "topic_id": "business_combinations_fin_instruments",
       "topic_label": "Business Combinations Fin Instruments",
       "directory": "Business Combinations Fin Instruments",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -254,11 +272,12 @@
       "topic_id": "business_combinations_financial_assets",
       "topic_label": "Business Combinations Financial Assets",
       "directory": "Business Combinations Financial Assets",
-      "rule_count": 15,
+      "rule_count": 16,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -268,11 +287,12 @@
       "topic_id": "business_combinations_financial_liabilities",
       "topic_label": "Business Combinations Financial Liabilities",
       "directory": "Business Combinations Financial Liabilities",
-      "rule_count": 15,
+      "rule_count": 16,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -282,11 +302,12 @@
       "topic_id": "business_combinations_intangibles",
       "topic_label": "Business Combinations Intangibles",
       "directory": "Business Combinations Intangibles",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -296,11 +317,12 @@
       "topic_id": "business_combinations_inventories",
       "topic_label": "Business Combinations Inventories",
       "directory": "Business Combinations Inventories",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -310,11 +332,12 @@
       "topic_id": "business_combinations_p_p_e",
       "topic_label": "Business Combinations P P E",
       "directory": "Business Combinations P P E",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -324,11 +347,12 @@
       "topic_id": "business_combinations_provisions",
       "topic_label": "Business Combinations Provisions",
       "directory": "Business Combinations Provisions",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -338,11 +362,12 @@
       "topic_id": "cash_flow",
       "topic_label": "Cash Flow",
       "directory": "Cash Flow",
-      "rule_count": 41,
+      "rule_count": 42,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -352,11 +377,12 @@
       "topic_id": "contingent_liabilities",
       "topic_label": "Contingent Liabilities",
       "directory": "Contingent Liabilities",
-      "rule_count": 9,
+      "rule_count": 10,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -366,11 +392,12 @@
       "topic_id": "continuing_discontinued",
       "topic_label": "Continuing Discontinued",
       "directory": "Continuing Discontinued",
-      "rule_count": 17,
+      "rule_count": 18,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -380,11 +407,12 @@
       "topic_id": "countries",
       "topic_label": "Countries",
       "directory": "Countries",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -393,12 +421,13 @@
       "topic_id": "creditors",
       "topic_label": "Creditors",
       "directory": "Creditors",
-      "rule_count": 48,
+      "rule_count": 49,
       "families": [
         "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -408,11 +437,12 @@
       "topic_id": "currencies",
       "topic_label": "Currencies",
       "directory": "Currencies",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -421,11 +451,12 @@
       "topic_id": "d_s_e_p_subsidiaries",
       "topic_label": "D S E P Subsidiaries",
       "directory": "D S E P Subsidiaries",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -434,12 +465,13 @@
       "topic_id": "debtors",
       "topic_label": "Debtors",
       "directory": "Debtors",
-      "rule_count": 53,
+      "rule_count": 54,
       "families": [
         "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -449,11 +481,12 @@
       "topic_id": "debtors_operating_leases",
       "topic_label": "Debtors Operating Leases",
       "directory": "Debtors Operating Leases",
-      "rule_count": 28,
+      "rule_count": 29,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -463,11 +496,12 @@
       "topic_id": "deferred_tax",
       "topic_label": "Deferred Tax",
       "directory": "Deferred Tax",
-      "rule_count": 23,
+      "rule_count": 24,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -477,11 +511,12 @@
       "topic_id": "derivatives",
       "topic_label": "Derivatives",
       "directory": "Derivatives",
-      "rule_count": 46,
+      "rule_count": 47,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -491,11 +526,12 @@
       "topic_id": "derivatives_simple",
       "topic_label": "Derivatives Simple",
       "directory": "Derivatives Simple",
-      "rule_count": 16,
+      "rule_count": 17,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -505,11 +541,12 @@
       "topic_id": "detailed_profit_and_loss",
       "topic_label": "Detailed Profit and Loss",
       "directory": "Detailed Profit and Loss",
-      "rule_count": 20,
+      "rule_count": 21,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -519,11 +556,12 @@
       "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
       "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Ethnicity",
       "directory": "Diversity and Inclusion Reporting Board and Executive Management By Ethnicity",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -532,11 +570,12 @@
       "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
       "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Gender",
       "directory": "Diversity and Inclusion Reporting Board and Executive Management By Gender",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -545,11 +584,12 @@
       "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
       "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Sex",
       "directory": "Diversity and Inclusion Reporting Board and Executive Management By Sex",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -558,11 +598,12 @@
       "topic_id": "e_p_s",
       "topic_label": "E P S",
       "directory": "E P S",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -572,11 +613,12 @@
       "topic_id": "entity_contact_info",
       "topic_label": "Entity Contact Info",
       "directory": "Entity Contact Info",
-      "rule_count": 14,
+      "rule_count": 15,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -586,11 +628,12 @@
       "topic_id": "entity_officers",
       "topic_label": "Entity Officers",
       "directory": "Entity Officers",
-      "rule_count": 18,
+      "rule_count": 19,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -600,11 +643,12 @@
       "topic_id": "entity_special_legal_status",
       "topic_label": "Entity Special Legal Status",
       "directory": "Entity Special Legal Status",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -613,11 +657,12 @@
       "topic_id": "entity_trading_status",
       "topic_label": "Entity Trading Status",
       "directory": "Entity Trading Status",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -626,11 +671,12 @@
       "topic_id": "equity_and_soci",
       "topic_label": "Equity and SOCI",
       "directory": "Equity and SOCI",
-      "rule_count": 27,
+      "rule_count": 28,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -640,11 +686,12 @@
       "topic_id": "fair_value_movement",
       "topic_label": "Fair Value Movement",
       "directory": "Fair Value Movement",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -654,11 +701,12 @@
       "topic_id": "finance_leases",
       "topic_label": "Finance Leases",
       "directory": "Finance Leases",
-      "rule_count": 33,
+      "rule_count": 34,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -668,11 +716,12 @@
       "topic_id": "financial_assets",
       "topic_label": "Financial Assets",
       "directory": "Financial Assets",
-      "rule_count": 89,
+      "rule_count": 90,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -682,11 +731,12 @@
       "topic_id": "financial_instruments_simple",
       "topic_label": "Financial Instruments Simple",
       "directory": "Financial Instruments Simple",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -696,11 +746,12 @@
       "topic_id": "financial_liabilities",
       "topic_label": "Financial Liabilities",
       "directory": "Financial Liabilities",
-      "rule_count": 53,
+      "rule_count": 54,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -710,11 +761,12 @@
       "topic_id": "hourly_pay_information",
       "topic_label": "Hourly Pay Information",
       "directory": "Hourly Pay Information",
-      "rule_count": 9,
+      "rule_count": 10,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -723,11 +775,12 @@
       "topic_id": "income",
       "topic_label": "Income",
       "directory": "Income",
-      "rule_count": 42,
+      "rule_count": 43,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -737,11 +790,12 @@
       "topic_id": "income_biological_assets",
       "topic_label": "Income Biological Assets",
       "directory": "Income Biological Assets",
-      "rule_count": 28,
+      "rule_count": 29,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -751,11 +805,12 @@
       "topic_id": "income_business_combinations",
       "topic_label": "Income Business Combinations",
       "directory": "Income Business Combinations",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -765,11 +820,12 @@
       "topic_id": "income_intangibles",
       "topic_label": "Income Intangibles",
       "directory": "Income Intangibles",
-      "rule_count": 34,
+      "rule_count": 35,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -779,11 +835,12 @@
       "topic_id": "income_investment_property",
       "topic_label": "Income Investment Property",
       "directory": "Income Investment Property",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -793,11 +850,12 @@
       "topic_id": "income_main",
       "topic_label": "Income Main",
       "directory": "Income Main",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -807,11 +865,12 @@
       "topic_id": "income_main_by_ethnicity",
       "topic_label": "Income Main By Ethnicity",
       "directory": "Income Main By Ethnicity",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -821,11 +880,12 @@
       "topic_id": "income_main_by_ethnicity_main",
       "topic_label": "Income Main By Ethnicity Main",
       "directory": "Income Main By Ethnicity Main",
-      "rule_count": 22,
+      "rule_count": 23,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -835,11 +895,12 @@
       "topic_id": "income_main_by_gender",
       "topic_label": "Income Main By Gender",
       "directory": "Income Main By Gender",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -849,11 +910,12 @@
       "topic_id": "income_main_by_gender_main",
       "topic_label": "Income Main By Gender Main",
       "directory": "Income Main By Gender Main",
-      "rule_count": 22,
+      "rule_count": 23,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -863,11 +925,12 @@
       "topic_id": "income_main_by_sex",
       "topic_label": "Income Main By Sex",
       "directory": "Income Main By Sex",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -877,11 +940,12 @@
       "topic_id": "income_main_by_sex_main",
       "topic_label": "Income Main By Sex Main",
       "directory": "Income Main By Sex Main",
-      "rule_count": 22,
+      "rule_count": 23,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -891,11 +955,12 @@
       "topic_id": "income_operating_leases",
       "topic_label": "Income Operating Leases",
       "directory": "Income Operating Leases",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -905,11 +970,12 @@
       "topic_id": "income_other_related_parties",
       "topic_label": "Income Other Related Parties",
       "directory": "Income Other Related Parties",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -919,11 +985,12 @@
       "topic_id": "income_p_p_e",
       "topic_label": "Income P P E",
       "directory": "Income P P E",
-      "rule_count": 28,
+      "rule_count": 29,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -933,11 +1000,12 @@
       "topic_id": "income_provisions",
       "topic_label": "Income Provisions",
       "directory": "Income Provisions",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -947,11 +1015,12 @@
       "topic_id": "income_s_t_and_l_v_operating_leases",
       "topic_label": "Income S T and L V Operating Leases",
       "directory": "Income S T and L V Operating Leases",
-      "rule_count": 25,
+      "rule_count": 26,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -961,11 +1030,12 @@
       "topic_id": "income_tax",
       "topic_label": "Income Tax",
       "directory": "Income Tax",
-      "rule_count": 21,
+      "rule_count": 22,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -975,11 +1045,12 @@
       "topic_id": "intangibles",
       "topic_label": "Intangibles",
       "directory": "Intangibles",
-      "rule_count": 31,
+      "rule_count": 32,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -989,11 +1060,12 @@
       "topic_id": "intermediary_payment",
       "topic_label": "Intermediary Payment",
       "directory": "Intermediary Payment",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1003,11 +1075,12 @@
       "topic_id": "inventories",
       "topic_label": "Inventories",
       "directory": "Inventories",
-      "rule_count": 17,
+      "rule_count": 18,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1017,11 +1090,12 @@
       "topic_id": "inventories_segments",
       "topic_label": "Inventories Segments",
       "directory": "Inventories Segments",
-      "rule_count": 17,
+      "rule_count": 18,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1031,11 +1105,12 @@
       "topic_id": "investment_movements",
       "topic_label": "Investment Movements",
       "directory": "Investment Movements",
-      "rule_count": 20,
+      "rule_count": 21,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1045,12 +1120,13 @@
       "topic_id": "investment_property",
       "topic_label": "Investment Property",
       "directory": "Investment Property",
-      "rule_count": 22,
+      "rule_count": 23,
       "families": [
         "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1060,11 +1136,12 @@
       "topic_id": "investments",
       "topic_label": "Investments",
       "directory": "Investments",
-      "rule_count": 37,
+      "rule_count": 38,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1074,11 +1151,12 @@
       "topic_id": "joint_ventures",
       "topic_label": "Joint Ventures",
       "directory": "Joint Ventures",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1088,11 +1166,12 @@
       "topic_id": "joint_ventures_countries",
       "topic_label": "Joint Ventures Countries",
       "directory": "Joint Ventures Countries",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1102,11 +1181,12 @@
       "topic_id": "languages",
       "topic_label": "Languages",
       "directory": "Languages",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1115,11 +1195,12 @@
       "topic_id": "legal_form_of_entity",
       "topic_label": "Legal Form of Entity",
       "directory": "Legal Form of Entity",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1128,11 +1209,12 @@
       "topic_id": "main_industry_sector",
       "topic_label": "Main Industry Sector",
       "directory": "Main Industry Sector",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1142,11 +1224,12 @@
       "topic_id": "market_risk",
       "topic_label": "Market Risk",
       "directory": "Market Risk",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1156,11 +1239,12 @@
       "topic_id": "operating_leases",
       "topic_label": "Operating Leases",
       "directory": "Operating Leases",
-      "rule_count": 33,
+      "rule_count": 34,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1170,11 +1254,12 @@
       "topic_id": "pay_ratio_information",
       "topic_label": "Pay Ratio Information",
       "directory": "Pay Ratio Information",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1183,11 +1268,12 @@
       "topic_id": "pensions",
       "topic_label": "Pensions",
       "directory": "Pensions",
-      "rule_count": 19,
+      "rule_count": 20,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1197,12 +1283,13 @@
       "topic_id": "property_plant_equipment",
       "topic_label": "Property, plant and equipment",
       "directory": "Property, plant and equipment",
-      "rule_count": 24,
+      "rule_count": 25,
       "families": [
         "1 Topic note presence",
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1212,11 +1299,12 @@
       "topic_id": "provisions",
       "topic_label": "Provisions",
       "directory": "Provisions",
-      "rule_count": 19,
+      "rule_count": 20,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1226,11 +1314,12 @@
       "topic_id": "related_parties",
       "topic_label": "Related Parties",
       "directory": "Related Parties",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1240,11 +1329,12 @@
       "topic_id": "related_parties_balances",
       "topic_label": "Related Parties Balances",
       "directory": "Related Parties Balances",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1254,11 +1344,12 @@
       "topic_id": "report_period",
       "topic_label": "Report Period",
       "directory": "Report Period",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1267,11 +1358,12 @@
       "topic_id": "s_o_c_i_tax",
       "topic_label": "S O C I Tax",
       "directory": "S O C I Tax",
-      "rule_count": 15,
+      "rule_count": 16,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1281,11 +1373,12 @@
       "topic_id": "s_o_r_ps_applied",
       "topic_label": "S O R Ps Applied",
       "directory": "S O R Ps Applied",
-      "rule_count": 7,
+      "rule_count": 8,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1294,11 +1387,12 @@
       "topic_id": "scope_of_accounts",
       "topic_label": "Scope of Accounts",
       "directory": "Scope of Accounts",
-      "rule_count": 6,
+      "rule_count": 7,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1307,11 +1401,12 @@
       "topic_id": "segments_text",
       "topic_label": "Segments Text",
       "directory": "Segments Text",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1320,11 +1415,12 @@
       "topic_id": "share_based_payments",
       "topic_label": "Share based Payments",
       "directory": "Share based Payments",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1334,11 +1430,12 @@
       "topic_id": "shares",
       "topic_label": "Shares",
       "directory": "Shares",
-      "rule_count": 15,
+      "rule_count": 16,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1348,11 +1445,12 @@
       "topic_id": "staff_by_gender",
       "topic_label": "Staff By Gender",
       "directory": "Staff By Gender",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1361,11 +1459,12 @@
       "topic_id": "staff_by_sex",
       "topic_label": "Staff By Sex",
       "directory": "Staff By Sex",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1374,11 +1473,12 @@
       "topic_id": "streamlined_energy_and_carbon_reporting",
       "topic_label": "Streamlined Energy and Carbon Reporting",
       "directory": "Streamlined Energy and Carbon Reporting",
-      "rule_count": 20,
+      "rule_count": 21,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1388,11 +1488,12 @@
       "topic_id": "subsidiaries",
       "topic_label": "Subsidiaries",
       "directory": "Subsidiaries",
-      "rule_count": 13,
+      "rule_count": 14,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1402,11 +1503,12 @@
       "topic_id": "subsidiaries_countries",
       "topic_label": "Subsidiaries Countries",
       "directory": "Subsidiaries Countries",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1416,11 +1518,12 @@
       "topic_id": "supplier_finance_arrangements",
       "topic_label": "Supplier Finance Arrangements",
       "directory": "Supplier Finance Arrangements",
-      "rule_count": 8,
+      "rule_count": 9,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1429,11 +1532,12 @@
       "topic_id": "supplier_finance_arrangements_carrying_amounts",
       "topic_label": "Supplier Finance Arrangements Carrying amounts",
       "directory": "Supplier Finance Arrangements Carrying amounts",
-      "rule_count": 9,
+      "rule_count": 10,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
       ]
@@ -1442,11 +1546,12 @@
       "topic_id": "third_party_agents",
       "topic_label": "Third Party Agents",
       "directory": "Third Party Agents",
-      "rule_count": 10,
+      "rule_count": 11,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"
@@ -1456,11 +1561,12 @@
       "topic_id": "u_s_es",
       "topic_label": "U S Es",
       "directory": "U S Es",
-      "rule_count": 11,
+      "rule_count": 12,
       "families": [
         "2 Hypercube conformity",
         "3 Expected dimension usage",
         "4 Member validity",
+        "5 Concept arithmetic relationships",
         "6 Dimensional aggregation relationships",
         "7 Movement reconciliation",
         "8 Modelling suggestion"

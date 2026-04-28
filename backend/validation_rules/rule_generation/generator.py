@@ -14,6 +14,7 @@ RULE_FAMILY_LAYOUT = {
     "hypercube_conformity": (2, "Hypercube conformity"),
     "expected_dimension_usage": (3, "Expected dimension usage"),
     "dimension_member_validity": (4, "Member validity"),
+    "concept_arithmetic_relationship": (5, "Concept arithmetic relationships"),
     "dimensional_aggregation_relationship": (6, "Dimensional aggregation relationships"),
     "movement_reconciliation": (7, "Movement reconciliation"),
     "modelling_suggestion": (8, "Modelling suggestion"),
@@ -294,6 +295,44 @@ def _dimensional_aggregation_rules(topic: dict) -> list[CandidateRule]:
     return rules
 
 
+def _concept_arithmetic_rule(topic: dict) -> CandidateRule | None:
+    if not topic.get("hypercubes"):
+        return None
+    return CandidateRule(
+        id=build_rule_id(topic_id=topic["topic_id"], rule_kind="ARITH", index=1),
+        type="concept_arithmetic_relationship",
+        topic=topic["topic_id"],
+        severity="warning",
+        confidence="medium",
+        requires_review=True,
+        payload={
+            "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+            "candidate_requirements": {
+                "minimum_component_concepts": 1,
+                "maximum_component_concepts": 8,
+                "numeric_only": True,
+                "same_period_type": True,
+                "same_unit_kind": True,
+                "allow_intermediate_totals": True,
+            },
+            "match": {
+                "period": "same",
+                "unit": "same",
+                "all_dimensions": "same_except_allowed_component_analysis_dimensions",
+            },
+            "allowed_component_dimension_variance": [
+                "common:X-AnalysisDimension",
+            ],
+            "missing_policy": "do_not_treat_missing_as_zero",
+            "taxonomy_basis": {
+                "reason_type": "presentation_subtotal",
+                "topic_source": "role_aware_presentation_descendants",
+                "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context.",
+            },
+        },
+    )
+
+
 def _movement_reconciliation_rule(topic: dict, concept_index: dict[str, dict]) -> CandidateRule | None:
     primary_items = _topic_primary_items(topic)
     instant_primary_items = sorted(
@@ -503,6 +542,9 @@ def _topic_rules(
     if expected:
         rules.append(expected)
     rules.extend(_member_validity_rules(topic))
+    concept_arithmetic = _concept_arithmetic_rule(topic)
+    if concept_arithmetic:
+        rules.append(concept_arithmetic)
     rules.extend(_dimensional_aggregation_rules(topic))
     movement = _movement_reconciliation_rule(topic, concept_index)
     if movement:
