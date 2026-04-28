@@ -32,6 +32,11 @@ def _load_rule_pack(split_output_dir: Path) -> tuple[dict, dict[str, dict]]:
     return manifest, rules_by_topic
 
 
+def rule_pack_manifest(split_output_dir: Path) -> dict:
+    manifest, _ = _load_rule_pack(split_output_dir)
+    return manifest
+
+
 def _allowed_members_by_topic(topics_payload: dict) -> dict[str, dict[str, set[str]]]:
     mapping: dict[str, dict[str, set[str]]] = {}
     for topic in topics_payload["topics"]:
@@ -176,6 +181,8 @@ def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules
                     "trigger_fact_ids": [fact.fact_id for fact in trigger_facts],
                     "topic_fact_ids": [fact.fact_id for fact in topic_facts],
                     "topic_fact_reasons": {fact_id: reason_map[fact_id] for fact_id in sorted(reason_map)},
+                    "trigger_fact_count": len(trigger_facts),
+                    "topic_fact_count": len(topic_facts),
                 },
             }
         )
@@ -187,6 +194,11 @@ def _expected_dimension_usage_results(report: ReportModel, topic_id: str, topic_
     results: list[dict] = []
     for rule in topic_rules["families"].get("3 Expected dimension usage", []):
         allowed_dimensions = set(rule["taxonomy_basis"]["dimensions"])
+        matching_fact_ids = [
+            fact.fact_id
+            for fact in topic_facts
+            if (_fact_context(report, fact) and (set(_fact_context(report, fact).dimensions) & allowed_dimensions))
+        ]
         passed = not topic_facts or any(
             (_fact_context(report, fact) and (set(_fact_context(report, fact).dimensions) & allowed_dimensions))
             for fact in topic_facts
@@ -202,7 +214,13 @@ def _expected_dimension_usage_results(report: ReportModel, topic_id: str, topic_
                     if passed
                     else "Topic facts were found but none used an expected dimension."
                 ),
-                "evidence": {"topic_fact_ids": [fact.fact_id for fact in topic_facts]},
+                "evidence": {
+                    "topic_fact_ids": [fact.fact_id for fact in topic_facts],
+                    "matching_fact_ids": matching_fact_ids,
+                    "topic_fact_count": len(topic_facts),
+                    "matching_fact_count": len(matching_fact_ids),
+                    "allowed_dimensions": sorted(allowed_dimensions),
+                },
             }
         )
     return results
@@ -212,6 +230,7 @@ def _hypercube_conformity_results(report: ReportModel, topic_id: str, topic_rule
     topic_facts = _topic_facts(report, topic_id, topic_rules)
     allowed_sets = [set(rule["taxonomy_basis"]["dimensions"]) for rule in topic_rules["families"].get("2 Hypercube conformity", [])]
     invalid_fact_ids: list[str] = []
+    valid_fact_ids: list[str] = []
     for fact in topic_facts:
         context = _fact_context(report, fact)
         if context is None or not context.dimensions:
@@ -219,6 +238,8 @@ def _hypercube_conformity_results(report: ReportModel, topic_id: str, topic_rule
         fact_dimensions = set(context.dimensions)
         if not any(fact_dimensions <= allowed for allowed in allowed_sets):
             invalid_fact_ids.append(fact.fact_id)
+        else:
+            valid_fact_ids.append(fact.fact_id)
     return [
         {
             "rule_id": f"{topic_id}.HYPERCUBE_CONFORMITY",
@@ -230,7 +251,12 @@ def _hypercube_conformity_results(report: ReportModel, topic_id: str, topic_rule
                 if not invalid_fact_ids
                 else "Some topic facts use dimension combinations that do not fit any allowed hypercube."
             ),
-            "evidence": {"invalid_fact_ids": invalid_fact_ids},
+            "evidence": {
+                "invalid_fact_ids": invalid_fact_ids,
+                "valid_fact_ids": valid_fact_ids,
+                "checked_fact_count": len(valid_fact_ids) + len(invalid_fact_ids),
+                "allowed_hypercube_count": len(allowed_sets),
+            },
         }
     ]
 
@@ -239,6 +265,7 @@ def _member_validity_results(report: ReportModel, topic_id: str, topic_rules: di
     topic_facts = _topic_facts(report, topic_id, topic_rules)
     allowed_map = allowed_members_by_topic.get(topic_id, {})
     invalid_dimension_members: list[dict] = []
+    checked_dimension_members: list[dict] = []
     for fact in topic_facts:
         context = _fact_context(report, fact)
         if context is None:
@@ -247,6 +274,8 @@ def _member_validity_results(report: ReportModel, topic_id: str, topic_rules: di
             allowed_members = allowed_map.get(dimension)
             if allowed_members is not None and member not in allowed_members:
                 invalid_dimension_members.append({"fact_id": fact.fact_id, "dimension": dimension, "member": member})
+            elif allowed_members is not None:
+                checked_dimension_members.append({"fact_id": fact.fact_id, "dimension": dimension, "member": member})
     return [
         {
             "rule_id": f"{topic_id}.MEMBER_VALIDITY",
@@ -258,7 +287,12 @@ def _member_validity_results(report: ReportModel, topic_id: str, topic_rules: di
                 if not invalid_dimension_members
                 else "Some dimension members are outside the discovered member trees."
             ),
-            "evidence": {"invalid_dimension_members": invalid_dimension_members},
+            "evidence": {
+                "invalid_dimension_members": invalid_dimension_members,
+                "checked_dimension_members": checked_dimension_members,
+                "checked_dimension_member_count": len(checked_dimension_members),
+                "checked_fact_count": len({item["fact_id"] for item in checked_dimension_members}),
+            },
         }
     ]
 
@@ -280,12 +314,13 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
             signature = (fact.concept_qname, fact.unit, _context_signature(context, excluding_dimension=rule["dimension"]))
             grouped[signature].append((fact, context))
 
-        mismatches: list[dict] = []
+        comparisons: list[dict] = []
         component_members = set(rule["component_members"]["members"])
         for signature, entries in grouped.items():
             head_fact = None
             component_total = 0.0
             component_count = 0
+            component_facts: list[dict] = []
             for fact, context in entries:
                 member = context.dimensions.get(rule["dimension"])
                 if member == rule["head_member"]:
@@ -295,19 +330,31 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
                     if numeric_value is not None:
                         component_total += numeric_value
                         component_count += 1
+                        component_facts.append(
+                            {
+                                "fact_id": fact.fact_id,
+                                "member": member,
+                                "value": numeric_value,
+                            }
+                        )
             if head_fact is None or component_count == 0:
                 continue
             head_value = head_fact.numeric_value()
             if head_value is None:
                 continue
-            if abs(head_value - component_total) > 0.0001:
-                mismatches.append(
-                    {
-                        "head_fact_id": head_fact.fact_id,
-                        "head_value": head_value,
-                        "component_total": component_total,
-                    }
-                )
+            comparisons.append(
+                {
+                    "head_fact_id": head_fact.fact_id,
+                    "head_member": rule["head_member"],
+                    "head_value": head_value,
+                    "component_total": component_total,
+                    "difference": round(head_value - component_total, 6),
+                    "component_facts": component_facts,
+                    "matches": abs(head_value - component_total) <= 0.0001,
+                }
+            )
+
+        mismatches = [comparison for comparison in comparisons if not comparison["matches"]]
 
         results.append(
             {
@@ -320,7 +367,7 @@ def _rollup_results(report: ReportModel, topic_id: str, topic_rules: dict) -> li
                     if not mismatches
                     else "Observed roll-up candidates do not reconcile."
                 ),
-                "evidence": {"mismatches": mismatches},
+                "evidence": {"comparisons": comparisons, "mismatches": mismatches},
             }
         )
     return results
@@ -332,16 +379,22 @@ def evaluate_rule_pack(
     split_output_dir: Path,
     topics_payload: dict,
     include_all_topics: bool = False,
+    selected_topics: set[str] | None = None,
+    selected_families_by_topic: dict[str, set[str]] | None = None,
 ) -> dict:
     manifest, rules_by_topic = _load_rule_pack(split_output_dir)
     allowed_members_by_topic = _allowed_members_by_topic(topics_payload)
     _augment_allowed_members_from_rules(allowed_members_by_topic, rules_by_topic)
     results: list[dict] = []
     evaluated_topics: list[dict] = []
+    topic_scope = "all_topics" if include_all_topics else "selected_topics" if selected_topics else "relevant_topics_only"
     for topic_id, topic_rules in rules_by_topic.items():
+        if selected_topics is not None and topic_id not in selected_topics:
+            continue
         relevant = _topic_is_relevant(report, topic_id, topic_rules)
         if not include_all_topics and not relevant:
-            continue
+            if selected_topics is None:
+                continue
         evaluated_topics.append(
             {
                 "topic_id": topic_id,
@@ -351,16 +404,26 @@ def evaluate_rule_pack(
                 "topic_fact_count": len(_topic_facts(report, topic_id, topic_rules)),
             }
         )
-        results.extend(_topic_note_presence_results(report, topic_id, topic_rules))
-        results.extend(_hypercube_conformity_results(report, topic_id, topic_rules))
-        results.extend(_expected_dimension_usage_results(report, topic_id, topic_rules))
-        results.extend(_member_validity_results(report, topic_id, topic_rules, allowed_members_by_topic))
-        results.extend(_rollup_results(report, topic_id, topic_rules))
+        allowed_families = selected_families_by_topic.get(topic_id) if selected_families_by_topic else None
+        if _family_enabled("1 Topic note presence", allowed_families):
+            results.extend(_topic_note_presence_results(report, topic_id, topic_rules))
+        if _family_enabled("2 Hypercube conformity", allowed_families):
+            results.extend(_hypercube_conformity_results(report, topic_id, topic_rules))
+        if _family_enabled("3 Expected dimension usage", allowed_families):
+            results.extend(_expected_dimension_usage_results(report, topic_id, topic_rules))
+        if _family_enabled("4 Member validity", allowed_families):
+            results.extend(_member_validity_results(report, topic_id, topic_rules, allowed_members_by_topic))
+        if _family_enabled("6 Dimension member roll-up", allowed_families):
+            results.extend(_rollup_results(report, topic_id, topic_rules))
     return {
         "source_path": report.source_path,
         "entrypoint": manifest["entrypoint"],
         "taxonomy_year": manifest["taxonomy_year"],
-        "topic_scope": "all_topics" if include_all_topics else "relevant_topics_only",
+        "topic_scope": topic_scope,
+        "selected_topics": sorted(selected_topics) if selected_topics else [],
+        "selected_families_by_topic": {
+            topic_id: sorted(families) for topic_id, families in (selected_families_by_topic or {}).items()
+        },
         "evaluated_topic_count": len(evaluated_topics),
         "evaluated_topics": evaluated_topics,
         "result_count": len(results),
@@ -370,6 +433,10 @@ def evaluate_rule_pack(
         },
         "results": results,
     }
+
+
+def _family_enabled(family_name: str, allowed_families: set[str] | None) -> bool:
+    return allowed_families is None or family_name in allowed_families
 
 
 def parse_args() -> argparse.Namespace:

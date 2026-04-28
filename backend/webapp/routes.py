@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 
 from flask import Blueprint, Response, current_app, flash, jsonify, redirect, render_template, request, send_file, url_for
+from markupsafe import Markup, escape
 
 from .services.job_service import create_validation_job, get_job, start_validation_job
 from .services.job_service import create_batch_validation_job, start_batch_validation_job
@@ -26,10 +27,27 @@ from .services.validation_service import (
     recent_validation_runs,
     stored_source_files,
     synthetic_example_paths,
+    validation_topic_options,
 )
 
 
 web = Blueprint("web", __name__)
+
+
+@web.app_template_global()
+def render_fact_table(facts: list[dict]) -> str:
+    if not facts:
+        return ""
+    rows = [
+        "<div class='table-shell compact'><table><thead><tr><th>Name</th><th>Value</th><th>Period</th><th>Dimensions</th></tr></thead><tbody>"
+    ]
+    for fact in facts:
+        dimensions = ", ".join(f"{key}={value}" for key, value in fact.get("dimensions", {}).items()) or "-"
+        rows.append(
+            f"<tr><td>{escape(fact.get('name',''))}</td><td>{escape(fact.get('value',''))}</td><td>{escape(fact.get('period',''))}</td><td>{escape(dimensions)}</td></tr>"
+        )
+    rows.append("</tbody></table></div>")
+    return Markup("".join(rows))
 
 
 @web.route("/")
@@ -45,8 +63,12 @@ def validate() -> str | Response:
                 synthetic_path=request.form.get("synthetic_path"),
                 stored_source_id=request.form.get("stored_source_id"),
                 upload_files=request.files.getlist("upload_files"),
+                validation_scope=request.form.get("validation_scope", "auto"),
+                selected_topics=request.form.getlist("selected_topics"),
+                selected_family_keys=request.form.getlist("selected_family_keys"),
             )
             source_records = submission["source_records"]
+            validation_selection = submission["validation_selection"]
             if submission["mode"] == "batch":
                 batch_group = create_batch_group(source_records=source_records)
                 job_id = create_batch_validation_job(batch_group_id=batch_group["id"])
@@ -55,10 +77,16 @@ def validate() -> str | Response:
                     job_id=job_id,
                     batch_group_id=batch_group["id"],
                     source_file_ids=[record["id"] for record in source_records],
+                    validation_selection=validation_selection,
                 )
             else:
                 job_id = create_validation_job(source_file_id=source_records[0]["id"])
-                start_validation_job(current_app._get_current_object(), job_id=job_id, source_file_id=source_records[0]["id"])
+                start_validation_job(
+                    current_app._get_current_object(),
+                    job_id=job_id,
+                    source_file_id=source_records[0]["id"],
+                    validation_selection=validation_selection,
+                )
             return redirect(url_for("web.job_progress", job_id=job_id))
         except ValueError as exc:
             flash(str(exc), "error")
@@ -67,6 +95,7 @@ def validate() -> str | Response:
         "validate.html",
         synthetic_examples=synthetic_example_paths(),
         stored_sources=stored_source_files(),
+        validation_topics=validation_topic_options(),
     )
 
 

@@ -17,6 +17,71 @@
 
 <section class="panel">
     <form method="post" enctype="multipart/form-data" class="stack-lg">
+        <div class="panel nested-panel">
+            <div class="section-heading">
+                <h3>Validation scope</h3>
+                <p class="muted">Choose whether to auto-detect relevant topics, validate a selected subset, or run the full candidate rule pack.</p>
+            </div>
+            <div class="grid-3">
+                <label class="option-card">
+                    <input type="radio" name="validation_scope" value="auto" checked>
+                    <span>Auto-detect relevant topics</span>
+                    <small>Use report evidence and triggers to choose which topics to validate.</small>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="validation_scope" value="selected">
+                    <span>Selected topics</span>
+                    <small>Choose specific topics and optionally untick individual rule families.</small>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="validation_scope" value="all">
+                    <span>All candidate topics</span>
+                    <small>Run every topic in the candidate rule pack regardless of relevance.</small>
+                </label>
+            </div>
+        </div>
+
+        <div id="topic-selection-panel" class="panel nested-panel hidden">
+            <div class="section-heading">
+                <h3>Selected topics and rule families</h3>
+                <p class="muted">Tick one or more topics. All families are selected by default for any chosen topic, and you can untick individual families if needed.</p>
+            </div>
+            <div class="search-toolbar">
+                <label for="topic-search" class="muted">Search topics</label>
+                <input id="topic-search" type="search" placeholder="Filter topics by name or id">
+            </div>
+            <div class="selection-toolbar">
+                <button type="button" class="button-link secondary toolbar-button" id="select-all-topics">Select All Topics</button>
+                <button type="button" class="button-link secondary toolbar-button" id="clear-all-topics">Clear All Topics</button>
+                <button type="button" class="button-link secondary toolbar-button" id="expand-all-topics">Expand All</button>
+                <button type="button" class="button-link secondary toolbar-button" id="collapse-all-topics">Collapse All</button>
+            </div>
+            <div class="topic-selection-grid">
+                {% for topic in validation_topics %}
+                    <details class="topic-picker-card" data-topic-card="{{ topic.topic_id }}" data-topic-search="{{ (topic.topic_label ~ ' ' ~ topic.topic_id)|lower }}">
+                        <summary>
+                            <label class="topic-checkbox">
+                                <input type="checkbox" name="selected_topics" value="{{ topic.topic_id }}" data-topic-toggle="{{ topic.topic_id }}">
+                                <span>{{ topic.topic_label }}</span>
+                            </label>
+                        </summary>
+                        <div class="family-toolbar">
+                            <button type="button" class="mini-button" data-topic-family-select="{{ topic.topic_id }}">All Families</button>
+                            <button type="button" class="mini-button" data-topic-family-clear="{{ topic.topic_id }}">Clear Families</button>
+                        </div>
+                        <div class="family-selector">
+                            {% for family in topic.families %}
+                                <label class="family-checkbox">
+                                    <input type="checkbox" name="selected_family_keys" value="{{ topic.topic_id }}::{{ family }}" checked>
+                                    <span>{{ family }}</span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                    </details>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="grid-2">
             <div class="panel nested-panel">
                 <div class="section-heading">
@@ -52,7 +117,7 @@
             <span>Rule-pack snapshot</span>
             <strong>Immutable copy stored per run</strong>
             <span>Results scope</span>
-            <strong>Relevant topics only</strong>
+            <strong>Auto, selected, or all candidate topics</strong>
             <span>Batch handling</span>
             <strong>Multi-file uploads grouped as Batch TIMESTAMP</strong>
         </div>
@@ -93,4 +158,81 @@
         </table>
     </div>
 </section>
+
+<script>
+const scopeRadios = Array.from(document.querySelectorAll('input[name="validation_scope"]'));
+const topicPanel = document.getElementById('topic-selection-panel');
+const topicToggles = Array.from(document.querySelectorAll('[data-topic-toggle]'));
+const topicCards = Array.from(document.querySelectorAll('[data-topic-card]'));
+const selectAllTopicsButton = document.getElementById('select-all-topics');
+const clearAllTopicsButton = document.getElementById('clear-all-topics');
+const expandAllTopicsButton = document.getElementById('expand-all-topics');
+const collapseAllTopicsButton = document.getElementById('collapse-all-topics');
+const familySelectButtons = Array.from(document.querySelectorAll('[data-topic-family-select]'));
+const familyClearButtons = Array.from(document.querySelectorAll('[data-topic-family-clear]'));
+const topicSearchInput = document.getElementById('topic-search');
+
+function syncScopeUi() {
+    const selectedScope = scopeRadios.find((radio) => radio.checked)?.value || 'auto';
+    topicPanel.classList.toggle('hidden', selectedScope !== 'selected');
+}
+
+function syncTopicFamilies() {
+    topicToggles.forEach((toggle) => {
+        const topicId = toggle.getAttribute('data-topic-toggle');
+        const familyCheckboxes = document.querySelectorAll(`input[name="selected_family_keys"][value^="${topicId}::"]`);
+        familyCheckboxes.forEach((checkbox) => {
+            checkbox.disabled = !toggle.checked;
+        });
+    });
+}
+
+function setTopicState(checked) {
+    visibleTopicCards().forEach((card) => {
+        const toggle = card.querySelector('[data-topic-toggle]');
+        if (toggle) {
+            toggle.checked = checked;
+        }
+    });
+    syncTopicFamilies();
+}
+
+function setFamilyState(topicId, checked) {
+    const toggle = document.querySelector(`[data-topic-toggle="${topicId}"]`);
+    if (toggle && !toggle.checked && checked) {
+        toggle.checked = true;
+    }
+    const familyCheckboxes = document.querySelectorAll(`input[name="selected_family_keys"][value^="${topicId}::"]`);
+    familyCheckboxes.forEach((checkbox) => {
+        checkbox.checked = checked;
+    });
+    syncTopicFamilies();
+}
+
+function visibleTopicCards() {
+    return topicCards.filter((card) => !card.classList.contains('filtered-out'));
+}
+
+function filterTopics() {
+    const query = (topicSearchInput.value || '').trim().toLowerCase();
+    topicCards.forEach((card) => {
+        const haystack = card.dataset.topicSearch || '';
+        const match = !query || haystack.includes(query);
+        card.classList.toggle('filtered-out', !match);
+    });
+}
+
+scopeRadios.forEach((radio) => radio.addEventListener('change', syncScopeUi));
+topicToggles.forEach((toggle) => toggle.addEventListener('change', syncTopicFamilies));
+selectAllTopicsButton.addEventListener('click', () => setTopicState(true));
+clearAllTopicsButton.addEventListener('click', () => setTopicState(false));
+expandAllTopicsButton.addEventListener('click', () => visibleTopicCards().forEach((card) => { card.open = true; }));
+collapseAllTopicsButton.addEventListener('click', () => visibleTopicCards().forEach((card) => { card.open = false; }));
+familySelectButtons.forEach((button) => button.addEventListener('click', () => setFamilyState(button.dataset.topicFamilySelect, true)));
+familyClearButtons.forEach((button) => button.addEventListener('click', () => setFamilyState(button.dataset.topicFamilyClear, false)));
+topicSearchInput.addEventListener('input', filterTopics);
+syncScopeUi();
+syncTopicFamilies();
+filterTopics();
+</script>
 {% endblock %}

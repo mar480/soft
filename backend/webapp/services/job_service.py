@@ -85,10 +85,10 @@ def get_job(job_id: str) -> dict[str, Any] | None:
     return dict(row) if row is not None else None
 
 
-def start_validation_job(app: Flask, *, job_id: str, source_file_id: str) -> None:
+def start_validation_job(app: Flask, *, job_id: str, source_file_id: str, validation_selection: dict[str, Any]) -> None:
     worker = threading.Thread(
         target=_run_validation_job,
-        args=(app, job_id, source_file_id),
+        args=(app, job_id, source_file_id, validation_selection),
         daemon=True,
         name=f"validation-job-{job_id[:8]}",
     )
@@ -160,12 +160,13 @@ def mark_job_failed(job_id: str, *, error_message: str) -> None:
     db.commit()
 
 
-def _run_validation_job(app: Flask, job_id: str, source_file_id: str) -> None:
+def _run_validation_job(app: Flask, job_id: str, source_file_id: str, validation_selection: dict[str, Any]) -> None:
     with app.app_context():
         try:
             mark_job_started(job_id)
             run_id = perform_validation_run(
                 source_file_id=source_file_id,
+                validation_selection=validation_selection,
                 progress_callback=lambda percent, message: update_job_progress(
                     job_id,
                     progress_percent=percent,
@@ -177,17 +178,30 @@ def _run_validation_job(app: Flask, job_id: str, source_file_id: str) -> None:
             mark_job_failed(job_id, error_message=str(exc))
 
 
-def start_batch_validation_job(app: Flask, *, job_id: str, batch_group_id: str, source_file_ids: list[str]) -> None:
+def start_batch_validation_job(
+    app: Flask,
+    *,
+    job_id: str,
+    batch_group_id: str,
+    source_file_ids: list[str],
+    validation_selection: dict[str, Any],
+) -> None:
     worker = threading.Thread(
         target=_run_batch_validation_job,
-        args=(app, job_id, batch_group_id, source_file_ids),
+        args=(app, job_id, batch_group_id, source_file_ids, validation_selection),
         daemon=True,
         name=f"batch-validation-job-{job_id[:8]}",
     )
     worker.start()
 
 
-def _run_batch_validation_job(app: Flask, job_id: str, batch_group_id: str, source_file_ids: list[str]) -> None:
+def _run_batch_validation_job(
+    app: Flask,
+    job_id: str,
+    batch_group_id: str,
+    source_file_ids: list[str],
+    validation_selection: dict[str, Any],
+) -> None:
     with app.app_context():
         try:
             mark_job_started(job_id)
@@ -202,6 +216,7 @@ def _run_batch_validation_job(app: Flask, job_id: str, batch_group_id: str, sour
                 perform_validation_run(
                     source_file_id=source_file_id,
                     batch_group_id=batch_group_id,
+                    validation_selection=validation_selection,
                     progress_callback=lambda percent, message, idx=index, count=total: update_job_progress(
                         job_id,
                         progress_percent=min(99, int((((idx - 1) + (percent / 100)) / count) * 100)),

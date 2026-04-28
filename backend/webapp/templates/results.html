@@ -33,6 +33,10 @@
         <dl class="meta-list">
             <div><dt>Rule-pack version</dt><dd>{{ run.rule_pack_version }}</dd></div>
             <div><dt>Source type</dt><dd>{{ run.source_type }}</dd></div>
+            <div><dt>Validation scope</dt><dd>{{ run.payload.topic_scope }}</dd></div>
+            {% if run.payload.selected_topics %}
+                <div><dt>Selected topics</dt><dd>{{ run.payload.selected_topics|join(", ") }}</dd></div>
+            {% endif %}
             <div><dt>Rule snapshot</dt><dd>{{ run.rule_snapshot_path }}</dd></div>
         </dl>
     </div>
@@ -99,8 +103,169 @@
                                             <td colspan="4">
                                                 <div class="support-card">
                                                     <strong>Supporting information</strong>
-                                                    <p>This test checks the rule family behaviour for the selected topic and records the engine message and evidence payload from the backend.</p>
-                                                    <pre>{{ result.evidence | tojson(indent=2) }}</pre>
+                                                    <div class="support-summary">
+                                                        <p><strong>What this test is checking:</strong> {{ result.support.what_test_is }}</p>
+                                                        <p><strong>What a pass proves:</strong> {{ result.support.what_it_proves }}</p>
+                                                        <p><strong>Outcome for this run:</strong> {{ result.support.outcome_summary }}</p>
+                                                    </div>
+                                                    {% if result.evidence.trigger_facts %}
+                                                        <div class="evidence-group">
+                                                            <h5>Trigger facts</h5>
+                                                            {{ render_fact_table(result.evidence.trigger_facts) }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.topic_facts %}
+                                                        <div class="evidence-group">
+                                                            <h5>Topic facts</h5>
+                                                            {{ render_fact_table(result.evidence.topic_facts) }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.invalid_facts %}
+                                                        <div class="evidence-group">
+                                                            <h5>Invalid facts</h5>
+                                                            {{ render_fact_table(result.evidence.invalid_facts) }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.topic_fact_reason_details %}
+                                                        <div class="evidence-group">
+                                                            <h5>Fact relevance</h5>
+                                                            <div class="table-shell compact">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Name</th>
+                                                                            <th>Value</th>
+                                                                            <th>Period</th>
+                                                                            <th>Reasons</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for item in result.evidence.topic_fact_reason_details %}
+                                                                            <tr>
+                                                                                <td>{{ item.fact.name }}</td>
+                                                                                <td>{{ item.fact.value }}</td>
+                                                                                <td>{{ item.fact.period }}</td>
+                                                                                <td>{{ item.reasons|join(", ") }}</td>
+                                                                            </tr>
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.invalid_dimension_member_details %}
+                                                        <div class="evidence-group">
+                                                            <h5>Invalid dimension members</h5>
+                                                            <div class="table-shell compact">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Name</th>
+                                                                            <th>Value</th>
+                                                                            <th>Period</th>
+                                                                            <th>Dimension</th>
+                                                                            <th>Member</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for item in result.evidence.invalid_dimension_member_details %}
+                                                                            <tr>
+                                                                                <td>{{ item.fact.name if item.fact else item.fact_id }}</td>
+                                                                                <td>{{ item.fact.value if item.fact else "" }}</td>
+                                                                                <td>{{ item.fact.period if item.fact else "" }}</td>
+                                                                                <td>{{ item.dimension }}</td>
+                                                                                <td>{{ item.member }}</td>
+                                                                            </tr>
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.checked_dimension_member_details and result.status == 'pass' %}
+                                                        <div class="evidence-group">
+                                                            <h5>Validated dimension-member uses</h5>
+                                                            <div class="table-shell compact">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Name</th>
+                                                                            <th>Value</th>
+                                                                            <th>Period</th>
+                                                                            <th>Dimension</th>
+                                                                            <th>Member</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        {% for item in result.evidence.checked_dimension_member_details[:20] %}
+                                                                            <tr>
+                                                                                <td>{{ item.fact.name if item.fact else item.fact_id }}</td>
+                                                                                <td>{{ item.fact.value if item.fact else "" }}</td>
+                                                                                <td>{{ item.fact.period if item.fact else "" }}</td>
+                                                                                <td>{{ item.dimension }}</td>
+                                                                                <td>{{ item.member }}</td>
+                                                                            </tr>
+                                                                        {% endfor %}
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.matching_facts %}
+                                                        <div class="evidence-group">
+                                                            <h5>Facts using expected dimensions</h5>
+                                                            {{ render_fact_table(result.evidence.matching_facts) }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.valid_facts and result.status == 'pass' %}
+                                                        <div class="evidence-group">
+                                                            <h5>Facts conforming to allowed hypercubes</h5>
+                                                            {{ render_fact_table(result.evidence.valid_facts[:20]) }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if result.evidence.comparison_details %}
+                                                        <div class="evidence-group">
+                                                            <h5>Roll-up comparisons</h5>
+                                                            {% for comparison in result.evidence.comparison_details %}
+                                                                <div class="rollup-card">
+                                                                    <p class="muted">
+                                                                        Head: {{ comparison.head_fact.name if comparison.head_fact else comparison.head_fact_id }}
+                                                                        · total {{ comparison.head_value }}
+                                                                        · components {{ comparison.component_total }}
+                                                                        · difference {{ comparison.difference }}
+                                                                    </p>
+                                                                    {% if comparison.component_details %}
+                                                                        <div class="table-shell compact">
+                                                                            <table>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>Component</th>
+                                                                                        <th>Member</th>
+                                                                                        <th>Value</th>
+                                                                                        <th>Period</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    {% for component in comparison.component_details %}
+                                                                                        <tr>
+                                                                                            <td>{{ component.fact.name if component.fact else component.fact_id }}</td>
+                                                                                            <td>{{ component.member }}</td>
+                                                                                            <td>{{ component.value }}</td>
+                                                                                            <td>{{ component.fact.period if component.fact else "" }}</td>
+                                                                                        </tr>
+                                                                                    {% endfor %}
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endfor %}
+                                                        </div>
+                                                    {% endif %}
+                                                    <details class="raw-evidence">
+                                                        <summary>Raw backend evidence</summary>
+                                                        <pre>{{ result.evidence | tojson(indent=2) }}</pre>
+                                                    </details>
                                                 </div>
                                             </td>
                                         </tr>
