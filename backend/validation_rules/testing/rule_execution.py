@@ -22,6 +22,10 @@ GENERIC_TOPIC_DIMENSIONS = {
     "bus:OriginalRevisedDataDimension",
     "common:X-AnalysisDimension",
     "core:ContinuingDiscontinuedOperationsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
     "core:RestatementsFirstTimeAdoptionDimension",
     "core:SegmentReconciliationDimension",
 }
