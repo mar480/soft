@@ -1,0 +1,34 @@
+{
+  "topic_id": "accounts_type",
+  "topic_label": "Accounts Type",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ACCOUNTSTYPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "accounts_type",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "bus:AccountsTypePrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:AccountsTypeDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

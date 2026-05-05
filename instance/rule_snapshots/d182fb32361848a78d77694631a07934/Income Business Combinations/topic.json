@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_business_combinations",
+  "topic_label": "Income Business Combinations",
+  "source_hypercubes": [
+    "core:Income-BusinessCombinationsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-BusinessCombinationsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-BusinessCombinations",
+      "elr_definition": "9098 - Hypercube - Income - Business Combinations",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 23
+}

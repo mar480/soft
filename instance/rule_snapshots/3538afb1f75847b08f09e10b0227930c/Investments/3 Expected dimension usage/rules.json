@@ -1,0 +1,53 @@
+{
+  "topic_id": "investments",
+  "topic_label": "Investments",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "investments",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:Investments-AssociatesPrimaryItems",
+            "core:Investments-EquitiesPrimaryItems",
+            "core:Investments-JointVenturesPrimaryItems",
+            "core:Investments-OtherPartiesPrimaryItems",
+            "core:Investments-ParentsPrimaryItems",
+            "core:Investments-SubsidiariesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:EquityClassesHeldDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:JointVenturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:PositionTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

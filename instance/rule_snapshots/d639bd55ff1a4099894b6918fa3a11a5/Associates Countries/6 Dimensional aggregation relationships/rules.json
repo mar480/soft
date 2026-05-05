@@ -1,0 +1,93 @@
+{
+  "topic_id": "associates_countries",
+  "topic_label": "Associates Countries",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ASSOCIATESCOUNTRIES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "associates_countries",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:AssociatesDimension",
+      "head_member": "core:TotalAssociatesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Associate1",
+          "core:Associate10",
+          "core:Associate11",
+          "core:Associate12",
+          "core:Associate13",
+          "core:Associate14",
+          "core:Associate15",
+          "core:Associate16",
+          "core:Associate17",
+          "core:Associate18",
+          "core:Associate19",
+          "core:Associate2",
+          "core:Associate20",
+          "core:Associate21",
+          "core:Associate22",
+          "core:Associate23",
+          "core:Associate24",
+          "core:Associate25",
+          "core:Associate26",
+          "core:Associate27",
+          "core:Associate28",
+          "core:Associate29",
+          "core:Associate3",
+          "core:Associate30",
+          "core:Associate31",
+          "core:Associate32",
+          "core:Associate33",
+          "core:Associate34",
+          "core:Associate35",
+          "core:Associate36",
+          "core:Associate37",
+          "core:Associate38",
+          "core:Associate39",
+          "core:Associate4",
+          "core:Associate40",
+          "core:Associate41",
+          "core:Associate42",
+          "core:Associate43",
+          "core:Associate44",
+          "core:Associate45",
+          "core:Associate46",
+          "core:Associate47",
+          "core:Associate48",
+          "core:Associate49",
+          "core:Associate5",
+          "core:Associate50",
+          "core:Associate6",
+          "core:Associate7",
+          "core:Associate8",
+          "core:Associate9",
+          "core:OtherAssociatesTotalIndividuallyImmaterialAssociates"
+        ],
+        "domain_root": "core:TotalAssociatesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Associates [Dimension]",
+        "default_member": "core:TotalAssociatesDefault",
+        "domain_root": "core:TotalAssociatesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

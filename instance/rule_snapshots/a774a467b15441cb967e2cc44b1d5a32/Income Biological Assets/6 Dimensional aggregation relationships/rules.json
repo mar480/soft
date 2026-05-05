@@ -1,0 +1,306 @@
+{
+  "topic_id": "income_biological_assets",
+  "topic_label": "Income Biological Assets",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BiologicalAssetClassesDimension",
+      "head_member": "core:TotalBiologicalAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:BearerBiologicalAssetClass1",
+          "core:BearerBiologicalAssetClass2",
+          "core:BearerBiologicalAssetClass3",
+          "core:BearerBiologicalAssetClass4",
+          "core:BearerBiologicalAssetClass5",
+          "core:BearerBiologicalAssets",
+          "core:ConsumableBiologicalAssetClass1",
+          "core:ConsumableBiologicalAssetClass2",
+          "core:ConsumableBiologicalAssetClass3",
+          "core:ConsumableBiologicalAssetClass4",
+          "core:ConsumableBiologicalAssetClass5",
+          "core:ConsumableBiologicalAssets"
+        ],
+        "domain_root": "core:TotalBiologicalAssetsDefault",
+        "member_descendants": {
+          "core:ConsumableBiologicalAssetClass1": [],
+          "core:ConsumableBiologicalAssetClass2": [],
+          "core:ConsumableBiologicalAssetClass3": [],
+          "core:ConsumableBiologicalAssetClass4": [],
+          "core:ConsumableBiologicalAssetClass5": [],
+          "core:ConsumableBiologicalAssets": [
+            "core:ConsumableBiologicalAssetClass1",
+            "core:ConsumableBiologicalAssetClass2",
+            "core:ConsumableBiologicalAssetClass3",
+            "core:ConsumableBiologicalAssetClass4",
+            "core:ConsumableBiologicalAssetClass5"
+          ],
+          "core:BearerBiologicalAssetClass1": [],
+          "core:BearerBiologicalAssetClass2": [],
+          "core:BearerBiologicalAssetClass3": [],
+          "core:BearerBiologicalAssetClass4": [],
+          "core:BearerBiologicalAssetClass5": [],
+          "core:BearerBiologicalAssets": [
+            "core:BearerBiologicalAssetClass1",
+            "core:BearerBiologicalAssetClass2",
+            "core:BearerBiologicalAssetClass3",
+            "core:BearerBiologicalAssetClass4",
+            "core:BearerBiologicalAssetClass5"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Biological asset classes [Dimension]",
+        "default_member": "core:TotalBiologicalAssetsDefault",
+        "domain_root": "core:TotalBiologicalAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BiologicalAssetMaturityDimension",
+      "head_member": "core:AllBiologicalAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:ImmatureBiologicalAssets",
+          "core:MatureBiologicalAssets"
+        ],
+        "domain_root": "core:AllBiologicalAssetsDefault",
+        "member_descendants": {
+          "core:MatureBiologicalAssets": [],
+          "core:ImmatureBiologicalAssets": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Biological asset maturity [Dimension]",
+        "default_member": "core:AllBiologicalAssetsDefault",
+        "domain_root": "core:AllBiologicalAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:DiscontinuedOperations",
+          "core:Non-currentAssetsDisposalGroupsHeldForSale",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "member_descendants": {
+          "core:ContinuingOperations": [],
+          "core:SpecificDiscontinuedOperation1": [],
+          "core:SpecificDiscontinuedOperation2": [],
+          "core:SpecificDiscontinuedOperation3": [],
+          "core:SpecificDiscontinuedOperation4": [],
+          "core:SpecificDiscontinuedOperation5": [],
+          "core:SpecificDiscontinuedOperation6": [],
+          "core:SpecificDiscontinuedOperation7": [],
+          "core:SpecificDiscontinuedOperation8": [],
+          "core:DiscontinuedOperations": [
+            "core:SpecificDiscontinuedOperation1",
+            "core:SpecificDiscontinuedOperation2",
+            "core:SpecificDiscontinuedOperation3",
+            "core:SpecificDiscontinuedOperation4",
+            "core:SpecificDiscontinuedOperation5",
+            "core:SpecificDiscontinuedOperation6",
+            "core:SpecificDiscontinuedOperation7",
+            "core:SpecificDiscontinuedOperation8"
+          ],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8": [],
+          "core:Non-currentAssetsDisposalGroupsHeldForSale": [
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ExceptionalsDimension",
+      "head_member": "core:TotalReportedDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:Exceptional",
+          "core:ExplicitlyIdentifiedAsNon-exceptional"
+        ],
+        "domain_root": "core:TotalReportedDefault",
+        "member_descendants": {
+          "core:Exceptional": [],
+          "core:ExplicitlyIdentifiedAsNon-exceptional": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Exceptionals [Dimension]",
+        "default_member": "core:TotalReportedDefault",
+        "domain_root": "core:TotalReportedDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEBIOLOGICALASSETS.DIMAGG.005",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:OwnershipAssetsDimension",
+      "head_member": "core:TotalOwnedLeasedAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:LeasebackAssets",
+          "core:LeasedAssets",
+          "core:OwnedAssets"
+        ],
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault",
+        "member_descendants": {
+          "core:OwnedAssets": [],
+          "core:LeasebackAssets": [],
+          "core:LeasedAssets": [
+            "core:LeasebackAssets"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Ownership of assets [Dimension]",
+        "default_member": "core:TotalOwnedLeasedAssetsDefault",
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

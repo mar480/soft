@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_main",
+  "topic_label": "Income Main",
+  "source_hypercubes": [
+    "core:Income-MainHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-MainHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-Analysis1",
+      "elr_definition": "90801 - Hypercube - Income - Main Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "rule_count": 24
+}

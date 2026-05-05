@@ -1,0 +1,17 @@
+{
+  "topic_id": "accounts_type",
+  "topic_label": "Accounts Type",
+  "source_hypercubes": [
+    "bus:AccountsTypeHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:AccountsTypeHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsType",
+      "elr_definition": "9025 - Hypercube - Accounts Type",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

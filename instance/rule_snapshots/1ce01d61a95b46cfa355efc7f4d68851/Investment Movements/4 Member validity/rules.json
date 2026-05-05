@@ -1,0 +1,171 @@
+{
+  "topic_id": "investment_movements",
+  "topic_label": "Investment Movements",
+  "rule_family": "4 Member validity",
+  "rule_count": 11,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InvestmentsMovementsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NetBookValueCarryingValueDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:Listed-unlistedDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:PositionTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:PositionTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SecuredStatusDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:SecuredStatusHeading"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "topic_id": "entity_contact_info",
+  "topic_label": "Entity Contact Info",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYCONTACTINFO.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "entity_contact_info",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "bus:EntityContactInfoPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:AddressTypeDimension",
+          "bus:EntityContactTypeDimension",
+          "bus:FormContactDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:PhoneNumberTypeDimension",
+          "countries:CountriesRegionsDimension",
+          "lang:LanguagesDimension"
+        ]
+      }
+    }
+  ]
+}

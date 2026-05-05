@@ -1,0 +1,137 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "AUTO.EQUITYANDSOCI.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:EquitySOCIHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Analysis1",
+        "elr_definition": "92401 - Hypercube - Equity and SOCI Analysis 1",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:EquitySOCIHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI",
+        "elr_definition": "9240 - Hypercube - Equity and SOCI",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:EquitySOCI-PPEHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-PPE",
+        "elr_definition": "9241 - Hypercube - Equity and SOCI - PPE",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:EquitySOCI-SharesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Shares",
+        "elr_definition": "9242 - Hypercube - Equity and SOCI - Shares",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "bus:EntityShareClassesDimension",
+          "bus:ShareTypesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:EquitySOCI-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Segments",
+        "elr_definition": "9243 - Hypercube - Equity and SOCI - Segments",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

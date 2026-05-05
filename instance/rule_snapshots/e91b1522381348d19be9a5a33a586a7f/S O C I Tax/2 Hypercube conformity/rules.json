@@ -1,0 +1,59 @@
+{
+  "topic_id": "s_o_c_i_tax",
+  "topic_label": "S O C I Tax",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.SOCITAX.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "s_o_c_i_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:SOCI-TaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SOCI-Tax-Analysis1",
+        "elr_definition": "92441 - Hypercube - SOCI - Tax Analysis 1",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:TaxJurisdictionDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.SOCITAX.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "s_o_c_i_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:SOCI-TaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SOCI-Tax",
+        "elr_definition": "9244 - Hypercube - SOCI - Tax",
+        "dimensions": [
+          "core:EquityClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:TaxJurisdictionDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "legal_form_of_entity",
+  "topic_label": "Legal Form of Entity",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.LEGALFORMOFENTITY.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "legal_form_of_entity",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:LegalFormEntityHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:LegalFormEntityDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Legal Form of Entity. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

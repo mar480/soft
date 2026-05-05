@@ -1,0 +1,30 @@
+{
+  "topic_id": "main_industry_sector",
+  "topic_label": "Main Industry Sector",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.MAININDUSTRYSECTOR.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "main_industry_sector",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:MainIndustrySectorHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-MainIndustrySector",
+        "elr_definition": "9009 - Hypercube - Main Industry Sector",
+        "dimensions": [
+          "bus:MainIndustrySectorDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

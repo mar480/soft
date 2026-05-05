@@ -1,0 +1,33 @@
+{
+  "topic_id": "segments_text",
+  "topic_label": "Segments Text",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SEGMENTSTEXT.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "segments_text",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Segments-TextHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Segments-Text",
+        "elr_definition": "9106 - Hypercube - Segments - Text",
+        "dimensions": [
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

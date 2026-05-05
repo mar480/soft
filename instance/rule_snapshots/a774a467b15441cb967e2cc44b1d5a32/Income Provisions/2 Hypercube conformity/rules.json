@@ -1,0 +1,44 @@
+{
+  "topic_id": "income_provisions",
+  "topic_label": "Income Provisions",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEPROVISIONS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "income_provisions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-ProvisionsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Provisions",
+        "elr_definition": "9097 - Hypercube - Income - Provisions",
+        "dimensions": [
+          "core:ProvisionsClassesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

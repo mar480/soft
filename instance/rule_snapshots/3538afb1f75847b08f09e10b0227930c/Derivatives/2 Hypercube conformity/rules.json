@@ -1,0 +1,123 @@
+{
+  "topic_id": "derivatives",
+  "topic_label": "Derivatives",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Derivatives-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Segments",
+        "elr_definition": "9076 - Hypercube - Derivatives - Segments",
+        "dimensions": [
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:DerivativesTypesDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativePurposeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Derivatives-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Basic",
+        "elr_definition": "9074 - Hypercube - Derivatives - Basic",
+        "dimensions": [
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:DerivativesTypesDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativePurposeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Derivatives-FullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Full",
+        "elr_definition": "9075 - Hypercube - Derivatives - Full",
+        "dimensions": [
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:DerivativesTypesDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativePurposeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

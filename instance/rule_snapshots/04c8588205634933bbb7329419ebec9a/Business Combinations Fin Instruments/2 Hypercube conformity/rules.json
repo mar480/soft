@@ -1,0 +1,57 @@
+{
+  "topic_id": "business_combinations_fin_instruments",
+  "topic_label": "Business Combinations Fin Instruments",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations_fin_instruments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-FinInstrumentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinInstruments-Analysis1",
+        "elr_definition": "91581 - Hypercube - Business Combinations - Fin Instruments Analysis 1",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations_fin_instruments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-FinInstrumentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinInstruments",
+        "elr_definition": "9158 - Hypercube - Business Combinations - Fin Instruments",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

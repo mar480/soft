@@ -1,0 +1,41 @@
+{
+  "topic_id": "detailed_profit_and_loss",
+  "topic_label": "Detailed Profit and Loss",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "detailed_profit_and_loss",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "dpl:DetailedProfitLossPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:MainIndustrySectorDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "countries:CountriesRegionsDimension",
+          "dpl:DetailedAnalysisDimension",
+          "dpl:ExpenseTypeDimension",
+          "dpl:IntraExtraGroupTransactionsDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "topic_id": "business_combinations_contingent_liabilities",
+  "topic_label": "Business Combinations Contingent Liabilities",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-ContingentLiabilitiesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:ContingentLiabilitiesClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Contingent Liabilities. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

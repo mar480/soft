@@ -1,0 +1,131 @@
+{
+  "topic_id": "finance_leases",
+  "topic_label": "Finance Leases",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.FINANCELEASES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinanceLeases-AssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Assets",
+        "elr_definition": "9122 - Hypercube - Finance Leases - Assets",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:CreditRatingsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinanceLeases-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Basic",
+        "elr_definition": "9120 - Hypercube - Finance Leases - Basic",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinanceLeases-LiabilitiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Liabilities",
+        "elr_definition": "9123 - Hypercube - Finance Leases - Liabilities",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinanceLeases-MainHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Main",
+        "elr_definition": "9121 - Hypercube - Finance Leases - Main",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

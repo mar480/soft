@@ -1,0 +1,115 @@
+{
+  "topic_id": "biological_assets",
+  "topic_label": "Biological Assets",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.BIOLOGICALASSETS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "biological_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BiologicalAssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Analysis1",
+        "elr_definition": "90421 - Hypercube - Biological Assets Analysis 1",
+        "dimensions": [
+          "core:BiologicalAssetClassesDimension",
+          "core:BiologicalAssetMaturityDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BIOLOGICALASSETS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "biological_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BiologicalAssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets",
+        "elr_definition": "9042 - Hypercube - Biological Assets",
+        "dimensions": [
+          "core:BiologicalAssetClassesDimension",
+          "core:BiologicalAssetMaturityDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BIOLOGICALASSETS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "biological_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BiologicalAssets-RangeHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Range",
+        "elr_definition": "9043 - Hypercube - Biological Assets - Range",
+        "dimensions": [
+          "core:BiologicalAssetClassesDimension",
+          "core:BiologicalAssetMaturityDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RangeDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BIOLOGICALASSETS.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "biological_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BiologicalAssets-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Segments",
+        "elr_definition": "9044 - Hypercube - Biological Assets - Segments",
+        "dimensions": [
+          "core:BiologicalAssetClassesDimension",
+          "core:BiologicalAssetMaturityDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

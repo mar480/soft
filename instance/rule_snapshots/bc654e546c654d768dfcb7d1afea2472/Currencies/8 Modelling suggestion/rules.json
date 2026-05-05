@@ -1,0 +1,31 @@
+{
+  "topic_id": "currencies",
+  "topic_label": "Currencies",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CURRENCIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "currencies",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:CurrenciesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "curr:CurrenciesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Currencies. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

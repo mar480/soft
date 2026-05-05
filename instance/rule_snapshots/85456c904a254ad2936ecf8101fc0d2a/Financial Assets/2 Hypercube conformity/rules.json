@@ -1,0 +1,784 @@
+{
+  "topic_id": "financial_assets",
+  "topic_label": "Financial Assets",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 19,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Basic-Analysis1",
+        "elr_definition": "90521 - Hypercube - Financial Assets - Basic Analysis 1",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-FullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Full-Analysis1",
+        "elr_definition": "90531 - Hypercube - Financial Assets - Full Analysis 1",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-SimpleHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Simple",
+        "elr_definition": "9055 - Hypercube - Financial Assets - Simple",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-SubsidiariesBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-SubsidiariesBasic",
+        "elr_definition": "9056 - Hypercube - Financial Assets - Subsidiaries Basic",
+        "dimensions": [
+          "core:SubsidiariesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-SubsidiariesFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-SubsidiariesFull",
+        "elr_definition": "9057 - Hypercube - Financial Assets - Subsidiaries Full",
+        "dimensions": [
+          "core:SubsidiariesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-AssociatesBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-AssociatesBasic",
+        "elr_definition": "9058 - Hypercube - Financial Assets - Associates Basic",
+        "dimensions": [
+          "core:AssociatesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.007",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-AssociatesFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-AssociatesFull",
+        "elr_definition": "9059 - Hypercube - Financial Assets - Associates Full",
+        "dimensions": [
+          "core:AssociatesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.008",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-JointVenturesBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-JointVenturesBasic",
+        "elr_definition": "9060 - Hypercube - Financial Assets - Joint Ventures Basic",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.009",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-JointVenturesFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-JointVenturesFull",
+        "elr_definition": "9061 - Hypercube - Financial Assets - Joint Ventures Full",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.010",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-ParentsBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-ParentsBasic",
+        "elr_definition": "9062 - Hypercube - Financial Assets - Parents Basic",
+        "dimensions": [
+          "core:ParentEntitiesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.011",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-ParentsFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-ParentsFull",
+        "elr_definition": "9063 - Hypercube - Financial Assets - Parents Full",
+        "dimensions": [
+          "core:ParentEntitiesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.012",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-OtherPartiesBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-OtherPartiesBasic",
+        "elr_definition": "9064 - Hypercube - Financial Assets - Other Parties Basic",
+        "dimensions": [
+          "core:OtherRelatedPartyTypeDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.013",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-OtherPartiesFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-OtherPartiesFull",
+        "elr_definition": "9065 - Hypercube - Financial Assets - Other Parties Full",
+        "dimensions": [
+          "core:OtherRelatedPartyTypeDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.014",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-EquitiesBasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-EquitiesBasic",
+        "elr_definition": "9066 - Hypercube - Financial Assets - Equities Basic",
+        "dimensions": [
+          "core:EquityClassesHeldDimension",
+          "bus:ShareTypesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.015",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-EquitiesFullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-EquitiesFull",
+        "elr_definition": "9067 - Hypercube - Financial Assets - Equities Full",
+        "dimensions": [
+          "core:EquityClassesHeldDimension",
+          "bus:ShareTypesDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.016",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-ReclassificationHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Reclassification",
+        "elr_definition": "9068 - Hypercube - Financial Assets - Reclassification",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.017",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Segments",
+        "elr_definition": "9054 - Hypercube - Financial Assets - Segments",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.018",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Basic",
+        "elr_definition": "9052 - Hypercube - Financial Assets - Basic",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.CUBE_CONFORMITY.019",
+      "type": "hypercube_conformity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialAssets-FullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Full",
+        "elr_definition": "9053 - Hypercube - Financial Assets - Full",
+        "dimensions": [
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRatingsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

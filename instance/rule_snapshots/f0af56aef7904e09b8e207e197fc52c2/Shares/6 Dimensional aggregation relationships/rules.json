@@ -1,0 +1,103 @@
+{
+  "topic_id": "shares",
+  "topic_label": "Shares",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.SHARES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "shares",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityShareClassesDimension",
+      "head_member": "bus:AllShareClassesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:DeferredShareClass1",
+          "bus:DeferredShareClass2",
+          "bus:DeferredShareClass3",
+          "bus:DeferredShareClass4",
+          "bus:DeferredShareClass5",
+          "bus:OrdinaryShareClass1",
+          "bus:OrdinaryShareClass2",
+          "bus:OrdinaryShareClass3",
+          "bus:OrdinaryShareClass4",
+          "bus:OrdinaryShareClass5",
+          "bus:OtherShareClass1",
+          "bus:OtherShareClass2",
+          "bus:OtherShareClass3",
+          "bus:OtherShareClass4",
+          "bus:OtherShareClass5",
+          "bus:PreferenceShareClass1",
+          "bus:PreferenceShareClass2",
+          "bus:PreferenceShareClass3",
+          "bus:PreferenceShareClass4",
+          "bus:PreferenceShareClass5"
+        ],
+        "domain_root": "bus:AllShareClassesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity share classes [Dimension]",
+        "default_member": "bus:AllShareClassesDefault",
+        "domain_root": "bus:AllShareClassesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.SHARES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "shares",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:ShareTypesDimension",
+      "head_member": "bus:AllShareTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:CumulativeNon-redeemableShares",
+          "bus:CumulativeRedeemableShares",
+          "bus:Non-cumulativeNon-redeemableShares",
+          "bus:Non-cumulativeRedeemableShares",
+          "bus:OtherShareType"
+        ],
+        "domain_root": "bus:AllShareTypesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Share types [Dimension]",
+        "default_member": "bus:AllShareTypesDefault",
+        "domain_root": "bus:AllShareTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

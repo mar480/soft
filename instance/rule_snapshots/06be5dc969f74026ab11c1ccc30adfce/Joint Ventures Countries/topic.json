@@ -1,0 +1,17 @@
+{
+  "topic_id": "joint_ventures_countries",
+  "topic_label": "Joint Ventures Countries",
+  "source_hypercubes": [
+    "core:JointVentures-CountriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:JointVentures-CountriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-JointVentures-Countries",
+      "elr_definition": "9219 - Hypercube - Joint Ventures - Countries",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 11
+}

@@ -1,0 +1,44 @@
+{
+  "topic_id": "income_tax",
+  "topic_label": "Income Tax",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMETAX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "income_tax",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:IncomeTax-SegmentsPrimaryItems",
+            "core:IncomeTaxPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:TaxJurisdictionDimension"
+        ]
+      }
+    }
+  ]
+}

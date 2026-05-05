@@ -1,0 +1,30 @@
+{
+  "topic_id": "main_industry_sector",
+  "topic_label": "Main Industry Sector",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.MAININDUSTRYSECTOR.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "main_industry_sector",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:MainIndustrySectorHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:MainIndustrySectorDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Main Industry Sector. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

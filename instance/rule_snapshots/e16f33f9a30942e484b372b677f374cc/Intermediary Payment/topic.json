@@ -1,0 +1,17 @@
+{
+  "topic_id": "intermediary_payment",
+  "topic_label": "Intermediary Payment",
+  "source_hypercubes": [
+    "core:IntermediaryPaymentHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:IntermediaryPaymentHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IntermediaryPayment-Grouping1",
+      "elr_definition": "9221 - Hypercube - Intermediary Payment Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 11
+}

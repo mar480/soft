@@ -1,0 +1,17 @@
+{
+  "topic_id": "pay_ratio_information",
+  "topic_label": "Pay Ratio Information",
+  "source_hypercubes": [
+    "direp:PayRatioInformationHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:PayRatioInformationHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pay-Ratio-Information",
+      "elr_definition": "9300 - Hypercube - Pay Ratio Information",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

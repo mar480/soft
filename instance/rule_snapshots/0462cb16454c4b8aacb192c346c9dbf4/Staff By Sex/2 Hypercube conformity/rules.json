@@ -1,0 +1,31 @@
+{
+  "topic_id": "staff_by_sex",
+  "topic_label": "Staff By Sex",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.STAFFBYSEX.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "staff_by_sex",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "direp:Staff-BySexHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-Staff-BySex",
+        "elr_definition": "9603 - Hypercube - Staff - By Sex",
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "direp:SexDimension"
+        ]
+      }
+    }
+  ]
+}

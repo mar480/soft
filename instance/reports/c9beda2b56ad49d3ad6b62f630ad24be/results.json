@@ -1,0 +1,4494 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\530a260ca5114a238add1c0d4afe932a_Prod223_4150_05687645_20260131.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "all_topics",
+  "selected_topics": [],
+  "selected_families_by_topic": {},
+  "evaluated_topic_count": 106,
+  "evaluated_topics": [
+    {
+      "topic_id": "accounting_standards_applied",
+      "topic_label": "Accounting Standards Applied",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "accounts_status",
+      "topic_label": "Accounts Status",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "accounts_type",
+      "topic_label": "Accounts Type",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "alternative_performance_measures_reconciliation",
+      "topic_label": "Alternative Performance Measures Reconciliation",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "applicable_legislation",
+      "topic_label": "Applicable Legislation",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "associates",
+      "topic_label": "Associates",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "associates_countries",
+      "topic_label": "Associates Countries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "audit_fees",
+      "topic_label": "Audit Fees",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "audit_firm_contact_info",
+      "topic_label": "Audit Firm Contact Info",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "balance_sheet",
+      "topic_label": "Balance Sheet",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "balance_sheet_current_and_non_current",
+      "topic_label": "Balance sheet Current And Non Current",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "balance_sheet_own_shares",
+      "topic_label": "Balance Sheet Own Shares",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "biological_assets",
+      "topic_label": "Biological Assets",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "bonus_pay_information",
+      "topic_label": "Bonus Pay Information",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations",
+      "topic_label": "Business Combinations",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_contingent_liabilities",
+      "topic_label": "Business Combinations Contingent Liabilities",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_derivatives",
+      "topic_label": "Business Combinations Derivatives",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_fin_instruments",
+      "topic_label": "Business Combinations Fin Instruments",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_financial_assets",
+      "topic_label": "Business Combinations Financial Assets",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_financial_liabilities",
+      "topic_label": "Business Combinations Financial Liabilities",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_intangibles",
+      "topic_label": "Business Combinations Intangibles",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_inventories",
+      "topic_label": "Business Combinations Inventories",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_p_p_e",
+      "topic_label": "Business Combinations P P E",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "business_combinations_provisions",
+      "topic_label": "Business Combinations Provisions",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "cash_flow",
+      "topic_label": "Cash Flow",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "contingent_liabilities",
+      "topic_label": "Contingent Liabilities",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "continuing_discontinued",
+      "topic_label": "Continuing Discontinued",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "countries",
+      "topic_label": "Countries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "currencies",
+      "topic_label": "Currencies",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "d_s_e_p_subsidiaries",
+      "topic_label": "D S E P Subsidiaries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "debtors",
+      "topic_label": "Debtors",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "debtors_operating_leases",
+      "topic_label": "Debtors Operating Leases",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "deferred_tax",
+      "topic_label": "Deferred Tax",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "derivatives",
+      "topic_label": "Derivatives",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "derivatives_simple",
+      "topic_label": "Derivatives Simple",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "detailed_profit_and_loss",
+      "topic_label": "Detailed Profit and Loss",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+      "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Ethnicity",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+      "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Gender",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
+      "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Sex",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "e_p_s",
+      "topic_label": "E P S",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "entity_contact_info",
+      "topic_label": "Entity Contact Info",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "entity_officers",
+      "topic_label": "Entity Officers",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "entity_special_legal_status",
+      "topic_label": "Entity Special Legal Status",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "entity_trading_status",
+      "topic_label": "Entity Trading Status",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "equity_and_soci",
+      "topic_label": "Equity and SOCI",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "fair_value_movement",
+      "topic_label": "Fair Value Movement",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "finance_leases",
+      "topic_label": "Finance Leases",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "financial_assets",
+      "topic_label": "Financial Assets",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "financial_instruments_simple",
+      "topic_label": "Financial Instruments Simple",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "financial_liabilities",
+      "topic_label": "Financial Liabilities",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "hourly_pay_information",
+      "topic_label": "Hourly Pay Information",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income",
+      "topic_label": "Income",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_biological_assets",
+      "topic_label": "Income Biological Assets",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_business_combinations",
+      "topic_label": "Income Business Combinations",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_intangibles",
+      "topic_label": "Income Intangibles",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_investment_property",
+      "topic_label": "Income Investment Property",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main",
+      "topic_label": "Income Main",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_ethnicity",
+      "topic_label": "Income Main By Ethnicity",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_ethnicity_main",
+      "topic_label": "Income Main By Ethnicity Main",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_gender",
+      "topic_label": "Income Main By Gender",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_gender_main",
+      "topic_label": "Income Main By Gender Main",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_sex",
+      "topic_label": "Income Main By Sex",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_main_by_sex_main",
+      "topic_label": "Income Main By Sex Main",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_operating_leases",
+      "topic_label": "Income Operating Leases",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_other_related_parties",
+      "topic_label": "Income Other Related Parties",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_p_p_e",
+      "topic_label": "Income P P E",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_provisions",
+      "topic_label": "Income Provisions",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_s_t_and_l_v_operating_leases",
+      "topic_label": "Income S T and L V Operating Leases",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "income_tax",
+      "topic_label": "Income Tax",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "intangibles",
+      "topic_label": "Intangibles",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "intermediary_payment",
+      "topic_label": "Intermediary Payment",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "inventories",
+      "topic_label": "Inventories",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "inventories_segments",
+      "topic_label": "Inventories Segments",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "investment_movements",
+      "topic_label": "Investment Movements",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "investment_property",
+      "topic_label": "Investment Property",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "investments",
+      "topic_label": "Investments",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "joint_ventures",
+      "topic_label": "Joint Ventures",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "joint_ventures_countries",
+      "topic_label": "Joint Ventures Countries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "languages",
+      "topic_label": "Languages",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "legal_form_of_entity",
+      "topic_label": "Legal Form of Entity",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "main_industry_sector",
+      "topic_label": "Main Industry Sector",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "market_risk",
+      "topic_label": "Market Risk",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "operating_leases",
+      "topic_label": "Operating Leases",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "pay_ratio_information",
+      "topic_label": "Pay Ratio Information",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "pensions",
+      "topic_label": "Pensions",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "property_plant_equipment",
+      "topic_label": "Property, plant and equipment",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "provisions",
+      "topic_label": "Provisions",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "related_parties",
+      "topic_label": "Related Parties",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "related_parties_balances",
+      "topic_label": "Related Parties Balances",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "report_period",
+      "topic_label": "Report Period",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "s_o_c_i_tax",
+      "topic_label": "S O C I Tax",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "s_o_r_ps_applied",
+      "topic_label": "S O R Ps Applied",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "scope_of_accounts",
+      "topic_label": "Scope of Accounts",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "segments_text",
+      "topic_label": "Segments Text",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "share_based_payments",
+      "topic_label": "Share based Payments",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "shares",
+      "topic_label": "Shares",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "staff_by_gender",
+      "topic_label": "Staff By Gender",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "staff_by_sex",
+      "topic_label": "Staff By Sex",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "streamlined_energy_and_carbon_reporting",
+      "topic_label": "Streamlined Energy and Carbon Reporting",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "subsidiaries",
+      "topic_label": "Subsidiaries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "subsidiaries_countries",
+      "topic_label": "Subsidiaries Countries",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "supplier_finance_arrangements",
+      "topic_label": "Supplier Finance Arrangements",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "supplier_finance_arrangements_carrying_amounts",
+      "topic_label": "Supplier Finance Arrangements Carrying amounts",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "third_party_agents",
+      "topic_label": "Third Party Agents",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    },
+    {
+      "topic_id": "u_s_es",
+      "topic_label": "U S Es",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    }
+  ],
+  "result_count": 368,
+  "summary": {
+    "pass": 368,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "accounting_standards_applied.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "accounting_standards_applied",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ACCOUNTINGSTANDARDSAPPLIED.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "accounting_standards_applied",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "accounting_standards_applied.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "accounting_standards_applied",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "accounts_status.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "accounts_status",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ACCOUNTSSTATUS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "accounts_status",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "accounts_status.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "accounts_status",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "accounts_type.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "accounts_type",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ACCOUNTSTYPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "accounts_type",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "accounts_type.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "accounts_type",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "alternative_performance_measures_reconciliation.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "alternative_performance_measures_reconciliation",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "alternative_performance_measures_reconciliation",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "alternative_performance_measures_reconciliation.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "alternative_performance_measures_reconciliation",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "applicable_legislation.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "applicable_legislation",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.APPLICABLELEGISLATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "applicable_legislation",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "applicable_legislation.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "applicable_legislation",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "associates.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "associates",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ASSOCIATES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "associates",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "associates.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "associates",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "associates_countries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "associates_countries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ASSOCIATESCOUNTRIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "associates_countries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "associates_countries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "associates_countries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "audit_fees.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "audit_fees",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.AUDITFEES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "audit_fees",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "audit_fees.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "audit_fees",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "audit_firm_contact_info.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "audit_firm_contact_info",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.AUDITFIRMCONTACTINFO.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "audit_firm_contact_info",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "audit_firm_contact_info.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "audit_firm_contact_info",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "balance_sheet",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BALANCESHEET.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "balance_sheet",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "balance_sheet",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet_current_and_non_current.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "balance_sheet_current_and_non_current",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BALANCESHEETCURRENTANDNONCURRENT.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "balance_sheet_current_and_non_current",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet_current_and_non_current.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "balance_sheet_current_and_non_current",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet_own_shares.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "balance_sheet_own_shares",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BALANCESHEETOWNSHARES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "balance_sheet_own_shares",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "balance_sheet_own_shares.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "balance_sheet_own_shares",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BALANCESHEETOWNSHARES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "balance_sheet_own_shares",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "biological_assets.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "biological_assets",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BIOLOGICALASSETS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "biological_assets",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "biological_assets.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "biological_assets",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BIOLOGICALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "biological_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "bonus_pay_information.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "bonus_pay_information",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BONUSPAYINFORMATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "bonus_pay_information",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "bonus_pay_information.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "bonus_pay_information",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "business_combinations.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_contingent_liabilities.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_contingent_liabilities",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_contingent_liabilities",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_contingent_liabilities.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_contingent_liabilities",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_contingent_liabilities",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_derivatives.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_derivatives",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_derivatives",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_derivatives.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_derivatives",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_fin_instruments.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_fin_instruments",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_fin_instruments",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_fin_instruments.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_fin_instruments",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_financial_assets.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_financial_assets",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_financial_assets",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_financial_assets.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_financial_assets",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_financial_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_financial_liabilities.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_financial_liabilities",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_financial_liabilities",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_financial_liabilities.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_financial_liabilities",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_financial_liabilities",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_intangibles.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_intangibles",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_intangibles",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_intangibles.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_intangibles",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_inventories.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_inventories",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSINVENTORIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_inventories",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_inventories.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_inventories",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_p_p_e.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_p_p_e",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSPPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_p_p_e",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_p_p_e.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_p_p_e",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSPPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_p_p_e",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_provisions.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "business_combinations_provisions",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "business_combinations_provisions",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "business_combinations_provisions.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "business_combinations_provisions",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "business_combinations_provisions",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "cash_flow.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "cash_flow",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CASHFLOW.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "cash_flow",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "cash_flow.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "cash_flow",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CASHFLOW.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "cash_flow",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "contingent_liabilities.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "contingent_liabilities",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CONTINGENTLIABILITIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "contingent_liabilities",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "contingent_liabilities.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "contingent_liabilities",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CONTINGENTLIABILITIES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "contingent_liabilities",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "continuing_discontinued.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "continuing_discontinued",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CONTINUINGDISCONTINUED.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "continuing_discontinued",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "continuing_discontinued.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "continuing_discontinued",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "countries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "countries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.COUNTRIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "countries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "countries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "countries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [],
+        "topic_fact_ids": [],
+        "topic_fact_reasons": {}
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "currencies.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "currencies",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CURRENCIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "currencies",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "currencies.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "currencies",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "d_s_e_p_subsidiaries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "d_s_e_p_subsidiaries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DSEPSUBSIDIARIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "d_s_e_p_subsidiaries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "d_s_e_p_subsidiaries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "d_s_e_p_subsidiaries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [],
+        "topic_fact_ids": [],
+        "topic_fact_reasons": {}
+      }
+    },
+    {
+      "rule_id": "debtors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "debtors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "debtors_operating_leases.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "debtors_operating_leases",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORSOPERATINGLEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "debtors_operating_leases",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "debtors_operating_leases.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "debtors_operating_leases",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORSOPERATINGLEASES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "debtors_operating_leases",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "deferred_tax.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "deferred_tax",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEFERREDTAX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "deferred_tax",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "deferred_tax.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "deferred_tax",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEFERREDTAX.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "deferred_tax",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "derivatives.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "derivatives",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DERIVATIVES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "derivatives",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "derivatives.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "derivatives",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DERIVATIVES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "derivatives",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "derivatives_simple.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "derivatives_simple",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DERIVATIVESSIMPLE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "derivatives_simple",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "derivatives_simple.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "derivatives_simple",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DERIVATIVESSIMPLE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "derivatives_simple",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "detailed_profit_and_loss.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "detailed_profit_and_loss",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DETAILEDPROFITANDLOSS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "detailed_profit_and_loss",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "detailed_profit_and_loss.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "detailed_profit_and_loss",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYETHNICITY.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYGENDER.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYSEX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_sex",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "e_p_s.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "e_p_s",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EPS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "e_p_s",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "e_p_s.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "e_p_s",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EPS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "e_p_s",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "entity_contact_info.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "entity_contact_info",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ENTITYCONTACTINFO.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "entity_contact_info",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "entity_contact_info.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "entity_contact_info",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "entity_officers.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "entity_officers",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ENTITYOFFICERS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "entity_officers",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "entity_officers.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "entity_officers",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "entity_special_legal_status.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "entity_special_legal_status",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ENTITYSPECIALLEGALSTATUS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "entity_special_legal_status",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "entity_special_legal_status.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "entity_special_legal_status",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "entity_trading_status.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "entity_trading_status",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.ENTITYTRADINGSTATUS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "entity_trading_status",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "entity_trading_status.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "entity_trading_status",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "equity_and_soci.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EQUITYANDSOCI.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "equity_and_soci.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EQUITYANDSOCI.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EQUITYANDSOCI.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.EQUITYANDSOCI.DIM_ROLLUP.003",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "equity_and_soci",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "fair_value_movement.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "fair_value_movement",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FAIRVALUEMOVEMENT.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "fair_value_movement",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "fair_value_movement.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "fair_value_movement",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "finance_leases.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "finance_leases",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCELEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "finance_leases",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "finance_leases.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "finance_leases",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "financial_assets.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "financial_assets",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALASSETS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "financial_assets",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "financial_assets.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "financial_assets",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "financial_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALASSETS.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "financial_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "financial_instruments_simple.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "financial_instruments_simple",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "financial_instruments_simple",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "financial_instruments_simple.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "financial_instruments_simple",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "financial_instruments_simple",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "financial_liabilities.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "financial_liabilities",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALLIABILITIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "financial_liabilities",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "financial_liabilities.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "financial_liabilities",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.FINANCIALLIABILITIES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "financial_liabilities",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "hourly_pay_information.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "hourly_pay_information",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.HOURLYPAYINFORMATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "hourly_pay_information",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "hourly_pay_information.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "hourly_pay_information",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOME.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOME.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_biological_assets.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_biological_assets",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEBIOLOGICALASSETS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_biological_assets",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_biological_assets.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_biological_assets",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEBIOLOGICALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_biological_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEBIOLOGICALASSETS.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_biological_assets",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_business_combinations.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_business_combinations",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEBUSINESSCOMBINATIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_business_combinations",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_business_combinations.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_business_combinations",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_intangibles.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINTANGIBLES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_intangibles.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINTANGIBLES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINTANGIBLES.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINTANGIBLES.DIM_ROLLUP.003",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_investment_property.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_investment_property",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINVESTMENTPROPERTY.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_investment_property",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_investment_property.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_investment_property",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEINVESTMENTPROPERTY.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_investment_property",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_main.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAIN.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_ethnicity.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYETHNICITY.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_ethnicity.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_ethnicity_main.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity_main",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYETHNICITYMAIN.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity_main",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_ethnicity_main.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_ethnicity_main",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_gender.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_gender",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYGENDER.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_gender",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_gender.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_gender",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_gender_main.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_gender_main",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYGENDERMAIN.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_gender_main",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_gender_main.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_gender_main",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_sex.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_sex",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYSEX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_sex",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_sex.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_sex",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_sex_main.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_main_by_sex_main",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEMAINBYSEXMAIN.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_main_by_sex_main",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_main_by_sex_main.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_main_by_sex_main",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_operating_leases.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_operating_leases",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEOPERATINGLEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_operating_leases",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_operating_leases.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_operating_leases",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_other_related_parties.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_other_related_parties",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEOTHERRELATEDPARTIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_other_related_parties",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_other_related_parties.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_other_related_parties",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_p_p_e.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_p_p_e",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEPPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_p_p_e",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_p_p_e.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_p_p_e",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEPPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_p_p_e",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEPPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_p_p_e",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_provisions.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_provisions",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEPROVISIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_provisions",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_provisions.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_provisions",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMEPROVISIONS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "income_provisions",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "income_s_t_and_l_v_operating_leases.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMESTANDLVOPERATINGLEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_s_t_and_l_v_operating_leases.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "income_tax.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "income_tax",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INCOMETAX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "income_tax",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "income_tax.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "income_tax",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "intangibles.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "intangibles",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INTANGIBLES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "intangibles",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "intangibles.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "intangibles",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INTANGIBLES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INTANGIBLES.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "intangibles",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "intermediary_payment.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "intermediary_payment",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INTERMEDIARYPAYMENT.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "intermediary_payment",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "intermediary_payment.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "intermediary_payment",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "inventories.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "inventories",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVENTORIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "inventories",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "inventories.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "inventories",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "inventories_segments.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "inventories_segments",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVENTORIESSEGMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "inventories_segments",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "inventories_segments.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "inventories_segments",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "investment_movements.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "investment_movements",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTMOVEMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "investment_movements",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "investment_movements.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "investment_movements",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTMOVEMENTS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "investment_movements",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTPROPERTY.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "investment_property",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [],
+        "topic_fact_ids": [],
+        "topic_fact_reasons": {}
+      }
+    },
+    {
+      "rule_id": "investment_property.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "investment_property",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTPROPERTY.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "investment_property",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "investment_property.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "investment_property",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTPROPERTY.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "investment_property",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "investments.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "investments",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "investments",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "investments.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "investments",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "investments",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.INVESTMENTS.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "investments",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "joint_ventures.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "joint_ventures",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.JOINTVENTURES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "joint_ventures",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "joint_ventures.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "joint_ventures",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "joint_ventures_countries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "joint_ventures_countries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.JOINTVENTURESCOUNTRIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "joint_ventures_countries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "joint_ventures_countries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "joint_ventures_countries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "languages.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "languages",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.LANGUAGES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "languages",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "languages.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "languages",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "legal_form_of_entity.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "legal_form_of_entity",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.LEGALFORMOFENTITY.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "legal_form_of_entity",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "legal_form_of_entity.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "legal_form_of_entity",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "main_industry_sector.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "main_industry_sector",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.MAININDUSTRYSECTOR.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "main_industry_sector",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "main_industry_sector.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "main_industry_sector",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "market_risk.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "market_risk",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.MARKETRISK.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "market_risk",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "market_risk.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "market_risk",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "operating_leases.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "operating_leases",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.OPERATINGLEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "operating_leases",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "operating_leases.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "operating_leases",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "pay_ratio_information.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "pay_ratio_information",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PAYRATIOINFORMATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "pay_ratio_information",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "pay_ratio_information.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "pay_ratio_information",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "pensions.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "pensions",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PENSIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "pensions",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "pensions.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "pensions",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [],
+        "topic_fact_ids": [],
+        "topic_fact_reasons": {}
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "provisions.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "provisions",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PROVISIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "provisions",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "provisions.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "provisions",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PROVISIONS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "provisions",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "related_parties.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "related_parties",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.RELATEDPARTIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "related_parties",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "related_parties.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "related_parties",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "related_parties_balances.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "related_parties_balances",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.RELATEDPARTIESBALANCES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "related_parties_balances",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "related_parties_balances.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "related_parties_balances",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "report_period.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "report_period",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.REPORTPERIOD.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "report_period",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "report_period.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "report_period",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "s_o_c_i_tax.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "s_o_c_i_tax",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SOCITAX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "s_o_c_i_tax",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "s_o_c_i_tax.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "s_o_c_i_tax",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SOCITAX.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "s_o_c_i_tax",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "s_o_r_ps_applied.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "s_o_r_ps_applied",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SORPSAPPLIED.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "s_o_r_ps_applied",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "s_o_r_ps_applied.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "s_o_r_ps_applied",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "scope_of_accounts.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "scope_of_accounts",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SCOPEOFACCOUNTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "scope_of_accounts",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "scope_of_accounts.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "scope_of_accounts",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "segments_text.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "segments_text",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SEGMENTSTEXT.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "segments_text",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "segments_text.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "segments_text",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "share_based_payments.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "share_based_payments",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SHAREBASEDPAYMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "share_based_payments",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "share_based_payments.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "share_based_payments",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "shares.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "shares",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SHARES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "shares",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "shares.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "shares",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SHARES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "shares",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "staff_by_gender.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "staff_by_gender",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.STAFFBYGENDER.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "staff_by_gender",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "staff_by_gender.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "staff_by_gender",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "staff_by_sex.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "staff_by_sex",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.STAFFBYSEX.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "staff_by_sex",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "staff_by_sex.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "staff_by_sex",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "streamlined_energy_and_carbon_reporting.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "streamlined_energy_and_carbon_reporting.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "subsidiaries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "subsidiaries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SUBSIDIARIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "subsidiaries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "subsidiaries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "subsidiaries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "subsidiaries_countries.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "subsidiaries_countries",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SUBSIDIARIESCOUNTRIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "subsidiaries_countries",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "subsidiaries_countries.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "subsidiaries_countries",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "supplier_finance_arrangements.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SUPPLIERFINANCEARRANGEMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "supplier_finance_arrangements.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "supplier_finance_arrangements_carrying_amounts.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements_carrying_amounts",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.SUPPLIERFINANCEARRANGEMENTSCARRYINGAMOUNTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements_carrying_amounts",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "supplier_finance_arrangements_carrying_amounts.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "supplier_finance_arrangements_carrying_amounts",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "third_party_agents.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "third_party_agents",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.THIRDPARTYAGENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "third_party_agents",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "third_party_agents.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "third_party_agents",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "u_s_es.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "u_s_es",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.USES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "u_s_es",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "u_s_es.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "u_s_es",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    }
+  ]
+}

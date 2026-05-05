@@ -1,0 +1,41 @@
+{
+  "source_path": "backend\\validation_rules\\generated\\2026\\frs102\\synthetic_examples\\ppe_note_rollup_mismatch.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "selected_topics",
+  "selected_topics": [
+    "biological_assets"
+  ],
+  "selected_families_by_topic": {
+    "biological_assets": [
+      "2 Hypercube conformity"
+    ]
+  },
+  "evaluated_topic_count": 1,
+  "evaluated_topics": [
+    {
+      "topic_id": "biological_assets",
+      "topic_label": "Biological Assets",
+      "relevant": false,
+      "trigger_fact_count": 0,
+      "topic_fact_count": 0
+    }
+  ],
+  "result_count": 1,
+  "summary": {
+    "pass": 1,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "biological_assets.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "biological_assets",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    }
+  ]
+}

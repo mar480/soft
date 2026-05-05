@@ -1,0 +1,17 @@
+{
+  "topic_id": "d_s_e_p_subsidiaries",
+  "topic_label": "D S E P Subsidiaries",
+  "source_hypercubes": [
+    "core:DSEPSubsidiariesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:DSEPSubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DSEPSubsidiaries",
+      "elr_definition": "9700 - Hypercube - DSEP Subsidiaries",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

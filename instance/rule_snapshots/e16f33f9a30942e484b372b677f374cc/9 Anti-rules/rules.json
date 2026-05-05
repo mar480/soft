@@ -1,0 +1,18 @@
+{
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "rule_family": "9 Anti-rules",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "ANTI.PRESENTATION_SUM.001",
+      "type": "blocked_inference",
+      "reason": "Do not assume every presentation child sums to parent without an explicit generated arithmetic candidate."
+    },
+    {
+      "id": "ANTI.MISSING_ZERO.001",
+      "type": "blocked_inference",
+      "reason": "Do not treat missing dimensional facts as zero."
+    }
+  ]
+}

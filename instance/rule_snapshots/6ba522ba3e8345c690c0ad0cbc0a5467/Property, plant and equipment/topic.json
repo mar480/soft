@@ -1,0 +1,40 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "source_hypercubes": [
+    "core:PPE-RangeHypercube",
+    "core:PPE-SegmentsHypercube",
+    "core:PPEHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Analysis1",
+      "elr_definition": "90301 - Hypercube - PPE Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE",
+      "elr_definition": "9030 - Hypercube - PPE",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:PPE-RangeHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Range",
+      "elr_definition": "9031 - Hypercube - PPE - Range",
+      "occurrence_type": "range",
+      "variant_label": "Range"
+    },
+    {
+      "hypercube": "core:PPE-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Segments",
+      "elr_definition": "9032 - Hypercube - PPE - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 23
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "balance_sheet_own_shares",
+  "topic_label": "Balance Sheet Own Shares",
+  "source_hypercubes": [
+    "core:BalanceSheet-OwnSharesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BalanceSheet-OwnSharesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-OwnShares",
+      "elr_definition": "9261 - Hypercube - Balance Sheet - Own Shares",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}

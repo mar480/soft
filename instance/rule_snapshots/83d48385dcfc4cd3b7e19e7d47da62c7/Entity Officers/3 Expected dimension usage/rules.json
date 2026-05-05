@@ -1,0 +1,40 @@
+{
+  "topic_id": "entity_officers",
+  "topic_label": "Entity Officers",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYOFFICERS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "entity_officers",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "bus:EntityOfficersPrimaryItems",
+            "core:EntityOfficers-BasicPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:EntityOfficerStatusDimension",
+          "bus:EntityOfficersDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "direp:X-SpecificAdvanceOrCreditDirectorsGroupingDimension",
+          "direp:X-SpecificGuaranteeDirectorsGroupingDimension"
+        ]
+      }
+    }
+  ]
+}

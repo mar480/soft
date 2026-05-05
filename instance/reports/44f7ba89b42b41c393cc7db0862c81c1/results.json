@@ -1,0 +1,120 @@
+{
+  "source_path": "backend\\validation_rules\\generated\\2026\\frs102\\synthetic_examples\\ppe_note_invalid_member.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "evaluated_topic_count": 1,
+  "evaluated_topics": [
+    {
+      "topic_id": "property_plant_equipment",
+      "topic_label": "Property, plant and equipment",
+      "relevant": true,
+      "trigger_fact_count": 3,
+      "topic_fact_count": 3
+    }
+  ],
+  "result_count": 6,
+  "summary": {
+    "pass": 5,
+    "fail": 1
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.PPE.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "f001",
+          "f002",
+          "f003"
+        ],
+        "topic_fact_ids": [
+          "f001",
+          "f002",
+          "f003"
+        ],
+        "topic_fact_reasons": {
+          "f001": [
+            "synthetic_topic_id",
+            "synthetic_anchor_primary_item"
+          ],
+          "f002": [
+            "synthetic_topic_id",
+            "synthetic_anchor_primary_item",
+            "topic_dimensions:core:PPEOwnershipDimension|core:PropertyPlantEquipmentClassesDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "f003": [
+            "synthetic_topic_id",
+            "synthetic_anchor_primary_item",
+            "topic_dimensions:core:PPEOwnershipDimension|core:PropertyPlantEquipmentClassesDimension",
+            "trigger_concept_with_topic_dimensions"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "f001",
+          "f002",
+          "f003"
+        ]
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "fail",
+      "topic": "property_plant_equipment",
+      "message": "Some dimension members are outside the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": [
+          {
+            "fact_id": "f002",
+            "dimension": "core:PropertyPlantEquipmentClassesDimension",
+            "member": "synthetic:InvalidMember"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    }
+  ]
+}

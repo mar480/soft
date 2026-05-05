@@ -1,0 +1,45 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.EQUITYANDSOCI.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "equity_and_soci",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:EquitySOCIHypercube",
+          "core:EquitySOCIHypercube",
+          "core:EquitySOCI-PPEHypercube",
+          "core:EquitySOCI-SharesHypercube",
+          "core:EquitySOCI-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:EquityClassesDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Equity and SOCI. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

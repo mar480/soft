@@ -1,0 +1,53 @@
+{
+  "topic_id": "languages",
+  "topic_label": "Languages",
+  "rule_family": "4 Member validity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.LANGUAGES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "languages",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.LANGUAGES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "languages",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.LANGUAGES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "languages",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "lang:LanguagesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "lang:LanguagesHeading"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "topic_id": "investments",
+  "topic_label": "Investments",
+  "rule_family": "4 Member validity",
+  "rule_count": 17,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:ShareTypesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AssociatesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAssociatesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:EquityClassesHeldDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllShareClassesHeldDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InvestmentsMovementsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NetBookValueCarryingValueDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:JointVenturesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalJointVenturesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:Listed-unlistedDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OtherRelatedPartyTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllOtherRelatedPartiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ParentEntitiesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllParentEntitiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:PositionTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:PositionTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SecuredStatusDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:SecuredStatusHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SubsidiariesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalSubsidiariesDefault"
+        ]
+      }
+    }
+  ]
+}

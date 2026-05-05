@@ -1,0 +1,32 @@
+{
+  "topic_id": "financial_instruments_simple",
+  "topic_label": "Financial Instruments Simple",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "financial_instruments_simple",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:FinancialInstruments-SimpleHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Financial Instruments Simple. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

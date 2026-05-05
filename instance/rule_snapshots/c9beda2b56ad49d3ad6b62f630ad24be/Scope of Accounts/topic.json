@@ -1,0 +1,17 @@
+{
+  "topic_id": "scope_of_accounts",
+  "topic_label": "Scope of Accounts",
+  "source_hypercubes": [
+    "bus:ScopeAccountsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:ScopeAccountsHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-ScopeAccounts",
+      "elr_definition": "9020 - Hypercube - Scope of Accounts",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 5
+}

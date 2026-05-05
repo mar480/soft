@@ -1,0 +1,17 @@
+{
+  "topic_id": "e_p_s",
+  "topic_label": "E P S",
+  "source_hypercubes": [
+    "core:EPSHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:EPSHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EPS",
+      "elr_definition": "9110 - Hypercube - EPS",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}

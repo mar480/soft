@@ -1,0 +1,62 @@
+{
+  "topic_id": "creditors",
+  "topic_label": "Creditors",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "creditors",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:Creditors-AssociatesPrimaryItems",
+            "core:Creditors-FinanceLeasesPrimaryItems",
+            "core:Creditors-JointVenturesPrimaryItems",
+            "core:Creditors-OtherPartiesPrimaryItems",
+            "core:Creditors-ParentsPrimaryItems",
+            "core:Creditors-SegmentsPrimaryItems",
+            "core:Creditors-SubsidiariesPrimaryItems",
+            "core:CreditorsPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

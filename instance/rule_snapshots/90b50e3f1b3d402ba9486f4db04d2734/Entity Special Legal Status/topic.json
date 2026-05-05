@@ -1,0 +1,17 @@
+{
+  "topic_id": "entity_special_legal_status",
+  "topic_label": "Entity Special Legal Status",
+  "source_hypercubes": [
+    "bus:EntitySpecialLegalStatusHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:EntitySpecialLegalStatusHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-EntitySpecialLegalStatus",
+      "elr_definition": "9013 - Hypercube - Entity Special Legal Status",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

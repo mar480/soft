@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_other_related_parties",
+  "topic_label": "Income Other Related Parties",
+  "source_hypercubes": [
+    "core:Income-OtherRelatedPartiesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-OtherRelatedPartiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-OtherRelatedParties",
+      "elr_definition": "9100 - Hypercube - Income - Other Related Parties",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 23
+}

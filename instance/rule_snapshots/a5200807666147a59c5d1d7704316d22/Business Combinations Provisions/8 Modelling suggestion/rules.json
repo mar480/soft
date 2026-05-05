@@ -1,0 +1,32 @@
+{
+  "topic_id": "business_combinations_provisions",
+  "topic_label": "Business Combinations Provisions",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_provisions",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-ProvisionsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:ProvisionsClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Provisions. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

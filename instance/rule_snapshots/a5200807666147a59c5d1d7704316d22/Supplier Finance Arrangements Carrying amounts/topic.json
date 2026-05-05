@@ -1,0 +1,17 @@
+{
+  "topic_id": "supplier_finance_arrangements_carrying_amounts",
+  "topic_label": "Supplier Finance Arrangements Carrying amounts",
+  "source_hypercubes": [
+    "core:SupplierFinanceArrangements-CarryingAmountsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:SupplierFinanceArrangements-CarryingAmountsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SupplierFinanceArrangements-CarryingAmounts",
+      "elr_definition": "9615 - Hypercube - Supplier Finance Arrangements - Carrying amounts",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

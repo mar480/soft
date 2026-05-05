@@ -1,0 +1,99 @@
+{
+  "topic_id": "financial_assets",
+  "topic_label": "Financial Assets",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALASSETS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "financial_assets",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:FinancialAssets-AssociatesBasicPrimaryItems",
+            "core:FinancialAssets-AssociatesFullPrimaryItems",
+            "core:FinancialAssets-BasicPrimaryItems",
+            "core:FinancialAssets-EquitiesBasicPrimaryItems",
+            "core:FinancialAssets-EquitiesFullPrimaryItems",
+            "core:FinancialAssets-FullPrimaryItems",
+            "core:FinancialAssets-JointVenturesBasicPrimaryItems",
+            "core:FinancialAssets-JointVenturesFullPrimaryItems",
+            "core:FinancialAssets-OtherPartiesBasicPrimaryItems",
+            "core:FinancialAssets-OtherPartiesFullPrimaryItems",
+            "core:FinancialAssets-ParentsBasicPrimaryItems",
+            "core:FinancialAssets-ParentsFullPrimaryItems",
+            "core:FinancialAssets-ReclassificationPrimaryItems",
+            "core:FinancialAssets-SegmentsPrimaryItems",
+            "core:FinancialAssets-SimplePrimaryItems",
+            "core:FinancialAssets-SubsidiariesBasicPrimaryItems",
+            "core:FinancialAssets-SubsidiariesFullPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "core:CreditRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+          "core:DrawnUndrawnLoansAdvancesDimension",
+          "core:EquityClassesHeldDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FairValueMovementDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:FinancialAssetsReclassificationDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:InterestRateTypeDimension",
+          "core:JointVenturesDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:LoansAdvancesProductGroupingDimension",
+          "core:MajorCustomersDimension",
+          "core:MarketRiskTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:PositionTypeDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

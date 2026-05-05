@@ -1,0 +1,17 @@
+{
+  "topic_id": "detailed_profit_and_loss",
+  "topic_label": "Detailed Profit and Loss",
+  "source_hypercubes": [
+    "dpl:DetailedProfitLossHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "dpl:DetailedProfitLossHypercube",
+      "elr": "http://xbrl.frc.org.uk/dpl/roles/Hypercube-DetailedProfitLoss",
+      "elr_definition": "850 - Hypercube - Detailed Profit and Loss",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 13
+}

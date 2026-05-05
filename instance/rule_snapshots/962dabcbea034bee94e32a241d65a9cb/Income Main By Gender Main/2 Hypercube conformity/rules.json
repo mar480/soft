@@ -1,0 +1,43 @@
+{
+  "topic_id": "income_main_by_gender_main",
+  "topic_label": "Income Main By Gender Main",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEMAINBYGENDERMAIN.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "income_main_by_gender_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-Main-ByGenderHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-ByGenderMainAnalysis1",
+        "elr_definition": "96121 - Hypercube - Income - Main - By Gender Main Analysis 1",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    }
+  ]
+}

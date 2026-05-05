@@ -1,0 +1,83 @@
+{
+  "topic_id": "business_combinations_contingent_liabilities",
+  "topic_label": "Business Combinations Contingent Liabilities",
+  "rule_family": "4 Member validity",
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:BusinessCombinationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalBusinessCombinationsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContingentLiabilitiesClassesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllContingentLiabilitiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSCONTINGENTLIABILITIES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "business_combinations_contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    }
+  ]
+}

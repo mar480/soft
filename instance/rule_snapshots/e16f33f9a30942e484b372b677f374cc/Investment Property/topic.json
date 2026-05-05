@@ -1,0 +1,40 @@
+{
+  "topic_id": "investment_property",
+  "topic_label": "Investment Property",
+  "source_hypercubes": [
+    "core:InvestmentProperty-RangeHypercube",
+    "core:InvestmentProperty-SegmentsHypercube",
+    "core:InvestmentPropertyHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:InvestmentPropertyHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentProperty-Analysis1",
+      "elr_definition": "90381 - Hypercube - Investment Property Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:InvestmentPropertyHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentProperty",
+      "elr_definition": "9038 - Hypercube - Investment Property",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:InvestmentProperty-RangeHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentProperty-Range",
+      "elr_definition": "9039 - Hypercube - Investment Property - Range",
+      "occurrence_type": "range",
+      "variant_label": "Range"
+    },
+    {
+      "hypercube": "core:InvestmentProperty-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentProperty-Segments",
+      "elr_definition": "9040 - Hypercube - Investment Property - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 23
+}

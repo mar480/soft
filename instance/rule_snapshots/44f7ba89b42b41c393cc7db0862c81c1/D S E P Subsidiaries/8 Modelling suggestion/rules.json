@@ -1,0 +1,31 @@
+{
+  "topic_id": "d_s_e_p_subsidiaries",
+  "topic_label": "D S E P Subsidiaries",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DSEPSUBSIDIARIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "d_s_e_p_subsidiaries",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:DSEPSubsidiariesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:DSEPSubsidiariesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for D S E P Subsidiaries. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

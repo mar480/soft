@@ -1,0 +1,72 @@
+{
+  "topic_id": "financial_assets",
+  "topic_label": "Financial Assets",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:EquityClassesHeldDimension",
+      "head_member": "core:AllShareClassesHeld",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:AllOrdinarySharesHeld",
+          "core:AllPreferenceSharesHeld",
+          "core:AllDeferredSharesHeld",
+          "core:Non-standardShareClassHeld1ComponentTotalShareClassesHeld",
+          "core:Non-standardShareClassHeld2ComponentTotalShareClassesHeld"
+        ],
+        "domain_root": "core:AllShareClassesHeldDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:AllShareClassesHeldDefault",
+        "dimension_label": "Equity classes held [Dimension]"
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialAssetsClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialAssets",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:FinancialAssetsAmortisedCost",
+          "core:FinancialAssetsFairValue",
+          "core:FinancialAssetsCostLessImpairment"
+        ],
+        "domain_root": "core:TotalFinancialAssetsDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalFinancialAssetsDefault",
+        "dimension_label": "Financial assets classes and categories [Dimension]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "derivatives_simple",
+  "topic_label": "Derivatives Simple",
+  "source_hypercubes": [
+    "core:Derivatives-SimpleHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Derivatives-SimpleHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Simple",
+      "elr_definition": "9077 - Hypercube - Derivatives - Simple",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 17
+}

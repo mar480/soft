@@ -1,0 +1,46 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "property_plant_equipment",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:PPE-RangePrimaryItems",
+            "core:PPE-SegmentsPrimaryItems",
+            "core:PPEPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PPEOwnershipDimension",
+          "core:ProductsServicesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

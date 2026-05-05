@@ -1,0 +1,29 @@
+{
+  "topic_id": "scope_of_accounts",
+  "topic_label": "Scope of Accounts",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SCOPEOFACCOUNTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "scope_of_accounts",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:ScopeAccountsHypercube"
+        ],
+        "dimensions": [
+          "bus:OriginalRevisedDataDimension",
+          "bus:ScopeAccountsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Scope of Accounts. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

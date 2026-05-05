@@ -1,0 +1,39 @@
+{
+  "topic_id": "business_combinations_financial_liabilities",
+  "topic_label": "Business Combinations Financial Liabilities",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "business_combinations_financial_liabilities",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialLiabilitiesClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialLiabilities",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:FinancialLiabilitiesAmortisedCost",
+          "core:FinancialLiabilitiesFairValueThroughProfitOrLoss",
+          "core:FinancialLiabilitiesCostLessImpairment"
+        ],
+        "domain_root": "core:TotalFinancialLiabilitiesDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalFinancialLiabilitiesDefault",
+        "dimension_label": "Financial liabilities classes and categories [Dimension]"
+      }
+    }
+  ]
+}

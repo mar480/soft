@@ -1,0 +1,17 @@
+{
+  "topic_id": "supplier_finance_arrangements",
+  "topic_label": "Supplier Finance Arrangements",
+  "source_hypercubes": [
+    "core:SupplierFinanceArrangementsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:SupplierFinanceArrangementsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SupplierFinanceArrangements",
+      "elr_definition": "9614 - Hypercube - Supplier Finance Arrangements",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

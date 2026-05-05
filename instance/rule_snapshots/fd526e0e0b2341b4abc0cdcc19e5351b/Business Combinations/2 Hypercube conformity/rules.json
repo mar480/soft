@@ -1,0 +1,80 @@
+{
+  "topic_id": "business_combinations",
+  "topic_label": "Business Combinations",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinationsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-Analysis1",
+        "elr_definition": "91541 - Hypercube - Business Combinations Analysis 1",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinationsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations",
+        "elr_definition": "9154 - Hypercube - Business Combinations",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-FinanceLeasesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinanceLeases",
+        "elr_definition": "9162 - Hypercube - Business Combinations - Finance Leases",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

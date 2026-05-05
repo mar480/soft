@@ -1,0 +1,34 @@
+{
+  "topic_id": "related_parties",
+  "topic_label": "Related Parties",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.RELATEDPARTIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "related_parties",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:RelatedPartiesHypercube",
+          "core:RelatedPartiesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RelatedPartiesDimension",
+          "core:RelatedPartyTransactionTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:X-Government-relatedEntitiesGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Related Parties. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

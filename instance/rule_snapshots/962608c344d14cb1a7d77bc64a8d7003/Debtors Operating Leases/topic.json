@@ -1,0 +1,17 @@
+{
+  "topic_id": "debtors_operating_leases",
+  "topic_label": "Debtors Operating Leases",
+  "source_hypercubes": [
+    "core:Debtors-OperatingLeasesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Debtors-OperatingLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-OperatingLeases",
+      "elr_definition": "9188 - Hypercube - Debtors - Operating Leases",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 27
+}

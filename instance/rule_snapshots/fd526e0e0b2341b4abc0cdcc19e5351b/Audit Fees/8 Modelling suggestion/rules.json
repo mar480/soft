@@ -1,0 +1,33 @@
+{
+  "topic_id": "audit_fees",
+  "topic_label": "Audit Fees",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.AUDITFEES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "audit_fees",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:AuditFeesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ThirdPartyAgentStatusDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Audit Fees. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

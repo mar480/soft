@@ -1,0 +1,17 @@
+{
+  "topic_id": "contingent_liabilities",
+  "topic_label": "Contingent Liabilities",
+  "source_hypercubes": [
+    "core:ContingentLiabilitiesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:ContingentLiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-ContingentLiabilities",
+      "elr_definition": "9151 - Hypercube - Contingent Liabilities",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

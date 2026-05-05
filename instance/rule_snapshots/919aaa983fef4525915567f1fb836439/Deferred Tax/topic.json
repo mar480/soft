@@ -1,0 +1,39 @@
+{
+  "topic_id": "deferred_tax",
+  "topic_label": "Deferred Tax",
+  "source_hypercubes": [
+    "core:DeferredTax-SegmentsHypercube",
+    "core:DeferredTaxHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:DeferredTaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Analysis1",
+      "elr_definition": "91301 - Hypercube - Deferred Tax Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:DeferredTaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax",
+      "elr_definition": "9130 - Hypercube - Deferred Tax",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:DeferredTaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Grouping1",
+      "elr_definition": "91302 - Hypercube - Deferred Tax Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "core:DeferredTax-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Segments",
+      "elr_definition": "9131 - Hypercube - Deferred Tax - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 24
+}

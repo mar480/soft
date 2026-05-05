@@ -1,0 +1,46 @@
+{
+  "topic_id": "entity_officers",
+  "topic_label": "Entity Officers",
+  "source_hypercubes": [
+    "bus:EntityOfficersHypercube",
+    "core:EntityOfficers-BasicHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:EntityOfficersHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-EntityOfficersAnalysis1",
+      "elr_definition": "90143 - Hypercube - Entity Officers Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "bus:EntityOfficersHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityOfficers",
+      "elr_definition": "9014 - Hypercube - Entity Officers",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "bus:EntityOfficersHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-EntityOfficersGrouping1",
+      "elr_definition": "90141 - Hypercube - Entity Officers Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "bus:EntityOfficersHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-EntityOfficersGrouping2",
+      "elr_definition": "90142 - Hypercube - Entity Officers Grouping 2",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 2"
+    },
+    {
+      "hypercube": "core:EntityOfficers-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EntityOfficers-Basic",
+      "elr_definition": "9140 - Hypercube - Entity Officers-Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    }
+  ],
+  "rule_count": 16
+}

@@ -1,0 +1,32 @@
+{
+  "topic_id": "continuing_discontinued",
+  "topic_label": "Continuing Discontinued",
+  "source_hypercubes": [
+    "core:Continuing-Discontinued-SegmentsHypercube",
+    "core:Continuing-DiscontinuedHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Continuing-DiscontinuedHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued-Analysis1",
+      "elr_definition": "91071 - Hypercube - Continuing - Discontinued Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:Continuing-DiscontinuedHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued",
+      "elr_definition": "9107 - Hypercube - Continuing - Discontinued",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Continuing-Discontinued-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued-Segments",
+      "elr_definition": "9108 - Hypercube - Continuing - Discontinued - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 15
+}

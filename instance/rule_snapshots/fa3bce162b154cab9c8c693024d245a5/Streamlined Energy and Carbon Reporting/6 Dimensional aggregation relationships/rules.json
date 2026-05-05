@@ -1,0 +1,120 @@
+{
+  "topic_id": "streamlined_energy_and_carbon_reporting",
+  "topic_label": "Streamlined Energy and Carbon Reporting",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "direp:DualReportingTypeDimension",
+      "head_member": "direp:NotApplicableDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "direp:Location-basedOrGrid-average",
+          "direp:MarketBasedREGOBacked"
+        ],
+        "domain_root": "direp:DualReportingTypeHeading"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Dual reporting type [Dimension]",
+        "default_member": "direp:NotApplicableDefault",
+        "domain_root": "direp:DualReportingTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "direp:EmissionsSourceDimension",
+      "head_member": "direp:TotalFromAllEmissionsSourcesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "direp:CombustionGas",
+          "direp:Other"
+        ],
+        "domain_root": "direp:TotalFromAllEmissionsSourcesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Emissions source [Dimension]",
+        "default_member": "direp:TotalFromAllEmissionsSourcesDefault",
+        "domain_root": "direp:TotalFromAllEmissionsSourcesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.STREAMLINEDENERGYANDCARBONREPORTING.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "streamlined_energy_and_carbon_reporting",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "direp:ReportingRegionDimension",
+      "head_member": "direp:AllRegionsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "direp:GlobalExcludingUKOffshore",
+          "direp:Offshore",
+          "direp:UK"
+        ],
+        "domain_root": "direp:AllRegionsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Reporting Region [Dimension]",
+        "default_member": "direp:AllRegionsDefault",
+        "domain_root": "direp:AllRegionsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

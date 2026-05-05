@@ -1,0 +1,36 @@
+{
+  "topic_id": "shares",
+  "topic_label": "Shares",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SHARES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "shares",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:SharesHypercube",
+          "bus:SharesHypercube",
+          "bus:SharesHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:X-IndividualIssueSharesGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Shares. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

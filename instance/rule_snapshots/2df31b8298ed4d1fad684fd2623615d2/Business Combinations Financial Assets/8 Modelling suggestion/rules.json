@@ -1,0 +1,35 @@
+{
+  "topic_id": "business_combinations_financial_assets",
+  "topic_label": "Business Combinations Financial Assets",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_financial_assets",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-FinancialAssetsHypercube",
+          "core:BusinessCombinations-FinancialAssetsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:BusinessCombinationsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Financial Assets. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

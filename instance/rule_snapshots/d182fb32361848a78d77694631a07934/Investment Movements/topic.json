@@ -1,0 +1,24 @@
+{
+  "topic_id": "investment_movements",
+  "topic_label": "Investment Movements",
+  "source_hypercubes": [
+    "core:InvestmentMovementsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:InvestmentMovementsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentMovements-Analysis1",
+      "elr_definition": "92051 - Hypercube - Investment Movements Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:InvestmentMovementsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-InvestmentMovements",
+      "elr_definition": "9205 - Hypercube - Investment Movements",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 19
+}

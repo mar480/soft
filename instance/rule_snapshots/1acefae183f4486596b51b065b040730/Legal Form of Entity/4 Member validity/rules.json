@@ -1,0 +1,53 @@
+{
+  "topic_id": "legal_form_of_entity",
+  "topic_label": "Legal Form of Entity",
+  "rule_family": "4 Member validity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.LEGALFORMOFENTITY.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "legal_form_of_entity",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.LEGALFORMOFENTITY.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "legal_form_of_entity",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:LegalFormEntityDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:LegalFormEntityHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.LEGALFORMOFENTITY.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "legal_form_of_entity",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    }
+  ]
+}

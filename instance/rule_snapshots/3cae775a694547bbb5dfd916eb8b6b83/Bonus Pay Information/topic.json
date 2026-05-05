@@ -1,0 +1,17 @@
+{
+  "topic_id": "bonus_pay_information",
+  "topic_label": "Bonus Pay Information",
+  "source_hypercubes": [
+    "direp:BonusPayInformationHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:BonusPayInformationHypercube",
+      "elr": "http://xbrl.frc.org.uk/reports/2026-01-01/direp/roles/Hypercube-BonusPayInformation",
+      "elr_definition": "9400 - Hypercube - Bonus Pay Information",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

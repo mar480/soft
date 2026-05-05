@@ -1,0 +1,336 @@
+{
+  "topic_id": "income_intangibles",
+  "topic_label": "Income Intangibles",
+  "rule_family": "4 Member validity",
+  "rule_count": 22,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractDurationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DurationContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TypeContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ExceptionalsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalReportedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GoodsServicesTransfersTimingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesTransferredToCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IntangibleAssetClassesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalIntangibleAssetsIncludingGoodwillDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IntangibleAssetsGenerationTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalInternallyExternallyAcquiredIntangibleAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IntangibleAssetsLifeTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalIntangibleAssetsWithFiniteWithIndefiniteLivesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IntangibleAssetsOwnershipTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalOwnedLeasedIntangibleAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomerTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomerTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:NaturePromiseDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NaturePromiseHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OwnershipAssetsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalOwnedLeasedAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.018",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.019",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.020",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SalesChannelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesSoldHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.021",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEINTANGIBLES.MEMBER_VALIDITY.022",
+      "type": "dimension_member_validity",
+      "topic": "income_intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:X-SpecificMaterialImpairmentLossOrReversalIntangibleAssetsGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    }
+  ]
+}

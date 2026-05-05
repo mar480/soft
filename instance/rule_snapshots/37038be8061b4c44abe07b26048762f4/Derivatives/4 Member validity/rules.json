@@ -1,0 +1,488 @@
+{
+  "topic_id": "derivatives",
+  "topic_label": "Derivatives",
+  "rule_family": "4 Member validity",
+  "rule_count": 32,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRatingsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CreditRatingsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRiskExposureDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MaximumCreditRiskExposure"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRiskInternalGradeRatingsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CreditRiskInternalGradeRatingsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CurrencyDenominationFinancialInstrumentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CurrencyDenominationFinancialInstrumentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DerivativePurposeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RiskTypeCoveredByDerivativeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DerivativesContractsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalForAllDerivativesContractsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DerivativesTypesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DerivativeFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FairValueMeasurementTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FairValueMeasurementTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FairValueMovementDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FairValueMovementsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentLevelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllLevelsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ValueTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsHeldForSaleDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialInstrumentsExcludingThoseHeldForSaleDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.018",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.019",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IndustryConcentrationRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TypesIndustryConcentrationRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.020",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InterestRateTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:InterestRateTypeFinancialInstrumentHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.021",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:LiquidityFeaturesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:LiquidityFeaturesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.022",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:Listed-unlistedDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.023",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.024",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MarketRiskTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MarketRisk"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.025",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllPeriods"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.026",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.027",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:PositionTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:PositionTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.028",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.029",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RegionCountryIssuerRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RegionCountryIssuerRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.030",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.031",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SecuredStatusDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:SecuredStatusHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVES.MEMBER_VALIDITY.032",
+      "type": "dimension_member_validity",
+      "topic": "derivatives",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    }
+  ]
+}

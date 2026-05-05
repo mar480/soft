@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_main_by_ethnicity_main",
+  "topic_label": "Income Main By Ethnicity Main",
+  "source_hypercubes": [
+    "core:Income-Main-ByEthnicityHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-Main-ByEthnicityHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-ByEthnicityMainAnalysis1",
+      "elr_definition": "96131 - Hypercube - Income - Main - By Ethnicity Main Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "rule_count": 19
+}

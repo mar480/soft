@@ -1,0 +1,30 @@
+{
+  "topic_id": "s_o_r_ps_applied",
+  "topic_label": "S O R Ps Applied",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SORPSAPPLIED.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "s_o_r_ps_applied",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:SORPsAppliedHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:SORPsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for S O R Ps Applied. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

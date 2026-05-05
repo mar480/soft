@@ -1,0 +1,38 @@
+{
+  "topic_id": "inventories",
+  "topic_label": "Inventories",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INVENTORIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "inventories",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:InventoriesHypercube",
+          "core:Inventories-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrentNon-currentInventoriesDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Inventories. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

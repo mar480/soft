@@ -1,0 +1,159 @@
+{
+  "topic_id": "financial_assets",
+  "topic_label": "Financial Assets",
+  "source_hypercubes": [
+    "core:FinancialAssets-AssociatesBasicHypercube",
+    "core:FinancialAssets-AssociatesFullHypercube",
+    "core:FinancialAssets-BasicHypercube",
+    "core:FinancialAssets-EquitiesBasicHypercube",
+    "core:FinancialAssets-EquitiesFullHypercube",
+    "core:FinancialAssets-FullHypercube",
+    "core:FinancialAssets-JointVenturesBasicHypercube",
+    "core:FinancialAssets-JointVenturesFullHypercube",
+    "core:FinancialAssets-OtherPartiesBasicHypercube",
+    "core:FinancialAssets-OtherPartiesFullHypercube",
+    "core:FinancialAssets-ParentsBasicHypercube",
+    "core:FinancialAssets-ParentsFullHypercube",
+    "core:FinancialAssets-ReclassificationHypercube",
+    "core:FinancialAssets-SegmentsHypercube",
+    "core:FinancialAssets-SimpleHypercube",
+    "core:FinancialAssets-SubsidiariesBasicHypercube",
+    "core:FinancialAssets-SubsidiariesFullHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FinancialAssets-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Basic-Analysis1",
+      "elr_definition": "90521 - Hypercube - Financial Assets - Basic Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:FinancialAssets-FullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Full-Analysis1",
+      "elr_definition": "90531 - Hypercube - Financial Assets - Full Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:FinancialAssets-SimpleHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Simple",
+      "elr_definition": "9055 - Hypercube - Financial Assets - Simple",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-SubsidiariesBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-SubsidiariesBasic",
+      "elr_definition": "9056 - Hypercube - Financial Assets - Subsidiaries Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-SubsidiariesFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-SubsidiariesFull",
+      "elr_definition": "9057 - Hypercube - Financial Assets - Subsidiaries Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-AssociatesBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-AssociatesBasic",
+      "elr_definition": "9058 - Hypercube - Financial Assets - Associates Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-AssociatesFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-AssociatesFull",
+      "elr_definition": "9059 - Hypercube - Financial Assets - Associates Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-JointVenturesBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-JointVenturesBasic",
+      "elr_definition": "9060 - Hypercube - Financial Assets - Joint Ventures Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-JointVenturesFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-JointVenturesFull",
+      "elr_definition": "9061 - Hypercube - Financial Assets - Joint Ventures Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-ParentsBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-ParentsBasic",
+      "elr_definition": "9062 - Hypercube - Financial Assets - Parents Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-ParentsFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-ParentsFull",
+      "elr_definition": "9063 - Hypercube - Financial Assets - Parents Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-OtherPartiesBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-OtherPartiesBasic",
+      "elr_definition": "9064 - Hypercube - Financial Assets - Other Parties Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-OtherPartiesFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-OtherPartiesFull",
+      "elr_definition": "9065 - Hypercube - Financial Assets - Other Parties Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-EquitiesBasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-EquitiesBasic",
+      "elr_definition": "9066 - Hypercube - Financial Assets - Equities Basic",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-EquitiesFullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-EquitiesFull",
+      "elr_definition": "9067 - Hypercube - Financial Assets - Equities Full",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-ReclassificationHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Reclassification",
+      "elr_definition": "9068 - Hypercube - Financial Assets - Reclassification",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialAssets-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Segments",
+      "elr_definition": "9054 - Hypercube - Financial Assets - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    },
+    {
+      "hypercube": "core:FinancialAssets-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Basic",
+      "elr_definition": "9052 - Hypercube - Financial Assets - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:FinancialAssets-FullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialAssets-Full",
+      "elr_definition": "9053 - Hypercube - Financial Assets - Full",
+      "occurrence_type": "variant",
+      "variant_label": "Full"
+    }
+  ],
+  "rule_count": 89
+}

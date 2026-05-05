@@ -1,0 +1,336 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\44ac0c4a030b48d282d42a2e3d9fa148_Prod223_4150_06905971_20251231.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "evaluated_topic_count": 2,
+  "evaluated_topics": [
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 18
+    },
+    {
+      "topic_id": "debtors",
+      "topic_label": "Debtors",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 18
+    }
+  ],
+  "result_count": 10,
+  "summary": {
+    "pass": 10,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_007",
+          "fact_008",
+          "fact_033",
+          "fact_034"
+        ],
+        "topic_fact_ids": [
+          "fact_007",
+          "fact_008",
+          "fact_019",
+          "fact_020",
+          "fact_021",
+          "fact_022",
+          "fact_023",
+          "fact_024",
+          "fact_025",
+          "fact_026",
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034"
+        ],
+        "topic_fact_reasons": {
+          "fact_007": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_008": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_019": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_020": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_021": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_022": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_023": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_024": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_025": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_026": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_027": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_028": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_029": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_030": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_031": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_032": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_033": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_034": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_007",
+          "fact_008",
+          "fact_019",
+          "fact_020",
+          "fact_021",
+          "fact_022",
+          "fact_023",
+          "fact_024",
+          "fact_025",
+          "fact_026",
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034"
+        ]
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_001",
+          "fact_002",
+          "fact_023",
+          "fact_024"
+        ],
+        "topic_fact_ids": [
+          "fact_007",
+          "fact_008",
+          "fact_019",
+          "fact_020",
+          "fact_021",
+          "fact_022",
+          "fact_023",
+          "fact_024",
+          "fact_025",
+          "fact_026",
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034"
+        ],
+        "topic_fact_reasons": {
+          "fact_007": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_008": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_019": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_020": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_021": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_022": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_023": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_024": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_025": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_026": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_027": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_028": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_029": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_030": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_031": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_032": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_033": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_034": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "debtors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_007",
+          "fact_008",
+          "fact_019",
+          "fact_020",
+          "fact_021",
+          "fact_022",
+          "fact_023",
+          "fact_024",
+          "fact_025",
+          "fact_026",
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034"
+        ]
+      }
+    },
+    {
+      "rule_id": "debtors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    }
+  ]
+}

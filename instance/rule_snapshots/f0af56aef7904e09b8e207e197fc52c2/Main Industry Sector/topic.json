@@ -1,0 +1,17 @@
+{
+  "topic_id": "main_industry_sector",
+  "topic_label": "Main Industry Sector",
+  "source_hypercubes": [
+    "bus:MainIndustrySectorHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:MainIndustrySectorHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-MainIndustrySector",
+      "elr_definition": "9009 - Hypercube - Main Industry Sector",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

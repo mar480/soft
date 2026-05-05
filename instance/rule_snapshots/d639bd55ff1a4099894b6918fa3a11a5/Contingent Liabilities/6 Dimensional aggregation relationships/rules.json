@@ -1,0 +1,71 @@
+{
+  "topic_id": "contingent_liabilities",
+  "topic_label": "Contingent Liabilities",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CONTINGENTLIABILITIES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "contingent_liabilities",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContingentLiabilitiesClassesDimension",
+      "head_member": "core:AllContingentLiabilitiesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:AcceptancesEndorsements",
+          "core:BadDebts",
+          "core:CommissionClawback",
+          "core:ContingentLiabilityOnBusinessCombination",
+          "core:DecommissioningRestorationDilapidations",
+          "core:DeferredConsiderations",
+          "core:DeferredTaxation",
+          "core:FinancialGuarantees",
+          "core:FinancialPenaltiesLevies",
+          "core:FurtherSpecificTypeProvisionContingentLiability1ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability2ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability3ComponentTotalProvisionsContingentLiabilities",
+          "core:FurtherSpecificTypeProvisionContingentLiability4ComponentTotalProvisionsContingentLiabilities",
+          "core:InventoryObsolescence",
+          "core:LegalProceedings",
+          "core:LegislativeChanges",
+          "core:OnerousContractsExcludingVacantProperties",
+          "core:OperatingLeases",
+          "core:OtherProvisionsContingentLiabilities",
+          "core:OtherRegulatoryMatters",
+          "core:Pensions",
+          "core:Post-employmentBenefits",
+          "core:ProfitSharingBonuses",
+          "core:Refunds",
+          "core:RestructuringOrReorganisation",
+          "core:SocialSecurityContributions",
+          "core:VacantProperties",
+          "core:Warranties",
+          "core:WasteDisposal"
+        ],
+        "domain_root": "core:AllContingentLiabilitiesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Contingent liabilities classes [Dimension]",
+        "default_member": "core:AllContingentLiabilitiesDefault",
+        "domain_root": "core:AllContingentLiabilitiesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

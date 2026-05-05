@@ -1,0 +1,71 @@
+{
+  "topic_id": "s_o_c_i_tax",
+  "topic_label": "S O C I Tax",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SOCITAX.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "s_o_c_i_tax",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:EquityClassesDimension",
+      "head_member": "core:TotalEquity",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:ShareCapital",
+          "core:SharePremium",
+          "core:ShareCapitalSharePremiumSubtotal",
+          "core:CapitalReserve",
+          "core:CapitalContributionReserve",
+          "core:MergerReserve",
+          "core:GoodwillReserve",
+          "core:ForeignCurrencyTranslationReserve",
+          "core:HedgingReserve",
+          "core:RevaluationReserve",
+          "core:GeneralBankingRisksReserve",
+          "core:Available-for-saleInvestmentsReserve",
+          "core:WarrantReserve",
+          "core:WarrantExerciseReserve",
+          "core:AssetRevaluationSurplusReserve",
+          "core:Share-basedPaymentsReserve",
+          "core:ShareBuy-backReserve",
+          "core:ESOPReserve",
+          "core:TaxationReserve",
+          "core:LegalStatutoryReserve",
+          "core:AssetsDisposalGroupsHeldForSaleReserve",
+          "core:ProposedDividendReserve",
+          "core:SilentParticipationInGovernmentProtectionScheme",
+          "core:OtherCapitalInstrumentsClassifiedAsEquity",
+          "core:FurtherSpecificReserve1ComponentTotalEquity",
+          "core:FurtherSpecificReserve2ComponentTotalEquity",
+          "core:FurtherSpecificReserve3ComponentTotalEquity",
+          "core:FurtherSpecificReserve4ComponentTotalEquity",
+          "core:OtherReservesSubtotal",
+          "core:OtherMiscellaneousReserve",
+          "core:RetainedEarningsAccumulatedLosses",
+          "core:TotalEquityAttributableToOwnersParentBeforeNon-controllingInterests",
+          "core:Non-controllingInterests",
+          "core:InvestmentFunds-specificClassesHeading",
+          "core:Insurance-specificClassesHeading"
+        ],
+        "domain_root": "core:TotalEquityDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalEquityDefault",
+        "dimension_label": "Equity classes [Dimension]"
+      }
+    }
+  ]
+}

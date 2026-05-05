@@ -1,0 +1,17 @@
+{
+  "topic_id": "inventories_segments",
+  "topic_label": "Inventories Segments",
+  "source_hypercubes": [
+    "core:Inventories-SegmentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Inventories-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Inventories-Segments-Analysis1",
+      "elr_definition": "9113 - Hypercube - Inventories - Segments Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "rule_count": 17
+}

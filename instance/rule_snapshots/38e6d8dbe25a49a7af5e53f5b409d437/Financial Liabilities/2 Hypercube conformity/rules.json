@@ -1,0 +1,250 @@
+{
+  "topic_id": "financial_liabilities",
+  "topic_label": "Financial Liabilities",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 7,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Basic-Analysis1",
+        "elr_definition": "90691 - Hypercube - Financial Liabilities - Basic Analysis 1",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-FullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Full-Analysis1",
+        "elr_definition": "90701 - Hypercube - Financial Liabilities - Full Analysis 1",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-SimpleHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Simple",
+        "elr_definition": "9072 - Hypercube - Financial Liabilities - Simple",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-BankLoanHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-BankLoan-Grouping1",
+        "elr_definition": "90702 - Hypercube - Financial Liabilities - Bank Loan Grouping 1",
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-MaterialBankLoanGroupingDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Segments",
+        "elr_definition": "9071 - Hypercube - Financial Liabilities - Segments",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Basic",
+        "elr_definition": "9069 - Hypercube - Financial Liabilities - Basic",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.CUBE_CONFORMITY.007",
+      "type": "hypercube_conformity",
+      "topic": "financial_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialLiabilities-FullHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Full",
+        "elr_definition": "9070 - Hypercube - Financial Liabilities - Full",
+        "dimensions": [
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:FairValueMovementDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialLiabilitiesReclassificationDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:MarketRiskTypeDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

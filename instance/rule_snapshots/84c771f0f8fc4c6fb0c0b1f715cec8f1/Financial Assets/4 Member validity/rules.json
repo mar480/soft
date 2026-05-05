@@ -1,0 +1,786 @@
+{
+  "topic_id": "financial_assets",
+  "topic_label": "Financial Assets",
+  "rule_family": "4 Member validity",
+  "rule_count": 52,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:ShareTypesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AcquiredIssuedInsuranceContractsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AcquiredIssuedInsuranceContractsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceAccountMeasurementTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllowanceAccountDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceForImpairmentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllowanceForImpairmentHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AssociatesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAssociatesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractTypeInsuranceSpecificDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContractTypeInsuranceSpecificHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractualServiceMarginInsuranceRevenueDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContractualServiceMarginInsuranceRevenueHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRatingsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CreditRatingsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRiskExposureDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MaximumCreditRiskExposure"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CreditRiskInternalGradeRatingsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CreditRiskInternalGradeRatingsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CurrencyDenominationFinancialInstrumentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CurrencyDenominationFinancialInstrumentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DerecognitionEquityInstrumentsMeasuredFairValueThroughOCIHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DrawnUndrawnLoansAdvancesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DrawnUndrawnTotal"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.018",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:EquityClassesHeldDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllShareClassesHeldDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.019",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FairValueMeasurementTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FairValueMeasurementTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.020",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FairValueMovementDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FairValueMovementsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.021",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialAssetsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.022",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsImpairmentStageDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialAssetsImpairmentStageHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.023",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsReclassificationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReclassifiedAssetsTotal"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.024",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.025",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentLevelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllLevelsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.026",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ValueTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.027",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsHeldForSaleDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialInstrumentsExcludingThoseHeldForSaleDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.028",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.029",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:IndustryConcentrationRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TypesIndustryConcentrationRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.030",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.031",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.032",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InterestRateTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:InterestRateTypeFinancialInstrumentHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.033",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:JointVenturesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalJointVenturesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.034",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:LiquidityFeaturesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:LiquidityFeaturesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.035",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:Listed-unlistedDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.036",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:LoansAdvancesProductGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:LoansAdvancesTotal"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.037",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.038",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MarketRiskTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MarketRisk"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.039",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllPeriods"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.040",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MovementAnalysisInsurance-NetInsuranceDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MovementAnalysisInsurance-NetInsuranceHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.041",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:NetReinsuranceContractsHeldAnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NetReinsuranceContractsHeldAnalysisHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.042",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OnerousNon-onerousInsuranceContractsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:OnerousNon-onerousInsuranceContractsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.043",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.044",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OtherRelatedPartyTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllOtherRelatedPartiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.045",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ParentEntitiesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllParentEntitiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.046",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:PositionTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:PositionTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.047",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.048",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RegionCountryIssuerRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RegionCountryIssuerRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.049",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.050",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SecuredStatusDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:SecuredStatusHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.051",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.FINANCIALASSETS.MEMBER_VALIDITY.052",
+      "type": "dimension_member_validity",
+      "topic": "financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SubsidiariesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalSubsidiariesDefault"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "topic_id": "detailed_profit_and_loss",
+  "topic_label": "Detailed Profit and Loss",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 6,
+  "rules": [
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "bus:MainIndustrySectorDimension",
+      "head_member": "bus:TotalActivitiesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:A-AgricultureForestryFishing",
+          "bus:B-MiningQuarrying",
+          "bus:C-Manufacturing",
+          "bus:CombinedCross-sectorActivities1",
+          "bus:CombinedCross-sectorActivities2",
+          "bus:CombinedCross-sectorActivities3",
+          "bus:CombinedCross-sectorActivities4",
+          "bus:D-ElectricityGasSteamAirConditioningSupply",
+          "bus:E-WaterSupplySewerageWasteManagementRemediationActivities",
+          "bus:F-Construction",
+          "bus:G-WholesaleRetailTradeRepairMotorVehiclesMotorcycles",
+          "bus:H-TransportationStorage",
+          "bus:I-AccommodationFoodServiceActivities",
+          "bus:J-InformationCommunication",
+          "bus:K-FinancialInsuranceActivities",
+          "bus:L-RealEstateActivities",
+          "bus:M-ProfessionalScientificTechnicalActivities",
+          "bus:N-AdministrativeSupportServiceActivities",
+          "bus:O-PublicAdministrationDefenceCompulsorySocialSecurity",
+          "bus:OtherSpecificActivity1",
+          "bus:OtherSpecificActivity2",
+          "bus:OtherSpecificActivity3",
+          "bus:OtherSpecificActivity4",
+          "bus:OtherSpecificActivity5",
+          "bus:P-Education",
+          "bus:Q-HumanHealthSocialWorkActivities",
+          "bus:R-ArtsEntertainmentRecreation",
+          "bus:S-OtherServiceActivities",
+          "bus:T-HouseholdsAsEmployers-UndifferentiatedGoodsService-productionActivitiesHouseholdsForOwnUse",
+          "bus:U-Extra-territorialOrganisationsBodies"
+        ],
+        "domain_root": "bus:MainIndustrySectorHeading"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Main industry sector [Dimension]",
+        "default_member": "bus:TotalActivitiesDefault",
+        "domain_root": "bus:MainIndustrySectorHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ExceptionalsDimension",
+      "head_member": "core:TotalReportedDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Exceptional",
+          "core:ExplicitlyIdentifiedAsNon-exceptional"
+        ],
+        "domain_root": "core:TotalReportedDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Exceptionals [Dimension]",
+        "default_member": "core:TotalReportedDefault",
+        "domain_root": "core:TotalReportedDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "dpl:DetailedAnalysisDimension",
+      "head_member": "dpl:TotalItemsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "dpl:Item1",
+          "dpl:Item10",
+          "dpl:Item11",
+          "dpl:Item12",
+          "dpl:Item13",
+          "dpl:Item14",
+          "dpl:Item15",
+          "dpl:Item16",
+          "dpl:Item17",
+          "dpl:Item18",
+          "dpl:Item19",
+          "dpl:Item2",
+          "dpl:Item20",
+          "dpl:Item21",
+          "dpl:Item22",
+          "dpl:Item23",
+          "dpl:Item24",
+          "dpl:Item25",
+          "dpl:Item26",
+          "dpl:Item27",
+          "dpl:Item28",
+          "dpl:Item29",
+          "dpl:Item3",
+          "dpl:Item30",
+          "dpl:Item31",
+          "dpl:Item32",
+          "dpl:Item33",
+          "dpl:Item34",
+          "dpl:Item35",
+          "dpl:Item36",
+          "dpl:Item37",
+          "dpl:Item38",
+          "dpl:Item39",
+          "dpl:Item4",
+          "dpl:Item40",
+          "dpl:Item5",
+          "dpl:Item6",
+          "dpl:Item7",
+          "dpl:Item8",
+          "dpl:Item9"
+        ],
+        "domain_root": "dpl:TotalItemsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Detailed analysis [Dimension]",
+        "default_member": "dpl:TotalItemsDefault",
+        "domain_root": "dpl:TotalItemsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.005",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "dpl:ExpenseTypeDimension",
+      "head_member": "dpl:TotalCostsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "dpl:AdministrativeExpenses",
+          "dpl:CostSales",
+          "dpl:DistributionCosts"
+        ],
+        "domain_root": "dpl:TotalCostsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Expense type [Dimension]",
+        "default_member": "dpl:TotalCostsDefault",
+        "domain_root": "dpl:TotalCostsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.DIMAGG.006",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "dpl:IntraExtraGroupTransactionsDimension",
+      "head_member": "dpl:TotalTransactionsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "dpl:Associates",
+          "dpl:JointVentures",
+          "dpl:Parent",
+          "dpl:ParticipatingInterests",
+          "dpl:SubsidiariesOtherGroupUndertakings",
+          "dpl:ThirdPartiesOutsideGroup"
+        ],
+        "domain_root": "dpl:TotalTransactionsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Intra / extra group transactions [Dimension]",
+        "default_member": "dpl:TotalTransactionsDefault",
+        "domain_root": "dpl:TotalTransactionsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

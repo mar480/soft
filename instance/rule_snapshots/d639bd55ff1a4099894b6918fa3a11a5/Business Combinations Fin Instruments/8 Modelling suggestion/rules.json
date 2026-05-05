@@ -1,0 +1,34 @@
+{
+  "topic_id": "business_combinations_fin_instruments",
+  "topic_label": "Business Combinations Fin Instruments",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFININSTRUMENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_fin_instruments",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-FinInstrumentsHypercube",
+          "core:BusinessCombinations-FinInstrumentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:BusinessCombinationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Fin Instruments. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

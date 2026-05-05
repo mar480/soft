@@ -1,0 +1,24 @@
+{
+  "topic_id": "subsidiaries",
+  "topic_label": "Subsidiaries",
+  "source_hypercubes": [
+    "core:SubsidiariesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Subsidiaries",
+      "elr_definition": "9214 - Hypercube - Subsidiaries",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Subsidiaries-Grouping1",
+      "elr_definition": "92141 - Hypercube - Subsidiaries Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 13
+}

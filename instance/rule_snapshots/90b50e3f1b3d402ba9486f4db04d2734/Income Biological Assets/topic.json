@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_biological_assets",
+  "topic_label": "Income Biological Assets",
+  "source_hypercubes": [
+    "core:Income-BiologicalAssetsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-BiologicalAssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-BiologicalAssets",
+      "elr_definition": "9085 - Hypercube - Income - Biological Assets",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 29
+}

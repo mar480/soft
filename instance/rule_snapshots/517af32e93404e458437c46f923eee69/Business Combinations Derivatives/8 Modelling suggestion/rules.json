@@ -1,0 +1,35 @@
+{
+  "topic_id": "business_combinations_derivatives",
+  "topic_label": "Business Combinations Derivatives",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_derivatives",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-DerivativesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:DerivativePurposeDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativesTypesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Derivatives. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "topic_id": "finance_leases",
+  "topic_label": "Finance Leases",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCELEASES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "finance_leases",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:FinanceLeases-AssetsPrimaryItems",
+            "core:FinanceLeases-BasicPrimaryItems",
+            "core:FinanceLeases-LiabilitiesPrimaryItems",
+            "core:FinanceLeases-MainPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CreditRatingsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

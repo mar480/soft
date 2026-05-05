@@ -1,0 +1,80 @@
+{
+  "topic_id": "income_p_p_e",
+  "topic_label": "Income P P E",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEPPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:OwnershipAssetsDimension",
+      "head_member": "core:TotalOwnedLeasedAssets",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:OwnedAssets",
+          "core:LeasedAssets"
+        ],
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault",
+        "dimension_label": "Ownership of assets [Dimension]"
+      }
+    },
+    {
+      "id": "AUTO.INCOMEPPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:PropertyPlantEquipmentClassesDimension",
+      "head_member": "core:TotalPropertyPlantEquipment",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:LandBuildings",
+          "core:LeaseholdImprovements",
+          "core:InvestmentPropertyIncludedWithinPPE",
+          "core:ConstructionInProgressAssetsUnderConstruction",
+          "core:VehiclesPlantMachinery",
+          "core:FurnitureFittingsToolsEquipment",
+          "core:NetworkAssets",
+          "core:AssetsNotYetAvailableForUsePPE",
+          "core:MiningOilGasAdditionalPPEClassesHeading",
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment",
+          "core:OtherPropertyPlantEquipment"
+        ],
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "dimension_label": "Property, plant and equipment classes [Dimension]"
+      }
+    }
+  ]
+}

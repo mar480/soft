@@ -1,0 +1,178 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\7ff6392c68e54836bb0793f68d173b0a_microentity-template.xhtml",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "selected_topics": [],
+  "selected_families_by_topic": {},
+  "evaluated_topic_count": 1,
+  "evaluated_topics": [
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 4
+    }
+  ],
+  "result_count": 5,
+  "summary": {
+    "pass": 5,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_025",
+          "fact_026",
+          "fact_031",
+          "fact_032"
+        ],
+        "topic_fact_ids": [
+          "fact_025",
+          "fact_026",
+          "fact_031",
+          "fact_032"
+        ],
+        "topic_fact_reasons": {
+          "fact_025": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_026": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_031": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_032": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ]
+        },
+        "trigger_fact_count": 4,
+        "topic_fact_count": 4
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": [],
+        "valid_fact_ids": [
+          "fact_025",
+          "fact_026",
+          "fact_031",
+          "fact_032"
+        ],
+        "checked_fact_count": 4,
+        "allowed_hypercube_count": 9
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_025",
+          "fact_026",
+          "fact_031",
+          "fact_032"
+        ],
+        "matching_fact_ids": [
+          "fact_025",
+          "fact_026",
+          "fact_031",
+          "fact_032"
+        ],
+        "topic_fact_count": 4,
+        "matching_fact_count": 4,
+        "allowed_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": [],
+        "checked_dimension_members": [
+          {
+            "fact_id": "fact_025",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact_026",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact_031",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:AfterOneYear"
+          },
+          {
+            "fact_id": "fact_032",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:AfterOneYear"
+          }
+        ],
+        "checked_dimension_member_count": 4,
+        "checked_fact_count": 4
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    }
+  ]
+}

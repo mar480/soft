@@ -1,0 +1,34 @@
+{
+  "topic_id": "associates",
+  "topic_label": "Associates",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ASSOCIATES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "associates",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:AssociatesHypercube",
+          "core:AssociatesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:X-DetailsSharesHeldInAssociateGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Associates. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

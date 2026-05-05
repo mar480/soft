@@ -1,0 +1,248 @@
+{
+  "topic_id": "debtors_operating_leases",
+  "topic_label": "Debtors Operating Leases",
+  "rule_family": "4 Member validity",
+  "rule_count": 16,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceAccountMeasurementTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllowanceAccountDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceForImpairmentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllowanceForImpairmentHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CurrencyDenominationFinancialInstrumentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CurrencyDenominationFinancialInstrumentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsImpairmentStageDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialAssetsImpairmentStageHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentLevelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllLevelsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ValueTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsHeldForSaleDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialInstrumentsExcludingThoseHeldForSaleDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllPeriods"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingLeasePurposeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAssetsUnderOperatingLeasesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RegionCountryIssuerRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RegionCountryIssuerRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    }
+  ]
+}

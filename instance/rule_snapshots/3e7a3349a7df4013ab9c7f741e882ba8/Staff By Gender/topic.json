@@ -1,0 +1,17 @@
+{
+  "topic_id": "staff_by_gender",
+  "topic_label": "Staff By Gender",
+  "source_hypercubes": [
+    "direp:Staff-ByGenderHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:Staff-ByGenderHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-Staff-ByGender",
+      "elr_definition": "9604 - Hypercube - Staff - By Gender",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

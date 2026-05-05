@@ -1,0 +1,24 @@
+{
+  "topic_id": "income_p_p_e",
+  "topic_label": "Income P P E",
+  "source_hypercubes": [
+    "core:Income-PPEHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-PPE",
+      "elr_definition": "9082 - Hypercube - Income - PPE",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Income-PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-PPE-Grouping1",
+      "elr_definition": "90821 - Hypercube - Income - PPE Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 27
+}

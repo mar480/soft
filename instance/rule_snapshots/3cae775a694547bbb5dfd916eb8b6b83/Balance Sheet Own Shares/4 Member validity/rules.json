@@ -1,0 +1,113 @@
+{
+  "topic_id": "balance_sheet_own_shares",
+  "topic_label": "Balance Sheet Own Shares",
+  "rule_family": "4 Member validity",
+  "rule_count": 7,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:EntityShareClassesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareClassesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:ShareTypesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InvestmentsMovementsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NetBookValueCarryingValueDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "topic_id": "investment_property",
+  "topic_label": "Investment Property",
+  "rule_family": "1 Topic note presence",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "topic": "investment_property",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "statement_concepts_present": {
+          "minimum_count": 1,
+          "concepts": [
+            "core:InvestmentProperty"
+          ],
+          "source_statement_roles": [
+            "balance_sheet"
+          ],
+          "headline_statement_roles": []
+        }
+      },
+      "expect": {
+        "topic_note_present": true,
+        "topic_primary_items": [
+          "core:InvestmentProperty-RangePrimaryItems",
+          "core:InvestmentProperty-SegmentsPrimaryItems",
+          "core:InvestmentPropertyPrimaryItems"
+        ],
+        "topic_hypercubes": [
+          "core:InvestmentProperty-RangeHypercube",
+          "core:InvestmentProperty-SegmentsHypercube",
+          "core:InvestmentPropertyHypercube"
+        ]
+      },
+      "taxonomy_basis": {
+        "matched_topic_label": "Investment Property",
+        "matched_statement_concept_label": "Investment property",
+        "allowed_non_statement_presentation_roles": [
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+            "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+            "classification": "notes_and_detailed_disclosures"
+          }
+        ],
+        "supplementary_non_statement_presentation_roles": [],
+        "topic_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:InvestmentPropertyOwnershipTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

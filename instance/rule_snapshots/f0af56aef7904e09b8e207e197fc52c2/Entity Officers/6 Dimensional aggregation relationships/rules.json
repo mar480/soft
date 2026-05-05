@@ -1,0 +1,149 @@
+{
+  "topic_id": "entity_officers",
+  "topic_label": "Entity Officers",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYOFFICERS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityOfficerStatusDimension",
+      "head_member": "bus:AllEntityOfficerTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:ExecutiveOfficer",
+          "bus:Non-executiveOfficer"
+        ],
+        "domain_root": "bus:AllEntityOfficerTypesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity officer status [Dimension]",
+        "default_member": "bus:AllEntityOfficerTypesDefault",
+        "domain_root": "bus:AllEntityOfficerTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityOfficersDimension",
+      "head_member": "bus:AllEntityOfficersEntityOfficersTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:Chairman",
+          "bus:ChairmanChiefExecutive",
+          "bus:ChiefExecutive",
+          "bus:CompanySecretary1",
+          "bus:CompanySecretary2",
+          "bus:CompanySecretaryDirector1",
+          "bus:CompanySecretaryDirector2",
+          "bus:Director1",
+          "bus:Director10",
+          "bus:Director11",
+          "bus:Director12",
+          "bus:Director13",
+          "bus:Director14",
+          "bus:Director15",
+          "bus:Director16",
+          "bus:Director17",
+          "bus:Director18",
+          "bus:Director19",
+          "bus:Director2",
+          "bus:Director20",
+          "bus:Director21",
+          "bus:Director22",
+          "bus:Director23",
+          "bus:Director24",
+          "bus:Director25",
+          "bus:Director26",
+          "bus:Director27",
+          "bus:Director28",
+          "bus:Director29",
+          "bus:Director3",
+          "bus:Director30",
+          "bus:Director31",
+          "bus:Director32",
+          "bus:Director33",
+          "bus:Director34",
+          "bus:Director35",
+          "bus:Director36",
+          "bus:Director37",
+          "bus:Director38",
+          "bus:Director39",
+          "bus:Director4",
+          "bus:Director40",
+          "bus:Director5",
+          "bus:Director6",
+          "bus:Director7",
+          "bus:Director8",
+          "bus:Director9",
+          "bus:HighestPaidDirector",
+          "bus:PartnerLLP1",
+          "bus:PartnerLLP10",
+          "bus:PartnerLLP11",
+          "bus:PartnerLLP12",
+          "bus:PartnerLLP13",
+          "bus:PartnerLLP14",
+          "bus:PartnerLLP15",
+          "bus:PartnerLLP16",
+          "bus:PartnerLLP17",
+          "bus:PartnerLLP18",
+          "bus:PartnerLLP19",
+          "bus:PartnerLLP2",
+          "bus:PartnerLLP20",
+          "bus:PartnerLLP3",
+          "bus:PartnerLLP4",
+          "bus:PartnerLLP5",
+          "bus:PartnerLLP6",
+          "bus:PartnerLLP7",
+          "bus:PartnerLLP8",
+          "bus:PartnerLLP9",
+          "bus:SeniorPartnerLimitedLiabilityPartnership"
+        ],
+        "domain_root": "bus:AllEntityOfficersEntityOfficersTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity officers [Dimension]",
+        "default_member": "bus:AllEntityOfficersEntityOfficersTotalDefault",
+        "domain_root": "bus:AllEntityOfficersEntityOfficersTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

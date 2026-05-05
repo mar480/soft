@@ -1,0 +1,45 @@
+{
+  "topic_id": "income_s_t_and_l_v_operating_leases",
+  "topic_label": "Income S T and L V Operating Leases",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMESTANDLVOPERATINGLEASES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Income-STLVOperatingLeasesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractDurationDimension",
+          "core:ContractTypeDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:NaturePromiseDimension",
+          "core:OperatingLeasePurposeDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SalesChannelDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Income S T and L V Operating Leases. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

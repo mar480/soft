@@ -1,0 +1,31 @@
+{
+  "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+  "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Gender",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DIVERSITYANDINCLUSIONREPORTINGBOARDANDEXECUTIVEMANAGEMENTBYGENDER.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "diversity_and_inclusion_reporting_board_and_executive_management_by_gender",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "direp:DiversityInclusionReporting-BoardExecutiveManagement-ByGenderHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-DiversityAndInclusionReporting-BoardAndExecutiveManagement-ByGender",
+        "elr_definition": "9601 - Hypercube - Diversity and Inclusion Reporting -  Board and Executive Management - By Gender",
+        "dimensions": [
+          "direp:GenderDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

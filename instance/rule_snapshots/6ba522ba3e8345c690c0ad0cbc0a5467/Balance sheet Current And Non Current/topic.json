@@ -1,0 +1,17 @@
+{
+  "topic_id": "balance_sheet_current_and_non_current",
+  "topic_label": "Balance sheet Current And Non Current",
+  "source_hypercubes": [
+    "core:BalanceSheet-CurrentNon-CurrentHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BalanceSheet-CurrentNon-CurrentHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-CurrentNon-CurrentAnalysis1",
+      "elr_definition": "92621 - Hypercube - Balance sheet - Current And Non-Current Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "rule_count": 16
+}

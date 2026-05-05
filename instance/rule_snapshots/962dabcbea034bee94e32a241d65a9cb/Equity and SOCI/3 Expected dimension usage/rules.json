@@ -1,0 +1,48 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "equity_and_soci",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:EquitySOCI-PPEPrimaryItems",
+            "core:EquitySOCI-SegmentsPrimaryItems",
+            "core:EquitySOCI-SharesPrimaryItems",
+            "core:EquitySOCIPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:EquityClassesDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

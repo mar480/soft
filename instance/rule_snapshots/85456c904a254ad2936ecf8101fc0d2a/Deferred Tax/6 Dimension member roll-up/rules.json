@@ -1,0 +1,80 @@
+{
+  "topic_id": "deferred_tax",
+  "topic_label": "Deferred Tax",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DEFERREDTAX.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:DeferredTaxAssetLiabilityClassesDimension",
+      "head_member": "core:TotalForDeferredTax",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:AcceleratedTaxDepreciationDeferredTax",
+          "core:AmortisationDeferredTax",
+          "core:ConvertibleDebtEquity-componentDeferredTax",
+          "core:ConvertiblePreferenceSharesDeferredTax",
+          "core:RetirementBenefitObligationsDeferredTax",
+          "core:OtherPost-employmentBenefitsDeferredTax",
+          "core:Share-basedPaymentsDeferredTax",
+          "core:ProvisionsDeferredTax",
+          "core:AccruedLiabilitiesDeferredTax",
+          "core:ContractAssetsDeferredTax",
+          "core:ContractCostAssetsDeferredTax",
+          "core:ContractLiabilitiesDeferredTax",
+          "core:ImpairmentLossesDeferredTax",
+          "core:CapitalisedDeferredDevelopmentCostsDeferredTax",
+          "core:RevaluationPropertyPlantEquipmentDeferredTax",
+          "core:RevaluationIntangibleAssetsDeferredTax",
+          "core:RevaluationBiologicalAssetsDeferredTax",
+          "core:RevaluationInvestmentPropertyDeferredTax",
+          "core:ForeignExchangeContractsDeferredTax",
+          "core:FairValueMovementsOnFinancialInstrumentsDeferredTax",
+          "core:FinancialAssetsFairValueThroughProfitOrLossDeferredTax",
+          "core:FinancialLiabilitiesFairValueThroughProfitOrLossDeferredTax",
+          "core:Available-for-saleFinancialAssetsDeferredTax",
+          "core:Held-to-maturityInvestmentsDeferredTax",
+          "core:LoansBorrowingsDeferredTax",
+          "core:DerivativesDeferredTax",
+          "core:RevaluationFairValueHedgesDeferredTax",
+          "core:RevaluationCashFlowHedgesDeferredTax",
+          "core:NetInvestmentHedgesDeferredTax",
+          "core:ForeignExchangeDifferencesOnForeignOperationsDeferredTax",
+          "core:InventoriesDeferredTax",
+          "core:LeasesDeferredTax",
+          "core:DeferredIncomeDeferredTax",
+          "core:TaxCreditsDeferredTax",
+          "core:TaxLossesCarry-forwardsDeferredTax",
+          "core:TransitionAdjustmentsArisingFromFirst-timeAdoptionDeferredTax",
+          "core:InsuranceAdditionalDeferredTaxClassesHeading",
+          "core:MiningOilGasAdditionalDeferredTaxClassesHeading",
+          "core:FurtherSpecificItem1DeferredTaxComponentTotalForDeferredTax",
+          "core:FurtherSpecificItem2DeferredTaxComponentTotalForDeferredTax",
+          "core:FurtherSpecificItem3DeferredTaxComponentTotalForDeferredTax",
+          "core:FurtherSpecificItem4DeferredTaxComponentTotalForDeferredTax",
+          "core:FurtherSpecificItem5DeferredTaxComponentTotalForDeferredTax",
+          "core:OtherDeferredTax"
+        ],
+        "domain_root": "core:TotalForDeferredTaxDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalForDeferredTaxDefault",
+        "dimension_label": "Deferred tax asset and liability classes [Dimension]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "segments_text",
+  "topic_label": "Segments Text",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SEGMENTSTEXT.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "segments_text",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Segments-TextHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Segments Text. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

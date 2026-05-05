@@ -1,0 +1,127 @@
+{
+  "topic_id": "business_combinations_financial_liabilities",
+  "topic_label": "Business Combinations Financial Liabilities",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_financial_liabilities",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_financial_liabilities",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALLIABILITIES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_financial_liabilities",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialLiabilitiesClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialLiabilitiesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:FinancialLiabilitiesAmortisedCost",
+          "core:FinancialLiabilitiesCostLessImpairment",
+          "core:FinancialLiabilitiesDesignatedFairValueThroughProfitOrLoss",
+          "core:FinancialLiabilitiesMandatorilyMeasuredFairValueThroughProfitOrLoss"
+        ],
+        "domain_root": "core:TotalFinancialLiabilitiesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial liabilities classes and categories [Dimension]",
+        "default_member": "core:TotalFinancialLiabilitiesDefault",
+        "domain_root": "core:TotalFinancialLiabilitiesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "topic_id": "audit_firm_contact_info",
+  "topic_label": "Audit Firm Contact Info",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.AUDITFIRMCONTACTINFO.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "audit_firm_contact_info",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "bus:AddressTypeDimension",
+      "head_member": "bus:MainAddressDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:Postal",
+          "bus:Street"
+        ],
+        "domain_root": "bus:AddressTypeHeading"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Address type [Dimension]",
+        "default_member": "bus:MainAddressDefault",
+        "domain_root": "bus:AddressTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.AUDITFIRMCONTACTINFO.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "audit_firm_contact_info",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "bus:ThirdPartyAgentStatusDimension",
+      "head_member": "bus:TotalAgentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:Agent1",
+          "bus:Agent10",
+          "bus:Agent2",
+          "bus:Agent3",
+          "bus:Agent4",
+          "bus:Agent5",
+          "bus:Agent6",
+          "bus:Agent7",
+          "bus:Agent8",
+          "bus:Agent9",
+          "bus:LeadAgentIfApplicable"
+        ],
+        "domain_root": "bus:TotalAgentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Third party agent status [Dimension]",
+        "default_member": "bus:TotalAgentsDefault",
+        "domain_root": "bus:TotalAgentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.AUDITFIRMCONTACTINFO.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "audit_firm_contact_info",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

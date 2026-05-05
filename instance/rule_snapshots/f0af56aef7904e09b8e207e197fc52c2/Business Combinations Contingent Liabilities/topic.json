@@ -1,0 +1,17 @@
+{
+  "topic_id": "business_combinations_contingent_liabilities",
+  "topic_label": "Business Combinations Contingent Liabilities",
+  "source_hypercubes": [
+    "core:BusinessCombinations-ContingentLiabilitiesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-ContingentLiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-ContingentLiabilities",
+      "elr_definition": "9166 - Hypercube - Business Combinations - Contingent Liabilities",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 10
+}

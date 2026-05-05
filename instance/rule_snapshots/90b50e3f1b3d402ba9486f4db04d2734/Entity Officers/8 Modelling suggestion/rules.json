@@ -1,0 +1,39 @@
+{
+  "topic_id": "entity_officers",
+  "topic_label": "Entity Officers",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYOFFICERS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "entity_officers",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:EntityOfficersHypercube",
+          "bus:EntityOfficersHypercube",
+          "bus:EntityOfficersHypercube",
+          "bus:EntityOfficersHypercube",
+          "core:EntityOfficers-BasicHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityOfficerStatusDimension",
+          "bus:EntityOfficersDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "direp:X-SpecificAdvanceOrCreditDirectorsGroupingDimension",
+          "direp:X-SpecificGuaranteeDirectorsGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Entity Officers. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "business_combinations_intangibles",
+  "topic_label": "Business Combinations Intangibles",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "business_combinations_intangibles",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BusinessCombinations-IntangiblesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Business Combinations Intangibles. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "diversity_and_inclusion_reporting_board_and_executive_management_by_ethnicity",
+  "topic_label": "Diversity and Inclusion Reporting Board and Executive Management By Ethnicity",
+  "source_hypercubes": [
+    "direp:DiversityInclusionReporting-BoardExecutiveManagement-ByEthnicityHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:DiversityInclusionReporting-BoardExecutiveManagement-ByEthnicityHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-DiversityAndInclusionReporting-BoardAndExecutiveManagement-ByEthnicity",
+      "elr_definition": "9602 - Hypercube - Diversity and Inclusion Reporting -  Board and Executive Management- By Ethnicity",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

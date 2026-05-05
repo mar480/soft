@@ -1,0 +1,31 @@
+{
+  "topic_id": "staff_by_gender",
+  "topic_label": "Staff By Gender",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.STAFFBYGENDER.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "staff_by_gender",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "direp:Staff-ByGenderHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "direp:GenderDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Staff By Gender. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "topic_id": "associates",
+  "topic_label": "Associates",
+  "source_hypercubes": [
+    "core:AssociatesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Associates",
+      "elr_definition": "9216 - Hypercube - Associates",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Associates-Grouping1",
+      "elr_definition": "92161 - Hypercube - Associates Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 10
+}

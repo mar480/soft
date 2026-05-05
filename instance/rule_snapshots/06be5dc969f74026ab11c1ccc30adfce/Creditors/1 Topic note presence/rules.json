@@ -1,0 +1,91 @@
+{
+  "topic_id": "creditors",
+  "topic_label": "Creditors",
+  "rule_family": "1 Topic note presence",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "topic": "creditors",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "statement_concepts_present": {
+          "minimum_count": 1,
+          "concepts": [
+            "core:Creditors"
+          ],
+          "source_statement_roles": [
+            "balance_sheet"
+          ],
+          "headline_statement_roles": [
+            "balance_sheet"
+          ]
+        }
+      },
+      "expect": {
+        "topic_note_present": true,
+        "topic_primary_items": [
+          "core:Creditors-AssociatesPrimaryItems",
+          "core:Creditors-FinanceLeasesPrimaryItems",
+          "core:Creditors-JointVenturesPrimaryItems",
+          "core:Creditors-OtherPartiesPrimaryItems",
+          "core:Creditors-ParentsPrimaryItems",
+          "core:Creditors-SegmentsPrimaryItems",
+          "core:Creditors-SubsidiariesPrimaryItems",
+          "core:CreditorsPrimaryItems"
+        ],
+        "topic_hypercubes": [
+          "core:Creditors-AssociatesHypercube",
+          "core:Creditors-FinanceLeasesHypercube",
+          "core:Creditors-JointVenturesHypercube",
+          "core:Creditors-OtherPartiesHypercube",
+          "core:Creditors-ParentsHypercube",
+          "core:Creditors-SegmentsHypercube",
+          "core:Creditors-SubsidiariesHypercube",
+          "core:CreditorsHypercube"
+        ]
+      },
+      "taxonomy_basis": {
+        "matched_topic_label": "Creditors",
+        "matched_statement_concept_label": "Creditors",
+        "allowed_non_statement_presentation_roles": [
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+            "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+            "classification": "notes_and_detailed_disclosures"
+          }
+        ],
+        "supplementary_non_statement_presentation_roles": [],
+        "topic_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

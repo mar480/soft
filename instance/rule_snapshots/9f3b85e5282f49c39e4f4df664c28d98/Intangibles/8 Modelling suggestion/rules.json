@@ -1,0 +1,49 @@
+{
+  "topic_id": "intangibles",
+  "topic_label": "Intangibles",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INTANGIBLES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "intangibles",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:IntangiblesHypercube",
+          "core:IntangiblesHypercube",
+          "core:IntangiblesHypercube",
+          "core:IntangiblesHypercube",
+          "core:Intangibles-RangeHypercube",
+          "core:Intangibles-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:X-IntangibleAssetsAcquiredThroughGovernmentGrantGroupingDimension",
+          "core:X-MaterialIntangibleAssetGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Intangibles. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "topic_id": "balance_sheet_current_and_non_current",
+  "topic_label": "Balance sheet Current And Non Current",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETCURRENTANDNONCURRENT.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "balance_sheet_current_and_non_current",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BalanceSheet-CurrentNon-CurrentHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-CurrentNon-CurrentAnalysis1",
+        "elr_definition": "92621 - Hypercube - Balance sheet - Current And Non-Current Analysis 1",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    }
+  ]
+}

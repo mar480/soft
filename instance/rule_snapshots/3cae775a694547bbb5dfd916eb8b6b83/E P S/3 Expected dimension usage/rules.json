@@ -1,0 +1,37 @@
+{
+  "topic_id": "e_p_s",
+  "topic_label": "E P S",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.EPS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "e_p_s",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:EPSPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

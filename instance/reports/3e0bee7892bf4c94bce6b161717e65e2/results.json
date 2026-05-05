@@ -1,0 +1,1581 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\4dc16ccde8ab425b9addad790b2462d9_FRC Annual Report and Accounts 2024-25 (iXBRL version with viewer).xhtml",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "selected_topics": [],
+  "selected_families_by_topic": {},
+  "evaluated_topic_count": 1,
+  "evaluated_topics": [
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": true,
+      "trigger_fact_count": 3,
+      "topic_fact_count": 121
+    }
+  ],
+  "result_count": 5,
+  "summary": {
+    "pass": 4,
+    "fail": 1
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact-359",
+          "fact-343",
+          "fact-350"
+        ],
+        "topic_fact_ids": [
+          "fact-446",
+          "fact-447",
+          "fact-448",
+          "fact-449",
+          "fact-450",
+          "fact-451",
+          "fact-452",
+          "fact-453",
+          "fact-454",
+          "fact-455",
+          "fact-507",
+          "fact-508",
+          "fact-510",
+          "fact-511",
+          "fact-513",
+          "fact-514",
+          "fact-516",
+          "fact-517",
+          "fact-519",
+          "fact-520",
+          "fact-522",
+          "fact-523",
+          "fact-525",
+          "fact-526",
+          "fact-528",
+          "fact-529",
+          "fact-531",
+          "fact-532",
+          "fact-534",
+          "fact-535",
+          "fact-537",
+          "fact-538",
+          "fact-540",
+          "fact-541",
+          "fact-543",
+          "fact-544",
+          "fact-546",
+          "fact-547",
+          "fact-549",
+          "fact-550",
+          "fact-552",
+          "fact-553",
+          "fact-555",
+          "fact-556",
+          "fact-558",
+          "fact-559",
+          "fact-561",
+          "fact-562",
+          "fact-564",
+          "fact-565",
+          "fact-567",
+          "fact-568",
+          "fact-570",
+          "fact-571",
+          "fact-573",
+          "fact-574",
+          "fact-576",
+          "fact-577",
+          "fact-579",
+          "fact-580",
+          "fact-582",
+          "fact-583",
+          "fact-585",
+          "fact-586",
+          "fact-588",
+          "fact-589",
+          "fact-591",
+          "fact-592",
+          "fact-594",
+          "fact-595",
+          "fact-131",
+          "fact-132",
+          "fact-133",
+          "fact-134",
+          "fact-135",
+          "fact-136",
+          "fact-220",
+          "fact-221",
+          "fact-222",
+          "fact-203",
+          "fact-204",
+          "fact-238",
+          "fact-239",
+          "fact-240",
+          "fact-241",
+          "fact-242",
+          "fact-335",
+          "fact-334",
+          "fact-352",
+          "fact-336",
+          "fact-344",
+          "fact-353",
+          "fact-337",
+          "fact-345",
+          "fact-354",
+          "fact-338",
+          "fact-346",
+          "fact-355",
+          "fact-339",
+          "fact-351",
+          "fact-356",
+          "fact-340",
+          "fact-347",
+          "fact-357",
+          "fact-341",
+          "fact-348",
+          "fact-358",
+          "fact-342",
+          "fact-349",
+          "fact-359",
+          "fact-343",
+          "fact-350",
+          "fact-368",
+          "fact-371",
+          "fact-369",
+          "fact-372",
+          "fact-370",
+          "fact-373",
+          "fact-137",
+          "fact-138",
+          "fact-139"
+        ],
+        "topic_fact_reasons": {
+          "fact-131": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-132": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-133": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-134": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-135": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-136": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-137": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-138": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-139": [
+            "topic_dimensions:core:OperatingSegmentsDimension"
+          ],
+          "fact-203": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-204": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-220": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-221": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-222": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-238": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-239": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-240": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-241": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-242": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-334": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-335": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-336": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-337": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-338": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-339": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-340": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-341": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-342": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-343": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact-344": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-345": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-346": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-347": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-348": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-349": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-350": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact-351": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-352": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-353": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-354": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-355": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-356": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-357": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-358": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact-359": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact-368": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-369": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-370": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-371": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-372": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-373": [
+            "topic_dimensions:core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact-446": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-447": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-448": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-449": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-450": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-451": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-452": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-453": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-454": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-455": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-507": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-508": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-510": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-511": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-513": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-514": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-516": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-517": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-519": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-520": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-522": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-523": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-525": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-526": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-528": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-529": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-531": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-532": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-534": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-535": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-537": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-538": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-540": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-541": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-543": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-544": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-546": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-547": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-549": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-550": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-552": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-553": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-555": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-556": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-558": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-559": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-561": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-562": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-564": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-565": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-567": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-568": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-570": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-571": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-573": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-574": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-576": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-577": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-579": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-580": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-582": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-583": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-585": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-586": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-588": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-589": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-591": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-592": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-594": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ],
+          "fact-595": [
+            "topic_dimensions:core:RestatementsFirstTimeAdoptionDimension"
+          ]
+        },
+        "trigger_fact_count": 3,
+        "topic_fact_count": 121
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "fail",
+      "topic": "creditors",
+      "message": "Some topic facts use dimension combinations that do not fit any allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": [
+          "fact-446",
+          "fact-447",
+          "fact-448",
+          "fact-449",
+          "fact-451",
+          "fact-452",
+          "fact-453",
+          "fact-454",
+          "fact-525",
+          "fact-526",
+          "fact-552",
+          "fact-553",
+          "fact-220",
+          "fact-221",
+          "fact-222",
+          "fact-203",
+          "fact-238",
+          "fact-239",
+          "fact-240",
+          "fact-241"
+        ],
+        "valid_fact_ids": [
+          "fact-450",
+          "fact-455",
+          "fact-507",
+          "fact-508",
+          "fact-510",
+          "fact-511",
+          "fact-513",
+          "fact-514",
+          "fact-516",
+          "fact-517",
+          "fact-519",
+          "fact-520",
+          "fact-522",
+          "fact-523",
+          "fact-528",
+          "fact-529",
+          "fact-531",
+          "fact-532",
+          "fact-534",
+          "fact-535",
+          "fact-537",
+          "fact-538",
+          "fact-540",
+          "fact-541",
+          "fact-543",
+          "fact-544",
+          "fact-546",
+          "fact-547",
+          "fact-549",
+          "fact-550",
+          "fact-555",
+          "fact-556",
+          "fact-558",
+          "fact-559",
+          "fact-561",
+          "fact-562",
+          "fact-564",
+          "fact-565",
+          "fact-567",
+          "fact-568",
+          "fact-570",
+          "fact-571",
+          "fact-573",
+          "fact-574",
+          "fact-576",
+          "fact-577",
+          "fact-579",
+          "fact-580",
+          "fact-582",
+          "fact-583",
+          "fact-585",
+          "fact-586",
+          "fact-588",
+          "fact-589",
+          "fact-591",
+          "fact-592",
+          "fact-594",
+          "fact-595",
+          "fact-131",
+          "fact-132",
+          "fact-133",
+          "fact-134",
+          "fact-135",
+          "fact-136",
+          "fact-204",
+          "fact-242",
+          "fact-335",
+          "fact-334",
+          "fact-352",
+          "fact-336",
+          "fact-344",
+          "fact-353",
+          "fact-337",
+          "fact-345",
+          "fact-354",
+          "fact-338",
+          "fact-346",
+          "fact-355",
+          "fact-339",
+          "fact-351",
+          "fact-356",
+          "fact-340",
+          "fact-347",
+          "fact-357",
+          "fact-341",
+          "fact-348",
+          "fact-358",
+          "fact-342",
+          "fact-349",
+          "fact-359",
+          "fact-343",
+          "fact-350",
+          "fact-368",
+          "fact-371",
+          "fact-369",
+          "fact-372",
+          "fact-370",
+          "fact-373",
+          "fact-137",
+          "fact-138",
+          "fact-139"
+        ],
+        "checked_fact_count": 121,
+        "allowed_hypercube_count": 9
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact-446",
+          "fact-447",
+          "fact-448",
+          "fact-449",
+          "fact-450",
+          "fact-451",
+          "fact-452",
+          "fact-453",
+          "fact-454",
+          "fact-455",
+          "fact-507",
+          "fact-508",
+          "fact-510",
+          "fact-511",
+          "fact-513",
+          "fact-514",
+          "fact-516",
+          "fact-517",
+          "fact-519",
+          "fact-520",
+          "fact-522",
+          "fact-523",
+          "fact-525",
+          "fact-526",
+          "fact-528",
+          "fact-529",
+          "fact-531",
+          "fact-532",
+          "fact-534",
+          "fact-535",
+          "fact-537",
+          "fact-538",
+          "fact-540",
+          "fact-541",
+          "fact-543",
+          "fact-544",
+          "fact-546",
+          "fact-547",
+          "fact-549",
+          "fact-550",
+          "fact-552",
+          "fact-553",
+          "fact-555",
+          "fact-556",
+          "fact-558",
+          "fact-559",
+          "fact-561",
+          "fact-562",
+          "fact-564",
+          "fact-565",
+          "fact-567",
+          "fact-568",
+          "fact-570",
+          "fact-571",
+          "fact-573",
+          "fact-574",
+          "fact-576",
+          "fact-577",
+          "fact-579",
+          "fact-580",
+          "fact-582",
+          "fact-583",
+          "fact-585",
+          "fact-586",
+          "fact-588",
+          "fact-589",
+          "fact-591",
+          "fact-592",
+          "fact-594",
+          "fact-595",
+          "fact-131",
+          "fact-132",
+          "fact-133",
+          "fact-134",
+          "fact-135",
+          "fact-136",
+          "fact-220",
+          "fact-221",
+          "fact-222",
+          "fact-203",
+          "fact-204",
+          "fact-238",
+          "fact-239",
+          "fact-240",
+          "fact-241",
+          "fact-242",
+          "fact-335",
+          "fact-334",
+          "fact-352",
+          "fact-336",
+          "fact-344",
+          "fact-353",
+          "fact-337",
+          "fact-345",
+          "fact-354",
+          "fact-338",
+          "fact-346",
+          "fact-355",
+          "fact-339",
+          "fact-351",
+          "fact-356",
+          "fact-340",
+          "fact-347",
+          "fact-357",
+          "fact-341",
+          "fact-348",
+          "fact-358",
+          "fact-342",
+          "fact-349",
+          "fact-359",
+          "fact-343",
+          "fact-350",
+          "fact-368",
+          "fact-371",
+          "fact-369",
+          "fact-372",
+          "fact-370",
+          "fact-373",
+          "fact-137",
+          "fact-138",
+          "fact-139"
+        ],
+        "matching_fact_ids": [
+          "fact-446",
+          "fact-447",
+          "fact-448",
+          "fact-449",
+          "fact-450",
+          "fact-451",
+          "fact-452",
+          "fact-453",
+          "fact-454",
+          "fact-455",
+          "fact-507",
+          "fact-508",
+          "fact-510",
+          "fact-511",
+          "fact-513",
+          "fact-514",
+          "fact-516",
+          "fact-517",
+          "fact-519",
+          "fact-520",
+          "fact-522",
+          "fact-523",
+          "fact-525",
+          "fact-526",
+          "fact-528",
+          "fact-529",
+          "fact-531",
+          "fact-532",
+          "fact-534",
+          "fact-535",
+          "fact-537",
+          "fact-538",
+          "fact-540",
+          "fact-541",
+          "fact-543",
+          "fact-544",
+          "fact-546",
+          "fact-547",
+          "fact-549",
+          "fact-550",
+          "fact-552",
+          "fact-553",
+          "fact-555",
+          "fact-556",
+          "fact-558",
+          "fact-559",
+          "fact-561",
+          "fact-562",
+          "fact-564",
+          "fact-565",
+          "fact-567",
+          "fact-568",
+          "fact-570",
+          "fact-571",
+          "fact-573",
+          "fact-574",
+          "fact-576",
+          "fact-577",
+          "fact-579",
+          "fact-580",
+          "fact-582",
+          "fact-583",
+          "fact-585",
+          "fact-586",
+          "fact-588",
+          "fact-589",
+          "fact-591",
+          "fact-592",
+          "fact-594",
+          "fact-595",
+          "fact-131",
+          "fact-132",
+          "fact-133",
+          "fact-134",
+          "fact-135",
+          "fact-136",
+          "fact-220",
+          "fact-221",
+          "fact-222",
+          "fact-203",
+          "fact-204",
+          "fact-238",
+          "fact-239",
+          "fact-240",
+          "fact-241",
+          "fact-242",
+          "fact-335",
+          "fact-334",
+          "fact-352",
+          "fact-336",
+          "fact-344",
+          "fact-353",
+          "fact-337",
+          "fact-345",
+          "fact-354",
+          "fact-338",
+          "fact-346",
+          "fact-355",
+          "fact-339",
+          "fact-351",
+          "fact-356",
+          "fact-340",
+          "fact-347",
+          "fact-357",
+          "fact-341",
+          "fact-348",
+          "fact-358",
+          "fact-342",
+          "fact-349",
+          "fact-359",
+          "fact-343",
+          "fact-350",
+          "fact-368",
+          "fact-371",
+          "fact-369",
+          "fact-372",
+          "fact-370",
+          "fact-373",
+          "fact-137",
+          "fact-138",
+          "fact-139"
+        ],
+        "topic_fact_count": 121,
+        "matching_fact_count": 121,
+        "allowed_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": [],
+        "checked_dimension_members": [
+          {
+            "fact_id": "fact-446",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-447",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-448",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-449",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-450",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-451",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-452",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-453",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-454",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-455",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-507",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-508",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-510",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-511",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-513",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-514",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-516",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-517",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-519",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-520",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-522",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-523",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-525",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-526",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-528",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-529",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-531",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-532",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-534",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-535",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-537",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-538",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-540",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-541",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-543",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-544",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-546",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-547",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-549",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-550",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-552",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-553",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-555",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-556",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-558",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-559",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-561",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-562",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-564",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-565",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-567",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-568",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-570",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-571",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-573",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-574",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-576",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-577",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-579",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-580",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-582",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-583",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-585",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-586",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-588",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-589",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-591",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-592",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-594",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:PreviouslyStatedAmount"
+          },
+          {
+            "fact_id": "fact-595",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-131",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment1"
+          },
+          {
+            "fact_id": "fact-132",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment1"
+          },
+          {
+            "fact_id": "fact-133",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment2"
+          },
+          {
+            "fact_id": "fact-134",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment2"
+          },
+          {
+            "fact_id": "fact-135",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment3"
+          },
+          {
+            "fact_id": "fact-136",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment3"
+          },
+          {
+            "fact_id": "fact-220",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-221",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-222",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-203",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-204",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-238",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-239",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-240",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-241",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-242",
+            "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+            "member": "core:IncreaseDecreaseDueToTransitionFromPreviousStandard"
+          },
+          {
+            "fact_id": "fact-335",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-334",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-352",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-336",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-344",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-353",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-337",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-345",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-354",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-338",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-346",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-355",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-339",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-351",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-356",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact-340",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact-347",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact-357",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-341",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-348",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-358",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-342",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-349",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-359",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-343",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-350",
+            "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+            "member": "core:CurrentFinancialInstruments"
+          },
+          {
+            "fact_id": "fact-368",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact-371",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:WithinOneYear"
+          },
+          {
+            "fact_id": "fact-369",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:BetweenOneFiveYears"
+          },
+          {
+            "fact_id": "fact-372",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:BetweenOneFiveYears"
+          },
+          {
+            "fact_id": "fact-370",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:MoreThanFiveYears"
+          },
+          {
+            "fact_id": "fact-373",
+            "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+            "member": "core:MoreThanFiveYears"
+          },
+          {
+            "fact_id": "fact-137",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment1"
+          },
+          {
+            "fact_id": "fact-138",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment2"
+          },
+          {
+            "fact_id": "fact-139",
+            "dimension": "core:OperatingSegmentsDimension",
+            "member": "core:ReportableOperatingSegment3"
+          }
+        ],
+        "checked_dimension_member_count": 121,
+        "checked_fact_count": 121
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "comparisons": [],
+        "mismatches": []
+      }
+    }
+  ]
+}

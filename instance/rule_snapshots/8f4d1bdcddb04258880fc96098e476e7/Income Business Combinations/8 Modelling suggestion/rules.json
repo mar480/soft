@@ -1,0 +1,44 @@
+{
+  "topic_id": "income_business_combinations",
+  "topic_label": "Income Business Combinations",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEBUSINESSCOMBINATIONS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "income_business_combinations",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Income-BusinessCombinationsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractDurationDimension",
+          "core:ContractTypeDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:NaturePromiseDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SalesChannelDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Income Business Combinations. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

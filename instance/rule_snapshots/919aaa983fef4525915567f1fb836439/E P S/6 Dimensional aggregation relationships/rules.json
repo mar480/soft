@@ -1,0 +1,270 @@
+{
+  "topic_id": "e_p_s",
+  "topic_label": "E P S",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.EPS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityShareClassesDimension",
+      "head_member": "bus:AllShareClassesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "bus:AllDeferredShares",
+          "bus:AllOrdinaryShares",
+          "bus:AllOtherShares",
+          "bus:AllPreferenceShares",
+          "bus:DeferredShareClass1",
+          "bus:DeferredShareClass2",
+          "bus:DeferredShareClass3",
+          "bus:DeferredShareClass4",
+          "bus:DeferredShareClass5",
+          "bus:OrdinaryShareClass1",
+          "bus:OrdinaryShareClass2",
+          "bus:OrdinaryShareClass3",
+          "bus:OrdinaryShareClass4",
+          "bus:OrdinaryShareClass5",
+          "bus:OtherShareClass1",
+          "bus:OtherShareClass2",
+          "bus:OtherShareClass3",
+          "bus:OtherShareClass4",
+          "bus:OtherShareClass5",
+          "bus:PreferenceShareClass1",
+          "bus:PreferenceShareClass2",
+          "bus:PreferenceShareClass3",
+          "bus:PreferenceShareClass4",
+          "bus:PreferenceShareClass5"
+        ],
+        "domain_root": "bus:AllShareClassesDefault",
+        "member_descendants": {
+          "bus:OrdinaryShareClass1": [],
+          "bus:OrdinaryShareClass2": [],
+          "bus:OrdinaryShareClass3": [],
+          "bus:OrdinaryShareClass4": [],
+          "bus:OrdinaryShareClass5": [],
+          "bus:AllOrdinaryShares": [
+            "bus:OrdinaryShareClass1",
+            "bus:OrdinaryShareClass2",
+            "bus:OrdinaryShareClass3",
+            "bus:OrdinaryShareClass4",
+            "bus:OrdinaryShareClass5"
+          ],
+          "bus:PreferenceShareClass1": [],
+          "bus:PreferenceShareClass2": [],
+          "bus:PreferenceShareClass3": [],
+          "bus:PreferenceShareClass4": [],
+          "bus:PreferenceShareClass5": [],
+          "bus:AllPreferenceShares": [
+            "bus:PreferenceShareClass1",
+            "bus:PreferenceShareClass2",
+            "bus:PreferenceShareClass3",
+            "bus:PreferenceShareClass4",
+            "bus:PreferenceShareClass5"
+          ],
+          "bus:DeferredShareClass1": [],
+          "bus:DeferredShareClass2": [],
+          "bus:DeferredShareClass3": [],
+          "bus:DeferredShareClass4": [],
+          "bus:DeferredShareClass5": [],
+          "bus:AllDeferredShares": [
+            "bus:DeferredShareClass1",
+            "bus:DeferredShareClass2",
+            "bus:DeferredShareClass3",
+            "bus:DeferredShareClass4",
+            "bus:DeferredShareClass5"
+          ],
+          "bus:OtherShareClass1": [],
+          "bus:OtherShareClass2": [],
+          "bus:OtherShareClass3": [],
+          "bus:OtherShareClass4": [],
+          "bus:OtherShareClass5": [],
+          "bus:AllOtherShares": [
+            "bus:OtherShareClass1",
+            "bus:OtherShareClass2",
+            "bus:OtherShareClass3",
+            "bus:OtherShareClass4",
+            "bus:OtherShareClass5"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity share classes [Dimension]",
+        "default_member": "bus:AllShareClassesDefault",
+        "domain_root": "bus:AllShareClassesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EPS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:ShareTypesDimension",
+      "head_member": "bus:AllShareTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "bus:CumulativeNon-redeemableShares",
+          "bus:CumulativeRedeemableShares",
+          "bus:CumulativeShares",
+          "bus:Non-cumulativeNon-redeemableShares",
+          "bus:Non-cumulativeRedeemableShares",
+          "bus:Non-cumulativeShares",
+          "bus:OtherShareType"
+        ],
+        "domain_root": "bus:AllShareTypesDefault",
+        "member_descendants": {
+          "bus:CumulativeRedeemableShares": [],
+          "bus:CumulativeNon-redeemableShares": [],
+          "bus:CumulativeShares": [
+            "bus:CumulativeNon-redeemableShares",
+            "bus:CumulativeRedeemableShares"
+          ],
+          "bus:Non-cumulativeRedeemableShares": [],
+          "bus:Non-cumulativeNon-redeemableShares": [],
+          "bus:Non-cumulativeShares": [
+            "bus:Non-cumulativeNon-redeemableShares",
+            "bus:Non-cumulativeRedeemableShares"
+          ],
+          "bus:OtherShareType": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Share types [Dimension]",
+        "default_member": "bus:AllShareTypesDefault",
+        "domain_root": "bus:AllShareTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EPS.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:DiscontinuedOperations",
+          "core:Non-currentAssetsDisposalGroupsHeldForSale",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "member_descendants": {
+          "core:ContinuingOperations": [],
+          "core:SpecificDiscontinuedOperation1": [],
+          "core:SpecificDiscontinuedOperation2": [],
+          "core:SpecificDiscontinuedOperation3": [],
+          "core:SpecificDiscontinuedOperation4": [],
+          "core:SpecificDiscontinuedOperation5": [],
+          "core:SpecificDiscontinuedOperation6": [],
+          "core:SpecificDiscontinuedOperation7": [],
+          "core:SpecificDiscontinuedOperation8": [],
+          "core:DiscontinuedOperations": [
+            "core:SpecificDiscontinuedOperation1",
+            "core:SpecificDiscontinuedOperation2",
+            "core:SpecificDiscontinuedOperation3",
+            "core:SpecificDiscontinuedOperation4",
+            "core:SpecificDiscontinuedOperation5",
+            "core:SpecificDiscontinuedOperation6",
+            "core:SpecificDiscontinuedOperation7",
+            "core:SpecificDiscontinuedOperation8"
+          ],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8": [],
+          "core:Non-currentAssetsDisposalGroupsHeldForSale": [
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

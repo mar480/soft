@@ -1,0 +1,17 @@
+{
+  "topic_id": "applicable_legislation",
+  "topic_label": "Applicable Legislation",
+  "source_hypercubes": [
+    "bus:ApplicableLegislationHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:ApplicableLegislationHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-ApplicableLegislation",
+      "elr_definition": "9023 - Hypercube - Applicable Legislation",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

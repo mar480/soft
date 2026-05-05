@@ -1,0 +1,72 @@
+{
+  "topic_id": "financial_liabilities",
+  "topic_label": "Financial Liabilities",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "financial_liabilities",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:FinancialLiabilities-BankLoanPrimaryItems",
+            "core:FinancialLiabilities-BasicPrimaryItems",
+            "core:FinancialLiabilities-FullPrimaryItems",
+            "core:FinancialLiabilities-SegmentsPrimaryItems",
+            "core:FinancialLiabilities-SimplePrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FairValueMovementDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:FinancialLiabilitiesReclassificationDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:MajorCustomersDimension",
+          "core:MarketRiskTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PositionTypeDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SegmentReconciliationDimension",
+          "core:X-MaterialBankLoanGroupingDimension"
+        ]
+      }
+    }
+  ]
+}

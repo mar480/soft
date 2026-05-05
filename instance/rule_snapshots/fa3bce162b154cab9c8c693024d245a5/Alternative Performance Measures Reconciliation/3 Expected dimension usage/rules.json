@@ -1,0 +1,39 @@
+{
+  "topic_id": "alternative_performance_measures_reconciliation",
+  "topic_label": "Alternative Performance Measures Reconciliation",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "direp:AlternativePerformanceMeasuresReconciliationPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "direp:AlternativePerformanceMeasuresDimension",
+          "direp:ReconcilingAdjustmentsDimension",
+          "direp:TypeExchangeRateDimension",
+          "direp:TypeGrowthRateDimension"
+        ]
+      }
+    }
+  ]
+}

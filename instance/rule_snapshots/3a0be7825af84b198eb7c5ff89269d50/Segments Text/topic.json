@@ -1,0 +1,17 @@
+{
+  "topic_id": "segments_text",
+  "topic_label": "Segments Text",
+  "source_hypercubes": [
+    "core:Segments-TextHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Segments-TextHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Segments-Text",
+      "elr_definition": "9106 - Hypercube - Segments - Text",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

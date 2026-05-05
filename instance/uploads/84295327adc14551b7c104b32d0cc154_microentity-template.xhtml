@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ix="http://www.xbrl.org/2013/inlineXBRL"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:ixt="http://www.xbrl.org/inlineXBRL/transformation/2022-02-16"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+  xmlns:core="http://xbrl.frc.org.uk/fr/2024-01-01/core"
+  xmlns:bus="http://xbrl.frc.org.uk/cd/2024-01-01/business"
+  xmlns:curr="http://xbrl.frc.org.uk/cd/2024-01-01/currencies"
+  xmlns:countries="http://xbrl.frc.org.uk/cd/2024-01-01/countries"
+  xmlns:direp="http://xbrl.frc.org.uk/reports/2024-01-01/direp"
+  xml:lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <title>Micro-entity Accounts — iXBRL (TR5)</title>
+
+  <style type="text/css">
+    @page {
+      size: A4;
+      margin: 18mm 18mm 22mm 18mm;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #000;
+      background: #f3f3f3;
+      margin: 0;
+      counter-reset: page;
+    }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      background: #fff;
+      box-shadow: 0 1mm 3mm rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1% 5%;
+    }
+
+    .page::after {
+      content: "Page " counter(page);
+      counter-increment: page;
+      position: absolute;
+      bottom: 8mm;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10pt;
+    }
+
+    .company-name {
+      text-align: center;
+      font-weight: 700;
+      font-size: 14pt;
+      margin-top: 10mm;
+    }
+
+    .title {
+      text-align: center;
+      margin-top: 3mm;
+      font-size: 12pt;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 1mm;
+      font-size: 10.5pt;
+      font-weight: 700;
+    }
+
+    .small {
+      font-size: 10pt;
+    }
+
+    .spacer {
+      height: 10mm;
+    }
+
+    .center-block {
+      text-align: center;
+      margin-top: 18mm;
+      line-height: 1.8;
+    }
+
+    table.meta,
+    table.statement {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5pt;
+      margin-top: 10mm;
+    }
+
+    table.meta td {
+      vertical-align: top;
+      padding: 2mm 0;
+    }
+
+    table.meta td:first-child {
+      width: 42mm;
+      font-weight: 700;
+    }
+
+    table.meta td:last-child {
+      padding-left: 3mm;
+    }
+
+    .cols-head {
+      width: 100%;
+      margin-top: 8mm;
+      display: grid;
+      grid-template-columns: 1fr 28mm 28mm;
+      font-size: 10.5pt;
+    }
+
+    .cols-head>div {
+      text-align: right;
+    }
+
+    .cols-head>div:first-child {
+      text-align: left;
+    }
+
+    .currency {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .statement tr td {
+      padding: 2mm 0;
+      vertical-align: top;
+    }
+
+    .statement tr td:nth-child(2),
+    .statement tr td:nth-child(3) {
+      width: 28mm;
+      text-align: right;
+    }
+
+    .underline {
+      border-bottom: 0.4pt solid #000;
+      display: inline-block;
+      /* padding-right: 1mm; */
+    }
+
+    .doubleline {
+      border-bottom: 1.2pt double #000;
+      display: inline-block;
+      /* padding-right: 1mm; */
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================================== -->
+  <!--                IXBRL HEADER                -->
+  <!-- ========================================== -->
+
+  <div style="display:none">
+
+    <ix:header>
+      <ix:hidden>
+        <ix:nonNumeric contextRef="CY" name="bus:NameProductionSoftware">Rob's awesome iXBRL template maker</ix:nonNumeric>
+        <ix:nonNumeric contextRef="Countries_CY" format="ixt:fixed-empty" name="bus:CountryFormationOrIncorporation" />
+        <ix:nonNumeric contextRef="Currencies_CY" format="ixt:fixed-empty" name="bus:PrincipalCurrencyUsedInBusinessReport" />
+        <ix:nonNumeric contextRef="LegalFormEntity_CY" format="ixt:fixed-empty" name="bus:LegalFormEntity" />
+        <ix:nonNumeric contextRef="AccountingStandards_CY" format="ixt:fixed-empty" name="bus:AccountingStandardsApplied" />
+        <ix:nonNumeric contextRef="AccountsStatus_CY" format="ixt:fixed-empty" name="bus:AccountsStatusAuditedOrUnaudited" />
+        <ix:nonNumeric contextRef="AccountsType_CY" format="ixt:fixed-empty" name="bus:AccountsType" />
+        <ix:nonNumeric contextRef="Director1_CY" format="ixt:fixed-empty" name="core:DirectorSigningFinancialStatements" />
+        <ix:nonNumeric contextRef="CY" format="ixt:fixed-false" name="bus:EntityDormantTruefalse">false</ix:nonNumeric>
+        <ix:nonNumeric contextRef="CY" format="ixt:fixed-empty" name="bus:EntityTradingStatus" />
+      </ix:hidden>
+
+      <ix:references>
+        <link:schemaRef xlink:href="https://xbrl.frc.org.uk/FRS-102/2024-01-01/FRS-102-2024-01-01.xsd" xlink:type="simple" />
+      </ix:references>
+
+      <ix:resources>
+        <xbrli:unit id="GBP">
+          <xbrli:measure>iso4217:GBP</xbrli:measure>
+        </xbrli:unit>
+
+        <xbrli:unit id="pure">
+          <xbrli:measure>xbrli:pure</xbrli:measure>
+        </xbrli:unit>
+
+        <xbrli:context id="PY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2022-11-01</xbrli:startDate>
+            <xbrli:endDate>2023-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CY_START">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2024-11-01</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2024-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="PY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2023-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="Countries_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="countries:CountriesRegionsDimension">
+                countries:EnglandWales</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="Currencies_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="curr:CurrenciesDimension">curr:PoundSterling
+              </xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="LegalFormEntity_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:LegalFormEntityDimension">
+                bus:PrivateLimitedCompanyLtd</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="AccountingStandards_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:AccountingStandardsDimension">
+                bus:Micro-entities</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="AccountsStatus_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:AccountsStatusDimension">
+                bus:AuditExempt-NoAccountantsReport</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="AccountsType_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:AccountsTypeDimension">bus:FullAccounts
+              </xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="EntityContactInfo_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:EntityContactTypeDimension">
+                bus:RegisteredOffice</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="Director1_CY">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="bus:EntityOfficersDimension">bus:Director1
+              </xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:startDate>2023-11-01</xbrli:startDate>
+            <xbrli:endDate>2024-10-31</xbrli:endDate>
+          </xbrli:period>
+        </xbrli:context>
+
+
+        <xbrli:context id="CreditorsWithinOneYear_CY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="core:MaturitiesOrExpirationPeriodsDimension">
+                core:WithinOneYear</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2024-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CreditorsWithinOneYear_PY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="core:MaturitiesOrExpirationPeriodsDimension">
+                core:WithinOneYear</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2023-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CreditorsAfterOneYear_CY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="core:MaturitiesOrExpirationPeriodsDimension">
+                core:AfterOneYear</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2024-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+        <xbrli:context id="CreditorsAfterOneYear_PY_END">
+          <xbrli:entity>
+            <xbrli:identifier scheme="http://www.companieshouse.gov.uk/">10433453</xbrli:identifier>
+            <xbrli:segment>
+              <xbrldi:explicitMember dimension="core:MaturitiesOrExpirationPeriodsDimension">
+                core:AfterOneYear</xbrldi:explicitMember>
+            </xbrli:segment>
+          </xbrli:entity>
+          <xbrli:period>
+            <xbrli:instant>2023-10-31</xbrli:instant>
+          </xbrli:period>
+        </xbrli:context>
+
+      </ix:resources>
+    </ix:header>
+  </div>
+
+
+
+  <!-- ========================================== -->
+  <!--                 COVER PAGE                 -->
+  <!-- ========================================== -->
+
+  <div class="page">
+    <div class="company-name"><ix:nonNumeric contextRef="CY" name="bus:EntityCurrentLegalOrRegisteredName">SOUND &amp; YMMIJ LTD</ix:nonNumeric></div>
+
+    <div class="spacer"></div>
+
+    <div class="subtitle">Company Registration Number:</div>
+    <div class="title small">
+      <ix:nonNumeric name="bus:UKCompaniesHouseRegisteredNumber" contextRef="CY">10433453</ix:nonNumeric>
+      (England and Wales)
+    </div>
+
+    <div class="center-block small">
+      <div>Unaudited micro entity accounts for the year ended 31 October 2024</div>
+      <div class="spacer"></div>
+      <div class="subtitle">Period of accounts</div>
+      <div class="spacer" style="height: 16mm;"></div>
+      <div>Start date:
+        <ix:nonNumeric name="bus:StartDateForPeriodCoveredByReport" contextRef="CY_START" format="ixt:date-day-monthname-year-en">01 November 2023</ix:nonNumeric>
+      </div>
+      <div>End date:
+        <ix:nonNumeric name="bus:EndDateForPeriodCoveredByReport" contextRef="CY_END" format="ixt:date-day-monthname-year-en">31 October 2024</ix:nonNumeric>
+      </div>
+    </div>
+  </div>
+  <!-- ========================================== -->
+  <!--           COMPANY INFORMATION PAGE          -->
+  <!-- ========================================== -->
+
+  <div class="page">
+
+    <div class="company-name">SOUND &amp; YMMIJ LTD</div>
+    <div class="title">Company Information</div>
+
+    <div class="subtitle small">
+      for the Period Ended 31 October 2024
+    </div>
+
+    <table class="meta">
+      <tr>
+        <td>Registered office:</td>
+        <td>
+          <ix:nonNumeric contextRef="EntityContactInfo_CY" name="bus:AddressLine1">4 Windlebrook Park</ix:nonNumeric><br />
+          <ix:nonNumeric contextRef="EntityContactInfo_CY" name="bus:AddressLine2">Longcross Road</ix:nonNumeric><br />
+          <ix:nonNumeric contextRef="EntityContactInfo_CY" name="bus:PrincipalLocation-CityOrTown">Chertsey</ix:nonNumeric><br />
+          <ix:nonNumeric contextRef="EntityContactInfo_CY" name="bus:CountyRegion">Surrey</ix:nonNumeric><br />
+          England<br />
+          <ix:nonNumeric contextRef="EntityContactInfo_CY" name="bus:PostalCodeZip">KT16 0BB</ix:nonNumeric>
+        </td>
+      </tr>
+    </table>
+    <table class="meta">
+      <tr>
+        <td>Principal activities:</td>
+        <td>
+          <ix:nonNumeric contextRef="CY" name="bus:DescriptionPrincipalActivities">The principal activity of the company during the year under review was the provision of musical entertainment.</ix:nonNumeric>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer" style="height: 16mm;"></div>        
+  </div>
+
+  <!-- ========================================== -->
+  <!--          PROFIT AND LOSS ACCOUNT           -->
+  <!-- ========================================== -->
+
+  <div class="page">
+
+    <div class="company-name">SOUND &amp; YMMIJ LTD</div>
+    <div class="title">Profit and Loss Account</div>
+
+    <div class="subtitle small">
+      for the Period Ended 31 October 2024
+    </div>
+
+    <div class="cols-head">
+      <div></div>
+      <div><strong>2024</strong><br />£</div>
+      <div><strong>2023</strong><br />£</div>
+    </div>
+
+    <table class="statement">
+
+      <tr>
+        <td>Turnover</td>
+        <td class="currency">
+          <ix:nonFraction name="core:TurnoverRevenue" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">18300</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:TurnoverRevenue" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">13987</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Other Income</td>
+        <td class="currency">
+          <ix:nonFraction name="core:OtherOperatingIncomeFormat2" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:OtherOperatingIncomeFormat2" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Cost of Materials</td>
+        <td class="currency">
+          <ix:nonFraction name="core:RawMaterialsConsumablesUsed" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:RawMaterialsConsumablesUsed" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Staff Costs</td>
+        <td class="currency">(<ix:nonFraction name="core:StaffCostsEmployeeBenefitsExpense" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">12570</ix:nonFraction>)
+        </td>
+        <td class="currency">(<ix:nonFraction name="core:StaffCostsEmployeeBenefitsExpense" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">12570</ix:nonFraction>)
+        </td>
+      </tr>
+
+      <tr>
+        <td>Depreciation and Writeoffs</td>
+        <td class="currency">
+          <ix:nonFraction name="core:DepreciationAmortisationImpairmentExpense" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:DepreciationAmortisationImpairmentExpense" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Other charges</td>
+        <td class="currency">(<ix:nonFraction name="core:OtherOperatingExpensesFormat2" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">3723</ix:nonFraction>)
+        </td>
+        <td class="currency">(<ix:nonFraction name="core:OtherOperatingExpensesFormat2" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">2194</ix:nonFraction>)
+        </td>
+      </tr>
+
+      <tr>
+        <td>Tax on Profit</td>
+        <td class="currency">
+          <ix:nonFraction name="core:TaxTaxCreditOnProfitOrLossOnOrdinaryActivities" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:TaxTaxCreditOnProfitOrLossOnOrdinaryActivities" contextRef="PY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong>Profit or (Loss) for Period</strong></td>
+        <td class="currency">
+          <span class="underline"><strong>
+              <ix:nonFraction name="core:ProfitLoss" contextRef="CY" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">2007</ix:nonFraction>
+            </strong></span>
+        </td>
+        <td class="currency">
+          <span class="underline"><strong>(<ix:nonFraction name="core:ProfitLoss" contextRef="PY" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">777</ix:nonFraction>)
+             
+            </strong></span>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+  <!-- ========================================== -->
+  <!--                BALANCE SHEET                -->
+  <!-- ========================================== -->
+
+  <div class="page">
+
+    <div class="company-name">SOUND &amp; YMMIJ LTD</div>
+    <div class="title">Balance Sheet</div>
+
+    <div class="subtitle small">
+      As at
+      <ix:nonNumeric name="bus:BalanceSheetDate" contextRef="CY_END" format="ixt:date-day-monthname-year-en">31 October 2024</ix:nonNumeric>
+    </div>
+
+    <div class="cols-head">
+      <div></div>
+      <div><strong>2024</strong><br />£</div>
+      <div><strong>2023</strong><br />£</div>
+    </div>
+
+    <table class="statement">
+
+      <tr>
+        <td>Called up share capital not paid:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">1</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:CalledUpShareCapitalNotPaidNotExpressedAsCurrentAsset" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">1</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Fixed Assets:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:FixedAssets" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:FixedAssets" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Current assets:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:CurrentAssets" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">1000</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:CurrentAssets" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">1000</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Prepayments and accrued income:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:PrepaymentsAccruedIncome" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:PrepaymentsAccruedIncome" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Creditors: amounts falling due within one year:</td>
+        <td class="currency">(<ix:nonFraction name="core:Creditors" contextRef="CreditorsWithinOneYear_CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">33294</ix:nonFraction>)
+        </td>
+        <td class="currency">(<ix:nonFraction name="core:Creditors" contextRef="CreditorsWithinOneYear_PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">35301</ix:nonFraction>)
+        </td>
+      </tr>
+
+      <tr>
+        <td><em>Net current assets (liabilities):</em></td>
+        <td class="currency"><span class="underline">(<ix:nonFraction name="core:NetCurrentAssetsLiabilities" contextRef="CY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">32294</ix:nonFraction>)
+          </span>
+        </td>
+        <td class="currency"><span class="underline">(<ix:nonFraction name="core:NetCurrentAssetsLiabilities" contextRef="PY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">34301</ix:nonFraction>)
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Total assets less current liabilities:</td>
+        <td class="currency"><span class="underline">(<ix:nonFraction name="core:TotalAssetsLessCurrentLiabilities" contextRef="CY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">32293</ix:nonFraction>)
+          </span>
+        </td>
+        <td class="currency"><span class="underline">(<ix:nonFraction name="core:TotalAssetsLessCurrentLiabilities" contextRef="PY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">34300</ix:nonFraction>)
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Creditors: amounts falling due after more than one year:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:Creditors" contextRef="CreditorsAfterOneYear_CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:Creditors" contextRef="CreditorsAfterOneYear_PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Provision for liabilities:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:ProvisionsForLiabilitiesBalanceSheetSubtotal" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:ProvisionsForLiabilitiesBalanceSheetSubtotal" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Accruals and deferred income:</td>
+        <td class="currency">
+          <ix:nonFraction name="core:AccruedLiabilitiesNotExpressedWithinCreditorsSubtotal" contextRef="CY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+        <td class="currency">
+          <ix:nonFraction name="core:AccruedLiabilitiesNotExpressedWithinCreditorsSubtotal" contextRef="PY_END" unitRef="GBP" decimals="0" format="ixt:num-dot-decimal">0</ix:nonFraction>
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong>Total net assets (liabilities):</strong></td>
+        <td class="currency">
+          <span class="doubleline"><strong>(<ix:nonFraction name="core:NetAssetsLiabilities" contextRef="CY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">32293</ix:nonFraction>)</strong>      
+          </span>
+        </td>
+        <td class="currency">
+          <span class="doubleline"><strong>(<ix:nonFraction name="core:NetAssetsLiabilities" contextRef="PY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">34300</ix:nonFraction>)</strong>
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td><strong>Capital and reserves:</strong></td>
+        <td class="currency">
+          <span class="doubleline"><strong>(<ix:nonFraction name="core:Equity" contextRef="CY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">32293</ix:nonFraction>)</strong>        
+          </span>
+        </td>
+        <td class="currency">
+          <span class="doubleline"><strong>(<ix:nonFraction name="core:Equity" contextRef="PY_END" unitRef="GBP" decimals="0" sign="-" format="ixt:num-dot-decimal">34300</ix:nonFraction>)</strong>          
+          </span>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+  <!-- ========================================== -->
+  <!--           BALANCE SHEET CONTINUED          -->
+  <!-- ========================================== -->
+
+  <div class="page">
+
+    <div class="company-name">SOUND &amp; YMMIJ LTD</div>
+    <div class="title">Balance Sheet continued</div>
+
+    <div class="small" style="margin-top: 10mm; line-height: 1.8;">
+
+      <p>
+        <ix:nonNumeric contextRef="CY"
+          name="direp:StatementThatCompanyEntitledToExemptionFromAuditUnderSection477CompaniesAct2006RelatingToSmallCompanies">
+          For the year ending 31 October 2024 the company was entitled to exemption under section 477 of the Companies Act 2006 relating to small companies.</ix:nonNumeric>
+      </p>
+
+      <p>
+        <ix:nonNumeric contextRef="CY" name="direp:StatementThatMembersHaveNotRequiredCompanyToObtainAnAudit">The members have not required the company to obtain an audit in accordance with section 476 of the Companies Act 2006.</ix:nonNumeric>
+      </p>
+
+      <p>
+        <ix:nonNumeric contextRef="CY"
+          name="direp:StatementThatDirectorsAcknowledgeTheirResponsibilitiesUnderCompaniesAct">The directors acknowledge their responsibilities for complying with the requirements of the Act with respect to accounting records and the preparation of accounts.</ix:nonNumeric>
+      </p>
+
+      <p>
+        <ix:nonNumeric contextRef="CY"
+          name="direp:StatementThatAccountsHaveBeenPreparedInAccordanceWithProvisionsSmallCompaniesRegime">These accounts have been prepared and delivered in accordance with the provisions of the small companies regime applicable to micro-entities.</ix:nonNumeric>
+      </p>
+
+      <div class="small" style="margin-top: 14mm; line-height: 1.9;">
+
+        <strong>
+          This report was approved by <ix:nonNumeric contextRef="CY" name="core:DescriptionBodyAuthorisingFinancialStatements">the board of directors</ix:nonNumeric> on
+          <ix:nonNumeric name="core:DateAuthorisationFinancialStatementsForIssue" contextRef="CY_END" format="ixt:date-day-monthname-year-en">31 July 2025</ix:nonNumeric>
+        </strong>
+        <br />
+
+        <strong>And signed on behalf of the board by:</strong>
+        <br /><br />
+
+        Name:
+
+        <ix:nonNumeric contextRef="Director1_CY" name="bus:NameEntityOfficer">James Osman Kerem Kent</ix:nonNumeric>
+
+        <br />
+
+        Status: Director
+
+      </div>
+
+      <div class="note small" style="margin-top: 16mm;">
+        The notes form part of these financial statements.
+      </div>
+
+    </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!--        FOOTNOTES / NOTES TO ACCOUNTS       -->
+    <!-- ========================================== -->
+
+    <div class="page">
+
+      <div class="company-name">SOUND &amp; YMMIJ LTD</div>
+      <div class="title">Footnotes to the Financial Statements</div>
+
+      <div class="subtitle small">
+        for the Period Ended 31 October 2024
+      </div>
+
+      <div class="spacer"></div>
+      <div class="small" style="margin-top: 3mm;">
+        <strong>1. Average number of employees: </strong><ix:nonFraction contextRef="CY" decimals="0" format="ixt:num-dot-decimal" name="core:AverageNumberEmployeesDuringPeriod" unitRef="pure">1</ix:nonFraction>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="small"><strong>2. Off balance sheet disclosure:</strong></div>
+
+      <div class="small" style="margin-top: 3mm;">
+        <ix:nonNumeric name="core:GeneralDescriptionAnyOff-balanceSheetArrangementsIncludingNaturePurposeFinancialImpactOnEntity" contextRef="CY">No</ix:nonNumeric>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!--             END OF DOCUMENT BODY           -->
+    <!-- ========================================== -->
+
+</body>
+
+</html>

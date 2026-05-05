@@ -1,0 +1,17 @@
+{
+  "topic_id": "alternative_performance_measures_reconciliation",
+  "topic_label": "Alternative Performance Measures Reconciliation",
+  "source_hypercubes": [
+    "direp:AlternativePerformanceMeasuresReconciliationHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:AlternativePerformanceMeasuresReconciliationHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-AlternativePerformanceMeasuresReconciliation",
+      "elr_definition": "9610 - Hypercube - Alternative Performance Measures Reconciliation",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 13
+}

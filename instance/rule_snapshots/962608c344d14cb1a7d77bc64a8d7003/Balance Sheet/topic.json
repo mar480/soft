@@ -1,0 +1,24 @@
+{
+  "topic_id": "balance_sheet",
+  "topic_label": "Balance Sheet",
+  "source_hypercubes": [
+    "core:BalanceSheet-BasicHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Analysis1",
+      "elr_definition": "92601 - Hypercube - Balance Sheet Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Basic",
+      "elr_definition": "9260 - Hypercube - Balance Sheet - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    }
+  ],
+  "rule_count": 15
+}

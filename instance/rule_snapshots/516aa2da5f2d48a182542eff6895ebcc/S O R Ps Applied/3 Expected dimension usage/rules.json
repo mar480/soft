@@ -1,0 +1,34 @@
+{
+  "topic_id": "s_o_r_ps_applied",
+  "topic_label": "S O R Ps Applied",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SORPSAPPLIED.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "s_o_r_ps_applied",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "bus:SORPsAppliedPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:SORPsDimension"
+        ]
+      }
+    }
+  ]
+}

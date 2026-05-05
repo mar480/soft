@@ -1,0 +1,50 @@
+{
+  "topic_id": "intangibles",
+  "topic_label": "Intangibles",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INTANGIBLES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "intangibles",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:Intangibles-RangePrimaryItems",
+            "core:Intangibles-SegmentsPrimaryItems",
+            "core:IntangiblesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:X-IntangibleAssetsAcquiredThroughGovernmentGrantGroupingDimension",
+          "core:X-MaterialIntangibleAssetGroupingDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "topic_id": "income_other_related_parties",
+  "topic_label": "Income Other Related Parties",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEOTHERRELATEDPARTIES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_other_related_parties",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOTHERRELATEDPARTIES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_other_related_parties",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ExceptionalsDimension",
+      "head_member": "core:TotalReportedDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Exceptional",
+          "core:ExplicitlyIdentifiedAsNon-exceptional"
+        ],
+        "domain_root": "core:TotalReportedDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Exceptionals [Dimension]",
+        "default_member": "core:TotalReportedDefault",
+        "domain_root": "core:TotalReportedDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOTHERRELATEDPARTIES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_other_related_parties",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:OtherRelatedPartyTypeDimension",
+      "head_member": "core:AllOtherRelatedPartiesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CloseFamilyMembersKeyManagementPersonnel",
+          "core:EntityControlledByKeyManagementPersonnel1",
+          "core:EntityControlledByKeyManagementPersonnel2",
+          "core:EntityControlledByKeyManagementPersonnel3",
+          "core:EntityControlledByKeyManagementPersonnel4",
+          "core:EntityControlledByKeyManagementPersonnel5",
+          "core:FurtherRelatedPartyRelationshipType1ComponentAllOtherRelatedParties",
+          "core:FurtherRelatedPartyRelationshipType2ComponentAllOtherRelatedParties",
+          "core:OtherGroupMember1",
+          "core:OtherGroupMember2",
+          "core:OtherGroupMember3",
+          "core:OtherGroupMember4",
+          "core:OtherGroupMember5",
+          "core:OtherGroupMember6",
+          "core:OtherGroupMember7",
+          "core:OtherGroupMember8",
+          "core:OtherUnconsolidatedStructuredEntitiesTotalIndividuallyImmaterialUnconsolidatedStructuredEntities",
+          "core:RemainingRelatedParties",
+          "core:UnconsolidatedStructuredEntity1",
+          "core:UnconsolidatedStructuredEntity2",
+          "core:UnconsolidatedStructuredEntity3",
+          "core:UnconsolidatedStructuredEntity4",
+          "core:UnconsolidatedStructuredEntity5"
+        ],
+        "domain_root": "core:AllOtherRelatedPartiesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Other related party type [Dimension]",
+        "default_member": "core:AllOtherRelatedPartiesDefault",
+        "domain_root": "core:AllOtherRelatedPartiesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "topic_id": "investment_movements",
+  "topic_label": "Investment Movements",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialAssetsClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:FinancialAssetsCostLessImpairment",
+          "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialAssetsDesignatedFairValueThroughProfitOrLoss",
+          "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialAssetsMandatorilyMeasuredFairValueThroughProfitOrLoss"
+        ],
+        "domain_root": "core:TotalFinancialAssetsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial assets classes and categories [Dimension]",
+        "default_member": "core:TotalFinancialAssetsDefault",
+        "domain_root": "core:TotalFinancialAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "investment_movements",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:Listed-unlistedDimension",
+      "head_member": "core:AllFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ListedExchangeTraded",
+          "core:UnlistedNon-exchangeTraded"
+        ],
+        "domain_root": "core:AllFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Listed-unlisted [Dimension]",
+        "default_member": "core:AllFinancialInstrumentsDefault",
+        "domain_root": "core:AllFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

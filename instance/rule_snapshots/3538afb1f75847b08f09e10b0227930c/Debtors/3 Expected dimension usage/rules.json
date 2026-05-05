@@ -1,0 +1,65 @@
+{
+  "topic_id": "debtors",
+  "topic_label": "Debtors",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "debtors",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:Debtors-AssociatesPrimaryItems",
+            "core:Debtors-FinanceLeasesPrimaryItems",
+            "core:Debtors-JointVenturesPrimaryItems",
+            "core:Debtors-OtherPartiesPrimaryItems",
+            "core:Debtors-ParentsPrimaryItems",
+            "core:Debtors-SegmentsPrimaryItems",
+            "core:Debtors-SubsidiariesPrimaryItems",
+            "core:DebtorsPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

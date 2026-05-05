@@ -1,0 +1,326 @@
+{
+  "topic_id": "debtors",
+  "topic_label": "Debtors",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 9,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DebtorsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Analysis1",
+        "elr_definition": "91801 - Hypercube - Debtors - Analysis 1",
+        "dimensions": [
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DebtorsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors",
+        "elr_definition": "9180 - Hypercube - Debtors",
+        "dimensions": [
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Segments",
+        "elr_definition": "9181 - Hypercube - Debtors - Segments",
+        "dimensions": [
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-AssociatesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Associates",
+        "elr_definition": "9184 - Hypercube - Debtors - Associates",
+        "dimensions": [
+          "core:AssociatesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-FinanceLeasesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-FinanceLeases",
+        "elr_definition": "9187 - Hypercube - Debtors - Finance Leases",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-JointVenturesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-JointVentures",
+        "elr_definition": "9185 - Hypercube - Debtors - Joint Ventures",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.007",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-OtherPartiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-OtherParties",
+        "elr_definition": "9186 - Hypercube - Debtors - Other Parties",
+        "dimensions": [
+          "core:OtherRelatedPartyTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.008",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-ParentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Parents",
+        "elr_definition": "9182 - Hypercube - Debtors - Parents",
+        "dimensions": [
+          "core:ParentEntitiesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.CUBE_CONFORMITY.009",
+      "type": "hypercube_conformity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Debtors-SubsidiariesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Subsidiaries",
+        "elr_definition": "9183 - Hypercube - Debtors - Subsidiaries",
+        "dimensions": [
+          "core:SubsidiariesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

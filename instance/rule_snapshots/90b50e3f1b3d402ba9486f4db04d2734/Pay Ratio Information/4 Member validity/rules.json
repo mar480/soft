@@ -1,0 +1,68 @@
+{
+  "topic_id": "pay_ratio_information",
+  "topic_label": "Pay Ratio Information",
+  "rule_family": "4 Member validity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:PayRatioPercentilesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "direp:PayRatioPercentilesHeading"
+        ]
+      }
+    }
+  ]
+}

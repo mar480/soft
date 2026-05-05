@@ -1,0 +1,17 @@
+{
+  "topic_id": "hourly_pay_information",
+  "topic_label": "Hourly Pay Information",
+  "source_hypercubes": [
+    "direp:HourlyPayInformationHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:HourlyPayInformationHypercube",
+      "elr": "http://xbrl.frc.org.uk/reports/2026-01-01/direp/roles/Hypercube-HourlyPayInformation",
+      "elr_definition": "9401 - Hypercube - Hourly Pay Information",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

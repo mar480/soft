@@ -1,0 +1,17 @@
+{
+  "topic_id": "audit_fees",
+  "topic_label": "Audit Fees",
+  "source_hypercubes": [
+    "core:AuditFeesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:AuditFeesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-AuditFees",
+      "elr_definition": "9105 - Hypercube - Audit Fees",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 13
+}

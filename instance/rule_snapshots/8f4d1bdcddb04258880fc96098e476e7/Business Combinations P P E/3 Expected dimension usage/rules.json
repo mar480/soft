@@ -1,0 +1,36 @@
+{
+  "topic_id": "business_combinations_p_p_e",
+  "topic_label": "Business Combinations P P E",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "business_combinations_p_p_e",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:BusinessCombinations-PPEPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

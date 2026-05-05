@@ -1,0 +1,57 @@
+{
+  "topic_id": "joint_ventures",
+  "topic_label": "Joint Ventures",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.JOINTVENTURES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "joint_ventures",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:JointVenturesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-JointVentures",
+        "elr_definition": "9218 - Hypercube - Joint Ventures",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.JOINTVENTURES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "joint_ventures",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:JointVenturesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-JointVentures-Grouping1",
+        "elr_definition": "92181 - Hypercube - Joint Ventures Grouping 1",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-DetailsSharesHeldInJointVentureGroupingDimension"
+        ]
+      }
+    }
+  ]
+}

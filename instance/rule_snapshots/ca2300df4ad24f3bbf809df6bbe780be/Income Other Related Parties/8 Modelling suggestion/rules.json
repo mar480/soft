@@ -1,0 +1,44 @@
+{
+  "topic_id": "income_other_related_parties",
+  "topic_label": "Income Other Related Parties",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEOTHERRELATEDPARTIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "income_other_related_parties",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Income-OtherRelatedPartiesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractDurationDimension",
+          "core:ContractTypeDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:NaturePromiseDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SalesChannelDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Income Other Related Parties. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

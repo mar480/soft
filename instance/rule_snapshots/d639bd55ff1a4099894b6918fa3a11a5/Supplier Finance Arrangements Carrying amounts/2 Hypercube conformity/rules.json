@@ -1,0 +1,32 @@
+{
+  "topic_id": "supplier_finance_arrangements_carrying_amounts",
+  "topic_label": "Supplier Finance Arrangements Carrying amounts",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SUPPLIERFINANCEARRANGEMENTSCARRYINGAMOUNTS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "supplier_finance_arrangements_carrying_amounts",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:SupplierFinanceArrangements-CarryingAmountsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SupplierFinanceArrangements-CarryingAmounts",
+        "elr_definition": "9615 - Hypercube - Supplier Finance Arrangements - Carrying amounts",
+        "dimensions": [
+          "core:SupplierFinanceArrangementsDimension",
+          "core:SupplierFinanceArrangementsCarryingStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

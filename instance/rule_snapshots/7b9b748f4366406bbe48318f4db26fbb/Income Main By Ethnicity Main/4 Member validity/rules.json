@@ -1,0 +1,246 @@
+{
+  "topic_id": "income_main_by_ethnicity_main",
+  "topic_label": "Income Main By Ethnicity Main",
+  "rule_family": "4 Member validity",
+  "rule_count": 16,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractDurationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DurationContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TypeContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractTypeInsuranceSpecificDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContractTypeInsuranceSpecificHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ExceptionalsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalReportedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GoodsServicesTransfersTimingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesTransferredToCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomerTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomerTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:NaturePromiseDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NaturePromiseHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SalesChannelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesSoldHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEMAINBYETHNICITYMAIN.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "income_main_by_ethnicity_main",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    }
+  ]
+}

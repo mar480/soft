@@ -1,0 +1,36 @@
+{
+  "topic_id": "joint_ventures_countries",
+  "topic_label": "Joint Ventures Countries",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.JOINTVENTURESCOUNTRIES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "joint_ventures_countries",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:JointVentures-CountriesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:JointVenturesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      }
+    }
+  ]
+}

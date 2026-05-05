@@ -1,0 +1,128 @@
+{
+  "topic_id": "alternative_performance_measures_reconciliation",
+  "topic_label": "Alternative Performance Measures Reconciliation",
+  "rule_family": "4 Member validity",
+  "rule_count": 8,
+  "rules": [
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:AlternativePerformanceMeasuresDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "direp:AlternativePerformanceMeasuresHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:ReconcilingAdjustmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "direp:AdjustmentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:TypeExchangeRateDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "direp:TypeExchangeRateHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:TypeGrowthRateDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "direp:TypeGrowthRateHeading"
+        ]
+      }
+    }
+  ]
+}

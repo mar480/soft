@@ -1,0 +1,17 @@
+{
+  "topic_id": "third_party_agents",
+  "topic_label": "Third Party Agents",
+  "source_hypercubes": [
+    "bus:ThirdPartyAgentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:ThirdPartyAgentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-ThirdPartyAgents",
+      "elr_definition": "9016 - Hypercube - Third Party Agents",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

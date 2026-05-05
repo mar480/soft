@@ -1,0 +1,179 @@
+{
+  "topic_id": "intangibles",
+  "topic_label": "Intangibles",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 6,
+  "rules": [
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IntangiblesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Analysis1",
+        "elr_definition": "90341 - Hypercube - Intangibles Analysis 1",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IntangiblesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles",
+        "elr_definition": "9034 - Hypercube - Intangibles",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IntangiblesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Grouping1",
+        "elr_definition": "90342 - Hypercube - Intangibles Grouping 1",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-MaterialIntangibleAssetGroupingDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IntangiblesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Grouping2",
+        "elr_definition": "90343 - Hypercube - Intangibles Grouping 2",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-IntangibleAssetsAcquiredThroughGovernmentGrantGroupingDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Intangibles-RangeHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Range",
+        "elr_definition": "9035 - Hypercube - Intangibles - Range",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RangeDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTANGIBLES.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "intangibles",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Intangibles-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Segments",
+        "elr_definition": "9036 - Hypercube - Intangibles - Segments",
+        "dimensions": [
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:IntangibleAssetsGenerationTypeDimension",
+          "core:IntangibleAssetsLifeTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

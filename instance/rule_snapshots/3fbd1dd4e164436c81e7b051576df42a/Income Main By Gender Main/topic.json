@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_main_by_gender_main",
+  "topic_label": "Income Main By Gender Main",
+  "source_hypercubes": [
+    "core:Income-Main-ByGenderHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-Main-ByGenderHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-ByGenderMainAnalysis1",
+      "elr_definition": "96121 - Hypercube - Income - Main - By Gender Main Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "rule_count": 23
+}

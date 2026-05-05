@@ -1,0 +1,32 @@
+{
+  "topic_id": "subsidiaries_countries",
+  "topic_label": "Subsidiaries Countries",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SUBSIDIARIESCOUNTRIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "subsidiaries_countries",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Subsidiaries-CountriesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SubsidiariesDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Subsidiaries Countries. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "topic_id": "business_combinations",
+  "topic_label": "Business Combinations",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinanceLeaseContractTypeDimension",
+      "head_member": "core:AllContractTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:FinanceLeases",
+          "core:FurtherContractType1ComponentTotalContractTypes",
+          "core:FurtherContractType2ComponentTotalContractTypes",
+          "core:FurtherContractType3ComponentTotalContractTypes",
+          "core:HirePurchaseContracts",
+          "core:SaleLeaseback"
+        ],
+        "domain_root": "core:AllContractTypesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Finance lease contract type [Dimension]",
+        "default_member": "core:AllContractTypesDefault",
+        "domain_root": "core:AllContractTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONS.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

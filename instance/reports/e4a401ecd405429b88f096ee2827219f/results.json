@@ -1,0 +1,250 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\e92f422947c5437f85f0ef822344e6a3_Prod223_4150_14276687_20250831.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "evaluated_topic_count": 3,
+  "evaluated_topics": [
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": true,
+      "trigger_fact_count": 2,
+      "topic_fact_count": 2
+    },
+    {
+      "topic_id": "debtors",
+      "topic_label": "Debtors",
+      "relevant": true,
+      "trigger_fact_count": 2,
+      "topic_fact_count": 2
+    },
+    {
+      "topic_id": "property_plant_equipment",
+      "topic_label": "Property, plant and equipment",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 1
+    }
+  ],
+  "result_count": 16,
+  "summary": {
+    "pass": 16,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_009",
+          "fact_010"
+        ],
+        "topic_fact_ids": [
+          "fact_009",
+          "fact_010"
+        ],
+        "topic_fact_reasons": {
+          "fact_009": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_010": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_009",
+          "fact_010"
+        ]
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_003",
+          "fact_004"
+        ],
+        "topic_fact_ids": [
+          "fact_009",
+          "fact_010"
+        ],
+        "topic_fact_reasons": {
+          "fact_009": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_010": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "debtors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_009",
+          "fact_010"
+        ]
+      }
+    },
+    {
+      "rule_id": "debtors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_001",
+          "fact_002",
+          "fact_029",
+          "fact_030"
+        ],
+        "topic_fact_ids": [
+          "fact_055"
+        ],
+        "topic_fact_reasons": {
+          "fact_055": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_055"
+        ]
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    }
+  ]
+}

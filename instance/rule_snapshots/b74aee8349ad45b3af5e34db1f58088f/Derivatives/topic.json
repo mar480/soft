@@ -1,0 +1,33 @@
+{
+  "topic_id": "derivatives",
+  "topic_label": "Derivatives",
+  "source_hypercubes": [
+    "core:Derivatives-BasicHypercube",
+    "core:Derivatives-FullHypercube",
+    "core:Derivatives-SegmentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Derivatives-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Segments",
+      "elr_definition": "9076 - Hypercube - Derivatives - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    },
+    {
+      "hypercube": "core:Derivatives-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Basic",
+      "elr_definition": "9074 - Hypercube - Derivatives - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:Derivatives-FullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Full",
+      "elr_definition": "9075 - Hypercube - Derivatives - Full",
+      "occurrence_type": "variant",
+      "variant_label": "Full"
+    }
+  ],
+  "rule_count": 38
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "accounts_status",
+  "topic_label": "Accounts Status",
+  "source_hypercubes": [
+    "bus:AccountsStatusHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:AccountsStatusHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsStatus",
+      "elr_definition": "9024 - Hypercube - Accounts Status",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

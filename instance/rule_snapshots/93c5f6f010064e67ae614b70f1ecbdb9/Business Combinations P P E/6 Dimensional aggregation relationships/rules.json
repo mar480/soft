@@ -1,0 +1,226 @@
+{
+  "topic_id": "business_combinations_p_p_e",
+  "topic_label": "Business Combinations P P E",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPPE.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "member_descendants": {
+          "core:TotalIndividuallyImmaterialBusinessCombinations": [],
+          "core:SpecificBusinessCombination1": [],
+          "core:SpecificBusinessCombination2": [],
+          "core:SpecificBusinessCombination3": [],
+          "core:SpecificBusinessCombination4": [],
+          "core:SpecificBusinessCombination5": [],
+          "core:SpecificBusinessCombination6": [],
+          "core:SpecificBusinessCombination7": [],
+          "core:SpecificBusinessCombination8": [],
+          "core:SpecificBusinessCombination9": [],
+          "core:SpecificBusinessCombination10": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPPE.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:PropertyPlantEquipmentClassesDimension",
+      "head_member": "core:TotalPropertyPlantEquipmentDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:Aircraft",
+          "core:AssetsNotYetAvailableForUsePPE",
+          "core:Buildings",
+          "core:CommercialMotorVehicles",
+          "core:CommunicationNetworkEquipment",
+          "core:ComputerEquipment",
+          "core:ConstructionInProgressAssetsUnderConstruction",
+          "core:DeferredStrippingExpendituresForMineProperties",
+          "core:FurnitureFittings",
+          "core:FurnitureFittingsToolsEquipment",
+          "core:InvestmentPropertyIncludedWithinPPE",
+          "core:Land",
+          "core:LandBuildings",
+          "core:LeaseholdImprovements",
+          "core:MiningAssetsUnderConstruction",
+          "core:MiningOilGasAdditionalPPEClassesHeading",
+          "core:MotorCars",
+          "core:MotorVehicles",
+          "core:NetworkAssets",
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment",
+          "core:OfficeEquipment",
+          "core:OilDepotsStorageTanksServiceStations",
+          "core:OilGasProductionAssets",
+          "core:OilGasProperties",
+          "core:OtherMiningAssets",
+          "core:OtherPropertyPlantEquipment",
+          "core:OtherVehicles",
+          "core:PlantMachinery",
+          "core:ProducingMines",
+          "core:ShipsBoats",
+          "core:TangibleExplorationEvaluationAssets",
+          "core:ToolsEquipment",
+          "core:TotalMineProperties",
+          "core:TotalPropertyPlantEquipmentOtherThanExplorationEvaluationAssets",
+          "core:Vehicles",
+          "core:VehiclesPlantMachinery"
+        ],
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "member_descendants": {
+          "core:Land": [],
+          "core:Buildings": [],
+          "core:LandBuildings": [
+            "core:Buildings",
+            "core:Land"
+          ],
+          "core:LeaseholdImprovements": [],
+          "core:InvestmentPropertyIncludedWithinPPE": [],
+          "core:ConstructionInProgressAssetsUnderConstruction": [],
+          "core:PlantMachinery": [],
+          "core:Aircraft": [],
+          "core:ShipsBoats": [],
+          "core:CommercialMotorVehicles": [],
+          "core:MotorCars": [],
+          "core:MotorVehicles": [
+            "core:CommercialMotorVehicles",
+            "core:MotorCars"
+          ],
+          "core:OtherVehicles": [],
+          "core:Vehicles": [
+            "core:Aircraft",
+            "core:CommercialMotorVehicles",
+            "core:MotorCars",
+            "core:MotorVehicles",
+            "core:OtherVehicles",
+            "core:ShipsBoats"
+          ],
+          "core:VehiclesPlantMachinery": [
+            "core:Aircraft",
+            "core:CommercialMotorVehicles",
+            "core:MotorCars",
+            "core:MotorVehicles",
+            "core:OtherVehicles",
+            "core:PlantMachinery",
+            "core:ShipsBoats",
+            "core:Vehicles"
+          ],
+          "core:FurnitureFittings": [],
+          "core:ToolsEquipment": [],
+          "core:ComputerEquipment": [],
+          "core:CommunicationNetworkEquipment": [],
+          "core:OfficeEquipment": [
+            "core:CommunicationNetworkEquipment",
+            "core:ComputerEquipment"
+          ],
+          "core:FurnitureFittingsToolsEquipment": [
+            "core:CommunicationNetworkEquipment",
+            "core:ComputerEquipment",
+            "core:FurnitureFittings",
+            "core:OfficeEquipment",
+            "core:ToolsEquipment"
+          ],
+          "core:NetworkAssets": [],
+          "core:AssetsNotYetAvailableForUsePPE": [],
+          "core:TotalPropertyPlantEquipmentOtherThanExplorationEvaluationAssets": [],
+          "core:TangibleExplorationEvaluationAssets": [],
+          "core:OilGasProperties": [],
+          "core:OilGasProductionAssets": [],
+          "core:OilDepotsStorageTanksServiceStations": [],
+          "core:TotalMineProperties": [],
+          "core:ProducingMines": [],
+          "core:MiningAssetsUnderConstruction": [],
+          "core:DeferredStrippingExpendituresForMineProperties": [],
+          "core:OtherMiningAssets": [],
+          "core:MiningOilGasAdditionalPPEClassesHeading": [
+            "core:DeferredStrippingExpendituresForMineProperties",
+            "core:MiningAssetsUnderConstruction",
+            "core:OilDepotsStorageTanksServiceStations",
+            "core:OilGasProductionAssets",
+            "core:OilGasProperties",
+            "core:OtherMiningAssets",
+            "core:ProducingMines",
+            "core:TangibleExplorationEvaluationAssets",
+            "core:TotalMineProperties",
+            "core:TotalPropertyPlantEquipmentOtherThanExplorationEvaluationAssets"
+          ],
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment": [],
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment": [],
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment": [],
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment": [],
+          "core:OtherPropertyPlantEquipment": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Property, plant and equipment classes [Dimension]",
+        "default_member": "core:TotalPropertyPlantEquipmentDefault",
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

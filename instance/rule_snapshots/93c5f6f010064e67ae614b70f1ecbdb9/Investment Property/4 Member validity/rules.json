@@ -1,0 +1,186 @@
+{
+  "topic_id": "investment_property",
+  "topic_label": "Investment Property",
+  "rule_family": "4 Member validity",
+  "rule_count": 12,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:InvestmentPropertyOwnershipTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalOwnedLeasedInvestmentPropertyDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RangeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:SingleValueDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTPROPERTY.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "investment_property",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    }
+  ]
+}

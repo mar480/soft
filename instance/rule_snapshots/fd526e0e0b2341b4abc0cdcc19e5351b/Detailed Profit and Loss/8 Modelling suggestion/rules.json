@@ -1,0 +1,37 @@
+{
+  "topic_id": "detailed_profit_and_loss",
+  "topic_label": "Detailed Profit and Loss",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "detailed_profit_and_loss",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "dpl:DetailedProfitLossHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:MainIndustrySectorDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "countries:CountriesRegionsDimension",
+          "dpl:DetailedAnalysisDimension",
+          "dpl:ExpenseTypeDimension",
+          "dpl:IntraExtraGroupTransactionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Detailed Profit and Loss. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

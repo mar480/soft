@@ -1,0 +1,199 @@
+{
+  "topic_id": "deferred_tax",
+  "topic_label": "Deferred Tax",
+  "rule_family": "4 Member validity",
+  "rule_count": 13,
+  "rules": [
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:DeferredTaxAssetLiabilityClassesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalForDeferredTaxDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:TaxJurisdictionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalTaxDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:X-SpecificDeferredTaxAssetGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    }
+  ]
+}

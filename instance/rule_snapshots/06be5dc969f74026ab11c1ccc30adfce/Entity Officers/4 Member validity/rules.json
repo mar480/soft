@@ -1,0 +1,122 @@
+{
+  "topic_id": "entity_officers",
+  "topic_label": "Entity Officers",
+  "rule_family": "4 Member validity",
+  "rule_count": 8,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:EntityOfficerStatusDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllEntityOfficerTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:EntityOfficersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllEntityOfficersEntityOfficersTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:X-SpecificAdvanceOrCreditDirectorsGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.ENTITYOFFICERS.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "entity_officers",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "direp:X-SpecificGuaranteeDirectorsGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    }
+  ]
+}

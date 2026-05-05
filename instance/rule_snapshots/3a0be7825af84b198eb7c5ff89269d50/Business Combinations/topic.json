@@ -1,0 +1,32 @@
+{
+  "topic_id": "business_combinations",
+  "topic_label": "Business Combinations",
+  "source_hypercubes": [
+    "core:BusinessCombinations-FinanceLeasesHypercube",
+    "core:BusinessCombinationsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinationsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-Analysis1",
+      "elr_definition": "91541 - Hypercube - Business Combinations Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BusinessCombinationsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations",
+      "elr_definition": "9154 - Hypercube - Business Combinations",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:BusinessCombinations-FinanceLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinanceLeases",
+      "elr_definition": "9162 - Hypercube - Business Combinations - Finance Leases",
+      "occurrence_type": "variant",
+      "variant_label": "Finance Leases"
+    }
+  ],
+  "rule_count": 12
+}

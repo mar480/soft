@@ -1,0 +1,189 @@
+{
+  "topic_id": "investments",
+  "topic_label": "Investments",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 6,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-AssociatesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Associates",
+        "elr_definition": "9208 - Hypercube - Investments - Associates",
+        "dimensions": [
+          "core:AssociatesDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-EquitiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Equities",
+        "elr_definition": "9211 - Hypercube - Investments - Equities",
+        "dimensions": [
+          "core:EquityClassesHeldDimension",
+          "bus:ShareTypesDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-JointVenturesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-JointVentures",
+        "elr_definition": "9209 - Hypercube - Investments - Joint Ventures",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-OtherPartiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-OtherParties",
+        "elr_definition": "9210 - Hypercube - Investments - Other Parties",
+        "dimensions": [
+          "core:OtherRelatedPartyTypeDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-ParentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Parents",
+        "elr_definition": "9206 - Hypercube - Investments - Parents",
+        "dimensions": [
+          "core:ParentEntitiesDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INVESTMENTS.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "investments",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Investments-SubsidiariesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Subsidiaries",
+        "elr_definition": "9207 - Hypercube - Investments - Subsidiaries",
+        "dimensions": [
+          "core:SubsidiariesDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:SecuredStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

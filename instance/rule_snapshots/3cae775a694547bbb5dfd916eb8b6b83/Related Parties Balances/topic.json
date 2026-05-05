@@ -1,0 +1,17 @@
+{
+  "topic_id": "related_parties_balances",
+  "topic_label": "Related Parties Balances",
+  "source_hypercubes": [
+    "core:RelatedParties-InstrumentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:RelatedParties-InstrumentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-RelatedParties-Balances",
+      "elr_definition": "9146 - Hypercube - Related Parties - Balances",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}

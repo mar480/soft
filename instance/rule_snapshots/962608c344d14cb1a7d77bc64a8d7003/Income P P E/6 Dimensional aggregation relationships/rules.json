@@ -1,0 +1,197 @@
+{
+  "topic_id": "income_p_p_e",
+  "topic_label": "Income P P E",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEPPE.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEPPE.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ExceptionalsDimension",
+      "head_member": "core:TotalReportedDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Exceptional",
+          "core:ExplicitlyIdentifiedAsNon-exceptional"
+        ],
+        "domain_root": "core:TotalReportedDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Exceptionals [Dimension]",
+        "default_member": "core:TotalReportedDefault",
+        "domain_root": "core:TotalReportedDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEPPE.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:OwnershipAssetsDimension",
+      "head_member": "core:TotalOwnedLeasedAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:LeasebackAssets",
+          "core:OwnedAssets"
+        ],
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Ownership of assets [Dimension]",
+        "default_member": "core:TotalOwnedLeasedAssetsDefault",
+        "domain_root": "core:TotalOwnedLeasedAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.INCOMEPPE.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "income_p_p_e",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:PropertyPlantEquipmentClassesDimension",
+      "head_member": "core:TotalPropertyPlantEquipmentDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Aircraft",
+          "core:AssetsNotYetAvailableForUsePPE",
+          "core:Buildings",
+          "core:CommercialMotorVehicles",
+          "core:CommunicationNetworkEquipment",
+          "core:ComputerEquipment",
+          "core:ConstructionInProgressAssetsUnderConstruction",
+          "core:DeferredStrippingExpendituresForMineProperties",
+          "core:FurnitureFittings",
+          "core:InvestmentPropertyIncludedWithinPPE",
+          "core:Land",
+          "core:LeaseholdImprovements",
+          "core:MiningAssetsUnderConstruction",
+          "core:MotorCars",
+          "core:NetworkAssets",
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment",
+          "core:OilDepotsStorageTanksServiceStations",
+          "core:OilGasProductionAssets",
+          "core:OilGasProperties",
+          "core:OtherMiningAssets",
+          "core:OtherPropertyPlantEquipment",
+          "core:OtherVehicles",
+          "core:PlantMachinery",
+          "core:ProducingMines",
+          "core:ShipsBoats",
+          "core:TangibleExplorationEvaluationAssets",
+          "core:ToolsEquipment",
+          "core:TotalMineProperties",
+          "core:TotalPropertyPlantEquipmentOtherThanExplorationEvaluationAssets"
+        ],
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Property, plant and equipment classes [Dimension]",
+        "default_member": "core:TotalPropertyPlantEquipmentDefault",
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

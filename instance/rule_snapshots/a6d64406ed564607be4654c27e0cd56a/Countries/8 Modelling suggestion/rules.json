@@ -1,0 +1,31 @@
+{
+  "topic_id": "countries",
+  "topic_label": "Countries",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.COUNTRIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "countries",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:CountriesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Countries. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

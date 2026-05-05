@@ -1,0 +1,79 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "rule_family": "1 Topic note presence",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PPE.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "topic": "property_plant_equipment",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "statement_concepts_present": {
+          "minimum_count": 1,
+          "concepts": [
+            "core:PropertyPlantEquipment"
+          ],
+          "source_statement_roles": [
+            "balance_sheet"
+          ],
+          "headline_statement_roles": []
+        }
+      },
+      "expect": {
+        "topic_note_present": true,
+        "topic_primary_items": [
+          "core:PPE-RangePrimaryItems",
+          "core:PPE-SegmentsPrimaryItems",
+          "core:PPEPrimaryItems"
+        ],
+        "topic_hypercubes": [
+          "core:PPE-RangeHypercube",
+          "core:PPE-SegmentsHypercube",
+          "core:PPEHypercube"
+        ]
+      },
+      "taxonomy_basis": {
+        "matched_topic_label": "Property, plant and equipment",
+        "matched_statement_concept_label": "Property, plant and equipment",
+        "allowed_non_statement_presentation_roles": [
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+            "definition": "402 - Additional Industry Sector Data (FRS 102)",
+            "classification": "additional_industry_sector_data"
+          },
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+            "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+            "classification": "notes_and_detailed_disclosures"
+          }
+        ],
+        "supplementary_non_statement_presentation_roles": [
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/AdditionalIndustrySectorDataFRS102",
+            "definition": "402 - Additional Industry Sector Data (FRS 102)",
+            "classification": "additional_industry_sector_data"
+          }
+        ],
+        "topic_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PPEOwnershipDimension",
+          "core:ProductsServicesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

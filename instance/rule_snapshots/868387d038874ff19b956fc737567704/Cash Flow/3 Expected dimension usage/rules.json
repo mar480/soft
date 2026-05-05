@@ -1,0 +1,57 @@
+{
+  "topic_id": "cash_flow",
+  "topic_label": "Cash Flow",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CASHFLOW.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "cash_flow",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:CashFlow-AssociatesPrimaryItems",
+            "core:CashFlow-FinanceLeasesPrimaryItems",
+            "core:CashFlow-JointVenturesPrimaryItems",
+            "core:CashFlow-OtherRelatedPartiesPrimaryItems",
+            "core:CashFlow-ParentsPrimaryItems",
+            "core:CashFlow-ShareClassesPrimaryItems",
+            "core:CashFlow-SubsidiariesPrimaryItems",
+            "core:CashFlowPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

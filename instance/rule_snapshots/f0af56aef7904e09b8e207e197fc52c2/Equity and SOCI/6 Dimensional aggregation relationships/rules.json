@@ -1,0 +1,314 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityShareClassesDimension",
+      "head_member": "bus:AllShareClassesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:DeferredShareClass1",
+          "bus:DeferredShareClass2",
+          "bus:DeferredShareClass3",
+          "bus:DeferredShareClass4",
+          "bus:DeferredShareClass5",
+          "bus:OrdinaryShareClass1",
+          "bus:OrdinaryShareClass2",
+          "bus:OrdinaryShareClass3",
+          "bus:OrdinaryShareClass4",
+          "bus:OrdinaryShareClass5",
+          "bus:OtherShareClass1",
+          "bus:OtherShareClass2",
+          "bus:OtherShareClass3",
+          "bus:OtherShareClass4",
+          "bus:OtherShareClass5",
+          "bus:PreferenceShareClass1",
+          "bus:PreferenceShareClass2",
+          "bus:PreferenceShareClass3",
+          "bus:PreferenceShareClass4",
+          "bus:PreferenceShareClass5"
+        ],
+        "domain_root": "bus:AllShareClassesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity share classes [Dimension]",
+        "default_member": "bus:AllShareClassesDefault",
+        "domain_root": "bus:AllShareClassesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:ShareTypesDimension",
+      "head_member": "bus:AllShareTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "bus:CumulativeNon-redeemableShares",
+          "bus:CumulativeRedeemableShares",
+          "bus:Non-cumulativeNon-redeemableShares",
+          "bus:Non-cumulativeRedeemableShares",
+          "bus:OtherShareType"
+        ],
+        "domain_root": "bus:AllShareTypesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Share types [Dimension]",
+        "default_member": "bus:AllShareTypesDefault",
+        "domain_root": "bus:AllShareTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:EquityClassesDimension",
+      "head_member": "core:TotalEquityDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:AssetRevaluationSurplusReserve",
+          "core:AssetsDisposalGroupsHeldForSaleReserve",
+          "core:Available-for-saleInvestmentsReserve",
+          "core:CapitalContributionReserve",
+          "core:CapitalRedemptionReserve",
+          "core:CapitalReservesInvestmentFundsOnly",
+          "core:ConvertibleDebtEquityComponentReserve",
+          "core:ESOPReserve",
+          "core:ForeignCurrencyTranslationReserve",
+          "core:FurtherSpecificReserve1ComponentTotalEquity",
+          "core:FurtherSpecificReserve2ComponentTotalEquity",
+          "core:FurtherSpecificReserve3ComponentTotalEquity",
+          "core:FurtherSpecificReserve4ComponentTotalEquity",
+          "core:GeneralBankingRisksReserve",
+          "core:GoodwillReserve",
+          "core:HedgingReserve",
+          "core:InsuranceFinanceReserveInsuranceSectorOnly",
+          "core:InvestmentPropertiesRevaluationReserve",
+          "core:LegalStatutoryReserve",
+          "core:MergerReserve",
+          "core:Non-controllingInterests",
+          "core:OtherCapitalInstrumentsClassifiedAsEquity",
+          "core:OtherCapitalReserve",
+          "core:OtherMiscellaneousReserve",
+          "core:OtherReservesSubtotal",
+          "core:PropertiesRevaluationReserve",
+          "core:ProposedDividendReserve",
+          "core:RetainedEarningsAccumulatedLosses",
+          "core:RevenueReservesInvestmentFundsOnly",
+          "core:Share-basedPaymentsReserve",
+          "core:ShareBuy-backReserve",
+          "core:ShareCapitalOrdinaryShareClass1",
+          "core:ShareCapitalOrdinaryShareClass2",
+          "core:ShareCapitalOrdinaryShareClass3",
+          "core:ShareCapitalOrdinaryShareClass4",
+          "core:ShareCapitalOrdinaryShareClass5",
+          "core:ShareCapitalOtherShareClass1",
+          "core:ShareCapitalOtherShareClass2",
+          "core:ShareCapitalOtherShareClass3",
+          "core:ShareCapitalOtherShareClass4",
+          "core:ShareCapitalOtherShareClass5",
+          "core:ShareCapitalPreferenceShareClass1",
+          "core:ShareCapitalPreferenceShareClass2",
+          "core:ShareCapitalPreferenceShareClass3",
+          "core:ShareCapitalPreferenceShareClass4",
+          "core:ShareCapitalPreferenceShareClass5",
+          "core:ShareCapitalSharePremiumSubtotal",
+          "core:SharePremiumOrdinaryShares",
+          "core:SharePremiumOtherShareTypes",
+          "core:SharePremiumPreferenceShares",
+          "core:SilentParticipationInGovernmentProtectionScheme",
+          "core:SpecialReserveInvestmentFundsOnly",
+          "core:TaxationReserve",
+          "core:TotalEquityAttributableToOwnersParentBeforeNon-controllingInterests",
+          "core:TreasurySharesOwnSharesReserve",
+          "core:WarrantExerciseReserve",
+          "core:WarrantReserve"
+        ],
+        "domain_root": "core:TotalEquityDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Equity classes [Dimension]",
+        "default_member": "core:TotalEquityDefault",
+        "domain_root": "core:TotalEquityDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.EQUITYANDSOCI.DIMAGG.005",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:PropertyPlantEquipmentClassesDimension",
+      "head_member": "core:TotalPropertyPlantEquipmentDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Aircraft",
+          "core:AssetsNotYetAvailableForUsePPE",
+          "core:Buildings",
+          "core:CommercialMotorVehicles",
+          "core:CommunicationNetworkEquipment",
+          "core:ComputerEquipment",
+          "core:ConstructionInProgressAssetsUnderConstruction",
+          "core:DeferredStrippingExpendituresForMineProperties",
+          "core:FurnitureFittings",
+          "core:InvestmentPropertyIncludedWithinPPE",
+          "core:Land",
+          "core:LeaseholdImprovements",
+          "core:MiningAssetsUnderConstruction",
+          "core:MotorCars",
+          "core:NetworkAssets",
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment",
+          "core:OilDepotsStorageTanksServiceStations",
+          "core:OilGasProductionAssets",
+          "core:OilGasProperties",
+          "core:OtherMiningAssets",
+          "core:OtherPropertyPlantEquipment",
+          "core:OtherVehicles",
+          "core:PlantMachinery",
+          "core:ProducingMines",
+          "core:ShipsBoats",
+          "core:TangibleExplorationEvaluationAssets",
+          "core:ToolsEquipment",
+          "core:TotalMineProperties",
+          "core:TotalPropertyPlantEquipmentOtherThanExplorationEvaluationAssets"
+        ],
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Property, plant and equipment classes [Dimension]",
+        "default_member": "core:TotalPropertyPlantEquipmentDefault",
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

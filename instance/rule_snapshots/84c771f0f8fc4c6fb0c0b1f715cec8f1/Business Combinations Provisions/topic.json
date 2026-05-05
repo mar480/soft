@@ -1,0 +1,17 @@
+{
+  "topic_id": "business_combinations_provisions",
+  "topic_label": "Business Combinations Provisions",
+  "source_hypercubes": [
+    "core:BusinessCombinations-ProvisionsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-ProvisionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-Provisions",
+      "elr_definition": "9165 - Hypercube - Business Combinations - Provisions",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 12
+}

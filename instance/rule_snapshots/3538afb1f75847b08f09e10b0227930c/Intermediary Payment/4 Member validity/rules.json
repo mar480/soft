@@ -1,0 +1,81 @@
+{
+  "topic_id": "intermediary_payment",
+  "topic_label": "Intermediary Payment",
+  "rule_family": "4 Member validity",
+  "rule_count": 5,
+  "rules": [
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:X-IntermediaryPaymentArrangementsGroupingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    }
+  ]
+}

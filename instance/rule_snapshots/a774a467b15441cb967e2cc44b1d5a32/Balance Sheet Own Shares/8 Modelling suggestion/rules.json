@@ -1,0 +1,34 @@
+{
+  "topic_id": "balance_sheet_own_shares",
+  "topic_label": "Balance Sheet Own Shares",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "balance_sheet_own_shares",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BalanceSheet-OwnSharesHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Balance Sheet Own Shares. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

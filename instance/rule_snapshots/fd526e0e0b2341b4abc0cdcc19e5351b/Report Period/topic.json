@@ -1,0 +1,17 @@
+{
+  "topic_id": "report_period",
+  "topic_label": "Report Period",
+  "source_hypercubes": [
+    "bus:ReportPeriodHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:ReportPeriodHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-ReportPeriod",
+      "elr_definition": "9026 - Hypercube - Report Period",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

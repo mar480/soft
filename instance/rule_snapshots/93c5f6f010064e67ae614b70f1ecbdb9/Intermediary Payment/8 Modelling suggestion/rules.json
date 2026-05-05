@@ -1,0 +1,32 @@
+{
+  "topic_id": "intermediary_payment",
+  "topic_label": "Intermediary Payment",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "intermediary_payment",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:IntermediaryPaymentHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:X-IntermediaryPaymentArrangementsGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Intermediary Payment. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

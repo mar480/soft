@@ -1,0 +1,24 @@
+{
+  "topic_id": "income_intangibles",
+  "topic_label": "Income Intangibles",
+  "source_hypercubes": [
+    "core:Income-IntangiblesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Intangibles",
+      "elr_definition": "9083 - Hypercube - Income - Intangibles",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Income-IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Intangibles-Grouping1",
+      "elr_definition": "90831 - Hypercube - Income - Intangibles Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 34
+}

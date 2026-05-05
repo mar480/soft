@@ -1,0 +1,859 @@
+Below is a comprehensive project plan for building a UK Taxonomy Rule Discovery and Validation Workbench.
+The framing is deliberately not “build a validator that rejects filings”. The stronger framing is:
+Build a taxonomy-aware rule discovery, consistency checking, and modelling-improvement system for UK digital accounts.
+That keeps it aligned with the FRC consistency-check philosophy: the historical consistency checks were intended to identify possible gaps, errors or weaknesses in tagging, not to act as hard acceptance/rejection validation tests.
+
+Project Plan: UK Taxonomy Rule Discovery and Validation Workbench
+1. Project purpose
+The project will create a system that can:
+1. Load the UK 2026 taxonomy suite from the local repo.
+2. Discover topics from taxonomy hypercubes.
+3. Extract the dimensional model for each topic.
+4. Generate candidate rules from those models.
+5. Run selected rules against iXBRL/XBRL filings.
+6. Report findings as warnings, suggestions, or modelling-improvement opportunities.
+The system should help answer questions like:
+Has the filer used the taxonomy model that exists for this disclosure?
+
+Are the concepts and dimensions used in the filing consistent with the relevant hypercube?
+
+Has the filer used a flat tagging approach where the taxonomy provides a dimensional note model?
+
+Are there missing total members, missing note anchors, or under-modelled disclosures?
+
+Where could the filer improve the tagging by using existing UK taxonomy concepts, dimensions or members?
+
+2. Core design decision
+The project should be hypercube-first.
+Earlier we considered generating rules from presentation and calculation relationships. We have now refined that.
+For UK taxonomies:
+Hypercube names identify topics.
+Hypercube primary items identify the disclosure scope.
+Hypercube dimensions identify expected note construction.
+Domain-member trees identify possible member roll-ups.
+Presentation ELRs provide context and human explanation.
+There are no calculation linkbase relationships to rely on.
+So the architecture should not be calculation-linkbase-led.
+The design principle is:
+Hypercube-first, presentation-explained, review-controlled.
+
+3. Important terminology
+3.1 Candidate rule
+A rule generated automatically from the taxonomy structure.
+Example:
+The PPE hypercube has a PPE classes dimension.
+If PPE note facts are present but no PPE class dimension is used, this may be weak modelling.
+Candidate rules require review before being treated as production-quality checks.
+3.2 Reviewed rule
+A candidate rule that has been reviewed, accepted, edited or promoted.
+3.3 Suppressed rule / anti-rule
+A rule that prevents bad automated inference.
+Example:
+Do not treat missing dimensional combinations as nil.
+Do not assume presentation children sum to a parent.
+Do not infer a roll-up where another dimension is aggregated.
+3.4 Finding
+A result emitted when a rule runs against a filing.
+Example:
+Finding: PPE facts are present, but the expected PPE class dimension was not used.
+Severity: info
+Confidence: medium
+Suggested action: consider using the PPE classes dimension.
+
+4. Scope
+In scope
+UK 2026 taxonomy package in backend/taxonomies/2026.
+Hypercube discovery.
+Topic discovery from hypercube names, labels and ELR definitions.
+Primary-item discovery.
+Dimension and member-tree discovery.
+Candidate rule generation.
+Rule review workflow.
+Python execution engine.
+JSON/HTML/CSV reporting.
+Filing fact indexing.
+Context, unit and dimension normalisation.
+Out of scope for MVP
+Hard regulatory acceptance/rejection validation.
+Full Companies House/HMRC production filing validation.
+Complete automatic repair of filings.
+Perfect natural-language interpretation of accounts.
+All possible statutory judgement.
+
+5. Project phases and weighting
+PhaseAreaWeight1Taxonomy indexing foundation15%2Hypercube/topic discovery20%3Candidate rule generation20%4Filing fact index and execution engine20%5Reporting and review workflow15%6Testing, examples and documentation10%
+Phase 1 — Taxonomy indexing foundation
+Goal: Build a reliable, reusable taxonomy intelligence layer.
+This is the base for everything else.
+1.1 Inputs
+Use the local taxonomy package in your repo:
+backend/taxonomies/2026
+The 2026 package includes multiple entry points such as FRS 101, FRS 102, IFRS, Core, Core Full, FRS-102-UKSEF, IFRS-UKSEF, DPL, CIC-34 and DSEP.
+1.2 Deliverables
+Create:
+backend/validation_rules/taxonomy/
+  taxonomy_loader.py
+  taxonomy_repository.py
+  concept_index.py
+  relationship_index.py
+  labels.py
+  entrypoints.py
+1.3 Main tasks
+Task 1 — Load taxonomy entry points
+Build an Arelle loader that can load:
+FRS-102
+IFRS
+FRS-102-UKSEF
+IFRS-UKSEF
+Core
+Core Full
+DPL
+CIC
+DSEP
+The loader should accept either:
+canonical URL
+local XSD path
+friendly entry point name
+Example API:
+model_xbrl = load_taxonomy_entrypoint(
+    taxonomy_year=2026,
+    entrypoint_name="FRS-102",
+)
+Task 2 — Build concept index
+For every concept, store:
+QName
+namespace
+local name
+standard label
+verbose label
+period type
+balance
+data type
+abstract flag
+substitution group
+is numeric
+is monetary
+is duration / instant
+Output:
+backend/validation_rules/generated/2026/frs102/concepts.json
+Task 3 — Build role / ELR index
+For every ELR:
+role URI
+role definition
+arcroles present
+related hypercubes
+related presentation roots
+Output:
+roles.json
+Task 4 — Build relationship index
+Extract these arcroles:
+parent-child
+all
+notAll
+hypercube-dimension
+dimension-domain
+domain-member
+dimension-default
+Do not build around summation-item because the UK taxonomies do not have calculation relationships for this purpose.
+Task 5 — Build label and topic helper utilities
+Create utilities for:
+normalising QName names
+splitting CamelCase
+removing words like Hypercube, Table, Analysis, Disclosure
+creating stable topic IDs
+Example:
+PropertyPlantEquipmentHypercube ? property_plant_and_equipment
+OperatingLeasesHypercube ? operating_leases
+CreditorsHypercube ? creditors
+1.4 Acceptance criteria
+Phase 1 is complete when you can run:
+python -m backend.validation_rules.taxonomy.inspect `
+  --taxonomy-year 2026 `
+  --entrypoint FRS-102
+And get a summary like:
+{
+  "entrypoint": "FRS-102",
+  "concept_count": 12345,
+  "role_count": 200,
+  "hypercube_count": 120,
+  "dimension_count": 300,
+  "domain_member_relationship_count": 5000
+}
+
+Phase 2 — Hypercube and topic discovery
+Goal: Build the central model of the taxonomy by topic.
+This is the most important phase.
+2.1 Deliverables
+Create:
+backend/validation_rules/discovery/
+  cube_model.py
+  cube_discoverer.py
+  topic_model.py
+  topic_classifier.py
+  member_tree.py
+2.2 Core data model
+Use something like:
+@dataclass
+class TopicModel:
+    topic_id: str
+    topic_label: str
+    taxonomy_year: int
+    entrypoint: str
+    hypercubes: list["CubeModel"]
+    candidate_rules: list[dict]
+
+
+@dataclass
+class CubeModel:
+    cube_qname: str
+    cube_label: str | None
+    elr: str
+    elr_definition: str | None
+    closed: bool
+    primary_items: list[dict]
+    dimensions: list["DimensionModel"]
+
+
+@dataclass
+class DimensionModel:
+    dimension_qname: str
+    dimension_label: str | None
+    default_member: str | None
+    domain_roots: list[str]
+    member_tree: list["MemberNode"]
+
+
+@dataclass
+class MemberNode:
+    qname: str
+    label: str | None
+    children: list["MemberNode"]
+2.3 Main tasks
+Task 1 — Discover hypercubes
+Traverse:
+primary item ? all/notAll ? hypercube
+For each cube, capture:
+cube qname
+cube label
+ELR
+ELR definition
+closed/open indication
+attached primary items
+Task 2 — Discover cube dimensions
+For each cube:
+hypercube ? hypercube-dimension ? dimension
+Capture:
+dimension qname
+dimension label
+dimension type
+Task 3 — Discover dimension domains and members
+For each dimension:
+dimension ? dimension-domain ? domain
+domain ? domain-member ? member tree
+dimension ? dimension-default ? default member
+Capture nested member trees, not just flat lists.
+Task 4 — Expand primary item scope
+This is important.
+A hypercube may attach to a parent primary item and apply to descendants. You will need to decide how to expand the primary item list.
+Initial approach:
+direct primary item attached to cube
++
+presentation descendants in same ELR where appropriate
+Later, refine using your existing hypercube-discovery logic.
+Task 5 — Classify topics
+Derive topic from:
+hypercube QName
+hypercube label
+ELR definition
+dimension labels
+primary item labels
+Example output:
+{
+  "topic_id": "property_plant_and_equipment",
+  "topic_label": "Property, plant and equipment",
+  "hypercubes": [...]
+}
+Task 6 — Group related hypercubes
+Some topics may have multiple related cubes.
+Example:
+PPE gross cost cube
+PPE accumulated depreciation cube
+PPE ownership cube
+PPE classes cube
+Group these under one topic where labels and ELR definitions indicate the same disclosure family.
+2.4 Acceptance criteria
+Phase 2 is complete when you can run:
+python -m backend.validation_rules.discovery.discover_topics `
+  --taxonomy-year 2026 `
+  --entrypoint FRS-102 `
+  --output backend/validation_rules/generated/2026/frs102/topics.json
+And inspect topic-level output:
+{
+  "topic_id": "property_plant_and_equipment",
+  "topic_label": "Property, plant and equipment",
+  "hypercube_count": 1,
+  "primary_item_count": 25,
+  "dimension_count": 2,
+  "dimensions": [
+    "core:PropertyPlantEquipmentClassesDimension",
+    "core:PPEOwnershipDimension"
+  ]
+}
+
+Phase 3 — Candidate rule generation
+Goal: Generate initial candidate rules from hypercube/topic models.
+This is where we automate the relationship discovery.
+3.1 Deliverables
+Create:
+backend/validation_rules/rule_generation/
+  generator.py
+  rule_ids.py
+  rule_schema.py
+  generators/
+    note_presence.py
+    hypercube_conformity.py
+    expected_dimension_usage.py
+    member_validity.py
+    total_member_presence.py
+    dimension_rollup.py
+    dimensional_safety.py
+    modelling_suggestions.py
+    anti_rules.py
+3.2 Candidate rule families
+Family 1 — Topic / note presence candidates
+Purpose:
+If a PFS concept is present, and the taxonomy provides a related note model, check whether note-model concepts are also present.
+Example:
+id: AUTO.PPE.NOTE_EXPECTED.001
+type: note_presence_candidate
+topic: property_plant_and_equipment
+trigger:
+  any_present:
+    - core:PropertyPlantEquipment
+expect:
+  any_present_from_hypercube: core:PropertyPlantEquipmentHypercube
+severity: info
+confidence: medium
+requires_review: true
+Family 2 — Hypercube conformity
+Purpose:
+Check whether dimensions and members used in the filing are consistent with the cube model.
+Example:
+id: AUTO.PPE.CUBE_CONFORMITY.001
+type: hypercube_conformity
+topic: property_plant_and_equipment
+hypercube: core:PropertyPlantEquipmentHypercube
+check:
+  dimensions_must_be_from_cube: true
+  members_must_be_in_domain_tree: true
+severity: warning
+confidence: high
+requires_review: false
+Family 3 — Expected dimension usage
+Purpose:
+If several primary items from a note hypercube are present, expect at least one cube dimension to be used.
+Example:
+id: AUTO.PPE.DIM_EXPECTED.001
+type: expected_dimension_usage
+trigger:
+  primary_items_from_hypercube_present:
+    minimum_count: 2
+expect:
+  at_least_one_dimension_from_hypercube_used: true
+severity: info
+confidence: medium
+Family 4 — Member validity
+Purpose:
+If a dimension is used, check the member belongs to the taxonomy domain tree.
+Example:
+id: AUTO.PPE.MEMBER_VALIDITY.001
+type: dimension_member_validity
+dimension: core:PropertyPlantEquipmentClassesDimension
+allowed_members:
+  from_domain_member_tree: true
+severity: warning
+confidence: high
+Family 5 — Total member presence
+Purpose:
+If several component members are used, suggest the relevant total member.
+Example:
+id: AUTO.PPE.TOTAL_MEMBER_EXPECTED.001
+type: total_member_presence_candidate
+dimension: core:PropertyPlantEquipmentClassesDimension
+trigger:
+  component_members_present:
+    minimum_count: 2
+expect:
+  head_member_present: core:TotalPropertyPlantEquipment
+severity: info
+confidence: medium
+Family 6 — Dimension-member roll-up candidates
+Purpose:
+For one primary concept, one period, one unit and one dimension, check whether a total member appears to equal component members, holding all other dimensions constant.
+Example:
+id: AUTO.PPE.DIM_ROLLUP.001
+type: dimension_member_rollup_candidate
+dimension: core:PropertyPlantEquipmentClassesDimension
+head_member: core:TotalPropertyPlantEquipment
+component_members:
+  from_domain_member_children: true
+match:
+  primary_item: same
+  period: same
+  unit: same
+  all_other_dimensions: same
+missing_policy: do_not_treat_missing_as_zero
+safe_only: true
+severity: warning
+confidence: medium
+requires_review: true
+This is a consistency check, not a formal calculation-linkbase validation.
+Family 7 — Dimensional aggregation safety
+Purpose:
+Prevent unsafe roll-ups where multiple dimensions are present.
+Example:
+id: AUTO.PPE.SAFETY.001
+type: dimensional_aggregation_safety
+when_summing_dimension: core:PropertyPlantEquipmentClassesDimension
+hold_constant:
+  - core:PPEOwnershipDimension
+missing_policy: missing_combination_is_not_nil
+This directly addresses the PPE problem described in the consistency-check explanation, where choosing the wrong dimension to sum across can wrongly imply missing lower-level values are nil.
+Family 8 — Modelling suggestions
+Purpose:
+Tell the filer how to improve the modelling using the taxonomy.
+Example:
+id: AUTO.PPE.MODELLING.001
+type: modelling_suggestion
+finding:
+  flat_note_detected: true
+suggest:
+  use_hypercube: core:PropertyPlantEquipmentHypercube
+  dimensions:
+    - core:PropertyPlantEquipmentClassesDimension
+    - core:PPEOwnershipDimension
+message: >
+  The taxonomy provides a dimensional PPE note model. Consider using the
+  PPE class and ownership dimensions rather than flat primary-item-only tagging.
+Family 9 — Anti-rules
+Purpose:
+Block bad generated rules.
+Examples:
+id: ANTI.PRESENTATION_SUM.001
+type: blocked_inference
+reason: Do not assume presentation children sum to parent.
+id: ANTI.MISSING_ZERO.001
+type: blocked_inference
+reason: Do not treat missing dimensional facts as zero.
+
+Family 10 — PFS presentation arithmetic consistency (constrained)
+Use only when all of these are true:
+1. Concept is in a recognised PFS section (SoFP, P&L, CF, SoCE).
+2. Parent/child structure is tagged as arithmetic-eligible (via curated allowlist/metadata, not raw presentation alone).
+3. Facts are comparable on:
+* same period
+* same unit
+* same entity
+* same dimensional context (or explicitly dimensionless policy)
+4. Sign policy is explicit (credit/debit inversion handled per statement logic).
+5. Missing facts are not auto-zero unless explicitly permitted.
+
+3.3 Output structure
+Generate topic-first files:
+backend/validation_rules/rule_packs/2026/auto/frs102_candidates.json
+Shape:
+{
+  "taxonomy_year": 2026,
+  "entrypoint": "FRS-102",
+  "topics": [
+    {
+      "topic_id": "property_plant_and_equipment",
+      "topic_label": "Property, plant and equipment",
+      "source_hypercubes": [],
+      "candidate_rules": []
+    }
+  ]
+}
+3.4 Acceptance criteria
+Phase 3 is complete when the system can generate candidate rules for at least:
+Property, plant and equipment
+Creditors
+Debtors
+Operating leases
+Provisions
+Investments
+And each topic includes:
+hypercube conformity candidates
+expected dimension usage candidates
+member validity candidates
+total member candidates
+dimension roll-up candidates
+modelling suggestions
+safety rules
+
+Phase 4 — Filing fact index and rule execution engine
+Goal: Run reviewed or candidate rules against actual iXBRL/XBRL filings.
+4.1 Deliverables
+Create:
+backend/validation_rules/filings/
+  filing_loader.py
+  fact_index.py
+  context_normaliser.py
+  unit_normaliser.py
+  dimension_normaliser.py
+  decimals.py
+
+backend/validation_rules/engine/
+  evaluator.py
+  result.py
+  severity.py
+  profiles.py
+4.2 Fact index
+Every fact should be indexed by:
+concept
+entity
+period
+unit
+dimensions
+Suggested model:
+@dataclass
+class IndexedFact:
+    concept: str
+    value: Decimal | str | bool | None
+    unit: str | None
+    decimals: int | str | None
+    period: PeriodKey
+    dimensions: dict[str, str]
+    entity: str
+    context_id: str
+    fact_id: str | None
+    is_nil: bool
+    source_file: str | None
+4.3 Context normalisation
+Handle:
+instant periods
+duration periods
+current period
+prior period
+opening balance date
+closing balance date
+Movement rules will need:
+opening instant
+current duration
+closing instant
+4.4 Dimension normalisation
+Materialise default members where appropriate.
+But do so carefully.
+The FRC explanation notes that dimensions with a default of not applicable may not have natural summation relationships and can create double-counting risk.
+So implement:
+materialise_defaults=True
+exclude_not_applicable_defaults_from_rollups=True
+4.5 Missing fact policy
+Support:
+ignore_missing
+do_not_treat_missing_as_zero
+treat_missing_as_zero_only_if_explicit
+fail_if_missing
+Default should be:
+do_not_treat_missing_as_zero
+4.6 Rule execution profiles
+Create profiles:
+research_mode
+preparer_assist
+regulator_review
+vendor_quality
+strict_experimental
+Example differences:
+ProfileBehaviourresearch_moderun candidate rules and show low confidencepreparer_assistshow suggestions and fixesregulator_reviewsuppress low-confidence suggestionsvendor_qualityshow modelling detail and technical explanationsstrict_experimentalrun everything, clearly marked experimental4.7 Finding model
+A finding should include:
+{
+  "rule_id": "AUTO.PPE.DIM_EXPECTED.001",
+  "topic": "property_plant_and_equipment",
+  "severity": "info",
+  "confidence": "medium",
+  "status": "triggered",
+  "message": "PPE note facts are present, but the PPE class dimension was not used.",
+  "suggested_action": "Consider using the PPE classes dimension.",
+  "facts_involved": [],
+  "taxonomy_basis": {
+    "hypercube": "core:PropertyPlantEquipmentHypercube",
+    "dimensions": []
+  }
+}
+4.8 Acceptance criteria
+Phase 4 is complete when you can run:
+python -m backend.validation_rules.run_checks `
+  --filing examples/company.xhtml `
+  --taxonomy-year 2026 `
+  --entrypoint FRS-102 `
+  --rules backend/validation_rules/rule_packs/2026/auto/frs102_candidates.json `
+  --profile research_mode `
+  --output reports/company_findings.json
+And produce findings grouped by topic.
+
+Phase 5 — Reporting and review workflow
+Goal: Make generated rules and filing findings reviewable.
+5.1 Deliverables
+Create:
+backend/validation_rules/reports/
+  html_report.py
+  json_report.py
+  csv_report.py
+  markdown_report.py
+
+backend/validation_rules/review/
+  review_status.py
+  promote_rule.py
+  suppress_rule.py
+5.2 Rule catalogue review statuses
+Each candidate rule should have:
+candidate
+accepted
+edited
+suppressed
+rejected
+experimental
+production
+Example:
+{
+  "id": "AUTO.PPE.DIM_ROLLUP.001",
+  "status": "candidate",
+  "review": {
+    "reviewed_by": null,
+    "review_date": null,
+    "notes": null
+  }
+}
+5.3 Rule catalogue UI / report
+Initial version can be static HTML.
+Group by:
+entrypoint
+topic
+hypercube
+rule type
+severity
+confidence
+review status
+For each topic show:
+hypercube name
+ELR definition
+primary concepts
+dimensions
+member trees
+generated rules
+suppressed rules
+5.4 Filing findings report
+Group findings by:
+severity
+topic
+rule type
+concept
+dimension
+period
+Each finding should include:
+What happened
+Why the rule triggered
+Taxonomy basis
+Affected facts
+Suggested action
+Whether this is a hard error, warning, or modelling suggestion
+5.5 HTML report sections
+Suggested report structure:
+1. Executive summary
+2. Findings by severity
+3. Findings by topic
+4. Modelling suggestions
+5. Dimensional construction review
+6. Potential arithmetic / roll-up checks
+7. Suppressed unsafe inferences
+8. Technical appendix
+5.6 Acceptance criteria
+Phase 5 is complete when you can inspect a filing report that says, for example:
+Topic: Property, plant and equipment
+
+Finding:
+The filing reports PPE movement concepts but does not use the PPE classes dimension.
+
+Taxonomy basis:
+The 2026 FRS 102 taxonomy contains a PPE hypercube with a PPE classes dimension.
+
+Suggested action:
+Consider tagging the PPE note using the PPE classes dimension and relevant members.
+
+Status:
+Info / modelling suggestion, not a filing rejection.
+
+Phase 6 — Testing, examples and documentation
+Goal: Make the project robust and usable.
+6.1 Deliverables
+Create:
+backend/validation_rules/tests/
+  test_topic_discovery.py
+  test_cube_models.py
+  test_candidate_generation.py
+  test_fact_index.py
+  test_rule_execution.py
+
+docs/
+  validation_workbench_overview.md
+  rule_authoring_guide.md
+  candidate_rule_review_guide.md
+  hypercube_discovery_notes.md
+6.2 Test fixtures
+Use:
+small synthetic iXBRL filings
+PPE examples
+creditors examples
+operating lease examples
+Create deliberately small test cases:
+valid dimensional note
+flat note with no dimensions
+member outside domain
+missing total member
+unsafe two-dimensional aggregation
+duplicate inconsistent fact
+6.3 Documentation topics
+Write clear documentation for:
+What the tool does
+What it does not do
+Why checks are warnings/suggestions
+How hypercubes drive topic discovery
+How to review candidate rules
+How to promote a rule
+How to suppress a bad rule
+How to run checks against a filing
+How to interpret findings
+
+Proposed repository structure
+backend/
+  validation_rules/
+    __init__.py
+
+    taxonomy/
+      taxonomy_loader.py
+      taxonomy_repository.py
+      concept_index.py
+      relationship_index.py
+      labels.py
+      entrypoints.py
+
+    discovery/
+      cube_model.py
+      cube_discoverer.py
+      topic_model.py
+      topic_classifier.py
+      member_tree.py
+      discover_topics.py
+
+    rule_generation/
+      generator.py
+      rule_schema.py
+      rule_ids.py
+      generators/
+        note_presence.py
+        hypercube_conformity.py
+        expected_dimension_usage.py
+        member_validity.py
+        total_member_presence.py
+        dimension_rollup.py
+        dimensional_safety.py
+        modelling_suggestions.py
+        anti_rules.py
+
+    rule_packs/
+      2026/
+        auto/
+          frs102_candidates.json
+          ifrs_candidates.json
+        reviewed/
+          frs102_reviewed.json
+          ifrs_reviewed.json
+
+    filings/
+      filing_loader.py
+      fact_index.py
+      context_normaliser.py
+      unit_normaliser.py
+      dimension_normaliser.py
+      decimals.py
+
+    engine/
+      evaluator.py
+      result.py
+      severity.py
+      profiles.py
+
+    reports/
+      html_report.py
+      json_report.py
+      csv_report.py
+      markdown_report.py
+
+    review/
+      promote_rule.py
+      suppress_rule.py
+      review_status.py
+
+    tests/
+      test_cube_discovery.py
+      test_candidate_generation.py
+      test_fact_index.py
+      test_rule_execution.py
+
+MVP milestone definition
+The MVP is complete when the system can:
+1. Load FRS-102 2026.
+2. Discover all hypercube topics.
+3. Generate candidate rules grouped by topic.
+4. Review and promote at least one topic, preferably PPE.
+5. Load one iXBRL filing.
+6. Run selected rules.
+7. Produce an HTML/JSON report.
+8. Clearly distinguish findings from hard validation errors.
+
+Risks and mitigations
+Risk 1 — Over-generating bad rules
+Mitigation:
+The taxonomy files are the single source of truth and consideration must be given to those relationships in generating rules. Guesswork or custom heuristics should be discussed and documented in detail.
+Everything generated is candidate by default.
+Use confidence scoring.
+Require review before production.
+Create anti-rules.
+Avoid presentation-derived arithmetic.
+Risk 2 — Treating missing facts as zero
+Mitigation:
+Default missing policy: do_not_treat_missing_as_zero.
+Only treat as zero where explicitly justified.
+Add dimensional safety rules.
+Risk 3 — Hypercube topic names are inconsistent
+Mitigation:
+Use labels and ELR definitions, not QName alone.
+Add manual topic alias map.
+Allow topic override files.
+Example:
+aliases:
+  property_plant_equipment:
+    - PPE
+    - Tangible fixed assets
+    - Property plant equipment
+Risk 4 — Multiple hypercubes per topic
+Mitigation:
+Allow topic to contain multiple cubes.
+Group by ELR definition, label similarity and primary-item overlap.
+Risk 5 — Rule engine becomes too complex
+Mitigation:
+Keep rule schema explicit.
+Do not build a general programming language in YAML.
+Use Python for complex rules.
+
+Risk 6 — Findings sound too authoritative
+Mitigation:
+Use careful wording:
+Potential issue
+May indicate weak modelling
+Consider using
+Review whether
+Not a filing rejection
+
+
+

@@ -1,0 +1,33 @@
+{
+  "topic_id": "fair_value_movement",
+  "topic_label": "Fair Value Movement",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FAIRVALUEMOVEMENT.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "fair_value_movement",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:FairValueMovementHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FairValueMovementDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Fair Value Movement. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

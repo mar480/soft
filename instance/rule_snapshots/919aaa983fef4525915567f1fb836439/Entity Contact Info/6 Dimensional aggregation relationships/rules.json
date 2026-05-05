@@ -1,0 +1,115 @@
+{
+  "topic_id": "entity_contact_info",
+  "topic_label": "Entity Contact Info",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYCONTACTINFO.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "entity_contact_info",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:AddressTypeDimension",
+      "head_member": "bus:MainAddressDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "bus:Postal",
+          "bus:Street"
+        ],
+        "domain_root": "bus:AddressTypeHeading",
+        "member_descendants": {
+          "bus:Postal": [],
+          "bus:Street": [],
+          "bus:AddressTypeHeading": [
+            "bus:Postal",
+            "bus:Street"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Address type [Dimension]",
+        "default_member": "bus:MainAddressDefault",
+        "domain_root": "bus:AddressTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.ENTITYCONTACTINFO.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "entity_contact_info",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "bus:EntityContactTypeDimension",
+      "head_member": "bus:HeadOfficeDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "bus:AmericanDepositaryReceiptsInformation",
+          "bus:InvestorRelations",
+          "bus:MediaRelations",
+          "bus:PrincipalPlaceBusiness",
+          "bus:RegisteredOffice",
+          "bus:RegistrarInformation",
+          "bus:ShareDealingInformation"
+        ],
+        "domain_root": "bus:EntityContactTypeHeading",
+        "member_descendants": {
+          "bus:PrincipalPlaceBusiness": [],
+          "bus:RegisteredOffice": [],
+          "bus:RegistrarInformation": [],
+          "bus:InvestorRelations": [],
+          "bus:MediaRelations": [],
+          "bus:ShareDealingInformation": [],
+          "bus:AmericanDepositaryReceiptsInformation": [],
+          "bus:EntityContactTypeHeading": [
+            "bus:AmericanDepositaryReceiptsInformation",
+            "bus:InvestorRelations",
+            "bus:MediaRelations",
+            "bus:PrincipalPlaceBusiness",
+            "bus:RegisteredOffice",
+            "bus:RegistrarInformation",
+            "bus:ShareDealingInformation"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Entity contact type [Dimension]",
+        "default_member": "bus:HeadOfficeDefault",
+        "domain_root": "bus:EntityContactTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

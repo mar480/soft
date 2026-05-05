@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_investment_property",
+  "topic_label": "Income Investment Property",
+  "source_hypercubes": [
+    "core:Income-InvestmentPropertyHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-InvestmentPropertyHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-InvestmentProperty",
+      "elr_definition": "9084 - Hypercube - Income - Investment Property",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 23
+}

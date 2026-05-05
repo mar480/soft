@@ -1,0 +1,110 @@
+{
+  "topic_id": "business_combinations_inventories",
+  "topic_label": "Business Combinations Inventories",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINVENTORIES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_inventories",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "member_descendants": {
+          "core:TotalIndividuallyImmaterialBusinessCombinations": [],
+          "core:SpecificBusinessCombination1": [],
+          "core:SpecificBusinessCombination2": [],
+          "core:SpecificBusinessCombination3": [],
+          "core:SpecificBusinessCombination4": [],
+          "core:SpecificBusinessCombination5": [],
+          "core:SpecificBusinessCombination6": [],
+          "core:SpecificBusinessCombination7": [],
+          "core:SpecificBusinessCombination8": [],
+          "core:SpecificBusinessCombination9": [],
+          "core:SpecificBusinessCombination10": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINVENTORIES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_inventories",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:CurrentNon-currentInventoriesDimension",
+      "head_member": "core:TotalCurrentNon-currentInventoriesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CurrentInventories",
+          "core:Non-currentInventories"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentInventoriesDefault",
+        "member_descendants": {
+          "core:CurrentInventories": [],
+          "core:Non-currentInventories": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Current and non-current inventories [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentInventoriesDefault",
+        "domain_root": "core:TotalCurrentNon-currentInventoriesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

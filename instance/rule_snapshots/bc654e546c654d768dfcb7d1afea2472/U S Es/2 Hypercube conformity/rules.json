@@ -1,0 +1,32 @@
+{
+  "topic_id": "u_s_es",
+  "topic_label": "U S Es",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.USES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "u_s_es",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:UnconsolidatedStructuredEntitiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-USEs",
+        "elr_definition": "9220 - Hypercube - USEs",
+        "dimensions": [
+          "core:UnconsolidatedStructuredEntitiesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

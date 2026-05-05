@@ -1,0 +1,35 @@
+{
+  "topic_id": "s_o_c_i_tax",
+  "topic_label": "S O C I Tax",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SOCITAX.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "s_o_c_i_tax",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:SOCI-TaxHypercube",
+          "core:SOCI-TaxHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:EquityClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:TaxJurisdictionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for S O C I Tax. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

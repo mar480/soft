@@ -1,0 +1,57 @@
+{
+  "topic_id": "income",
+  "topic_label": "Income",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOME.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "income",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Income-AssetsHypercube",
+          "core:Income-AssociatesHypercube",
+          "core:Income-BasicHypercube",
+          "core:Income-FinanceLeasesHypercube",
+          "core:Income-JointVenturesHypercube",
+          "core:Income-MainHypercube",
+          "core:Income-ParentsHypercube",
+          "core:Income-SubsidiariesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractDurationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ExceptionalsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:GeographicSegmentsDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:NaturePromiseDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OwnershipAssetsDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SalesChannelDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Income. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

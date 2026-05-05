@@ -1,0 +1,32 @@
+{
+  "topic_id": "u_s_es",
+  "topic_label": "U S Es",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.USES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "u_s_es",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:UnconsolidatedStructuredEntitiesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:UnconsolidatedStructuredEntitiesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for U S Es. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

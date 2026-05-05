@@ -1,0 +1,30 @@
+{
+  "topic_id": "applicable_legislation",
+  "topic_label": "Applicable Legislation",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.APPLICABLELEGISLATION.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "applicable_legislation",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:ApplicableLegislationHypercube"
+        ],
+        "dimensions": [
+          "bus:ApplicableLegislationDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Applicable Legislation. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "topic_id": "balance_sheet",
+  "topic_label": "Balance Sheet",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEET.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "balance_sheet",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Analysis1",
+        "elr_definition": "92601 - Hypercube - Balance Sheet Analysis 1",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BALANCESHEET.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "balance_sheet",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Basic",
+        "elr_definition": "9260 - Hypercube - Balance Sheet - Basic",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

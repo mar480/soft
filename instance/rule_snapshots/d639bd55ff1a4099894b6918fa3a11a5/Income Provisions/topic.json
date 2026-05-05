@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_provisions",
+  "topic_label": "Income Provisions",
+  "source_hypercubes": [
+    "core:Income-ProvisionsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-ProvisionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Provisions",
+      "elr_definition": "9097 - Hypercube - Income - Provisions",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 23
+}

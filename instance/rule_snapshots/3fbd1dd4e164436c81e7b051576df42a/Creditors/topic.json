@@ -1,0 +1,80 @@
+{
+  "topic_id": "creditors",
+  "topic_label": "Creditors",
+  "source_hypercubes": [
+    "core:Creditors-AssociatesHypercube",
+    "core:Creditors-FinanceLeasesHypercube",
+    "core:Creditors-JointVenturesHypercube",
+    "core:Creditors-OtherPartiesHypercube",
+    "core:Creditors-ParentsHypercube",
+    "core:Creditors-SegmentsHypercube",
+    "core:Creditors-SubsidiariesHypercube",
+    "core:CreditorsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:CreditorsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-Analysis1",
+      "elr_definition": "91901 - Hypercube - Creditors - Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:CreditorsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors",
+      "elr_definition": "9190 - Hypercube - Creditors",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Creditors-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-Segments",
+      "elr_definition": "9191 - Hypercube - Creditors - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    },
+    {
+      "hypercube": "core:Creditors-AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-Associates",
+      "elr_definition": "9194 - Hypercube - Creditors - Associates",
+      "occurrence_type": "variant",
+      "variant_label": "Associates"
+    },
+    {
+      "hypercube": "core:Creditors-FinanceLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-FinanceLeases",
+      "elr_definition": "9197 - Hypercube - Creditors - Finance Leases",
+      "occurrence_type": "variant",
+      "variant_label": "Finance Leases"
+    },
+    {
+      "hypercube": "core:Creditors-JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-JointVentures",
+      "elr_definition": "9195 - Hypercube - Creditors - Joint Ventures",
+      "occurrence_type": "variant",
+      "variant_label": "Joint Ventures"
+    },
+    {
+      "hypercube": "core:Creditors-OtherPartiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-OtherParties",
+      "elr_definition": "9196 - Hypercube - Creditors - Other Parties",
+      "occurrence_type": "variant",
+      "variant_label": "Other Parties"
+    },
+    {
+      "hypercube": "core:Creditors-ParentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-Parents",
+      "elr_definition": "9192 - Hypercube - Creditors - Parents",
+      "occurrence_type": "variant",
+      "variant_label": "Parents"
+    },
+    {
+      "hypercube": "core:Creditors-SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Creditors-Subsidiaries",
+      "elr_definition": "9193 - Hypercube - Creditors - Subsidiaries",
+      "occurrence_type": "variant",
+      "variant_label": "Subsidiaries"
+    }
+  ],
+  "rule_count": 49
+}

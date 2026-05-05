@@ -1,0 +1,17 @@
+{
+  "topic_id": "s_o_r_ps_applied",
+  "topic_label": "S O R Ps Applied",
+  "source_hypercubes": [
+    "bus:SORPsAppliedHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:SORPsAppliedHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-SORPsApplied",
+      "elr_definition": "9022 - Hypercube - SORPs Applied",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

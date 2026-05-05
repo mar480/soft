@@ -1,0 +1,34 @@
+{
+  "topic_id": "accounting_standards_applied",
+  "topic_label": "Accounting Standards Applied",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ACCOUNTINGSTANDARDSAPPLIED.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "accounting_standards_applied",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "bus:AccountingStandardsAppliedPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:AccountingStandardsDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "topic_id": "market_risk",
+  "topic_label": "Market Risk",
+  "source_hypercubes": [
+    "core:MarketRiskHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:MarketRiskHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-MarketRisk",
+      "elr_definition": "9200 - Hypercube - Market Risk",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

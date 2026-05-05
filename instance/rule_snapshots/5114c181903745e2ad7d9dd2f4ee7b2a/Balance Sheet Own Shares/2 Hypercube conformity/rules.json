@@ -1,0 +1,34 @@
+{
+  "topic_id": "balance_sheet_own_shares",
+  "topic_label": "Balance Sheet Own Shares",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "balance_sheet_own_shares",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BalanceSheet-OwnSharesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-OwnShares",
+        "elr_definition": "9261 - Hypercube - Balance Sheet - Own Shares",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:InvestmentsMovementsDimension",
+          "bus:EntityShareClassesDimension",
+          "bus:ShareTypesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

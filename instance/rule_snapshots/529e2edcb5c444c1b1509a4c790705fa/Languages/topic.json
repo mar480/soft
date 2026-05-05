@@ -1,0 +1,17 @@
+{
+  "topic_id": "languages",
+  "topic_label": "Languages",
+  "source_hypercubes": [
+    "bus:LanguagesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:LanguagesHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-Languages",
+      "elr_definition": "9003 - Hypercube - Languages",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

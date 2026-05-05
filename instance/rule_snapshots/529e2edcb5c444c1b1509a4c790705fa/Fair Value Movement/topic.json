@@ -1,0 +1,17 @@
+{
+  "topic_id": "fair_value_movement",
+  "topic_label": "Fair Value Movement",
+  "source_hypercubes": [
+    "core:FairValueMovementHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FairValueMovementHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FairValueMovement",
+      "elr_definition": "9202 - Hypercube - Fair Value Movement",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 11
+}

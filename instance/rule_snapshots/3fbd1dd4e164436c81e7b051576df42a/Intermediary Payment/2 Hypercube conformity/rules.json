@@ -1,0 +1,32 @@
+{
+  "topic_id": "intermediary_payment",
+  "topic_label": "Intermediary Payment",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INTERMEDIARYPAYMENT.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "intermediary_payment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IntermediaryPaymentHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IntermediaryPayment-Grouping1",
+        "elr_definition": "9221 - Hypercube - Intermediary Payment Grouping 1",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-IntermediaryPaymentArrangementsGroupingDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "topic_id": "income_operating_leases",
+  "topic_label": "Income Operating Leases",
+  "rule_family": "4 Member validity",
+  "rule_count": 17,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractDurationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:DurationContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContractTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TypeContractHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ExceptionalsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalReportedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GoodsServicesTransfersTimingDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesTransferredToCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomerTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomerTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:NaturePromiseDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:NaturePromiseHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingLeasePurposeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAssetsUnderOperatingLeasesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SalesChannelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GoodsOrServicesSoldHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMEOPERATINGLEASES.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "income_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    }
+  ]
+}

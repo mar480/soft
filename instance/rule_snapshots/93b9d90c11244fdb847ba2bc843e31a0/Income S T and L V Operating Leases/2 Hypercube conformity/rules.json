@@ -1,0 +1,45 @@
+{
+  "topic_id": "income_s_t_and_l_v_operating_leases",
+  "topic_label": "Income S T and L V Operating Leases",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMESTANDLVOPERATINGLEASES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-STLVOperatingLeasesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-STLVOperatingLeases",
+        "elr_definition": "90951 - Hypercube - Income - ST and LV Operating Leases",
+        "dimensions": [
+          "core:OperatingLeasePurposeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

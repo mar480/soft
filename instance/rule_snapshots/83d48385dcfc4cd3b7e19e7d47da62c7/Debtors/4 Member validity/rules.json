@@ -1,0 +1,411 @@
+{
+  "topic_id": "debtors",
+  "topic_label": "Debtors",
+  "rule_family": "4 Member validity",
+  "rule_count": 27,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "common:X-AnalysisDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": []
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceAccountMeasurementTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllowanceAccountDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AllowanceForImpairmentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllowanceForImpairmentHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:AssociatesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAssociatesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.007",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.008",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:CurrencyDenominationFinancialInstrumentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:CurrencyDenominationFinancialInstrumentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.009",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinanceLeaseContractTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllContractTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.010",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialAssetsImpairmentStageDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialAssetsImpairmentStageHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.011",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.012",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentLevelDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalAllLevelsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.013",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ValueTypeHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.014",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalFinancialInstrumentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.015",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:FinancialInstrumentsHeldForSaleDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:FinancialInstrumentsExcludingThoseHeldForSaleDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.016",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:GeographicSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:GeographicSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.017",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:JointVenturesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalJointVenturesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.018",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MajorCustomersDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:MajorCustomersHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.019",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:MaturitiesOrExpirationPeriodsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllPeriods"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.020",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OperatingSegmentsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ReportableOperatingSegmentsHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.021",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:OtherRelatedPartyTypeDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllOtherRelatedPartiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.022",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ParentEntitiesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:AllParentEntitiesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.023",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ProductsServicesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ProductsServicesHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.024",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RegionCountryIssuerRiskDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RegionCountryIssuerRiskHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.025",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.026",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SegmentReconciliationDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:EntityReportedValueAfterAdjustmentsDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEBTORS.MEMBER_VALIDITY.027",
+      "type": "dimension_member_validity",
+      "topic": "debtors",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:SubsidiariesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:TotalSubsidiariesDefault"
+        ]
+      }
+    }
+  ]
+}

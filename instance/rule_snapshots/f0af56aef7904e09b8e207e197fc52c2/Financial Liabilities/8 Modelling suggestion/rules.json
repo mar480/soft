@@ -1,0 +1,70 @@
+{
+  "topic_id": "financial_liabilities",
+  "topic_label": "Financial Liabilities",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALLIABILITIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "financial_liabilities",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:FinancialLiabilities-BasicHypercube",
+          "core:FinancialLiabilities-FullHypercube",
+          "core:FinancialLiabilities-SimpleHypercube",
+          "core:FinancialLiabilities-BankLoanHypercube",
+          "core:FinancialLiabilities-SegmentsHypercube",
+          "core:FinancialLiabilities-BasicHypercube",
+          "core:FinancialLiabilities-FullHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AcquiredIssuedInsuranceContractsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "core:ContractualServiceMarginInsuranceRevenueDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FairValueMovementDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:FinancialLiabilitiesClassesCategoriesDimension",
+          "core:FinancialLiabilitiesReclassificationDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisDimension",
+          "core:InsuranceContractsIssuedReinsuranceContractsHeldDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:MajorCustomersDimension",
+          "core:MarketRiskTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:MovementAnalysisInsurance-NetInsuranceDimension",
+          "core:NetReinsuranceContractsHeldAnalysisDimension",
+          "core:OnerousNon-onerousInsuranceContractsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PositionTypeDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SegmentReconciliationDimension",
+          "core:X-MaterialBankLoanGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Financial Liabilities. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

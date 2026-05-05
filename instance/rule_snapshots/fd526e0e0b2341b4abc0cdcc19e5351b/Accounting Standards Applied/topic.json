@@ -1,0 +1,17 @@
+{
+  "topic_id": "accounting_standards_applied",
+  "topic_label": "Accounting Standards Applied",
+  "source_hypercubes": [
+    "bus:AccountingStandardsAppliedHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:AccountingStandardsAppliedHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountingStandardsApplied",
+      "elr_definition": "9021 - Hypercube - Accounting Standards Applied",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

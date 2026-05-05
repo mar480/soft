@@ -1,0 +1,17 @@
+{
+  "topic_id": "business_combinations_p_p_e",
+  "topic_label": "Business Combinations P P E",
+  "source_hypercubes": [
+    "core:BusinessCombinations-PPEHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-PPE",
+      "elr_definition": "9155 - Hypercube - Business Combinations - PPE",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

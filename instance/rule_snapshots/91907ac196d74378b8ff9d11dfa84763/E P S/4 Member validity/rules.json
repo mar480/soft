@@ -1,0 +1,98 @@
+{
+  "topic_id": "e_p_s",
+  "topic_label": "E P S",
+  "rule_family": "4 Member validity",
+  "rule_count": 6,
+  "rules": [
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.001",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:EntityShareClassesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareClassesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.002",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:GroupCompanyDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:Consolidated"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.003",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:OriginalRevisedDataDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:CurrentlyStatedDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.004",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "bus:ShareTypesDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "bus:AllShareTypesDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.005",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:ContinuingDiscontinuedOperationsTotalDefault"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.EPS.MEMBER_VALIDITY.006",
+      "type": "dimension_member_validity",
+      "topic": "e_p_s",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "dimension": "core:RestatementsFirstTimeAdoptionDimension",
+      "allowed_members": {
+        "from_domain_member_tree": true,
+        "domain_roots": [
+          "core:RestatementsFirstTimeAdoptionHeading"
+        ]
+      }
+    }
+  ]
+}

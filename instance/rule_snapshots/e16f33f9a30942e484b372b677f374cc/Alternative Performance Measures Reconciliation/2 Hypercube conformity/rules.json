@@ -1,0 +1,35 @@
+{
+  "topic_id": "alternative_performance_measures_reconciliation",
+  "topic_label": "Alternative Performance Measures Reconciliation",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ALTERNATIVEPERFORMANCEMEASURESRECONCILIATION.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "alternative_performance_measures_reconciliation",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "direp:AlternativePerformanceMeasuresReconciliationHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-AlternativePerformanceMeasuresReconciliation",
+        "elr_definition": "9610 - Hypercube - Alternative Performance Measures Reconciliation",
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "direp:AlternativePerformanceMeasuresDimension",
+          "direp:ReconcilingAdjustmentsDimension",
+          "direp:TypeExchangeRateDimension",
+          "direp:TypeGrowthRateDimension"
+        ]
+      }
+    }
+  ]
+}

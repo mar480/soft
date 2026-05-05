@@ -1,0 +1,41 @@
+{
+  "topic_id": "operating_leases",
+  "topic_label": "Operating Leases",
+  "source_hypercubes": [
+    "core:OperatingLeases-AssetsHypercube",
+    "core:OperatingLeases-BasicHypercube",
+    "core:OperatingLeases-LiabilitiesHypercube",
+    "core:OperatingLeases-MainHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:OperatingLeases-AssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Assets",
+      "elr_definition": "9117 - Hypercube - Operating Leases - Assets",
+      "occurrence_type": "variant",
+      "variant_label": "Assets"
+    },
+    {
+      "hypercube": "core:OperatingLeases-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Basic",
+      "elr_definition": "9115 - Hypercube - Operating Leases - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:OperatingLeases-LiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Liabilities",
+      "elr_definition": "9118 - Hypercube - Operating Leases - Liabilities",
+      "occurrence_type": "variant",
+      "variant_label": "Liabilities"
+    },
+    {
+      "hypercube": "core:OperatingLeases-MainHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Main",
+      "elr_definition": "9116 - Hypercube - Operating Leases - Main",
+      "occurrence_type": "variant",
+      "variant_label": "Main"
+    }
+  ],
+  "rule_count": 32
+}

@@ -1,0 +1,292 @@
+{
+  "topic_id": "finance_leases",
+  "topic_label": "Finance Leases",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 6,
+  "rules": [
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:AllowanceAccountMeasurementTypeDimension",
+      "head_member": "core:TotalAllowanceAccountDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CollectiveAllowanceAccount",
+          "core:IndividualAllowanceAccount"
+        ],
+        "domain_root": "core:TotalAllowanceAccountDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Allowance account measurement type [Dimension]",
+        "default_member": "core:TotalAllowanceAccountDefault",
+        "domain_root": "core:TotalAllowanceAccountDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:AllowanceForImpairmentDimension",
+      "head_member": "core:CarryingValueDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:AllowanceForImpairmentLoss",
+          "core:BusinessCombinationsIncreaseDecreaseInAllowanceForImpairment",
+          "core:BusinessDivestitureDecreaseInAllowanceForImpairment",
+          "core:ChangesDueToModificationsThatDidNotResultInDerecognition",
+          "core:ChangesInModelsriskParameters",
+          "core:DecreaseDueToChangeInCreditRisk",
+          "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment",
+          "core:FinancialAssetsDerecognisedInPeriod",
+          "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+          "core:FurtherSpecificChange1IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:FurtherSpecificChange2IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:FurtherSpecificChange3IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:ImpactOnYearEndECLExposuresTransferredBetweenStagesDuringYear",
+          "core:ImpairmentCharge",
+          "core:IncreaseDueToChangeInCreditRisk",
+          "core:NewFinancialAssetsOriginatedOrPurchased",
+          "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+          "core:RecoveriesWrite-offsIncreaseInAllowanceForImpairment",
+          "core:ReleaseImpairment",
+          "core:TransferFromStage1To2",
+          "core:TransferFromStage1To3",
+          "core:TransferFromStage2To1",
+          "core:TransferFromStage2To3",
+          "core:TransferFromStage3To1",
+          "core:TransferFromStage3To2",
+          "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment",
+          "core:UnwindDiscountDecreaseInAllowanceForImpairment",
+          "core:ValueBeforeAllowanceForImpairmentLoss",
+          "core:Write-offFinancialAssetsDecreaseInAllowanceForImpairment"
+        ],
+        "domain_root": "core:AllowanceForImpairmentHeading"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Allowance for impairment [Dimension]",
+        "default_member": "core:CarryingValueDefault",
+        "domain_root": "core:AllowanceForImpairmentHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinanceLeaseContractTypeDimension",
+      "head_member": "core:AllContractTypesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:FinanceLeases",
+          "core:FurtherContractType1ComponentTotalContractTypes",
+          "core:FurtherContractType2ComponentTotalContractTypes",
+          "core:FurtherContractType3ComponentTotalContractTypes",
+          "core:HirePurchaseContracts",
+          "core:SaleLeaseback"
+        ],
+        "domain_root": "core:AllContractTypesDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Finance lease contract type [Dimension]",
+        "default_member": "core:AllContractTypesDefault",
+        "domain_root": "core:AllContractTypesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.005",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.FINANCELEASES.DIMAGG.006",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "finance_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "head_member": "core:CarryingValueDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContractualUndiscountedValue",
+          "core:Cost",
+          "core:FairValue",
+          "core:ForAllowanceForImpairmentSeeAllowanceForImpairmentDimensionGuidance",
+          "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance",
+          "core:GrossAmountRecognisedFinancialInstrument",
+          "core:GrossAmountRecognisedFinancialInstrumentOffset",
+          "core:HighGradeNeitherPastDueNorImpaired",
+          "core:ImpairedCarryingValue",
+          "core:NotionalAmountToDeliver",
+          "core:NotionalAmountToReceive",
+          "core:PastDueButNotImpairedCarryingValue",
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments",
+          "core:SpecialMonitoringNeitherPastDueNorImpaired",
+          "core:StandardGradeNeitherPastDueNorImpaired",
+          "core:Sub-standardGradeNeitherPastDueNorImpaired",
+          "core:UnratedNeitherPastDueNorImpaired"
+        ],
+        "domain_root": "core:ValueTypeHeading"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument value type [Dimension]",
+        "default_member": "core:CarryingValueDefault",
+        "domain_root": "core:ValueTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

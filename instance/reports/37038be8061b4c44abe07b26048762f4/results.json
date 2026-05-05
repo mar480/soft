@@ -1,0 +1,502 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\988ef156af1044fba83e3f5bf3a2e8fa_iXBRL_filleted_31122025_(1).html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "evaluated_topic_count": 3,
+  "evaluated_topics": [
+    {
+      "topic_id": "creditors",
+      "topic_label": "Creditors",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 22
+    },
+    {
+      "topic_id": "debtors",
+      "topic_label": "Debtors",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 22
+    },
+    {
+      "topic_id": "property_plant_equipment",
+      "topic_label": "Property, plant and equipment",
+      "relevant": true,
+      "trigger_fact_count": 4,
+      "topic_fact_count": 9
+    }
+  ],
+  "result_count": 16,
+  "summary": {
+    "pass": 16,
+    "fail": 0
+  },
+  "results": [
+    {
+      "rule_id": "AUTO.CREDITORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_009",
+          "fact_010",
+          "fact_051",
+          "fact_052"
+        ],
+        "topic_fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_009",
+          "fact_010",
+          "fact_035",
+          "fact_036",
+          "fact_037",
+          "fact_038",
+          "fact_039",
+          "fact_040",
+          "fact_041",
+          "fact_042",
+          "fact_043",
+          "fact_044",
+          "fact_045",
+          "fact_046",
+          "fact_047",
+          "fact_048",
+          "fact_049",
+          "fact_050",
+          "fact_051",
+          "fact_052"
+        ],
+        "topic_fact_reasons": {
+          "fact_003": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_004": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension"
+          ],
+          "fact_009": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_010": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_035": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_036": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_037": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_038": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_039": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_040": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_041": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_042": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_043": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_044": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_045": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_046": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_047": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_048": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_049": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_050": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_051": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_052": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "creditors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_009",
+          "fact_010",
+          "fact_035",
+          "fact_036",
+          "fact_037",
+          "fact_038",
+          "fact_039",
+          "fact_040",
+          "fact_041",
+          "fact_042",
+          "fact_043",
+          "fact_044",
+          "fact_045",
+          "fact_046",
+          "fact_047",
+          "fact_048",
+          "fact_049",
+          "fact_050",
+          "fact_051",
+          "fact_052"
+        ]
+      }
+    },
+    {
+      "rule_id": "creditors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.CREDITORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "creditors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_041",
+          "fact_042"
+        ],
+        "topic_fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_009",
+          "fact_010",
+          "fact_035",
+          "fact_036",
+          "fact_037",
+          "fact_038",
+          "fact_039",
+          "fact_040",
+          "fact_041",
+          "fact_042",
+          "fact_043",
+          "fact_044",
+          "fact_045",
+          "fact_046",
+          "fact_047",
+          "fact_048",
+          "fact_049",
+          "fact_050",
+          "fact_051",
+          "fact_052"
+        ],
+        "topic_fact_reasons": {
+          "fact_003": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_004": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_009": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_010": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_035": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_036": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_037": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_038": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_039": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_040": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_041": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_042": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_043": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_044": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_045": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_046": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_047": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_048": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_049": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_050": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_051": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ],
+          "fact_052": [
+            "topic_dimensions:core:FinancialInstrumentCurrentNon-currentDimension|core:MaturitiesOrExpirationPeriodsDimension"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "debtors.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_003",
+          "fact_004",
+          "fact_009",
+          "fact_010",
+          "fact_035",
+          "fact_036",
+          "fact_037",
+          "fact_038",
+          "fact_039",
+          "fact_040",
+          "fact_041",
+          "fact_042",
+          "fact_043",
+          "fact_044",
+          "fact_045",
+          "fact_046",
+          "fact_047",
+          "fact_048",
+          "fact_049",
+          "fact_050",
+          "fact_051",
+          "fact_052"
+        ]
+      }
+    },
+    {
+      "rule_id": "debtors.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.DEBTORS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "debtors",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Statement trigger concepts are present and note evidence was found.",
+      "evidence": {
+        "trigger_fact_ids": [
+          "fact_001",
+          "fact_002",
+          "fact_033",
+          "fact_034"
+        ],
+        "topic_fact_ids": [
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034",
+          "fact_106"
+        ],
+        "topic_fact_reasons": {
+          "fact_027": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_028": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_029": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_030": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_031": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_032": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ],
+          "fact_033": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_034": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension",
+            "trigger_concept_with_topic_dimensions"
+          ],
+          "fact_106": [
+            "topic_dimensions:core:PropertyPlantEquipmentClassesDimension"
+          ]
+        }
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.HYPERCUBE_CONFORMITY",
+      "type": "hypercube_conformity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All topic fact dimensions fit at least one allowed hypercube.",
+      "evidence": {
+        "invalid_fact_ids": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "At least one topic fact uses an expected dimension.",
+      "evidence": {
+        "topic_fact_ids": [
+          "fact_027",
+          "fact_028",
+          "fact_029",
+          "fact_030",
+          "fact_031",
+          "fact_032",
+          "fact_033",
+          "fact_034",
+          "fact_106"
+        ]
+      }
+    },
+    {
+      "rule_id": "property_plant_equipment.MEMBER_VALIDITY",
+      "type": "dimension_member_validity",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "All used dimension members are in the discovered member trees.",
+      "evidence": {
+        "invalid_dimension_members": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    },
+    {
+      "rule_id": "AUTO.PPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "status": "pass",
+      "topic": "property_plant_equipment",
+      "message": "Observed roll-up candidates reconcile where head and component facts are present.",
+      "evidence": {
+        "mismatches": []
+      }
+    }
+  ]
+}

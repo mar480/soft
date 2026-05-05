@@ -1,0 +1,17 @@
+{
+  "topic_id": "countries",
+  "topic_label": "Countries",
+  "source_hypercubes": [
+    "bus:CountriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:CountriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-Countries",
+      "elr_definition": "9001 - Hypercube - Countries",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 7
+}

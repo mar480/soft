@@ -1,0 +1,17 @@
+{
+  "topic_id": "audit_firm_contact_info",
+  "topic_label": "Audit Firm Contact Info",
+  "source_hypercubes": [
+    "bus:AuditFirmContactInfoHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:AuditFirmContactInfoHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/business/roles/Hypercube-AuditFirmContactInfo",
+      "elr_definition": "9017 - Hypercube - Audit Firm Contact Info",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 10
+}

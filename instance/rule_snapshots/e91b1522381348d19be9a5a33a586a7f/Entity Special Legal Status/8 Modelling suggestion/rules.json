@@ -1,0 +1,31 @@
+{
+  "topic_id": "entity_special_legal_status",
+  "topic_label": "Entity Special Legal Status",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYSPECIALLEGALSTATUS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "entity_special_legal_status",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:EntitySpecialLegalStatusHypercube"
+        ],
+        "dimensions": [
+          "bus:EntitySpecialLegalStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Entity Special Legal Status. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

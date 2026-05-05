@@ -1,0 +1,37 @@
+{
+  "topic_id": "audit_fees",
+  "topic_label": "Audit Fees",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.AUDITFEES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "audit_fees",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:AuditFeesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ThirdPartyAgentStatusDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

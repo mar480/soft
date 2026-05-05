@@ -1,0 +1,32 @@
+{
+  "topic_id": "provisions",
+  "topic_label": "Provisions",
+  "source_hypercubes": [
+    "core:Provisions-SegmentsHypercube",
+    "core:ProvisionsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:ProvisionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Provisions-Analysis1",
+      "elr_definition": "90461 - Hypercube - Provisions Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:ProvisionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Provisions",
+      "elr_definition": "9046 - Hypercube - Provisions",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Provisions-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Provisions-Segments",
+      "elr_definition": "9047 - Hypercube - Provisions - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 18
+}

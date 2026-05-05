@@ -1,0 +1,41 @@
+{
+  "topic_id": "income_tax",
+  "topic_label": "Income Tax",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMETAX.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "income_tax",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:IncomeTaxHypercube",
+          "core:IncomeTaxHypercube",
+          "core:IncomeTax-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:TaxJurisdictionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Income Tax. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

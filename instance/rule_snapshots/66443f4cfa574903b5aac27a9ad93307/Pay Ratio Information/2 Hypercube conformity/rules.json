@@ -1,0 +1,31 @@
+{
+  "topic_id": "pay_ratio_information",
+  "topic_label": "Pay Ratio Information",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "direp:PayRatioInformationHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pay-Ratio-Information",
+        "elr_definition": "9300 - Hypercube - Pay Ratio Information",
+        "dimensions": [
+          "direp:PayRatioPercentilesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

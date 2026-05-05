@@ -1,0 +1,30 @@
+{
+  "topic_id": "accounts_status",
+  "topic_label": "Accounts Status",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ACCOUNTSSTATUS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "accounts_status",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:AccountsStatusHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsStatus",
+        "elr_definition": "9024 - Hypercube - Accounts Status",
+        "dimensions": [
+          "bus:AccountsStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

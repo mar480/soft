@@ -1,0 +1,73 @@
+{
+  "topic_id": "income",
+  "topic_label": "Income",
+  "source_hypercubes": [
+    "core:Income-AssetsHypercube",
+    "core:Income-AssociatesHypercube",
+    "core:Income-BasicHypercube",
+    "core:Income-FinanceLeasesHypercube",
+    "core:Income-JointVenturesHypercube",
+    "core:Income-MainHypercube",
+    "core:Income-ParentsHypercube",
+    "core:Income-SubsidiariesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-AssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Assets",
+      "elr_definition": "9081 - Hypercube - Income - Assets",
+      "occurrence_type": "variant",
+      "variant_label": "Assets"
+    },
+    {
+      "hypercube": "core:Income-AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Associates",
+      "elr_definition": "9089 - Hypercube - Income - Associates",
+      "occurrence_type": "variant",
+      "variant_label": "Associates"
+    },
+    {
+      "hypercube": "core:Income-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Basic",
+      "elr_definition": "9101 - Hypercube - Income - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:Income-FinanceLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-FinanceLeases",
+      "elr_definition": "9096 - Hypercube - Income - Finance Leases",
+      "occurrence_type": "variant",
+      "variant_label": "Finance Leases"
+    },
+    {
+      "hypercube": "core:Income-JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-JointVentures",
+      "elr_definition": "9090 - Hypercube - Income - Joint Ventures",
+      "occurrence_type": "variant",
+      "variant_label": "Joint Ventures"
+    },
+    {
+      "hypercube": "core:Income-MainHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main",
+      "elr_definition": "9080 - Hypercube - Income - Main",
+      "occurrence_type": "variant",
+      "variant_label": "Main"
+    },
+    {
+      "hypercube": "core:Income-ParentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Parents",
+      "elr_definition": "9099 - Hypercube - Income - Parents",
+      "occurrence_type": "variant",
+      "variant_label": "Parents"
+    },
+    {
+      "hypercube": "core:Income-SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Subsidiaries",
+      "elr_definition": "9088 - Hypercube - Income - Subsidiaries",
+      "occurrence_type": "variant",
+      "variant_label": "Subsidiaries"
+    }
+  ],
+  "rule_count": 41
+}

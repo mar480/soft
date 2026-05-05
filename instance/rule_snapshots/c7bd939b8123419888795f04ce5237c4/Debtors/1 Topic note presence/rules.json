@@ -1,0 +1,92 @@
+{
+  "topic_id": "debtors",
+  "topic_label": "Debtors",
+  "rule_family": "1 Topic note presence",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORS.TOPIC_NOTE.001",
+      "type": "topic_note_presence",
+      "topic": "debtors",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "statement_concepts_present": {
+          "minimum_count": 1,
+          "concepts": [
+            "core:Debtors"
+          ],
+          "source_statement_roles": [
+            "balance_sheet"
+          ],
+          "headline_statement_roles": []
+        }
+      },
+      "expect": {
+        "topic_note_present": true,
+        "topic_primary_items": [
+          "core:Debtors-AssociatesPrimaryItems",
+          "core:Debtors-FinanceLeasesPrimaryItems",
+          "core:Debtors-JointVenturesPrimaryItems",
+          "core:Debtors-OtherPartiesPrimaryItems",
+          "core:Debtors-ParentsPrimaryItems",
+          "core:Debtors-SegmentsPrimaryItems",
+          "core:Debtors-SubsidiariesPrimaryItems",
+          "core:DebtorsPrimaryItems"
+        ],
+        "topic_hypercubes": [
+          "core:Debtors-AssociatesHypercube",
+          "core:Debtors-FinanceLeasesHypercube",
+          "core:Debtors-JointVenturesHypercube",
+          "core:Debtors-OtherPartiesHypercube",
+          "core:Debtors-ParentsHypercube",
+          "core:Debtors-SegmentsHypercube",
+          "core:Debtors-SubsidiariesHypercube",
+          "core:DebtorsHypercube"
+        ]
+      },
+      "taxonomy_basis": {
+        "matched_topic_label": "Debtors",
+        "matched_statement_concept_label": "Debtors",
+        "allowed_non_statement_presentation_roles": [
+          {
+            "role_uri": "http://xbrl.frc.org.uk/fr/core/roles/NotesAndDetailedDisclosuresFRS102",
+            "definition": "302 - Notes and Detailed Disclosures (FRS 102)",
+            "classification": "notes_and_detailed_disclosures"
+          }
+        ],
+        "supplementary_non_statement_presentation_roles": [],
+        "topic_dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      }
+    }
+  ]
+}

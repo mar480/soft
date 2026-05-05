@@ -1,0 +1,17 @@
+{
+  "topic_id": "entity_contact_info",
+  "topic_label": "Entity Contact Info",
+  "source_hypercubes": [
+    "bus:EntityContactInfoHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:EntityContactInfoHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityContactInfo",
+      "elr_definition": "9015 - Hypercube - Entity Contact Info",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}

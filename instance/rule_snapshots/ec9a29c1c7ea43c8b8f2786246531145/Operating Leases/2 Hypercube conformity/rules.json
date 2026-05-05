@@ -1,0 +1,131 @@
+{
+  "topic_id": "operating_leases",
+  "topic_label": "Operating Leases",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.OPERATINGLEASES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:OperatingLeases-AssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Assets",
+        "elr_definition": "9117 - Hypercube - Operating Leases - Assets",
+        "dimensions": [
+          "core:OperatingLeasePurposeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:CreditRatingsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.OPERATINGLEASES.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:OperatingLeases-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Basic",
+        "elr_definition": "9115 - Hypercube - Operating Leases - Basic",
+        "dimensions": [
+          "core:OperatingLeasePurposeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.OPERATINGLEASES.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:OperatingLeases-LiabilitiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Liabilities",
+        "elr_definition": "9118 - Hypercube - Operating Leases - Liabilities",
+        "dimensions": [
+          "core:OperatingLeasePurposeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.OPERATINGLEASES.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "operating_leases",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:OperatingLeases-MainHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Operating-Leases-Main",
+        "elr_definition": "9116 - Hypercube - Operating Leases - Main",
+        "dimensions": [
+          "core:OperatingLeasePurposeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

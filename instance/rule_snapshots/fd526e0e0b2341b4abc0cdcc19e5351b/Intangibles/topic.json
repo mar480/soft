@@ -1,0 +1,54 @@
+{
+  "topic_id": "intangibles",
+  "topic_label": "Intangibles",
+  "source_hypercubes": [
+    "core:Intangibles-RangeHypercube",
+    "core:Intangibles-SegmentsHypercube",
+    "core:IntangiblesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Analysis1",
+      "elr_definition": "90341 - Hypercube - Intangibles Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles",
+      "elr_definition": "9034 - Hypercube - Intangibles",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Grouping1",
+      "elr_definition": "90342 - Hypercube - Intangibles Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "core:IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Grouping2",
+      "elr_definition": "90343 - Hypercube - Intangibles Grouping 2",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 2"
+    },
+    {
+      "hypercube": "core:Intangibles-RangeHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Range",
+      "elr_definition": "9035 - Hypercube - Intangibles - Range",
+      "occurrence_type": "range",
+      "variant_label": "Range"
+    },
+    {
+      "hypercube": "core:Intangibles-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Intangibles-Segments",
+      "elr_definition": "9036 - Hypercube - Intangibles - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 31
+}

@@ -1,0 +1,38 @@
+{
+  "topic_id": "balance_sheet_own_shares",
+  "topic_label": "Balance Sheet Own Shares",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETOWNSHARES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "balance_sheet_own_shares",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:BalanceSheet-OwnSharesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

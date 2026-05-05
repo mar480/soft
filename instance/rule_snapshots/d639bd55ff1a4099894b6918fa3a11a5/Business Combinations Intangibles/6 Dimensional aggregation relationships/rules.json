@@ -1,0 +1,144 @@
+{
+  "topic_id": "business_combinations_intangibles",
+  "topic_label": "Business Combinations Intangibles",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_intangibles",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_intangibles",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:IntangibleAssetClassesDimension",
+      "head_member": "core:TotalIntangibleAssetsIncludingGoodwillDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:AssetsNotYetAvailableForUseIntangibles",
+          "core:BrandNames",
+          "core:ComputerSoftware",
+          "core:CopyrightsPatentsTrademarksServiceOperatingRights",
+          "core:CustomerRelationships",
+          "core:DevelopmentCostsCapitalisedDevelopmentExpenditure",
+          "core:ExplorationLicenses",
+          "core:Goodwill",
+          "core:IntangibleExplorationEvaluationAssets",
+          "core:LicencesFranchises",
+          "core:MastheadsPublishingTitles",
+          "core:MiningRights",
+          "core:NegativeGoodwill",
+          "core:Non-standardIntangibleAssetClass1ComponentIntangibleAssetsOtherThanGoodwill",
+          "core:Non-standardIntangibleAssetClass2ComponentIntangibleAssetsOtherThanGoodwill",
+          "core:Non-standardIntangibleAssetClass3ComponentIntangibleAssetsOtherThanGoodwill",
+          "core:Non-standardIntangibleAssetClass4ComponentIntangibleAssetsOtherThanGoodwill",
+          "core:OtherMiscellaneousIntangibleExplorationEvaluationAssets",
+          "core:OtherResidualIntangibleAssets",
+          "core:PaymentsOnAccount",
+          "core:RecipesFormulaeModelsDesignsPrototypes"
+        ],
+        "domain_root": "core:TotalIntangibleAssetsIncludingGoodwillDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Intangible asset classes [Dimension]",
+        "default_member": "core:TotalIntangibleAssetsIncludingGoodwillDefault",
+        "domain_root": "core:TotalIntangibleAssetsIncludingGoodwillDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_intangibles",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:IntangibleAssetsOwnershipTypeDimension",
+      "head_member": "core:TotalOwnedLeasedIntangibleAssetsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:OwnedIntangibleAssets",
+          "core:Right-of-useIntangibleAssetsArisingFromSaleLeaseback"
+        ],
+        "domain_root": "core:TotalOwnedLeasedIntangibleAssetsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Intangible assets ownership type [Dimension]",
+        "default_member": "core:TotalOwnedLeasedIntangibleAssetsDefault",
+        "domain_root": "core:TotalOwnedLeasedIntangibleAssetsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

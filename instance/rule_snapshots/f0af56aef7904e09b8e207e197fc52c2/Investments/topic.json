@@ -1,0 +1,57 @@
+{
+  "topic_id": "investments",
+  "topic_label": "Investments",
+  "source_hypercubes": [
+    "core:Investments-AssociatesHypercube",
+    "core:Investments-EquitiesHypercube",
+    "core:Investments-JointVenturesHypercube",
+    "core:Investments-OtherPartiesHypercube",
+    "core:Investments-ParentsHypercube",
+    "core:Investments-SubsidiariesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Investments-AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Associates",
+      "elr_definition": "9208 - Hypercube - Investments - Associates",
+      "occurrence_type": "variant",
+      "variant_label": "Associates"
+    },
+    {
+      "hypercube": "core:Investments-EquitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Equities",
+      "elr_definition": "9211 - Hypercube - Investments - Equities",
+      "occurrence_type": "variant",
+      "variant_label": "Equities"
+    },
+    {
+      "hypercube": "core:Investments-JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-JointVentures",
+      "elr_definition": "9209 - Hypercube - Investments - Joint Ventures",
+      "occurrence_type": "variant",
+      "variant_label": "Joint Ventures"
+    },
+    {
+      "hypercube": "core:Investments-OtherPartiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-OtherParties",
+      "elr_definition": "9210 - Hypercube - Investments - Other Parties",
+      "occurrence_type": "variant",
+      "variant_label": "Other Parties"
+    },
+    {
+      "hypercube": "core:Investments-ParentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Parents",
+      "elr_definition": "9206 - Hypercube - Investments - Parents",
+      "occurrence_type": "variant",
+      "variant_label": "Parents"
+    },
+    {
+      "hypercube": "core:Investments-SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Investments-Subsidiaries",
+      "elr_definition": "9207 - Hypercube - Investments - Subsidiaries",
+      "occurrence_type": "variant",
+      "variant_label": "Subsidiaries"
+    }
+  ],
+  "rule_count": 36
+}

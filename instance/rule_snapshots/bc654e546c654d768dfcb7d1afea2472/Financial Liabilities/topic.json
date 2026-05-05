@@ -1,0 +1,63 @@
+{
+  "topic_id": "financial_liabilities",
+  "topic_label": "Financial Liabilities",
+  "source_hypercubes": [
+    "core:FinancialLiabilities-BankLoanHypercube",
+    "core:FinancialLiabilities-BasicHypercube",
+    "core:FinancialLiabilities-FullHypercube",
+    "core:FinancialLiabilities-SegmentsHypercube",
+    "core:FinancialLiabilities-SimpleHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FinancialLiabilities-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Basic-Analysis1",
+      "elr_definition": "90691 - Hypercube - Financial Liabilities - Basic Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-FullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Full-Analysis1",
+      "elr_definition": "90701 - Hypercube - Financial Liabilities - Full Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-SimpleHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Simple",
+      "elr_definition": "9072 - Hypercube - Financial Liabilities - Simple",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-BankLoanHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-BankLoan-Grouping1",
+      "elr_definition": "90702 - Hypercube - Financial Liabilities - Bank Loan Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Segments",
+      "elr_definition": "9071 - Hypercube - Financial Liabilities - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Basic",
+      "elr_definition": "9069 - Hypercube - Financial Liabilities - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:FinancialLiabilities-FullHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialLiabilities-Full",
+      "elr_definition": "9070 - Hypercube - Financial Liabilities - Full",
+      "occurrence_type": "variant",
+      "variant_label": "Full"
+    }
+  ],
+  "rule_count": 47
+}

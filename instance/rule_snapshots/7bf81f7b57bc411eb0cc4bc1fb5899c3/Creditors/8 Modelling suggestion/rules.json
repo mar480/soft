@@ -1,0 +1,59 @@
+{
+  "topic_id": "creditors",
+  "topic_label": "Creditors",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CREDITORS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "creditors",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:CreditorsHypercube",
+          "core:CreditorsHypercube",
+          "core:Creditors-SegmentsHypercube",
+          "core:Creditors-AssociatesHypercube",
+          "core:Creditors-FinanceLeasesHypercube",
+          "core:Creditors-JointVenturesHypercube",
+          "core:Creditors-OtherPartiesHypercube",
+          "core:Creditors-ParentsHypercube",
+          "core:Creditors-SubsidiariesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Creditors. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

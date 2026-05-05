@@ -1,0 +1,192 @@
+{
+  "topic_id": "derivatives_simple",
+  "topic_label": "Derivatives Simple",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "derivatives_simple",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "derivatives_simple",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:DerivativesContractsDimension",
+      "head_member": "core:TotalForAllDerivativesContractsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CapFloorContract",
+          "core:CommodityContract",
+          "core:CommoditySwapContract",
+          "core:EmbeddedDerivativeContract",
+          "core:ForwardContract",
+          "core:ForwardFuturesContract",
+          "core:ForwardOptionContract",
+          "core:ForwardSwapContract",
+          "core:FuturesContract",
+          "core:Non-standardDerivativeContract1ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract2ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract3ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract4ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract5ComponentTotalForDerivativeContracts",
+          "core:OptionContractPurchased",
+          "core:OptionContractWritten",
+          "core:OptionFuturesContract",
+          "core:OptionSwapContract",
+          "core:SpotForwardFuturesContract",
+          "core:SwapContract",
+          "core:SwapForwardContract"
+        ],
+        "domain_root": "core:TotalForAllDerivativesContractsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Derivatives contracts [Dimension]",
+        "default_member": "core:TotalForAllDerivativesContractsDefault",
+        "domain_root": "core:TotalForAllDerivativesContractsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "derivatives_simple",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:DerivativesTypesDimension",
+      "head_member": "core:DerivativeFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:CashFlowHedge",
+          "core:DerivativesHeldForTradingHedgeAccountingNotApplied",
+          "core:FairValueHedge",
+          "core:HedgeNetInvestment"
+        ],
+        "domain_root": "core:DerivativeFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Derivatives types [Dimension]",
+        "default_member": "core:DerivativeFinancialInstrumentsDefault",
+        "domain_root": "core:DerivativeFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "derivatives_simple",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialInstrumentsCostLessImpairment",
+          "core:FinancialInstrumentsDesignatedFairValueThroughProfitOrLoss",
+          "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss",
+          "core:FinancialLiabilitiesAmortisedCost"
+        ],
+        "domain_root": "core:TotalFinancialInstrumentsDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instruments classes and categories [Dimension]",
+        "default_member": "core:TotalFinancialInstrumentsDefault",
+        "domain_root": "core:TotalFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

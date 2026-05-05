@@ -1,0 +1,53 @@
+{
+  "topic_id": "pensions",
+  "topic_label": "Pensions",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PENSIONS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "pensions",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:Post-employmentBenefitPlansDimension",
+      "head_member": "core:TotalForAllPost-employmentBenefitPlansThisTypeOnlyEntityPost-employmentBenefitPlanThisTypeDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:OtherPost-employmentBenefitPlan1",
+          "core:OtherPost-employmentBenefitPlan2",
+          "core:PensionPlan1",
+          "core:PensionPlan2",
+          "core:PensionPlan3",
+          "core:PensionPlan4",
+          "core:PensionPlan5",
+          "core:PensionPlan6",
+          "core:Post-employmentMedicalPlan1",
+          "core:Post-employmentMedicalPlan2",
+          "core:TotalForAllPensionPlansExcludingMedicalOtherPlans"
+        ],
+        "domain_root": "core:TotalForAllPost-employmentBenefitPlansThisTypeOnlyEntityPost-employmentBenefitPlanThisTypeDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Post-employment benefit plans [Dimension]",
+        "default_member": "core:TotalForAllPost-employmentBenefitPlansThisTypeOnlyEntityPost-employmentBenefitPlanThisTypeDefault",
+        "domain_root": "core:TotalForAllPost-employmentBenefitPlansThisTypeOnlyEntityPost-employmentBenefitPlanThisTypeDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

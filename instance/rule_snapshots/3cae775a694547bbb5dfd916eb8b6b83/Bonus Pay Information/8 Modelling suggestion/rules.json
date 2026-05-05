@@ -1,0 +1,31 @@
+{
+  "topic_id": "bonus_pay_information",
+  "topic_label": "Bonus Pay Information",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BONUSPAYINFORMATION.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "bonus_pay_information",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "direp:BonusPayInformationHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "direp:GPGGenderDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Bonus Pay Information. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

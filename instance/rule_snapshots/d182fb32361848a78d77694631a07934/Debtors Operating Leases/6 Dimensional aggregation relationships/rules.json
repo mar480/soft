@@ -1,0 +1,727 @@
+{
+  "topic_id": "debtors_operating_leases",
+  "topic_label": "Debtors Operating Leases",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 8,
+  "rules": [
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:AllowanceAccountMeasurementTypeDimension",
+      "head_member": "core:TotalAllowanceAccountDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CollectiveAllowanceAccount",
+          "core:IndividualAllowanceAccount"
+        ],
+        "domain_root": "core:TotalAllowanceAccountDefault",
+        "member_descendants": {
+          "core:IndividualAllowanceAccount": [],
+          "core:CollectiveAllowanceAccount": [],
+          "core:CreditLossesIncurredButNotObserved": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Allowance account measurement type [Dimension]",
+        "default_member": "core:TotalAllowanceAccountDefault",
+        "domain_root": "core:TotalAllowanceAccountDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:AllowanceForImpairmentDimension",
+      "head_member": "core:CarryingValueDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:AllowanceForImpairmentLoss",
+          "core:BusinessCombinationsIncreaseDecreaseInAllowanceForImpairment",
+          "core:BusinessDivestitureDecreaseInAllowanceForImpairment",
+          "core:ChangesDueToModificationsThatDidNotResultInDerecognition",
+          "core:ChangesInModelsriskParameters",
+          "core:DecreaseDueToChangeInCreditRisk",
+          "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment",
+          "core:DisposalsDiscontinuedOperationsDecreaseIncreaseInAllowanceForImpairment",
+          "core:FinancialAssetsDerecognisedInPeriod",
+          "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+          "core:ForeignExchangeOtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+          "core:FurtherSpecificChange1IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:FurtherSpecificChange2IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:FurtherSpecificChange3IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+          "core:ImpactOnYearEndECLExposuresTransferredBetweenStagesDuringYear",
+          "core:ImpairmentCharge",
+          "core:ImpairmentChargeRelease",
+          "core:IncreaseDueToChangeInCreditRisk",
+          "core:MovementInAllowanceForImpairmentLossAllowanceAccountHeading",
+          "core:NewFinancialAssetsOriginatedOrPurchased",
+          "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+          "core:RecoveriesWrite-offsIncreaseInAllowanceForImpairment",
+          "core:ReleaseImpairment",
+          "core:TransferFromStage1To2",
+          "core:TransferFromStage1To3",
+          "core:TransferFromStage2To1",
+          "core:TransferFromStage2To3",
+          "core:TransferFromStage3To1",
+          "core:TransferFromStage3To2",
+          "core:TransferToStage1",
+          "core:TransferToStage2",
+          "core:TransferToStage3",
+          "core:TransfersBetweenExpectedCreditLossStagesHeading",
+          "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment",
+          "core:UnwindDiscountDecreaseInAllowanceForImpairment",
+          "core:ValueBeforeAllowanceForImpairmentLoss",
+          "core:Write-offFinancialAssetsDecreaseInAllowanceForImpairment"
+        ],
+        "domain_root": "core:AllowanceForImpairmentHeading",
+        "member_descendants": {
+          "core:AllowanceForImpairmentLoss": [],
+          "core:ValueBeforeAllowanceForImpairmentLoss": [],
+          "core:TransferFromStage2To1": [],
+          "core:TransferFromStage3To1": [],
+          "core:TransferToStage1": [
+            "core:TransferFromStage2To1",
+            "core:TransferFromStage3To1"
+          ],
+          "core:TransferFromStage1To2": [],
+          "core:TransferFromStage3To2": [],
+          "core:TransferToStage2": [
+            "core:TransferFromStage1To2",
+            "core:TransferFromStage3To2"
+          ],
+          "core:TransferFromStage1To3": [],
+          "core:TransferFromStage2To3": [],
+          "core:TransferToStage3": [
+            "core:TransferFromStage1To3",
+            "core:TransferFromStage2To3"
+          ],
+          "core:TransfersBetweenExpectedCreditLossStagesHeading": [
+            "core:TransferFromStage1To2",
+            "core:TransferFromStage1To3",
+            "core:TransferFromStage2To1",
+            "core:TransferFromStage2To3",
+            "core:TransferFromStage3To1",
+            "core:TransferFromStage3To2",
+            "core:TransferToStage1",
+            "core:TransferToStage2",
+            "core:TransferToStage3"
+          ],
+          "core:IncreaseDueToChangeInCreditRisk": [],
+          "core:DecreaseDueToChangeInCreditRisk": [],
+          "core:ChangesDueToModificationsThatDidNotResultInDerecognition": [],
+          "core:ChangesInModelsriskParameters": [],
+          "core:NewFinancialAssetsOriginatedOrPurchased": [],
+          "core:ImpactOnYearEndECLExposuresTransferredBetweenStagesDuringYear": [],
+          "core:FinancialAssetsDerecognisedInPeriod": [],
+          "core:ImpairmentCharge": [],
+          "core:ReleaseImpairment": [],
+          "core:ImpairmentChargeRelease": [
+            "core:ImpairmentCharge",
+            "core:ReleaseImpairment"
+          ],
+          "core:BusinessCombinationsIncreaseDecreaseInAllowanceForImpairment": [],
+          "core:BusinessDivestitureDecreaseInAllowanceForImpairment": [],
+          "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment": [],
+          "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment": [],
+          "core:DisposalsDiscontinuedOperationsDecreaseIncreaseInAllowanceForImpairment": [
+            "core:BusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment"
+          ],
+          "core:Write-offFinancialAssetsDecreaseInAllowanceForImpairment": [],
+          "core:RecoveriesWrite-offsIncreaseInAllowanceForImpairment": [],
+          "core:UnwindDiscountDecreaseInAllowanceForImpairment": [],
+          "core:FurtherSpecificChange1IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement": [],
+          "core:FurtherSpecificChange2IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement": [],
+          "core:FurtherSpecificChange3IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement": [],
+          "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment": [],
+          "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment": [],
+          "core:ForeignExchangeOtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment": [
+            "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment"
+          ],
+          "core:MovementInAllowanceForImpairmentLossAllowanceAccountHeading": [
+            "core:BusinessCombinationsIncreaseDecreaseInAllowanceForImpairment",
+            "core:BusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:ChangesDueToModificationsThatDidNotResultInDerecognition",
+            "core:ChangesInModelsriskParameters",
+            "core:DecreaseDueToChangeInCreditRisk",
+            "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:DisposalsDiscontinuedOperationsDecreaseIncreaseInAllowanceForImpairment",
+            "core:FinancialAssetsDerecognisedInPeriod",
+            "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:ForeignExchangeOtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:FurtherSpecificChange1IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:FurtherSpecificChange2IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:FurtherSpecificChange3IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:ImpactOnYearEndECLExposuresTransferredBetweenStagesDuringYear",
+            "core:ImpairmentCharge",
+            "core:ImpairmentChargeRelease",
+            "core:IncreaseDueToChangeInCreditRisk",
+            "core:NewFinancialAssetsOriginatedOrPurchased",
+            "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:RecoveriesWrite-offsIncreaseInAllowanceForImpairment",
+            "core:ReleaseImpairment",
+            "core:TransferFromStage1To2",
+            "core:TransferFromStage1To3",
+            "core:TransferFromStage2To1",
+            "core:TransferFromStage2To3",
+            "core:TransferFromStage3To1",
+            "core:TransferFromStage3To2",
+            "core:TransferToStage1",
+            "core:TransferToStage2",
+            "core:TransferToStage3",
+            "core:TransfersBetweenExpectedCreditLossStagesHeading",
+            "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment",
+            "core:UnwindDiscountDecreaseInAllowanceForImpairment",
+            "core:Write-offFinancialAssetsDecreaseInAllowanceForImpairment"
+          ],
+          "core:AllowanceForImpairmentHeading": [
+            "core:AllowanceForImpairmentLoss",
+            "core:BusinessCombinationsIncreaseDecreaseInAllowanceForImpairment",
+            "core:BusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:ChangesDueToModificationsThatDidNotResultInDerecognition",
+            "core:ChangesInModelsriskParameters",
+            "core:DecreaseDueToChangeInCreditRisk",
+            "core:DiscontinuedOperationsDisposalsOtherThanBusinessDivestitureDecreaseInAllowanceForImpairment",
+            "core:DisposalsDiscontinuedOperationsDecreaseIncreaseInAllowanceForImpairment",
+            "core:FinancialAssetsDerecognisedInPeriod",
+            "core:ForeignExchangeAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:ForeignExchangeOtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:FurtherSpecificChange1IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:FurtherSpecificChange2IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:FurtherSpecificChange3IncreaseDecreaseInAllowanceForImpairmentComponentTotalMovement",
+            "core:ImpactOnYearEndECLExposuresTransferredBetweenStagesDuringYear",
+            "core:ImpairmentCharge",
+            "core:ImpairmentChargeRelease",
+            "core:IncreaseDueToChangeInCreditRisk",
+            "core:MovementInAllowanceForImpairmentLossAllowanceAccountHeading",
+            "core:NewFinancialAssetsOriginatedOrPurchased",
+            "core:OtherAdjustmentsIncreaseDecreaseInAllowanceForImpairment",
+            "core:RecoveriesWrite-offsIncreaseInAllowanceForImpairment",
+            "core:ReleaseImpairment",
+            "core:TransferFromStage1To2",
+            "core:TransferFromStage1To3",
+            "core:TransferFromStage2To1",
+            "core:TransferFromStage2To3",
+            "core:TransferFromStage3To1",
+            "core:TransferFromStage3To2",
+            "core:TransferToStage1",
+            "core:TransferToStage2",
+            "core:TransferToStage3",
+            "core:TransfersBetweenExpectedCreditLossStagesHeading",
+            "core:TransfersToFromAssetsHeldForSaleDecreaseIncreaseInAllowanceForImpairment",
+            "core:UnwindDiscountDecreaseInAllowanceForImpairment",
+            "core:ValueBeforeAllowanceForImpairmentLoss",
+            "core:Write-offFinancialAssetsDecreaseInAllowanceForImpairment"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Allowance for impairment [Dimension]",
+        "default_member": "core:CarryingValueDefault",
+        "domain_root": "core:AllowanceForImpairmentHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:ContinuingDiscontinuedOperationsDimension",
+      "head_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:ContinuingOperations",
+          "core:DiscontinuedOperations",
+          "core:Non-currentAssetsDisposalGroupsHeldForSale",
+          "core:SpecificDiscontinuedOperation1",
+          "core:SpecificDiscontinuedOperation2",
+          "core:SpecificDiscontinuedOperation3",
+          "core:SpecificDiscontinuedOperation4",
+          "core:SpecificDiscontinuedOperation5",
+          "core:SpecificDiscontinuedOperation6",
+          "core:SpecificDiscontinuedOperation7",
+          "core:SpecificDiscontinuedOperation8",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+        ],
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "member_descendants": {
+          "core:ContinuingOperations": [],
+          "core:SpecificDiscontinuedOperation1": [],
+          "core:SpecificDiscontinuedOperation2": [],
+          "core:SpecificDiscontinuedOperation3": [],
+          "core:SpecificDiscontinuedOperation4": [],
+          "core:SpecificDiscontinuedOperation5": [],
+          "core:SpecificDiscontinuedOperation6": [],
+          "core:SpecificDiscontinuedOperation7": [],
+          "core:SpecificDiscontinuedOperation8": [],
+          "core:DiscontinuedOperations": [
+            "core:SpecificDiscontinuedOperation1",
+            "core:SpecificDiscontinuedOperation2",
+            "core:SpecificDiscontinuedOperation3",
+            "core:SpecificDiscontinuedOperation4",
+            "core:SpecificDiscontinuedOperation5",
+            "core:SpecificDiscontinuedOperation6",
+            "core:SpecificDiscontinuedOperation7",
+            "core:SpecificDiscontinuedOperation8"
+          ],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7": [],
+          "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8": [],
+          "core:Non-currentAssetsDisposalGroupsHeldForSale": [
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale1",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale2",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale3",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale4",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale5",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale6",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale7",
+            "core:SpecificNon-currentAssetsDisposalGroupHeldForSale8"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Continuing and discontinued operations [Dimension]",
+        "default_member": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "domain_root": "core:ContinuingDiscontinuedOperationsTotalDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "member_descendants": {
+          "core:CurrentFinancialInstruments": [],
+          "core:Non-currentFinancialInstruments": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.005",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentLevelDimension",
+      "head_member": "core:TotalAllLevelsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:Level1",
+          "core:Level2",
+          "core:Level3"
+        ],
+        "domain_root": "core:TotalAllLevelsDefault",
+        "member_descendants": {
+          "core:Level1": [],
+          "core:Level2": [],
+          "core:Level3": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument level [Dimension]",
+        "default_member": "core:TotalAllLevelsDefault",
+        "domain_root": "core:TotalAllLevelsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.006",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentValueTypeDimension",
+      "head_member": "core:CarryingValueDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:ContractualUndiscountedValue",
+          "core:Cost",
+          "core:EffectOffsettingForFinancialInstrumentsHeading",
+          "core:FairValue",
+          "core:ForAllowanceForImpairmentSeeAllowanceForImpairmentDimensionGuidance",
+          "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance",
+          "core:GrossAmountRecognisedFinancialInstrument",
+          "core:GrossAmountRecognisedFinancialInstrumentOffset",
+          "core:HighGradeNeitherPastDueNorImpaired",
+          "core:ImpairedCarryingValue",
+          "core:NeitherPastDueNorImpairedCarryingValue",
+          "core:NetAmountAfterDeductingAmountsNotSetOffFromNetAmountPresentedInBalanceSheet",
+          "core:NotionalAmount",
+          "core:NotionalAmountToDeliver",
+          "core:NotionalAmountToReceive",
+          "core:PastDueButNotImpairedCarryingValue",
+          "core:PastDueOrImpairedCarryingValue",
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments",
+          "core:RelatedAmountsNotSetOffInBalanceSheetFinancialInstrumentsCollateral",
+          "core:SpecialMonitoringNeitherPastDueNorImpaired",
+          "core:StandardGradeNeitherPastDueNorImpaired",
+          "core:Sub-standardGradeNeitherPastDueNorImpaired",
+          "core:UnratedNeitherPastDueNorImpaired"
+        ],
+        "domain_root": "core:ValueTypeHeading",
+        "member_descendants": {
+          "core:Cost": [],
+          "core:FairValue": [],
+          "core:ContractualUndiscountedValue": [],
+          "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance": [],
+          "core:GrossAmountRecognisedFinancialInstrument": [],
+          "core:GrossAmountRecognisedFinancialInstrumentOffset": [],
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments": [],
+          "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral": [],
+          "core:RelatedAmountsNotSetOffInBalanceSheetFinancialInstrumentsCollateral": [
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments"
+          ],
+          "core:NetAmountAfterDeductingAmountsNotSetOffFromNetAmountPresentedInBalanceSheet": [
+            "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance",
+            "core:GrossAmountRecognisedFinancialInstrument",
+            "core:GrossAmountRecognisedFinancialInstrumentOffset",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments",
+            "core:RelatedAmountsNotSetOffInBalanceSheetFinancialInstrumentsCollateral"
+          ],
+          "core:EffectOffsettingForFinancialInstrumentsHeading": [
+            "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance",
+            "core:GrossAmountRecognisedFinancialInstrument",
+            "core:GrossAmountRecognisedFinancialInstrumentOffset",
+            "core:NetAmountAfterDeductingAmountsNotSetOffFromNetAmountPresentedInBalanceSheet",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments",
+            "core:RelatedAmountsNotSetOffInBalanceSheetFinancialInstrumentsCollateral"
+          ],
+          "core:PastDueButNotImpairedCarryingValue": [],
+          "core:ImpairedCarryingValue": [],
+          "core:PastDueOrImpairedCarryingValue": [
+            "core:ImpairedCarryingValue",
+            "core:PastDueButNotImpairedCarryingValue"
+          ],
+          "core:HighGradeNeitherPastDueNorImpaired": [],
+          "core:StandardGradeNeitherPastDueNorImpaired": [],
+          "core:Sub-standardGradeNeitherPastDueNorImpaired": [],
+          "core:SpecialMonitoringNeitherPastDueNorImpaired": [],
+          "core:UnratedNeitherPastDueNorImpaired": [],
+          "core:NeitherPastDueNorImpairedCarryingValue": [
+            "core:HighGradeNeitherPastDueNorImpaired",
+            "core:SpecialMonitoringNeitherPastDueNorImpaired",
+            "core:StandardGradeNeitherPastDueNorImpaired",
+            "core:Sub-standardGradeNeitherPastDueNorImpaired",
+            "core:UnratedNeitherPastDueNorImpaired"
+          ],
+          "core:NotionalAmountToReceive": [],
+          "core:NotionalAmountToDeliver": [],
+          "core:NotionalAmount": [
+            "core:NotionalAmountToDeliver",
+            "core:NotionalAmountToReceive"
+          ],
+          "core:ForAllowanceForImpairmentSeeAllowanceForImpairmentDimensionGuidance": [],
+          "core:ValueTypeHeading": [
+            "core:ContractualUndiscountedValue",
+            "core:Cost",
+            "core:EffectOffsettingForFinancialInstrumentsHeading",
+            "core:FairValue",
+            "core:ForAllowanceForImpairmentSeeAllowanceForImpairmentDimensionGuidance",
+            "core:ForNetAmountPresentedInBalanceSheetUseCarryingValueDefaultGuidance",
+            "core:GrossAmountRecognisedFinancialInstrument",
+            "core:GrossAmountRecognisedFinancialInstrumentOffset",
+            "core:HighGradeNeitherPastDueNorImpaired",
+            "core:ImpairedCarryingValue",
+            "core:NeitherPastDueNorImpairedCarryingValue",
+            "core:NetAmountAfterDeductingAmountsNotSetOffFromNetAmountPresentedInBalanceSheet",
+            "core:NotionalAmount",
+            "core:NotionalAmountToDeliver",
+            "core:NotionalAmountToReceive",
+            "core:PastDueButNotImpairedCarryingValue",
+            "core:PastDueOrImpairedCarryingValue",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialCollateral",
+            "core:RelatedAmountNotSetOffInBalanceSheetFinancialInstruments",
+            "core:RelatedAmountsNotSetOffInBalanceSheetFinancialInstrumentsCollateral",
+            "core:SpecialMonitoringNeitherPastDueNorImpaired",
+            "core:StandardGradeNeitherPastDueNorImpaired",
+            "core:Sub-standardGradeNeitherPastDueNorImpaired",
+            "core:UnratedNeitherPastDueNorImpaired"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument value type [Dimension]",
+        "default_member": "core:CarryingValueDefault",
+        "domain_root": "core:ValueTypeHeading",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.007",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:FinancialAssetsAmortisedCost",
+          "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialAssetsFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome",
+          "core:FinancialInstrumentsAmortisedCost",
+          "core:FinancialInstrumentsCostLessImpairment",
+          "core:FinancialInstrumentsDesignatedFairValueThroughProfitOrLoss",
+          "core:FinancialInstrumentsFairValue",
+          "core:FinancialInstrumentsFairValueThroughProfitOrLoss",
+          "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss",
+          "core:FinancialLiabilitiesAmortisedCost"
+        ],
+        "domain_root": "core:TotalFinancialInstrumentsDefault",
+        "member_descendants": {
+          "core:LoansReceivables": [],
+          "core:Held-to-maturityFinancialAssets": [],
+          "core:FinancialAssetsAmortisedCost": [
+            "core:Held-to-maturityFinancialAssets",
+            "core:LoansReceivables"
+          ],
+          "core:FinancialLiabilitiesAmortisedCost": [],
+          "core:FinancialInstrumentsAmortisedCost": [
+            "core:FinancialAssetsAmortisedCost",
+            "core:FinancialLiabilitiesAmortisedCost",
+            "core:Held-to-maturityFinancialAssets",
+            "core:LoansReceivables"
+          ],
+          "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss": [],
+          "core:FinancialInstrumentsDesignatedFairValueThroughProfitOrLoss": [],
+          "core:FinancialInstrumentsHeldForTrading": [],
+          "core:FinancialInstrumentsFairValueThroughProfitOrLoss": [
+            "core:FinancialInstrumentsDesignatedFairValueThroughProfitOrLoss",
+            "core:FinancialInstrumentsHeldForTrading",
+            "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss"
+          ],
+          "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome": [],
+          "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome": [],
+          "core:FinancialAssetsFairValueThroughOtherComprehensiveIncome": [
+            "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome",
+            "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome"
+          ],
+          "core:FinancialInstrumentsDesignatedFairValueThroughOtherComprehensiveIncome": [],
+          "core:Available-for-saleFinancialAssets": [],
+          "core:FinancialInstrumentsFairValue": [
+            "core:Available-for-saleFinancialAssets",
+            "core:FinancialAssetsDesignatedFairValueThroughOtherComprehensiveIncome",
+            "core:FinancialAssetsFairValueThroughOtherComprehensiveIncome",
+            "core:FinancialAssetsMandatorilyMeasuredFairValueThroughOtherComprehensiveIncome",
+            "core:FinancialInstrumentsDesignatedFairValueThroughOtherComprehensiveIncome",
+            "core:FinancialInstrumentsDesignatedFairValueThroughProfitOrLoss",
+            "core:FinancialInstrumentsFairValueThroughProfitOrLoss",
+            "core:FinancialInstrumentsHeldForTrading",
+            "core:FinancialInstrumentsMandatorilyMeasuredFairValueThroughProfitOrLoss"
+          ],
+          "core:FinancialInstrumentsCostLessImpairment": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instruments classes and categories [Dimension]",
+        "default_member": "core:TotalFinancialInstrumentsDefault",
+        "domain_root": "core:TotalFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.DEBTORSOPERATINGLEASES.DIMAGG.008",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "debtors_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:OperatingLeasePurposeDimension",
+      "head_member": "core:TotalAssetsUnderOperatingLeasesDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:LandBuildingsUnderOperatingLeases",
+          "core:OtherAssetsUnderOperatingLeases",
+          "core:PlantEquipmentOtherAssetsUnderOperatingLeases",
+          "core:PlantEquipmentUnderOperatingLeases"
+        ],
+        "domain_root": "core:TotalAssetsUnderOperatingLeasesDefault",
+        "member_descendants": {
+          "core:LandBuildingsUnderOperatingLeases": [],
+          "core:PlantEquipmentUnderOperatingLeases": [],
+          "core:OtherAssetsUnderOperatingLeases": [],
+          "core:PlantEquipmentOtherAssetsUnderOperatingLeases": [
+            "core:OtherAssetsUnderOperatingLeases",
+            "core:PlantEquipmentUnderOperatingLeases"
+          ]
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Operating lease purpose [Dimension]",
+        "default_member": "core:TotalAssetsUnderOperatingLeasesDefault",
+        "domain_root": "core:TotalAssetsUnderOperatingLeasesDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

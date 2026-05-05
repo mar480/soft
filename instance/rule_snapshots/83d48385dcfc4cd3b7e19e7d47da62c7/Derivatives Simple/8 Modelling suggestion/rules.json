@@ -1,0 +1,35 @@
+{
+  "topic_id": "derivatives_simple",
+  "topic_label": "Derivatives Simple",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "derivatives_simple",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Derivatives-SimpleHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:DerivativePurposeDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativesTypesDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Derivatives Simple. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

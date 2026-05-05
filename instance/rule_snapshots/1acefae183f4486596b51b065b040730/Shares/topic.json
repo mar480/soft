@@ -1,0 +1,31 @@
+{
+  "topic_id": "shares",
+  "topic_label": "Shares",
+  "source_hypercubes": [
+    "bus:SharesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:SharesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Shares-Analysis1",
+      "elr_definition": "90111 - Hypercube - Shares Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "bus:SharesHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-Shares",
+      "elr_definition": "9011 - Hypercube - Shares",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "bus:SharesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Shares-Grouping1",
+      "elr_definition": "90112 - Hypercube - Shares Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 13
+}

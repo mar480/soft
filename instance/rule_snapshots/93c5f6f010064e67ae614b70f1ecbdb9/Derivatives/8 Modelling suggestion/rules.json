@@ -1,0 +1,61 @@
+{
+  "topic_id": "derivatives",
+  "topic_label": "Derivatives",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "derivatives",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Derivatives-SegmentsHypercube",
+          "core:Derivatives-BasicHypercube",
+          "core:Derivatives-FullHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CreditRatingsDimension",
+          "core:CreditRiskExposureDimension",
+          "core:CreditRiskInternalGradeRatingsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:DerivativePurposeDimension",
+          "core:DerivativesContractsDimension",
+          "core:DerivativesTypesDimension",
+          "core:FairValueMeasurementTypeDimension",
+          "core:FairValueMovementDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentLevelDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:IndustryConcentrationRiskDimension",
+          "core:InterestRateTypeDimension",
+          "core:LiquidityFeaturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:MajorCustomersDimension",
+          "core:MarketRiskTypeDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PositionTypeDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Derivatives. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

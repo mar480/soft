@@ -1,0 +1,48 @@
+{
+  "topic_id": "income_business_combinations",
+  "topic_label": "Income Business Combinations",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMEBUSINESSCOMBINATIONS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "income_business_combinations",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:Income-BusinessCombinationsPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ContractDurationDimension",
+          "core:ContractTypeDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:MajorCustomersDimension",
+          "core:NaturePromiseDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SalesChannelDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      }
+    }
+  ]
+}

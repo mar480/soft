@@ -1,0 +1,17 @@
+{
+  "topic_id": "associates_countries",
+  "topic_label": "Associates Countries",
+  "source_hypercubes": [
+    "core:Associates-CountriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Associates-CountriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Associates-Countries",
+      "elr_definition": "9217 - Hypercube - Associates - Countries",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 8
+}

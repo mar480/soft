@@ -1,0 +1,39 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "rule_family": "5 Concept arithmetic relationships",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.EQUITYANDSOCI.ARITH.001",
+      "type": "concept_arithmetic_relationship",
+      "topic": "equity_and_soci",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "discovery_mode": "role_aware_presentation_descendants_from_observed_head_facts",
+      "candidate_requirements": {
+        "minimum_component_concepts": 1,
+        "maximum_component_concepts": 8,
+        "numeric_only": true,
+        "same_period_type": true,
+        "same_unit_kind": true,
+        "allow_intermediate_totals": true
+      },
+      "match": {
+        "period": "same",
+        "unit": "same",
+        "all_dimensions": "same_except_allowed_component_analysis_dimensions"
+      },
+      "allowed_component_dimension_variance": [
+        "common:X-AnalysisDimension"
+      ],
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "reason_type": "presentation_subtotal",
+        "topic_source": "role_aware_presentation_descendants",
+        "reason": "The taxonomy presentation structure for the topic provides concrete descendant concepts that can act as subtotal components when observed in the same scoped context."
+      }
+    }
+  ]
+}

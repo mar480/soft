@@ -1,0 +1,43 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PPE.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "property_plant_equipment",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:PPEHypercube",
+          "core:PPEHypercube",
+          "core:PPE-RangeHypercube",
+          "core:PPE-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:PPEOwnershipDimension",
+          "core:ProductsServicesDimension",
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Property, plant and equipment. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

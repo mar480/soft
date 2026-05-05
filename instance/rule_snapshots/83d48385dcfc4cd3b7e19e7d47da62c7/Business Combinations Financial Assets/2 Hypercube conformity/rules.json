@@ -1,0 +1,59 @@
+{
+  "topic_id": "business_combinations_financial_assets",
+  "topic_label": "Business Combinations Financial Assets",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations_financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-FinancialAssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinancialAssets-Analysis1",
+        "elr_definition": "91601 - Hypercube - Business Combinations - Financial Assets Analysis 1",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSFINANCIALASSETS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations_financial_assets",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-FinancialAssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinancialAssets",
+        "elr_definition": "9160 - Hypercube - Business Combinations - Financial Assets",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

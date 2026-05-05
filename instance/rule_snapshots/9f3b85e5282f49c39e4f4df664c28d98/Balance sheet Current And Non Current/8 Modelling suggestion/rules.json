@@ -1,0 +1,38 @@
+{
+  "topic_id": "balance_sheet_current_and_non_current",
+  "topic_label": "Balance sheet Current And Non Current",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BALANCESHEETCURRENTANDNONCURRENT.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "balance_sheet_current_and_non_current",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:BalanceSheet-CurrentNon-CurrentHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Balance sheet Current And Non Current. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

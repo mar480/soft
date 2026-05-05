@@ -1,0 +1,31 @@
+{
+  "topic_id": "supplier_finance_arrangements",
+  "topic_label": "Supplier Finance Arrangements",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SUPPLIERFINANCEARRANGEMENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "supplier_finance_arrangements",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:SupplierFinanceArrangementsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SupplierFinanceArrangementsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Supplier Finance Arrangements. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "topic_id": "related_parties_balances",
+  "topic_label": "Related Parties Balances",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.RELATEDPARTIESBALANCES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "related_parties_balances",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:RelatedParties-InstrumentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:RelatedPartiesDimension",
+          "core:RelatedPartyTransactionTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Related Parties Balances. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

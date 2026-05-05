@@ -1,0 +1,17 @@
+{
+  "topic_id": "entity_trading_status",
+  "topic_label": "Entity Trading Status",
+  "source_hypercubes": [
+    "bus:EntityTradingStatusHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:EntityTradingStatusHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-EntityTradingStatus",
+      "elr_definition": "9012 - Hypercube - Entity Trading Status",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

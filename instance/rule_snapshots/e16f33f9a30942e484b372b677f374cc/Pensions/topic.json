@@ -1,0 +1,39 @@
+{
+  "topic_id": "pensions",
+  "topic_label": "Pensions",
+  "source_hypercubes": [
+    "core:Pensions-SegmentsHypercube",
+    "core:PensionsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:PensionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Analysis1",
+      "elr_definition": "92301 - Hypercube - Pensions - Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:PensionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions",
+      "elr_definition": "9230 - Hypercube - Pensions",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:PensionsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Grouping1",
+      "elr_definition": "92302 - Hypercube - Pensions - Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "core:Pensions-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Segments",
+      "elr_definition": "9231 - Hypercube - Pensions - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "rule_count": 20
+}

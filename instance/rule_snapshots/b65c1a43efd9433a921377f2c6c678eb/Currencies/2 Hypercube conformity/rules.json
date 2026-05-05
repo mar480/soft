@@ -1,0 +1,31 @@
+{
+  "topic_id": "currencies",
+  "topic_label": "Currencies",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CURRENCIES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "currencies",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:CurrenciesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-Currencies",
+        "elr_definition": "9002 - Hypercube - Currencies",
+        "dimensions": [
+          "curr:CurrenciesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "topic_id": "pensions",
+  "topic_label": "Pensions",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.PENSIONS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "pensions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PensionsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Analysis1",
+        "elr_definition": "92301 - Hypercube - Pensions - Analysis 1",
+        "dimensions": [
+          "core:Post-employmentBenefitPlansDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PENSIONS.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "pensions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PensionsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions",
+        "elr_definition": "9230 - Hypercube - Pensions",
+        "dimensions": [
+          "core:Post-employmentBenefitPlansDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PENSIONS.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "pensions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PensionsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Grouping1",
+        "elr_definition": "92302 - Hypercube - Pensions - Grouping 1",
+        "dimensions": [
+          "core:Post-employmentBenefitPlansDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-OtherTypeAssetHeldInDefinedBenefitPlanGroupingDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PENSIONS.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "pensions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Pensions-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Pensions-Segments",
+        "elr_definition": "9231 - Hypercube - Pensions - Segments",
+        "dimensions": [
+          "core:Post-employmentBenefitPlansDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

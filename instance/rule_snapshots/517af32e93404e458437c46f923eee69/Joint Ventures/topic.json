@@ -1,0 +1,24 @@
+{
+  "topic_id": "joint_ventures",
+  "topic_label": "Joint Ventures",
+  "source_hypercubes": [
+    "core:JointVenturesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-JointVentures",
+      "elr_definition": "9218 - Hypercube - Joint Ventures",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-JointVentures-Grouping1",
+      "elr_definition": "92181 - Hypercube - Joint Ventures Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "rule_count": 11
+}

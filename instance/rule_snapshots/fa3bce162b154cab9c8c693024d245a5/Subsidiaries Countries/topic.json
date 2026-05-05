@@ -1,0 +1,17 @@
+{
+  "topic_id": "subsidiaries_countries",
+  "topic_label": "Subsidiaries Countries",
+  "source_hypercubes": [
+    "core:Subsidiaries-CountriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Subsidiaries-CountriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Subsidiaries-Countries",
+      "elr_definition": "9215 - Hypercube - Subsidiaries - Countries",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

@@ -1,0 +1,30 @@
+{
+  "topic_id": "accounting_standards_applied",
+  "topic_label": "Accounting Standards Applied",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ACCOUNTINGSTANDARDSAPPLIED.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "accounting_standards_applied",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:AccountingStandardsAppliedHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountingStandardsApplied",
+        "elr_definition": "9021 - Hypercube - Accounting Standards Applied",
+        "dimensions": [
+          "bus:AccountingStandardsDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

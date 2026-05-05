@@ -1,0 +1,35 @@
+{
+  "topic_id": "supplier_finance_arrangements",
+  "topic_label": "Supplier Finance Arrangements",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SUPPLIERFINANCEARRANGEMENTS.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "supplier_finance_arrangements",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:SupplierFinanceArrangementsPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SupplierFinanceArrangementsDimension"
+        ]
+      }
+    }
+  ]
+}

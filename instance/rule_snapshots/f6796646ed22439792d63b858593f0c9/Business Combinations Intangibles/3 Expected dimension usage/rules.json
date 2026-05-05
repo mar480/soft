@@ -1,0 +1,37 @@
+{
+  "topic_id": "business_combinations_intangibles",
+  "topic_label": "Business Combinations Intangibles",
+  "rule_family": "3 Expected dimension usage",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSINTANGIBLES.DIM_EXPECTED.001",
+      "type": "expected_dimension_usage",
+      "topic": "business_combinations_intangibles",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "trigger": {
+        "primary_items_from_topic_present": {
+          "minimum_count": 1,
+          "primary_items": [
+            "core:BusinessCombinations-IntangiblesPrimaryItems"
+          ]
+        }
+      },
+      "expect": {
+        "at_least_one_dimension_from_topic_used": true
+      },
+      "taxonomy_basis": {
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:BusinessCombinationsDimension",
+          "core:IntangibleAssetClassesDimension",
+          "core:IntangibleAssetsOwnershipTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "topic_id": "income",
+  "topic_label": "Income",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 8,
+  "rules": [
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-AssetsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Assets",
+        "elr_definition": "9081 - Hypercube - Income - Assets",
+        "dimensions": [
+          "core:OwnershipAssetsDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-AssociatesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Associates",
+        "elr_definition": "9089 - Hypercube - Income - Associates",
+        "dimensions": [
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-BasicHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Basic",
+        "elr_definition": "9101 - Hypercube - Income - Basic",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-FinanceLeasesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-FinanceLeases",
+        "elr_definition": "9096 - Hypercube - Income - Finance Leases",
+        "dimensions": [
+          "core:FinanceLeaseContractTypeDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.005",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-JointVenturesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-JointVentures",
+        "elr_definition": "9090 - Hypercube - Income - Joint Ventures",
+        "dimensions": [
+          "core:JointVenturesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.006",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-MainHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main",
+        "elr_definition": "9080 - Hypercube - Income - Main",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "core:ContractTypeInsuranceSpecificDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.007",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-ParentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Parents",
+        "elr_definition": "9099 - Hypercube - Income - Parents",
+        "dimensions": [
+          "core:ParentEntitiesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOME.CUBE_CONFORMITY.008",
+      "type": "hypercube_conformity",
+      "topic": "income",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Income-SubsidiariesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Subsidiaries",
+        "elr_definition": "9088 - Hypercube - Income - Subsidiaries",
+        "dimensions": [
+          "core:SubsidiariesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:MajorCustomerTypeDimension",
+          "core:SegmentReconciliationDimension",
+          "core:ContractTypeDimension",
+          "core:ContractDurationDimension",
+          "core:GoodsServicesTransfersTimingDimension",
+          "core:SalesChannelDimension",
+          "core:NaturePromiseDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

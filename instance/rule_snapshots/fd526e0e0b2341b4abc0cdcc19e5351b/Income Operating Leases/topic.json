@@ -1,0 +1,17 @@
+{
+  "topic_id": "income_operating_leases",
+  "topic_label": "Income Operating Leases",
+  "source_hypercubes": [
+    "core:Income-OperatingLeasesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-OperatingLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-OperatingLeases",
+      "elr_definition": "9095 - Hypercube - Income - Operating Leases",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 24
+}

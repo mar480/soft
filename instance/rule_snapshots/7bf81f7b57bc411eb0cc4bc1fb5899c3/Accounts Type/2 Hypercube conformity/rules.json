@@ -1,0 +1,30 @@
+{
+  "topic_id": "accounts_type",
+  "topic_label": "Accounts Type",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ACCOUNTSTYPE.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "accounts_type",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:AccountsTypeHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-AccountsType",
+        "elr_definition": "9025 - Hypercube - Accounts Type",
+        "dimensions": [
+          "bus:AccountsTypeDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

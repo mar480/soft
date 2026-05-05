@@ -1,0 +1,31 @@
+{
+  "topic_id": "entity_trading_status",
+  "topic_label": "Entity Trading Status",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ENTITYTRADINGSTATUS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "entity_trading_status",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:EntityTradingStatusHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityTradingStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Entity Trading Status. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

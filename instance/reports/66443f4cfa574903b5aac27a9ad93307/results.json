@@ -1,0 +1,14 @@
+{
+  "source_path": "C:\\Users\\rmarks\\OneDrive - Companies House\\Desktop\\soft\\instance\\uploads\\79a38098a37e44eca47f6446148d2e35_Prod223_4150_08332793_20250430.html",
+  "entrypoint": "FRS-102",
+  "taxonomy_year": 2026,
+  "topic_scope": "relevant_topics_only",
+  "evaluated_topic_count": 0,
+  "evaluated_topics": [],
+  "result_count": 0,
+  "summary": {
+    "pass": 0,
+    "fail": 0
+  },
+  "results": []
+}

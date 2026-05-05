@@ -1,0 +1,115 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.PPE.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PPEHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Analysis1",
+        "elr_definition": "90301 - Hypercube - PPE Analysis 1",
+        "dimensions": [
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:PPEOwnershipDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PPE.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PPEHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE",
+        "elr_definition": "9030 - Hypercube - PPE",
+        "dimensions": [
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:PPEOwnershipDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PPE.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PPE-RangeHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Range",
+        "elr_definition": "9031 - Hypercube - PPE - Range",
+        "dimensions": [
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:PPEOwnershipDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:RangeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.PPE.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:PPE-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-PPE-Segments",
+        "elr_definition": "9032 - Hypercube - PPE - Segments",
+        "dimensions": [
+          "core:PropertyPlantEquipmentClassesDimension",
+          "core:PPEOwnershipDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

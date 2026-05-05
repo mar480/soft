@@ -1,0 +1,115 @@
+{
+  "topic_id": "deferred_tax",
+  "topic_label": "Deferred Tax",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.DEFERREDTAX.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DeferredTaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Analysis1",
+        "elr_definition": "91301 - Hypercube - Deferred Tax Analysis 1",
+        "dimensions": [
+          "core:DeferredTaxAssetLiabilityClassesDimension",
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DeferredTaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax",
+        "elr_definition": "9130 - Hypercube - Deferred Tax",
+        "dimensions": [
+          "core:DeferredTaxAssetLiabilityClassesDimension",
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DeferredTaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Grouping1",
+        "elr_definition": "91302 - Hypercube - Deferred Tax Grouping 1",
+        "dimensions": [
+          "core:DeferredTaxAssetLiabilityClassesDimension",
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:X-SpecificDeferredTaxAssetGroupingDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.DEFERREDTAX.CUBE_CONFORMITY.004",
+      "type": "hypercube_conformity",
+      "topic": "deferred_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:DeferredTax-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-DeferredTax-Segments",
+        "elr_definition": "9131 - Hypercube - Deferred Tax - Segments",
+        "dimensions": [
+          "core:DeferredTaxAssetLiabilityClassesDimension",
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

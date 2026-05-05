@@ -1,0 +1,39 @@
+{
+  "topic_id": "investment_movements",
+  "topic_label": "Investment Movements",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTMOVEMENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "investment_movements",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:InvestmentMovementsHypercube",
+          "core:InvestmentMovementsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:Listed-unlistedDimension",
+          "core:PositionTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Investment Movements. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

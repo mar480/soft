@@ -1,0 +1,39 @@
+{
+  "topic_id": "derivatives_simple",
+  "topic_label": "Derivatives Simple",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DERIVATIVESSIMPLE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "derivatives_simple",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:FinancialInstrumentsClassesCategoriesDimension",
+      "head_member": "core:TotalFinancialInstruments",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:FinancialInstrumentsAmortisedCost",
+          "core:FinancialInstrumentsFairValue",
+          "core:FinancialInstrumentsCostLessImpairment"
+        ],
+        "domain_root": "core:TotalFinancialInstrumentsDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalFinancialInstrumentsDefault",
+        "dimension_label": "Financial instruments classes and categories [Dimension]"
+      }
+    }
+  ]
+}

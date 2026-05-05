@@ -1,0 +1,50 @@
+{
+  "topic_id": "operating_leases",
+  "topic_label": "Operating Leases",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.OPERATINGLEASES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "operating_leases",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:OperatingLeases-AssetsHypercube",
+          "core:OperatingLeases-BasicHypercube",
+          "core:OperatingLeases-LiabilitiesHypercube",
+          "core:OperatingLeases-MainHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:AllowanceAccountMeasurementTypeDimension",
+          "core:AllowanceForImpairmentDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:CreditRatingsDimension",
+          "core:CurrencyDenominationFinancialInstrumentsDimension",
+          "core:FinancialAssetsImpairmentStageDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:FinancialInstrumentValueTypeDimension",
+          "core:FinancialInstrumentsHeldForSaleDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:MaturitiesOrExpirationPeriodsDimension",
+          "core:OperatingLeasePurposeDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:RegionCountryIssuerRiskDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Operating Leases. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

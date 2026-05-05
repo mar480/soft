@@ -1,0 +1,37 @@
+{
+  "topic_id": "detailed_profit_and_loss",
+  "topic_label": "Detailed Profit and Loss",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.DETAILEDPROFITANDLOSS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "detailed_profit_and_loss",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "dpl:DetailedProfitLossHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/dpl/roles/Hypercube-DetailedProfitLoss",
+        "elr_definition": "850 - Hypercube - Detailed Profit and Loss",
+        "dimensions": [
+          "bus:MainIndustrySectorDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "dpl:ExpenseTypeDimension",
+          "core:ExceptionalsDimension",
+          "dpl:DetailedAnalysisDimension",
+          "dpl:IntraExtraGroupTransactionsDimension",
+          "countries:CountriesRegionsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

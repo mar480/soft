@@ -1,0 +1,82 @@
+{
+  "topic_id": "property_plant_equipment",
+  "topic_label": "Property, plant and equipment",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.PPE.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:PPEOwnershipDimension",
+      "head_member": "core:TotalOwnedLeasedPPEAssets",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:OwnedOrFreeholdAssets",
+          "core:LeasedAssetsHeldAsLessee",
+          "core:AssetsHeldForUseUnderLeasesLessor",
+          "core:Right-of-useAssets"
+        ],
+        "domain_root": "core:TotalOwnedLeasedPPEAssetsDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalOwnedLeasedPPEAssetsDefault",
+        "dimension_label": "PPE ownership [Dimension]"
+      }
+    },
+    {
+      "id": "AUTO.PPE.DIM_ROLLUP.002",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "property_plant_equipment",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:PropertyPlantEquipmentClassesDimension",
+      "head_member": "core:TotalPropertyPlantEquipment",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:LandBuildings",
+          "core:LeaseholdImprovements",
+          "core:InvestmentPropertyIncludedWithinPPE",
+          "core:ConstructionInProgressAssetsUnderConstruction",
+          "core:VehiclesPlantMachinery",
+          "core:FurnitureFittingsToolsEquipment",
+          "core:NetworkAssets",
+          "core:AssetsNotYetAvailableForUsePPE",
+          "core:MiningOilGasAdditionalPPEClassesHeading",
+          "core:Non-standardPPEClass1ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass2ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass3ComponentTotalPropertyPlantEquipment",
+          "core:Non-standardPPEClass4ComponentTotalPropertyPlantEquipment",
+          "core:OtherPropertyPlantEquipment"
+        ],
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalPropertyPlantEquipmentDefault",
+        "dimension_label": "Property, plant and equipment classes [Dimension]"
+      }
+    }
+  ]
+}

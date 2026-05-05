@@ -1,0 +1,17 @@
+{
+  "topic_id": "currencies",
+  "topic_label": "Currencies",
+  "source_hypercubes": [
+    "bus:CurrenciesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:CurrenciesHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-Currencies",
+      "elr_definition": "9002 - Hypercube - Currencies",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

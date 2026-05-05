@@ -1,0 +1,24 @@
+{
+  "topic_id": "business_combinations_financial_liabilities",
+  "topic_label": "Business Combinations Financial Liabilities",
+  "source_hypercubes": [
+    "core:BusinessCombinations-FinancialLiabilitiesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-FinancialLiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinanceLiabilities-Analysis1",
+      "elr_definition": "91631 - Hypercube - Business Combinations - Financial Liabilities Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BusinessCombinations-FinancialLiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinanceLiabilities",
+      "elr_definition": "9163 - Hypercube - Business Combinations - Financial Liabilities",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}

@@ -1,0 +1,54 @@
+{
+  "topic_id": "cash_flow",
+  "topic_label": "Cash Flow",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CASHFLOW.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "cash_flow",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:CashFlowHypercube",
+          "core:CashFlowHypercube",
+          "core:CashFlow-OtherRelatedPartiesHypercube",
+          "core:CashFlow-ShareClassesHypercube",
+          "core:CashFlow-AssociatesHypercube",
+          "core:CashFlow-FinanceLeasesHypercube",
+          "core:CashFlow-JointVenturesHypercube",
+          "core:CashFlow-ParentsHypercube",
+          "core:CashFlow-SubsidiariesHypercube"
+        ],
+        "dimensions": [
+          "bus:EntityShareClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "common:X-AnalysisDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:FinanceLeaseContractTypeDimension",
+          "core:GeographicSegmentsDimension",
+          "core:JointVenturesDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:SubsidiariesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Cash Flow. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

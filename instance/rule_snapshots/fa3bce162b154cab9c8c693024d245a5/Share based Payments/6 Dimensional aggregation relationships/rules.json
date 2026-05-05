@@ -1,0 +1,96 @@
+{
+  "topic_id": "share_based_payments",
+  "topic_label": "Share based Payments",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 2,
+  "rules": [
+    {
+      "id": "AUTO.SHAREBASEDPAYMENTS.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "share_based_payments",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:Share-basedPaymentArrangementsDimension",
+      "head_member": "core:TotalForAllShare-basedPaymentArrangementsOnlyShare-basedPaymentArrangementDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Share-basedArrangement1",
+          "core:Share-basedArrangement2",
+          "core:Share-basedArrangement3",
+          "core:Share-basedArrangement4",
+          "core:Share-basedArrangement5",
+          "core:Share-basedArrangement6",
+          "core:Share-basedArrangement7",
+          "core:Share-basedArrangement8"
+        ],
+        "domain_root": "core:TotalForAllShare-basedPaymentArrangementsOnlyShare-basedPaymentArrangementDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Share-based payment arrangements [Dimension]",
+        "default_member": "core:TotalForAllShare-basedPaymentArrangementsOnlyShare-basedPaymentArrangementDefault",
+        "domain_root": "core:TotalForAllShare-basedPaymentArrangementsOnlyShare-basedPaymentArrangementDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.SHAREBASEDPAYMENTS.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "share_based_payments",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:Share-basedPaymentGrantsDimension",
+      "head_member": "core:TotalGrantsForShare-basedPaymentArrangementDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_leaf_members": true,
+        "members": [
+          "core:Grant1",
+          "core:Grant10",
+          "core:Grant2",
+          "core:Grant3",
+          "core:Grant4",
+          "core:Grant5",
+          "core:Grant6",
+          "core:Grant7",
+          "core:Grant8",
+          "core:Grant9"
+        ],
+        "domain_root": "core:TotalGrantsForShare-basedPaymentArrangementDefault"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Share-based payment grants [Dimension]",
+        "default_member": "core:TotalGrantsForShare-basedPaymentArrangementDefault",
+        "domain_root": "core:TotalGrantsForShare-basedPaymentArrangementDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

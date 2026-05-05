@@ -1,0 +1,17 @@
+{
+  "topic_id": "legal_form_of_entity",
+  "topic_label": "Legal Form of Entity",
+  "source_hypercubes": [
+    "bus:LegalFormEntityHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:LegalFormEntityHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-LegalFormEntity",
+      "elr_definition": "9010 - Hypercube - Legal Form of Entity",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 6
+}

@@ -1,0 +1,40 @@
+{
+  "topic_id": "provisions",
+  "topic_label": "Provisions",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PROVISIONS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "provisions",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:ProvisionsHypercube",
+          "core:ProvisionsHypercube",
+          "core:Provisions-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:ProvisionsClassesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Provisions. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

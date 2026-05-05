@@ -1,0 +1,17 @@
+{
+  "topic_id": "share_based_payments",
+  "topic_label": "Share based Payments",
+  "source_hypercubes": [
+    "core:Share-basedPaymentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Share-basedPaymentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Share-BasedPayments",
+      "elr_definition": "9141 - Hypercube - Share-based Payments",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 9
+}

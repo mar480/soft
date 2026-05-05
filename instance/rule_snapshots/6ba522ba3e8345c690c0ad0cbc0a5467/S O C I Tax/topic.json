@@ -1,0 +1,24 @@
+{
+  "topic_id": "s_o_c_i_tax",
+  "topic_label": "S O C I Tax",
+  "source_hypercubes": [
+    "core:SOCI-TaxHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:SOCI-TaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SOCI-Tax-Analysis1",
+      "elr_definition": "92441 - Hypercube - SOCI - Tax Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:SOCI-TaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-SOCI-Tax",
+      "elr_definition": "9244 - Hypercube - SOCI - Tax",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "rule_count": 14
+}
