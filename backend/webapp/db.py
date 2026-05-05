@@ -5,6 +5,8 @@ from pathlib import Path
 
 from flask import Flask, current_app, g
 
+from .storage import normalize_persisted_paths
+
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS source_files (
@@ -97,6 +99,7 @@ def init_db() -> None:
     db.executescript(SCHEMA)
     _ensure_column(db, "validation_runs", "batch_group_id", "TEXT")
     _ensure_column(db, "jobs", "batch_group_id", "TEXT")
+    normalize_persisted_paths(db)
     db.commit()
 
 

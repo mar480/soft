@@ -15,6 +15,7 @@ from backend.validation_rules.testing.report_model import ReportContext, ReportF
 from backend.validation_rules.testing.rule_execution import _load_json, evaluate_rule_pack, rule_pack_manifest
 
 from ..db import get_db
+from ..storage import resolve_storage_path, storage_path_value
 
 
 RESULT_FAMILY_LABELS = {
@@ -55,12 +56,12 @@ def family_category_label(family_name: str) -> str:
 
 
 def synthetic_example_paths() -> list[Path]:
-    examples_dir = Path(current_app.config["SYNTHETIC_EXAMPLES_DIR"])
+    examples_dir = resolve_storage_path(current_app.config["SYNTHETIC_EXAMPLES_DIR"])
     return sorted(examples_dir.glob("*.html"))
 
 
 def validation_topic_options() -> list[dict[str, Any]]:
-    manifest = rule_pack_manifest(Path(current_app.config["SPLIT_OUTPUT_DIR"]))
+    manifest = rule_pack_manifest(resolve_storage_path(current_app.config["SPLIT_OUTPUT_DIR"]))
     return [
         {
             "topic_id": topic["topic_id"],
@@ -153,10 +154,14 @@ def get_validation_run(run_id: str) -> dict[str, Any] | None:
     if row is None:
         return None
 
-    payload = json.loads(Path(row["result_json_path"]).read_text(encoding="utf-8"))
-    report = load_report_model(Path(row["source_path"]))
+    payload = json.loads(resolve_storage_path(row["result_json_path"]).read_text(encoding="utf-8"))
+    report = load_report_model(resolve_storage_path(row["source_path"]))
     concept_balances = load_concept_balances()
     result = dict(row)
+    result["result_json_path"] = str(resolve_storage_path(row["result_json_path"]))
+    result["html_report_path"] = str(resolve_storage_path(row["html_report_path"]))
+    result["rule_snapshot_path"] = str(resolve_storage_path(row["rule_snapshot_path"]))
+    result["source_path"] = str(resolve_storage_path(row["source_path"]))
     result["payload"] = payload
     enriched_results = enrich_results(payload["results"], report, concept_balances)
     result["grouped_results"] = group_results(enriched_results)
@@ -278,9 +283,10 @@ def perform_validation_run(
     notify_progress(progress_callback, 15, "Creating immutable rule snapshot.")
     rule_snapshot_path = snapshot_rule_pack(run_id)
     notify_progress(progress_callback, 35, "Loading report model.")
-    payload = evaluate_source_file(source_record["stored_path"], validation_selection=validation_selection)
+    source_path = resolve_storage_path(source_record["stored_path"])
+    payload = evaluate_source_file(source_path, validation_selection=validation_selection)
     notify_progress(progress_callback, 70, "Compiling validation results.")
-    report = load_report_model(Path(source_record["stored_path"]))
+    report = load_report_model(source_path)
     enriched_results = enrich_results(payload["results"], report, load_concept_balances())
     summarized_outcomes = outcome_summary(enriched_results)
     score_percent = compute_score(summarized_outcomes)
@@ -339,13 +345,13 @@ def perform_validation_run(
             current_app.config["TAXONOMY_YEAR"],
             current_app.config["TAXONOMY_ENTRYPOINT"],
             f"{current_app.config['TAXONOMY_YEAR']} {current_app.config['TAXONOMY_ENTRYPOINT']}",
-            str(rule_snapshot_path),
+            storage_path_value(rule_snapshot_path),
             0,
             summarized_outcomes["pass"],
             summarized_outcomes["fail"],
             score_percent,
-            str(result_json_path),
-            str(html_report_path),
+            storage_path_value(result_json_path),
+            storage_path_value(html_report_path),
             timestamp,
         ),
     )
@@ -374,13 +380,13 @@ def resolve_source_file(*, input_mode: str, selected_path: str | None, upload) -
     if input_mode == "synthetic":
         if not selected_path:
             raise ValueError("Choose a synthetic example.")
-        path = Path(selected_path)
+        path = resolve_storage_path(selected_path)
         source_id = uuid.uuid4().hex
         record = {
             "id": source_id,
             "display_name": path.name,
             "source_type": "synthetic",
-            "stored_path": str(path),
+            "stored_path": storage_path_value(path),
             "created_at": utc_now(),
         }
         db.execute(
@@ -418,7 +424,7 @@ def resolve_source_file(*, input_mode: str, selected_path: str | None, upload) -
             "id": source_id,
             "display_name": Path(upload.filename).name,
             "source_type": "upload",
-            "stored_path": str(destination),
+            "stored_path": storage_path_value(destination),
             "created_at": utc_now(),
         }
         db.execute(
@@ -446,15 +452,15 @@ def get_source_file(source_file_id: str) -> dict[str, Any] | None:
     return dict(row) if row is not None else None
 
 
-def evaluate_source_file(source_path: str, validation_selection: dict[str, Any] | None = None) -> dict[str, Any]:
+def evaluate_source_file(source_path: str | Path, validation_selection: dict[str, Any] | None = None) -> dict[str, Any]:
     validation_selection = validation_selection or default_validation_selection()
-    report = load_report_model(Path(source_path))
+    report = load_report_model(resolve_storage_path(str(source_path)))
     return evaluate_rule_pack(
         report=report,
-        split_output_dir=Path(current_app.config["SPLIT_OUTPUT_DIR"]),
-        topics_payload=_load_json(Path(current_app.config["TOPICS_FILE"])),
-        concepts_payload=_load_json(Path(current_app.config["CONCEPTS_FILE"])),
-        roles_payload=_load_json(Path(current_app.config["ROLES_FILE"])),
+        split_output_dir=resolve_storage_path(current_app.config["SPLIT_OUTPUT_DIR"]),
+        topics_payload=_load_json(resolve_storage_path(current_app.config["TOPICS_FILE"])),
+        concepts_payload=_load_json(resolve_storage_path(current_app.config["CONCEPTS_FILE"])),
+        roles_payload=_load_json(resolve_storage_path(current_app.config["ROLES_FILE"])),
         include_all_topics=validation_selection["scope"] == "all",
         selected_topics=set(validation_selection["selected_topics"]) if validation_selection["scope"] == "selected" else None,
         selected_families_by_topic=validation_selection["selected_families_by_topic"] if validation_selection["scope"] == "selected" else None,
@@ -462,7 +468,7 @@ def evaluate_source_file(source_path: str, validation_selection: dict[str, Any] 
 
 
 def snapshot_rule_pack(run_id: str) -> Path:
-    source = Path(current_app.config["SPLIT_OUTPUT_DIR"])
+    source = resolve_storage_path(current_app.config["SPLIT_OUTPUT_DIR"])
     destination = Path(current_app.config["RULE_SNAPSHOT_FOLDER"]) / run_id
     shutil.copytree(source, destination, dirs_exist_ok=True)
     return destination
@@ -514,8 +520,8 @@ def coverage_summary(results: list[dict[str, Any]]) -> dict[str, float | int]:
 
 
 def with_run_metrics(run: dict[str, Any]) -> dict[str, Any]:
-    payload = json.loads(Path(run["result_json_path"]).read_text(encoding="utf-8"))
-    report = load_report_model(Path(run["source_path"]))
+    payload = json.loads(resolve_storage_path(run["result_json_path"]).read_text(encoding="utf-8"))
+    report = load_report_model(resolve_storage_path(run["source_path"]))
     enriched_results = enrich_results(payload["results"], report, load_concept_balances())
     run["outcome_summary"] = outcome_summary(enriched_results)
     run["coverage_summary"] = coverage_summary(enriched_results)
@@ -527,7 +533,7 @@ def with_run_metrics(run: dict[str, Any]) -> dict[str, Any]:
 
 
 def with_run_metrics_fast(run: dict[str, Any]) -> dict[str, Any]:
-    payload = json.loads(Path(run["result_json_path"]).read_text(encoding="utf-8"))
+    payload = json.loads(resolve_storage_path(run["result_json_path"]).read_text(encoding="utf-8"))
     results = payload.get("results", [])
     summary = {"pass": 0, "fail": 0, "not_applied": 0, "total": len(results)}
     for result in results:
