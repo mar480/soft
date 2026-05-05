@@ -1,0 +1,111 @@
+{
+  "topic_id": "debtors",
+  "topic_label": "Debtors",
+  "source_hypercubes": [
+    "core:Debtors-AssociatesHypercube",
+    "core:Debtors-FinanceLeasesHypercube",
+    "core:Debtors-JointVenturesHypercube",
+    "core:Debtors-OtherPartiesHypercube",
+    "core:Debtors-ParentsHypercube",
+    "core:Debtors-SegmentsHypercube",
+    "core:Debtors-SubsidiariesHypercube",
+    "core:DebtorsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:DebtorsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Analysis1",
+      "elr_definition": "91801 - Hypercube - Debtors - Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:DebtorsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors",
+      "elr_definition": "9180 - Hypercube - Debtors",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Debtors-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Segments",
+      "elr_definition": "9181 - Hypercube - Debtors - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    },
+    {
+      "hypercube": "core:Debtors-AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Associates",
+      "elr_definition": "9184 - Hypercube - Debtors - Associates",
+      "occurrence_type": "variant",
+      "variant_label": "Associates"
+    },
+    {
+      "hypercube": "core:Debtors-FinanceLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-FinanceLeases",
+      "elr_definition": "9187 - Hypercube - Debtors - Finance Leases",
+      "occurrence_type": "variant",
+      "variant_label": "Finance Leases"
+    },
+    {
+      "hypercube": "core:Debtors-JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-JointVentures",
+      "elr_definition": "9185 - Hypercube - Debtors - Joint Ventures",
+      "occurrence_type": "variant",
+      "variant_label": "Joint Ventures"
+    },
+    {
+      "hypercube": "core:Debtors-OtherPartiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-OtherParties",
+      "elr_definition": "9186 - Hypercube - Debtors - Other Parties",
+      "occurrence_type": "variant",
+      "variant_label": "Other Parties"
+    },
+    {
+      "hypercube": "core:Debtors-ParentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Parents",
+      "elr_definition": "9182 - Hypercube - Debtors - Parents",
+      "occurrence_type": "variant",
+      "variant_label": "Parents"
+    },
+    {
+      "hypercube": "core:Debtors-SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-Subsidiaries",
+      "elr_definition": "9183 - Hypercube - Debtors - Subsidiaries",
+      "occurrence_type": "variant",
+      "variant_label": "Subsidiaries"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:AllowanceAccountMeasurementTypeDimension",
+    "core:AllowanceForImpairmentDimension",
+    "core:AssociatesDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:CurrencyDenominationFinancialInstrumentsDimension",
+    "core:FinanceLeaseContractTypeDimension",
+    "core:FinancialAssetsImpairmentStageDimension",
+    "core:FinancialInstrumentCurrentNon-currentDimension",
+    "core:FinancialInstrumentLevelDimension",
+    "core:FinancialInstrumentValueTypeDimension",
+    "core:FinancialInstrumentsClassesCategoriesDimension",
+    "core:FinancialInstrumentsHeldForSaleDimension",
+    "core:GeographicSegmentsDimension",
+    "core:JointVenturesDimension",
+    "core:MajorCustomersDimension",
+    "core:MaturitiesOrExpirationPeriodsDimension",
+    "core:OperatingSegmentsDimension",
+    "core:OtherRelatedPartyTypeDimension",
+    "core:ParentEntitiesDimension",
+    "core:ProductsServicesDimension",
+    "core:RegionCountryIssuerRiskDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension",
+    "core:SubsidiariesDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 54
+}

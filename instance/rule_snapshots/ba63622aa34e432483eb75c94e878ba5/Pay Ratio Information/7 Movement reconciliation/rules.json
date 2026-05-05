@@ -1,0 +1,33 @@
+{
+  "topic_id": "pay_ratio_information",
+  "topic_label": "Pay Ratio Information",
+  "rule_family": "7 Movement reconciliation",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PAYRATIOINFORMATION.MOVE.001",
+      "type": "movement_reconciliation",
+      "topic": "pay_ratio_information",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "match": {
+        "entity": "same",
+        "unit": "same",
+        "dimensions": "same",
+        "period_bridge": "instant_pair_with_matching_duration"
+      },
+      "movement_component_policy": {
+        "selection": "signed_subset_match",
+        "max_candidate_facts": 10,
+        "allow_zero_movement_without_components": true
+      },
+      "taxonomy_basis": {
+        "reason_type": "movement_bridge",
+        "reason": "The topic is modelled as a disclosure family with reusable dimensional contexts, so a same-scope opening/closing bridge with signed duration movements is a viable arithmetic motif to test when both instant and duration facts are observed in the report.",
+        "instant_primary_items": [],
+        "duration_primary_items": []
+      }
+    }
+  ]
+}

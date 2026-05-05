@@ -1,0 +1,57 @@
+{
+  "topic_id": "biological_assets",
+  "topic_label": "Biological Assets",
+  "source_hypercubes": [
+    "core:BiologicalAssets-RangeHypercube",
+    "core:BiologicalAssets-SegmentsHypercube",
+    "core:BiologicalAssetsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BiologicalAssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Analysis1",
+      "elr_definition": "90421 - Hypercube - Biological Assets Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BiologicalAssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets",
+      "elr_definition": "9042 - Hypercube - Biological Assets",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:BiologicalAssets-RangeHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Range",
+      "elr_definition": "9043 - Hypercube - Biological Assets - Range",
+      "occurrence_type": "range",
+      "variant_label": "Range"
+    },
+    {
+      "hypercube": "core:BiologicalAssets-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BiologicalAssets-Segments",
+      "elr_definition": "9044 - Hypercube - Biological Assets - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:BiologicalAssetClassesDimension",
+    "core:BiologicalAssetMaturityDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RangeDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 19
+}

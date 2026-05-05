@@ -1,0 +1,37 @@
+{
+  "topic_id": "income_main_by_gender_main",
+  "topic_label": "Income Main By Gender Main",
+  "source_hypercubes": [
+    "core:Income-Main-ByGenderHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-Main-ByGenderHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-ByGenderMainAnalysis1",
+      "elr_definition": "96121 - Hypercube - Income - Main - By Gender Main Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "common:X-AnalysisDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ContractDurationDimension",
+    "core:ContractTypeDimension",
+    "core:ContractTypeInsuranceSpecificDimension",
+    "core:ExceptionalsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:GoodsServicesTransfersTimingDimension",
+    "core:MajorCustomerTypeDimension",
+    "core:MajorCustomersDimension",
+    "core:NaturePromiseDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SalesChannelDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 23
+}

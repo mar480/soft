@@ -1,0 +1,10 @@
+{
+  "topic_id": "mandatory_tags",
+  "topic_label": "Mandatory Tags",
+  "source_hypercubes": [],
+  "source_hypercube_occurrences": [],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [],
+  "always_relevant": true,
+  "rule_count": 28
+}

@@ -1,0 +1,31 @@
+{
+  "topic_id": "third_party_agents",
+  "topic_label": "Third Party Agents",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.THIRDPARTYAGENTS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "third_party_agents",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "bus:ThirdPartyAgentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/cd/roles/Hypercube-ThirdPartyAgents",
+        "elr_definition": "9016 - Hypercube - Third Party Agents",
+        "dimensions": [
+          "bus:ThirdPartyAgentStatusDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

@@ -53,30 +53,33 @@
 
     {% for topic in run.grouped_results %}
         <h2>{{ topic.topic }}</h2>
-        {% for family in topic.families %}
-            <h3>{{ family.family }}</h3>
-            {% for section in family.outcome_sections %}
-                <h4>{{ section.label }}</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>Rule ID</th>
-                            <th>Type</th>
-                            <th>Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for result in section.results %}
+        {% for category in topic.categories %}
+            <h3>{{ category.category }}</h3>
+            {% for family in category.families %}
+                <h4>{{ family.family }}</h4>
+                {% for section in family.outcome_sections %}
+                    <h5>{{ section.label }}</h5>
+                    <table>
+                        <thead>
                             <tr>
-                                <td class="status-{{ result.outcome_status }}">{{ result.outcome_status|replace("_", " ") }}</td>
-                                <td>{{ result.rule_id }}</td>
-                                <td>{{ result.type }}</td>
-                                <td>{{ result.message }}</td>
+                                <th>Status</th>
+                                <th>Rule ID</th>
+                                <th>Type</th>
+                                <th>Message</th>
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {% for result in section.results %}
+                                <tr>
+                                    <td class="status-{{ result.outcome_status }}">{{ result.outcome_status|replace("_", " ") }}</td>
+                                    <td>{{ result.rule_id }}</td>
+                                    <td>{{ result.type }}</td>
+                                    <td>{{ result.message }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% endfor %}
             {% endfor %}
         {% endfor %}
     {% endfor %}

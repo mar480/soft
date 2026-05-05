@@ -1,0 +1,32 @@
+{
+  "topic_id": "associates_countries",
+  "topic_label": "Associates Countries",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.ASSOCIATESCOUNTRIES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "associates_countries",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Associates-CountriesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:AssociatesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Associates Countries. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

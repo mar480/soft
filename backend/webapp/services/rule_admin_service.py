@@ -11,7 +11,7 @@ from typing import Any
 from flask import current_app
 
 from ..db import get_db
-from .validation_service import utc_now
+from .validation_service import family_category_label, utc_now
 
 
 def topic_inventory(*, family_filter: str | None = None) -> list[dict[str, Any]]:
@@ -30,6 +30,8 @@ def topic_inventory(*, family_filter: str | None = None) -> list[dict[str, Any]]
                 "topic_label": topic["topic_label"],
                 "directory": topic["directory"],
                 "rule_count": topic["rule_count"],
+                "family_count": len(families),
+                "family_groups": _group_topic_families(topic["topic_id"], families, drafts),
                 "families": [
                     {
                         "name": family,
@@ -49,6 +51,12 @@ def available_rule_families() -> list[str]:
     return sorted(families)
 
 
+def available_rule_categories() -> list[str]:
+    categories = {family_category_label(family) for family in available_rule_families()}
+    order = {"Mandatory tags": 0, "Cube conformity": 1, "Arithmetic": 2, "Disclosure presence": 3, "Modelling guidance": 4, "Other": 5}
+    return sorted(categories, key=lambda category: (order.get(category, 99), category))
+
+
 def family_stats() -> list[dict[str, Any]]:
     manifest = _manifest()
     published_counts: dict[str, int] = defaultdict(int)
@@ -59,8 +67,32 @@ def family_stats() -> list[dict[str, Any]]:
     for _, family in active_drafts_by_family():
         draft_counts[family] += 1
     return [
-        {"family": family, "published_topics": published_counts[family], "draft_topics": draft_counts[family]}
+        {
+            "family": family,
+            "category": family_category_label(family),
+            "published_topics": published_counts[family],
+            "draft_topics": draft_counts[family],
+        }
         for family in sorted(published_counts)
+    ]
+
+
+def _group_topic_families(topic_id: str, families: list[str], drafts: set[tuple[str, str]]) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    order = {"Mandatory tags": 0, "Cube conformity": 1, "Arithmetic": 2, "Disclosure presence": 3, "Modelling guidance": 4, "Other": 5}
+    for family in families:
+        grouped[family_category_label(family)].append(
+            {
+                "name": family,
+                "has_draft": (topic_id, family) in drafts,
+            }
+        )
+    return [
+        {
+            "category": category,
+            "families": sorted(items, key=lambda item: item["name"]),
+        }
+        for category, items in sorted(grouped.items(), key=lambda item: (order.get(item[0], 99), item[0]))
     ]
 
 

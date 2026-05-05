@@ -1,0 +1,33 @@
+{
+  "topic_id": "audit_firm_contact_info",
+  "topic_label": "Audit Firm Contact Info",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.AUDITFIRMCONTACTINFO.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "audit_firm_contact_info",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:AuditFirmContactInfoHypercube"
+        ],
+        "dimensions": [
+          "bus:AddressTypeDimension",
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ThirdPartyAgentStatusDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "countries:CountriesRegionsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Audit Firm Contact Info. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

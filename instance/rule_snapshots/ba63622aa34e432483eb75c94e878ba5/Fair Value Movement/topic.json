@@ -1,0 +1,27 @@
+{
+  "topic_id": "fair_value_movement",
+  "topic_label": "Fair Value Movement",
+  "source_hypercubes": [
+    "core:FairValueMovementHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FairValueMovementHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FairValueMovement",
+      "elr_definition": "9202 - Hypercube - Fair Value Movement",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:FairValueMeasurementTypeDimension",
+    "core:FairValueMovementDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 9
+}

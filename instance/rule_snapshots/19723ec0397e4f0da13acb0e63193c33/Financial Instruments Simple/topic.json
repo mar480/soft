@@ -1,0 +1,26 @@
+{
+  "topic_id": "financial_instruments_simple",
+  "topic_label": "Financial Instruments Simple",
+  "source_hypercubes": [
+    "core:FinancialInstruments-SimpleHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FinancialInstruments-SimpleHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialInstruments-Simple",
+      "elr_definition": "9050 - Hypercube - Financial Instruments - Simple",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:FinancialInstrumentsClassesCategoriesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 8
+}

@@ -1,0 +1,27 @@
+{
+  "topic_id": "audit_firm_contact_info",
+  "topic_label": "Audit Firm Contact Info",
+  "source_hypercubes": [
+    "bus:AuditFirmContactInfoHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "bus:AuditFirmContactInfoHypercube",
+      "elr": "http://xbrl.frc.org.uk/cd/business/roles/Hypercube-AuditFirmContactInfo",
+      "elr_definition": "9017 - Hypercube - Audit Firm Contact Info",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:AddressTypeDimension",
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "bus:ThirdPartyAgentStatusDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "countries:CountriesRegionsDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 9
+}

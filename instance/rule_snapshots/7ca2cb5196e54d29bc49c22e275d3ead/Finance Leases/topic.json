@@ -1,0 +1,65 @@
+{
+  "topic_id": "finance_leases",
+  "topic_label": "Finance Leases",
+  "source_hypercubes": [
+    "core:FinanceLeases-AssetsHypercube",
+    "core:FinanceLeases-BasicHypercube",
+    "core:FinanceLeases-LiabilitiesHypercube",
+    "core:FinanceLeases-MainHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:FinanceLeases-AssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Assets",
+      "elr_definition": "9122 - Hypercube - Finance Leases - Assets",
+      "occurrence_type": "variant",
+      "variant_label": "Assets"
+    },
+    {
+      "hypercube": "core:FinanceLeases-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Basic",
+      "elr_definition": "9120 - Hypercube - Finance Leases - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    },
+    {
+      "hypercube": "core:FinanceLeases-LiabilitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Liabilities",
+      "elr_definition": "9123 - Hypercube - Finance Leases - Liabilities",
+      "occurrence_type": "variant",
+      "variant_label": "Liabilities"
+    },
+    {
+      "hypercube": "core:FinanceLeases-MainHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Finance-Leases-Main",
+      "elr_definition": "9121 - Hypercube - Finance Leases - Main",
+      "occurrence_type": "variant",
+      "variant_label": "Main"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:AllowanceAccountMeasurementTypeDimension",
+    "core:AllowanceForImpairmentDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:CreditRatingsDimension",
+    "core:CurrencyDenominationFinancialInstrumentsDimension",
+    "core:FinanceLeaseContractTypeDimension",
+    "core:FinancialAssetsImpairmentStageDimension",
+    "core:FinancialInstrumentCurrentNon-currentDimension",
+    "core:FinancialInstrumentValueTypeDimension",
+    "core:FinancialInstrumentsHeldForSaleDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:MaturitiesOrExpirationPeriodsDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RegionCountryIssuerRiskDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 34
+}

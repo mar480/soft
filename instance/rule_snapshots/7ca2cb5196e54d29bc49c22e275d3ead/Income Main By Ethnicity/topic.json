@@ -1,0 +1,39 @@
+{
+  "topic_id": "income_main_by_ethnicity",
+  "topic_label": "Income Main By Ethnicity",
+  "source_hypercubes": [
+    "core:Income-Main-ByEthnicityHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-Main-ByEthnicityHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Main-ByEthnicity",
+      "elr_definition": "9613 - Hypercube - Income - Main - By Ethnicity",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ContractDurationDimension",
+    "core:ContractTypeDimension",
+    "core:ContractTypeInsuranceSpecificDimension",
+    "core:ExceptionalsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:GoodsServicesTransfersTimingDimension",
+    "core:MajorCustomerTypeDimension",
+    "core:MajorCustomersDimension",
+    "core:NaturePromiseDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SalesChannelDimension",
+    "core:SegmentReconciliationDimension",
+    "direp:EthnicityDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 25
+}

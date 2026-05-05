@@ -1,0 +1,32 @@
+{
+  "topic_id": "business_combinations_provisions",
+  "topic_label": "Business Combinations Provisions",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSPROVISIONS.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "business_combinations_provisions",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:BusinessCombinations-ProvisionsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-Provisions",
+        "elr_definition": "9165 - Hypercube - Business Combinations - Provisions",
+        "dimensions": [
+          "core:BusinessCombinationsDimension",
+          "core:ProvisionsClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

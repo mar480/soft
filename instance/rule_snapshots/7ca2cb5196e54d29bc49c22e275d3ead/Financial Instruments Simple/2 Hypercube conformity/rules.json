@@ -1,0 +1,32 @@
+{
+  "topic_id": "financial_instruments_simple",
+  "topic_label": "Financial Instruments Simple",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.FINANCIALINSTRUMENTSSIMPLE.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "financial_instruments_simple",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:FinancialInstruments-SimpleHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-FinancialInstruments-Simple",
+        "elr_definition": "9050 - Hypercube - Financial Instruments - Simple",
+        "dimensions": [
+          "core:FinancialInstrumentsClassesCategoriesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

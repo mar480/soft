@@ -1,0 +1,51 @@
+{
+  "topic_id": "income_intangibles",
+  "topic_label": "Income Intangibles",
+  "source_hypercubes": [
+    "core:Income-IntangiblesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Intangibles",
+      "elr_definition": "9083 - Hypercube - Income - Intangibles",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Income-IntangiblesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-Intangibles-Grouping1",
+      "elr_definition": "90831 - Hypercube - Income - Intangibles Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    }
+  ],
+  "topic_specific_dimensions": [
+    "core:X-SpecificMaterialImpairmentLossOrReversalIntangibleAssetsGroupingDimension"
+  ],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ContractDurationDimension",
+    "core:ContractTypeDimension",
+    "core:ExceptionalsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:GoodsServicesTransfersTimingDimension",
+    "core:IntangibleAssetClassesDimension",
+    "core:IntangibleAssetsGenerationTypeDimension",
+    "core:IntangibleAssetsLifeTypeDimension",
+    "core:IntangibleAssetsOwnershipTypeDimension",
+    "core:MajorCustomerTypeDimension",
+    "core:MajorCustomersDimension",
+    "core:NaturePromiseDimension",
+    "core:OperatingSegmentsDimension",
+    "core:OwnershipAssetsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SalesChannelDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 26
+}

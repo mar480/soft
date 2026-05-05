@@ -1,0 +1,38 @@
+{
+  "topic_id": "balance_sheet",
+  "topic_label": "Balance Sheet",
+  "source_hypercubes": [
+    "core:BalanceSheet-BasicHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Analysis1",
+      "elr_definition": "92601 - Hypercube - Balance Sheet Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BalanceSheet-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BalanceSheet-Basic",
+      "elr_definition": "9260 - Hypercube - Balance Sheet - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 14
+}

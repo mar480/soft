@@ -82,22 +82,24 @@
             <summary>
                 <div>
                     <h3>{{ topic.topic }}</h3>
-                    <p class="muted">{{ topic.families|length }} rule families</p>
+                    <p class="muted">{{ topic.categories|length }} rule categories</p>
                 </div>
             </summary>
             <div class="stack-md">
-                {% for family in topic.families %}
+                {% for category in topic.categories %}
                     <div class="panel nested-panel">
                         <div class="section-heading">
-                            <h4>{{ family.family }}</h4>
-                            <p class="muted">{{ family.results|length }} tests</p>
+                            <h4>{{ category.category }}</h4>
+                            <p class="muted">{{ category.families|length }} families</p>
                         </div>
-                        {% for section in family.outcome_sections %}
+                        {% for family in category.families %}
                             <div class="outcome-group">
                                 <div class="outcome-heading">
-                                    <h5>{{ section.label }}</h5>
-                                    <p class="muted">{{ section.results|length }} tests</p>
+                                    <h5>{{ family.family }}</h5>
+                                    <p class="muted">{{ family.results|length }} tests</p>
                                 </div>
+                                {% for section in family.outcome_sections %}
+                                <p class="muted"><strong>{{ section.label }}</strong> &middot; {{ section.results|length }} tests</p>
                                 <div class="table-shell">
                                     <table>
                                         <thead>
@@ -125,6 +127,18 @@
                                                                 <p><strong>What a pass proves:</strong> {{ result.support.what_it_proves }}</p>
                                                                 <p><strong>Outcome for this run:</strong> {{ result.support.outcome_summary }}</p>
                                                             </div>
+                                                            {% if result.evidence.mandatory_facts %}
+                                                                <div class="evidence-group">
+                                                                    <h5>Mandatory concept facts</h5>
+                                                                    {{ render_fact_table(result.evidence.mandatory_facts) }}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% if result.evidence.dimensional_facts and result.outcome_status != 'not_applied' %}
+                                                                <div class="evidence-group">
+                                                                    <h5>Dimensional mandatory facts</h5>
+                                                                    {{ render_fact_table(result.evidence.dimensional_facts) }}
+                                                                </div>
+                                                            {% endif %}
                                                             {% if result.evidence.trigger_facts %}
                                                                 <div class="evidence-group">
                                                                     <h5>Trigger facts</h5>
@@ -604,6 +618,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                {% endfor %}
                             </div>
                         {% endfor %}
                     </div>

@@ -1,0 +1,39 @@
+{
+  "topic_id": "inventories",
+  "topic_label": "Inventories",
+  "source_hypercubes": [
+    "core:Inventories-SegmentsHypercube",
+    "core:InventoriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:InventoriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Inventories",
+      "elr_definition": "9111 - Hypercube - Inventories",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:Inventories-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Inventories-Segments",
+      "elr_definition": "9112 - Hypercube - Inventories - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:CurrentNon-currentInventoriesDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 14
+}

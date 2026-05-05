@@ -1,0 +1,89 @@
+{
+  "topic_id": "income_tax",
+  "topic_label": "Income Tax",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.INCOMETAX.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "income_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IncomeTaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax-Analysis1",
+        "elr_definition": "91701 - Hypercube - Income Tax Analysis 1",
+        "dimensions": [
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMETAX.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "income_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IncomeTaxHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax",
+        "elr_definition": "9170 - Hypercube - Income Tax",
+        "dimensions": [
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.INCOMETAX.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "income_tax",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:IncomeTax-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax-Segments",
+        "elr_definition": "9172 - Hypercube - Income Tax - Segments",
+        "dimensions": [
+          "core:TaxJurisdictionDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:ExceptionalsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

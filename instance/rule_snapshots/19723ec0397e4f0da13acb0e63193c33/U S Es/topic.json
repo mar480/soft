@@ -1,0 +1,27 @@
+{
+  "topic_id": "u_s_es",
+  "topic_label": "U S Es",
+  "source_hypercubes": [
+    "core:UnconsolidatedStructuredEntitiesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:UnconsolidatedStructuredEntitiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-USEs",
+      "elr_definition": "9220 - Hypercube - USEs",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [
+    "core:UnconsolidatedStructuredEntitiesDimension"
+  ],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 8
+}

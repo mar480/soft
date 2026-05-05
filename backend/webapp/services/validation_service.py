@@ -17,6 +17,43 @@ from backend.validation_rules.testing.rule_execution import _load_json, evaluate
 from ..db import get_db
 
 
+RESULT_FAMILY_LABELS = {
+    "mandatory_concept_presence": "9 Mandatory tags",
+    "mandatory_concept_role_scope": "9 Mandatory tags",
+    "mandatory_concept_dimensional_conformity": "9 Mandatory tags",
+    "topic_note_presence": "1 Topic note presence",
+    "hypercube_conformity": "2 Hypercube conformity",
+    "expected_dimension_usage": "3 Expected dimension usage",
+    "dimension_member_validity": "4 Member validity",
+    "concept_arithmetic_relationship": "5 Concept arithmetic relationships",
+    "dimension_member_rollup_candidate": "6 Dimension member roll-up",
+    "dimensional_aggregation_relationship": "6 Dimensional aggregation relationships",
+    "movement_reconciliation": "7 Movement reconciliation",
+    "modelling_suggestion": "8 Modelling suggestion",
+}
+
+FAMILY_CATEGORY_LABELS = {
+    "9 Mandatory tags": "Mandatory tags",
+    "1 Topic note presence": "Disclosure presence",
+    "2 Hypercube conformity": "Cube conformity",
+    "3 Expected dimension usage": "Cube conformity",
+    "4 Member validity": "Cube conformity",
+    "5 Concept arithmetic relationships": "Arithmetic",
+    "6 Dimension member roll-up": "Arithmetic",
+    "6 Dimensional aggregation relationships": "Arithmetic",
+    "7 Movement reconciliation": "Arithmetic",
+    "8 Modelling suggestion": "Modelling guidance",
+}
+
+
+def result_family_label(result_type: str) -> str:
+    return RESULT_FAMILY_LABELS.get(result_type, result_type.replace("_", " ").title())
+
+
+def family_category_label(family_name: str) -> str:
+    return FAMILY_CATEGORY_LABELS.get(family_name, "Other")
+
+
 def synthetic_example_paths() -> list[Path]:
     examples_dir = Path(current_app.config["SYNTHETIC_EXAMPLES_DIR"])
     return sorted(examples_dir.glob("*.html"))
@@ -94,7 +131,7 @@ def recent_validation_runs() -> list[dict[str, Any]]:
         ORDER BY validation_runs.created_at DESC
         """
     ).fetchall()
-    return [with_run_metrics(dict(row)) for row in rows]
+    return [with_run_metrics_fast(dict(row)) for row in rows]
 
 
 def get_validation_run(run_id: str) -> dict[str, Any] | None:
@@ -173,7 +210,7 @@ def batch_runs(batch_group_id: str) -> list[dict[str, Any]]:
         """,
         (batch_group_id,),
     ).fetchall()
-    return [with_run_metrics(dict(row)) for row in rows]
+    return [with_run_metrics_fast(dict(row)) for row in rows]
 
 
 def prepare_submission(
@@ -441,11 +478,12 @@ def compute_score(summary: dict[str, int]) -> float:
 def family_breakdown(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
     counts: dict[str, dict[str, int]] = defaultdict(lambda: {"pass": 0, "fail": 0, "not_applied": 0})
     for result in results:
-        bucket = counts[result["type"]]
+        bucket = counts[result["family_label"]]
         bucket[result.get("outcome_status", result["status"])] += 1
     return [
         {
             "family": family,
+            "category": family_category_label(family),
             "pass": values["pass"],
             "fail": values["fail"],
             "not_applied": values["not_applied"],
@@ -488,6 +526,28 @@ def with_run_metrics(run: dict[str, Any]) -> dict[str, Any]:
     return run
 
 
+def with_run_metrics_fast(run: dict[str, Any]) -> dict[str, Any]:
+    payload = json.loads(Path(run["result_json_path"]).read_text(encoding="utf-8"))
+    results = payload.get("results", [])
+    summary = {"pass": 0, "fail": 0, "not_applied": 0, "total": len(results)}
+    for result in results:
+        status = result.get("status")
+        if status in summary:
+            summary[status] += 1
+    run["outcome_summary"] = summary
+    run["coverage_summary"] = {
+        "applied": summary["pass"] + summary["fail"],
+        "not_applied": summary["not_applied"],
+        "total": summary["total"],
+        "coverage_percent": round(((summary["pass"] + summary["fail"]) / summary["total"]) * 100, 1) if summary["total"] else 0.0,
+    }
+    run["total_pass"] = summary["pass"]
+    run["total_fail"] = summary["fail"]
+    run["total_not_applied"] = summary["not_applied"]
+    run["score_percent"] = compute_score(summary)
+    return run
+
+
 def aggregate_outcome_summary(runs: list[dict[str, Any]]) -> dict[str, int]:
     summary = {"pass": 0, "fail": 0, "not_applied": 0, "total": 0}
     for run in runs:
@@ -513,21 +573,28 @@ def aggregate_coverage_summary(runs: list[dict[str, Any]]) -> dict[str, float | 
 
 
 def group_results(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    topics: dict[str, dict[str, list[dict[str, Any]]]] = defaultdict(lambda: defaultdict(list))
+    topics: dict[str, dict[str, dict[str, list[dict[str, Any]]]]] = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     for result in results:
-        topics[result["topic"]][result["type"]].append(result)
+        topics[result["topic"]][result["category_label"]][result["family_label"]].append(result)
     grouped: list[dict[str, Any]] = []
-    for topic, families in sorted(topics.items()):
+    category_order = {"Mandatory tags": 0, "Cube conformity": 1, "Arithmetic": 2, "Disclosure presence": 3, "Modelling guidance": 4, "Other": 5}
+    for topic, categories in sorted(topics.items()):
         grouped.append(
             {
                 "topic": topic,
-                "families": [
+                "categories": [
                     {
-                        "family": family,
-                        "results": entries,
-                        "outcome_sections": build_outcome_sections(entries),
+                        "category": category,
+                        "families": [
+                            {
+                                "family": family,
+                                "results": entries,
+                                "outcome_sections": build_outcome_sections(entries),
+                            }
+                            for family, entries in sorted(families.items())
+                        ],
                     }
-                    for family, entries in sorted(families.items())
+                    for category, families in sorted(categories.items(), key=lambda item: (category_order.get(item[0], 99), item[0]))
                 ],
             }
         )
@@ -557,6 +624,8 @@ def enrich_results(results: list[dict[str, Any]], report: ReportModel, concept_b
         result_copy = dict(result)
         result_copy["evidence"] = enrich_evidence(result.get("evidence", {}), fact_index, report.contexts, concept_balances)
         result_copy["outcome_status"] = classify_outcome_status(result_copy)
+        result_copy["family_label"] = result_family_label(result_copy["type"])
+        result_copy["category_label"] = family_category_label(result_copy["family_label"])
         result_copy["support"] = build_support_information(result_copy)
         enriched.append(result_copy)
     return enriched
@@ -572,6 +641,10 @@ def enrich_evidence(
 
     if "trigger_fact_ids" in evidence:
         enriched["trigger_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["trigger_fact_ids"] if fact_id in fact_index]
+    if "mandatory_fact_ids" in evidence:
+        enriched["mandatory_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["mandatory_fact_ids"] if fact_id in fact_index]
+    if "dimensional_fact_ids" in evidence:
+        enriched["dimensional_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["dimensional_fact_ids"] if fact_id in fact_index]
     if "topic_fact_ids" in evidence:
         enriched["topic_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["topic_fact_ids"] if fact_id in fact_index]
     if "invalid_fact_ids" in evidence:
@@ -595,13 +668,14 @@ def enrich_evidence(
             for entry in evidence["checked_dimension_members"]
         ]
     if "topic_fact_reasons" in evidence:
+        topic_fact_ids = set(evidence.get("topic_fact_ids", []))
         enriched["topic_fact_reason_details"] = [
             {
                 "fact": fact_summary(fact_index[fact_id], contexts, concept_balances),
                 "reasons": reasons,
             }
             for fact_id, reasons in evidence["topic_fact_reasons"].items()
-            if fact_id in fact_index
+            if fact_id in fact_index and (not topic_fact_ids or fact_id in topic_fact_ids)
         ]
     if "matching_fact_ids" in evidence:
         enriched["matching_facts"] = [fact_summary(fact_index[fact_id], contexts, concept_balances) for fact_id in evidence["matching_fact_ids"] if fact_id in fact_index]
@@ -724,6 +798,9 @@ def fact_summary(fact: ReportFact, contexts: dict[str, ReportContext], concept_b
 
 def build_support_information(result: dict[str, Any]) -> dict[str, Any]:
     builders = {
+        "mandatory_concept_presence": support_mandatory_concept_presence,
+        "mandatory_concept_role_scope": support_mandatory_concept_role_scope,
+        "mandatory_concept_dimensional_conformity": support_mandatory_concept_dimensional_conformity,
         "topic_note_presence": support_topic_note_presence,
         "hypercube_conformity": support_hypercube_conformity,
         "expected_dimension_usage": support_expected_dimension_usage,
@@ -735,6 +812,55 @@ def build_support_information(result: dict[str, Any]) -> dict[str, Any]:
     }
     builder = builders.get(result["type"], support_generic)
     return builder(result)
+
+
+def support_mandatory_concept_presence(result: dict[str, Any]) -> dict[str, Any]:
+    evidence = result["evidence"]
+    fact_count = evidence.get("mandatory_fact_count", len(evidence.get("mandatory_facts", [])))
+    return {
+        "what_test_is": "Checks whether a curated mandatory concept is present anywhere in the filing.",
+        "what_it_proves": "A pass proves the filing contains at least one fact for the required concept; a fail means the required concept is missing.",
+        "outcome_summary": (
+            f"Found {fact_count} fact(s) for the mandatory concept."
+            if result["outcome_status"] == "pass"
+            else "No facts were found for the mandatory concept."
+        ),
+    }
+
+
+def support_mandatory_concept_role_scope(result: dict[str, Any]) -> dict[str, Any]:
+    evidence = result["evidence"]
+    required_roles = ", ".join(evidence.get("required_statement_roles", [])) or "no scoped roles"
+    taxonomy_roles = ", ".join(evidence.get("taxonomy_statement_roles", [])) or "no taxonomy roles found"
+    return {
+        "what_test_is": "Checks a scoped mandatory concept against the configured statement-role requirement.",
+        "what_it_proves": "A pass proves the mandatory concept is present and the taxonomy maps it to the required statement role.",
+        "outcome_summary": (
+            "The mandatory concept was not present, so the role-scope check was not applied."
+            if result["outcome_status"] == "not_applied"
+            and not evidence.get("mandatory_facts")
+            else "The mandatory concept was present, but no taxonomy statement-role mapping was available for this concept, so the role-scope check was not applied."
+            if result["outcome_status"] == "not_applied"
+            else f"Required roles: {required_roles}. Taxonomy roles for concept: {taxonomy_roles}."
+        ),
+    }
+
+
+def support_mandatory_concept_dimensional_conformity(result: dict[str, Any]) -> dict[str, Any]:
+    evidence = result["evidence"]
+    checked = evidence.get("checked_fact_count", 0)
+    invalid = len(evidence.get("invalid_facts", []))
+    return {
+        "what_test_is": "Checks whether any dimensional use of a mandatory concept fits at least one allowed cube pattern.",
+        "what_it_proves": "A pass proves the mandatory concept, when used dimensionally, is consistent with the allowed taxonomy cube structures linked to that concept.",
+        "outcome_summary": (
+            "The mandatory concept was not used dimensionally in this filing, so the dimensional conformity check was not applied."
+            if result["outcome_status"] == "not_applied"
+            else f"Checked {checked} dimensional fact(s); all fitted an allowed cube pattern."
+            if result["outcome_status"] == "pass"
+            else f"Checked {checked} dimensional fact(s); {invalid} did not fit any allowed cube pattern."
+        ),
+    }
 
 
 def support_topic_note_presence(result: dict[str, Any]) -> dict[str, Any]:
@@ -906,6 +1032,17 @@ def support_generic(result: dict[str, Any]) -> dict[str, Any]:
 
 def classify_outcome_status(result: dict[str, Any]) -> str:
     evidence = result.get("evidence", {})
+    if result["type"] == "mandatory_concept_presence":
+        return result["status"]
+    if result["type"] == "mandatory_concept_role_scope":
+        if not evidence.get("mandatory_facts"):
+            return "not_applied"
+        if not evidence.get("taxonomy_statement_roles"):
+            return "not_applied"
+        return result["status"]
+    if result["type"] == "mandatory_concept_dimensional_conformity":
+        checked = evidence.get("checked_fact_count", len(evidence.get("dimensional_facts", [])))
+        return "not_applied" if checked == 0 else result["status"]
     if result["type"] == "topic_note_presence":
         return "not_applied" if not evidence.get("trigger_facts") else result["status"]
     if result["type"] == "expected_dimension_usage":

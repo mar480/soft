@@ -1,0 +1,40 @@
+{
+  "topic_id": "income_biological_assets",
+  "topic_label": "Income Biological Assets",
+  "source_hypercubes": [
+    "core:Income-BiologicalAssetsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Income-BiologicalAssetsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Income-BiologicalAssets",
+      "elr_definition": "9085 - Hypercube - Income - Biological Assets",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:BiologicalAssetClassesDimension",
+    "core:BiologicalAssetMaturityDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ContractDurationDimension",
+    "core:ContractTypeDimension",
+    "core:ExceptionalsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:GoodsServicesTransfersTimingDimension",
+    "core:MajorCustomerTypeDimension",
+    "core:MajorCustomersDimension",
+    "core:NaturePromiseDimension",
+    "core:OperatingSegmentsDimension",
+    "core:OwnershipAssetsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SalesChannelDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 29
+}

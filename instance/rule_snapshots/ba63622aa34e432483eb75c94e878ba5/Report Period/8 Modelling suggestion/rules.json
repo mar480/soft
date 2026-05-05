@@ -1,0 +1,30 @@
+{
+  "topic_id": "report_period",
+  "topic_label": "Report Period",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.REPORTPERIOD.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "report_period",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:ReportPeriodHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ReportPeriodDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Report Period. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

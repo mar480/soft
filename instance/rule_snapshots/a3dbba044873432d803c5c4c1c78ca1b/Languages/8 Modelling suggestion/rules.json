@@ -1,0 +1,30 @@
+{
+  "topic_id": "languages",
+  "topic_label": "Languages",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.LANGUAGES.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "languages",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:LanguagesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "lang:LanguagesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Languages. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

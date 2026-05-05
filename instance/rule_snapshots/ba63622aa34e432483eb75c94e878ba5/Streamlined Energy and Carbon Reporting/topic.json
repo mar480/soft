@@ -1,0 +1,68 @@
+{
+  "topic_id": "streamlined_energy_and_carbon_reporting",
+  "topic_label": "Streamlined Energy and Carbon Reporting",
+  "source_hypercubes": [
+    "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
+    "direp:StreamlinedEnergyCarbonReporting-DualReporting-EmissionsSourceHypercube",
+    "direp:StreamlinedEnergyCarbonReporting-DualReportingHypercube",
+    "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-ReportingRegion",
+      "elr_definition": "9510 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-DualReportingHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType",
+      "elr_definition": "9511 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-DualReporting-EmissionsSourceHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-DualReportingType-EmissionsSource",
+      "elr_definition": "9512 - Hypercube - Streamlined Energy and Carbon Reporting - Dual Reporting Type - Emissions Source",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-BasicGrouping1",
+      "elr_definition": "95001 - Hypercube - Streamlined Energy and Carbon Reporting - Basic Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-ReportingRegionHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-ReportingRegionGrouping1",
+      "elr_definition": "95101 - Hypercube - Streamlined Energy and Carbon Reporting - Reporting Region Grouping 1",
+      "occurrence_type": "grouping",
+      "variant_label": "Grouping 1"
+    },
+    {
+      "hypercube": "direp:StreamlinedEnergyCarbonReporting-BasicHypercube",
+      "elr": "http://xbrl.frc.org.uk/direp/roles/Hypercube-StreamlinedEnergyCarbonReporting-Basic",
+      "elr_definition": "9500 - Hypercube - Streamlined Energy and Carbon Reporting - Basic",
+      "occurrence_type": "variant",
+      "variant_label": "Basic"
+    }
+  ],
+  "topic_specific_dimensions": [
+    "direp:DualReportingTypeDimension",
+    "direp:EmissionsSourceDimension",
+    "direp:ReportingRegionDimension",
+    "direp:X-IntensityRatioGroupingDimension",
+    "direp:X-OperationalBoundariesGroupingDimension"
+  ],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 16
+}

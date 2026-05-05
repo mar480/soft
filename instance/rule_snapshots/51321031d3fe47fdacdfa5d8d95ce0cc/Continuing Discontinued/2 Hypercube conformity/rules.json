@@ -1,0 +1,83 @@
+{
+  "topic_id": "continuing_discontinued",
+  "topic_label": "Continuing Discontinued",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 3,
+  "rules": [
+    {
+      "id": "AUTO.CONTINUINGDISCONTINUED.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "continuing_discontinued",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Continuing-DiscontinuedHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued-Analysis1",
+        "elr_definition": "91071 - Hypercube - Continuing - Discontinued Analysis 1",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.CONTINUINGDISCONTINUED.CUBE_CONFORMITY.002",
+      "type": "hypercube_conformity",
+      "topic": "continuing_discontinued",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Continuing-DiscontinuedHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued",
+        "elr_definition": "9107 - Hypercube - Continuing - Discontinued",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    },
+    {
+      "id": "AUTO.CONTINUINGDISCONTINUED.CUBE_CONFORMITY.003",
+      "type": "hypercube_conformity",
+      "topic": "continuing_discontinued",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:Continuing-Discontinued-SegmentsHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Continuing-Discontinued-Segments",
+        "elr_definition": "9108 - Hypercube - Continuing - Discontinued - Segments",
+        "dimensions": [
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:GeographicSegmentsDimension",
+          "core:OperatingSegmentsDimension",
+          "core:ProductsServicesDimension",
+          "core:MajorCustomersDimension",
+          "core:SegmentReconciliationDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

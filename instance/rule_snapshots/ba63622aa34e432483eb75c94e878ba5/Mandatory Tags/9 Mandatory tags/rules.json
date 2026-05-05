@@ -1,0 +1,573 @@
+{
+  "topic_id": "mandatory_tags",
+  "topic_label": "Mandatory Tags",
+  "rule_family": "9 Mandatory tags",
+  "rule_count": 31,
+  "rules": [
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.001",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:UKCompaniesHouseRegisteredNumber",
+      "concept_label": "UK Companies House registered number",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.001",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:UKCompaniesHouseRegisteredNumber",
+      "concept_label": "UK Companies House registered number",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.002",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:BalanceSheetDate",
+      "concept_label": "Balance Sheet Date",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_ROLE.002",
+      "type": "mandatory_concept_role_scope",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "medium",
+      "requires_review": true,
+      "concept_qname": "bus:BalanceSheetDate",
+      "concept_label": "Balance Sheet Date",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.002",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:BalanceSheetDate",
+      "concept_label": "Balance Sheet Date",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.003",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:StartDateForPeriodCoveredByReport",
+      "concept_label": "Start date for period covered by report",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.003",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:StartDateForPeriodCoveredByReport",
+      "concept_label": "Start date for period covered by report",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.004",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EndDateForPeriodCoveredByReport",
+      "concept_label": "End date for period covered by report",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.004",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EndDateForPeriodCoveredByReport",
+      "concept_label": "End date for period covered by report",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.005",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityCurrentLegalOrRegisteredName",
+      "concept_label": "Entity current legal or registered name",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.005",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityCurrentLegalOrRegisteredName",
+      "concept_label": "Entity current legal or registered name",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.006",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:DateAuthorisationFinancialStatementsForIssue",
+      "concept_label": "Date authorisation financial statements for issue",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_ROLE.006",
+      "type": "mandatory_concept_role_scope",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "medium",
+      "requires_review": true,
+      "concept_qname": "core:DateAuthorisationFinancialStatementsForIssue",
+      "concept_label": "Date authorisation financial statements for issue",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.006",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:DateAuthorisationFinancialStatementsForIssue",
+      "concept_label": "Date authorisation financial statements for issue",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.007",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:DirectorSigningFinancialStatements",
+      "concept_label": "Director signing financial statements",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_ROLE.007",
+      "type": "mandatory_concept_role_scope",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "medium",
+      "requires_review": true,
+      "concept_qname": "core:DirectorSigningFinancialStatements",
+      "concept_label": "Director signing financial statements",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.007",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:DirectorSigningFinancialStatements",
+      "concept_label": "Director signing financial statements",
+      "required_statement_roles": [
+        "balance_sheet"
+      ],
+      "notes": "Balance sheet scoped mandatory tag.",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "balance_sheet"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.008",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityDormantTruefalse",
+      "concept_label": "Entity dormant [true/false]",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.008",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityDormantTruefalse",
+      "concept_label": "Entity dormant [true/false]",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.009",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityTradingStatus",
+      "concept_label": "Entity trading status",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.009",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:EntityTradingStatus",
+      "concept_label": "Entity trading status",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.010",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountingStandardsApplied",
+      "concept_label": "Accounting standards applied",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.010",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountingStandardsApplied",
+      "concept_label": "Accounting standards applied",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.011",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountsStatusAuditedOrUnaudited",
+      "concept_label": "Accounts status audited or unaudited",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.011",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountsStatusAuditedOrUnaudited",
+      "concept_label": "Accounts status audited or unaudited",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.012",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountsType",
+      "concept_label": "Accounts type",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.012",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "bus:AccountsType",
+      "concept_label": "Accounts type",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.013",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:AverageNumberEmployeesDuringPeriod",
+      "concept_label": "Average number of employees during the period",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.013",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:AverageNumberEmployeesDuringPeriod",
+      "concept_label": "Average number of employees during the period",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_PRESENT.014",
+      "type": "mandatory_concept_presence",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:ProfitLoss",
+      "concept_label": "Profit/Loss",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "income_statement",
+          "statement_changes_equity",
+          "statement_comprehensive_income"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    },
+    {
+      "id": "AUTO.MANDATORYTAGS.MANDATORY_DIM.014",
+      "type": "mandatory_concept_dimensional_conformity",
+      "topic": "mandatory_tags",
+      "severity": "error",
+      "confidence": "high",
+      "requires_review": false,
+      "concept_qname": "core:ProfitLoss",
+      "concept_label": "Profit/Loss",
+      "required_statement_roles": [],
+      "notes": "",
+      "taxonomy_basis": {
+        "statement_roles_for_concept": [
+          "income_statement",
+          "statement_changes_equity",
+          "statement_comprehensive_income"
+        ],
+        "matched_topics": [],
+        "allowed_dimension_sets": []
+      }
+    }
+  ]
+}

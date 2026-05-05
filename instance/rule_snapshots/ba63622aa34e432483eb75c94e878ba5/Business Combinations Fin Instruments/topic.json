@@ -1,0 +1,34 @@
+{
+  "topic_id": "business_combinations_fin_instruments",
+  "topic_label": "Business Combinations Fin Instruments",
+  "source_hypercubes": [
+    "core:BusinessCombinations-FinInstrumentsHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-FinInstrumentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinInstruments-Analysis1",
+      "elr_definition": "91581 - Hypercube - Business Combinations - Fin Instruments Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:BusinessCombinations-FinInstrumentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-FinInstruments",
+      "elr_definition": "9158 - Hypercube - Business Combinations - Fin Instruments",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:BusinessCombinationsDimension",
+    "core:FinancialInstrumentCurrentNon-currentDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 10
+}

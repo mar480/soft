@@ -1,0 +1,48 @@
+{
+  "topic_id": "income_tax",
+  "topic_label": "Income Tax",
+  "source_hypercubes": [
+    "core:IncomeTax-SegmentsHypercube",
+    "core:IncomeTaxHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:IncomeTaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax-Analysis1",
+      "elr_definition": "91701 - Hypercube - Income Tax Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:IncomeTaxHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax",
+      "elr_definition": "9170 - Hypercube - Income Tax",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:IncomeTax-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-IncomeTax-Segments",
+      "elr_definition": "9172 - Hypercube - Income Tax - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "common:X-AnalysisDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ExceptionalsDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension",
+    "core:TaxJurisdictionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 17
+}

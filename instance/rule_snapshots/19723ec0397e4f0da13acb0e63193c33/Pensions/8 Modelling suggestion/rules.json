@@ -1,0 +1,41 @@
+{
+  "topic_id": "pensions",
+  "topic_label": "Pensions",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.PENSIONS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "pensions",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:PensionsHypercube",
+          "core:PensionsHypercube",
+          "core:PensionsHypercube",
+          "core:Pensions-SegmentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "common:X-AnalysisDimension",
+          "core:GeographicSegmentsDimension",
+          "core:MajorCustomersDimension",
+          "core:OperatingSegmentsDimension",
+          "core:Post-employmentBenefitPlansDimension",
+          "core:ProductsServicesDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SegmentReconciliationDimension",
+          "core:X-OtherTypeAssetHeldInDefinedBenefitPlanGroupingDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Pensions. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

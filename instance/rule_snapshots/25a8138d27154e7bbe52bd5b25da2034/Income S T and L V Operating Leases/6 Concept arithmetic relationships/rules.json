@@ -1,0 +1,33 @@
+{
+  "topic_id": "income_s_t_and_l_v_operating_leases",
+  "topic_label": "Income S T and L V Operating Leases",
+  "rule_family": "6 Concept arithmetic relationships",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INCOMESTANDLVOPERATINGLEASES.ARITH.001",
+      "type": "concept_arithmetic_relationship",
+      "topic": "income_s_t_and_l_v_operating_leases",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "discovery_mode": "presentation_leaf_descendants_from_observed_topic_facts",
+      "candidate_requirements": {
+        "minimum_component_concepts": 2,
+        "maximum_component_concepts": 8,
+        "numeric_only": true,
+        "same_period_type": true,
+        "same_unit_kind": true
+      },
+      "match": {
+        "period": "same",
+        "unit": "same",
+        "all_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "topic_source": "presentation_parent_child_descendants"
+      }
+    }
+  ]
+}

@@ -20,6 +20,12 @@ STRONG_TOPIC_REASONS = {
     "topic_specific_dimensions",
 }
 
+NOTE_PRESENCE_TOPIC_REASONS = {
+    "synthetic_topic_id",
+    "topic_primary_item_concept",
+    "synthetic_anchor_primary_item",
+}
+
 GENERIC_TOPIC_DIMENSIONS = {
     "bus:GroupCompanyDataDimension",
     "bus:OriginalRevisedDataDimension",
@@ -35,6 +41,7 @@ GENERIC_TOPIC_DIMENSIONS = {
 }
 
 MAX_ARITHMETIC_COMPONENT_CONCEPTS = 8
+MANDATORY_FAMILY_NAME = "9 Mandatory tags"
 
 CONCEPT_ARITHMETIC_COMPONENT_ALIASES = {
     "core:CashBankOnHand": {"core:CashCashEquivalents"},
@@ -229,6 +236,36 @@ def _topic_facts(report: ReportModel, topic_id: str, topic_rules: dict, *, attri
     return [fact for fact in report.facts if fact.fact_id in selected_ids]
 
 
+def _topic_note_presence_facts(report: ReportModel, topic_id: str, topic_rules: dict) -> list[ReportFact]:
+    reason_map = _topic_fact_reason_map(report, topic_id, topic_rules)
+    selected_ids = {
+        fact_id
+        for fact_id, reasons in reason_map.items()
+        if any(reason in NOTE_PRESENCE_TOPIC_REASONS for reason in reasons)
+    }
+    return [fact for fact in report.facts if fact.fact_id in selected_ids]
+
+
+def _expected_dimension_usage_facts(
+    report: ReportModel,
+    topic_id: str,
+    topic_rules: dict,
+    role_graph: dict[str, dict[str, set[str]]],
+) -> list[ReportFact]:
+    concept_pool = _topic_role_concept_pool(topic_rules, role_graph)
+    selected: list[ReportFact] = []
+    for fact in report.facts:
+        context = _fact_context(report, fact)
+        if context is None or not context.dimensions:
+            continue
+        if fact.attributes.get("data-topic-id") == topic_id:
+            selected.append(fact)
+            continue
+        if fact.concept_qname and fact.concept_qname in concept_pool:
+            selected.append(fact)
+    return selected
+
+
 def _has_strong_topic_fact_evidence(report: ReportModel, topic_id: str, topic_rules: dict) -> bool:
     for reasons in _topic_fact_reason_map(report, topic_id, topic_rules).values():
         if any(reason in STRONG_TOPIC_REASONS or reason.startswith("topic_specific_dimensions:") for reason in reasons):
@@ -271,6 +308,8 @@ def _topic_is_relevant(
     concept_metadata: dict[str, dict[str, Any]],
     role_graph: dict[str, dict[str, set[str]]],
 ) -> bool:
+    if topic_rules.get("topic_metadata", {}).get("always_relevant"):
+        return True
     if _has_strong_topic_fact_evidence(report, topic_id, topic_rules):
         return True
     if _topic_trigger_facts(report, topic_rules):
@@ -280,8 +319,124 @@ def _topic_is_relevant(
     return False
 
 
+def _mandatory_tag_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
+    results: list[dict] = []
+    for rule in topic_rules["families"].get(MANDATORY_FAMILY_NAME, []):
+        concept_qname = rule.get("concept_qname")
+        concept_facts = [fact for fact in report.facts if fact.concept_qname == concept_qname]
+        if rule["type"] == "mandatory_concept_presence":
+            results.append(
+                {
+                    "rule_id": rule["id"],
+                    "type": rule["type"],
+                    "status": "pass" if concept_facts else "fail",
+                    "topic": topic_id,
+                    "message": (
+                        "Mandatory concept is present in the filing."
+                        if concept_facts
+                        else "Mandatory concept is missing from the filing."
+                    ),
+                    "evidence": {
+                        "mandatory_fact_ids": [fact.fact_id for fact in concept_facts],
+                        "mandatory_fact_count": len(concept_facts),
+                        "concept_qname": concept_qname,
+                        "concept_label": rule.get("concept_label"),
+                        "required_statement_roles": rule.get("required_statement_roles", []),
+                        "taxonomy_basis": rule.get("taxonomy_basis", {}),
+                    },
+                }
+            )
+        elif rule["type"] == "mandatory_concept_role_scope":
+            required_roles = set(rule.get("required_statement_roles", []))
+            taxonomy_roles = set(rule.get("taxonomy_basis", {}).get("statement_roles_for_concept", []))
+            passes_scope = required_roles <= taxonomy_roles
+            if not concept_facts:
+                status = "not_applied"
+                message = "Mandatory concept is absent, so statement-role scope was not evaluated."
+            elif not taxonomy_roles:
+                status = "not_applied"
+                message = "Mandatory concept is present but no taxonomy statement-role mapping was available."
+            else:
+                status = "pass" if passes_scope else "fail"
+                message = (
+                    "Mandatory concept is present and its taxonomy scope matches the required statement role."
+                    if passes_scope
+                    else "Mandatory concept is present but its taxonomy scope does not match the required statement role."
+                )
+            results.append(
+                {
+                    "rule_id": rule["id"],
+                    "type": rule["type"],
+                    "status": status,
+                    "topic": topic_id,
+                    "message": message,
+                    "evidence": {
+                        "mandatory_fact_ids": [fact.fact_id for fact in concept_facts],
+                        "mandatory_fact_count": len(concept_facts),
+                        "concept_qname": concept_qname,
+                        "concept_label": rule.get("concept_label"),
+                        "required_statement_roles": sorted(required_roles),
+                        "taxonomy_statement_roles": sorted(taxonomy_roles),
+                        "taxonomy_basis": rule.get("taxonomy_basis", {}),
+                    },
+                }
+            )
+        elif rule["type"] == "mandatory_concept_dimensional_conformity":
+            allowed_dimension_sets = [
+                set(item)
+                for item in rule.get("taxonomy_basis", {}).get("allowed_dimension_sets", [])
+                if item
+            ]
+            dimensional_facts: list[ReportFact] = []
+            invalid_fact_ids: list[str] = []
+            valid_fact_ids: list[str] = []
+            for fact in concept_facts:
+                context = _fact_context(report, fact)
+                if context is None or not context.dimensions:
+                    continue
+                dimensional_facts.append(fact)
+                fact_dimensions = set(context.dimensions)
+                if allowed_dimension_sets and any(fact_dimensions <= allowed for allowed in allowed_dimension_sets):
+                    valid_fact_ids.append(fact.fact_id)
+                else:
+                    invalid_fact_ids.append(fact.fact_id)
+            if dimensional_facts and not allowed_dimension_sets:
+                message = "Mandatory concept was used dimensionally but no taxonomy-backed cube pattern was available to confirm it."
+                status = "fail"
+            elif invalid_fact_ids:
+                message = "Observed dimensional mandatory facts do not fit any allowed cube pattern."
+                status = "fail"
+            elif dimensional_facts:
+                message = "Observed dimensional mandatory facts fit an allowed cube pattern."
+                status = "pass"
+            else:
+                message = "Mandatory concept was not used dimensionally in this filing."
+                status = "not_applied"
+            results.append(
+                {
+                    "rule_id": rule["id"],
+                    "type": rule["type"],
+                    "status": status,
+                    "topic": topic_id,
+                    "message": message,
+                    "evidence": {
+                        "mandatory_fact_ids": [fact.fact_id for fact in concept_facts],
+                        "dimensional_fact_ids": [fact.fact_id for fact in dimensional_facts],
+                        "invalid_fact_ids": invalid_fact_ids,
+                        "valid_fact_ids": valid_fact_ids,
+                        "checked_fact_count": len(dimensional_facts),
+                        "concept_qname": concept_qname,
+                        "concept_label": rule.get("concept_label"),
+                        "required_statement_roles": rule.get("required_statement_roles", []),
+                        "taxonomy_basis": rule.get("taxonomy_basis", {}),
+                    },
+                }
+            )
+    return results
+
+
 def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="all")
+    topic_facts = _topic_note_presence_facts(report, topic_id, topic_rules)
     reason_map = _topic_fact_reason_map(report, topic_id, topic_rules)
     results: list[dict] = []
     for rule in topic_rules["families"].get("1 Topic note presence", []):
@@ -301,7 +456,11 @@ def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules
                 "evidence": {
                     "trigger_fact_ids": [fact.fact_id for fact in trigger_facts],
                     "topic_fact_ids": [fact.fact_id for fact in topic_facts],
-                    "topic_fact_reasons": {fact_id: reason_map[fact_id] for fact_id in sorted(reason_map)},
+                    "topic_fact_reasons": {
+                        fact.fact_id: reason_map.get(fact.fact_id, [])
+                        for fact in topic_facts
+                        if fact.fact_id in reason_map
+                    },
                     "trigger_fact_count": len(trigger_facts),
                     "topic_fact_count": len(topic_facts),
                 },
@@ -310,8 +469,13 @@ def _topic_note_presence_results(report: ReportModel, topic_id: str, topic_rules
     return results
 
 
-def _expected_dimension_usage_results(report: ReportModel, topic_id: str, topic_rules: dict) -> list[dict]:
-    topic_facts = _topic_facts(report, topic_id, topic_rules, attribution="strong")
+def _expected_dimension_usage_results(
+    report: ReportModel,
+    topic_id: str,
+    topic_rules: dict,
+    role_graph: dict[str, dict[str, set[str]]],
+) -> list[dict]:
+    topic_facts = _expected_dimension_usage_facts(report, topic_id, topic_rules, role_graph)
     results: list[dict] = []
     for rule in topic_rules["families"].get("3 Expected dimension usage", []):
         allowed_dimensions = set(rule["taxonomy_basis"]["dimensions"])
@@ -1778,16 +1942,19 @@ def evaluate_rule_pack(
                 "strong_topic_fact_count": len(_topic_facts(report, topic_id, topic_rules, attribution="strong")),
             }
         )
+        available_families = set(topic_rules.get("families", {}))
         allowed_families = selected_families_by_topic.get(topic_id) if selected_families_by_topic else None
-        if _family_enabled("1 Topic note presence", allowed_families):
+        if _family_enabled(MANDATORY_FAMILY_NAME, allowed_families, available_families):
+            results.extend(_mandatory_tag_results(report, topic_id, topic_rules))
+        if _family_enabled("1 Topic note presence", allowed_families, available_families):
             results.extend(_topic_note_presence_results(report, topic_id, topic_rules))
-        if _family_enabled("2 Hypercube conformity", allowed_families):
+        if _family_enabled("2 Hypercube conformity", allowed_families, available_families):
             results.extend(_hypercube_conformity_results(report, topic_id, topic_rules))
-        if _family_enabled("3 Expected dimension usage", allowed_families):
-            results.extend(_expected_dimension_usage_results(report, topic_id, topic_rules))
-        if _family_enabled("4 Member validity", allowed_families):
+        if _family_enabled("3 Expected dimension usage", allowed_families, available_families):
+            results.extend(_expected_dimension_usage_results(report, topic_id, topic_rules, role_graph))
+        if _family_enabled("4 Member validity", allowed_families, available_families):
             results.extend(_member_validity_results(report, topic_id, topic_rules, allowed_members_by_topic))
-        if _family_enabled("5 Concept arithmetic relationships", allowed_families):
+        if _family_enabled("5 Concept arithmetic relationships", allowed_families, available_families):
             results.extend(
                 _concept_arithmetic_results(
                     report,
@@ -1798,7 +1965,7 @@ def evaluate_rule_pack(
                     role_graph,
                 )
             )
-        if _family_enabled("6 Dimensional aggregation relationships", allowed_families):
+        if _family_enabled("6 Dimensional aggregation relationships", allowed_families, available_families):
             results.extend(
                 _dimensional_aggregation_results(
                     report,
@@ -1807,7 +1974,7 @@ def evaluate_rule_pack(
                     concept_balances,
                 )
             )
-        if _family_enabled("7 Movement reconciliation", allowed_families):
+        if _family_enabled("7 Movement reconciliation", allowed_families, available_families):
             results.extend(
                 _movement_reconciliation_results(
                     report,
@@ -1836,7 +2003,9 @@ def evaluate_rule_pack(
     }
 
 
-def _family_enabled(family_name: str, allowed_families: set[str] | None) -> bool:
+def _family_enabled(family_name: str, allowed_families: set[str] | None, available_families: set[str]) -> bool:
+    if family_name not in available_families:
+        return False
     return allowed_families is None or family_name in allowed_families
 
 

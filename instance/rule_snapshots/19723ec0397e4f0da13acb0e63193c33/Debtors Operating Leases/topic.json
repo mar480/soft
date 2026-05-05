@@ -1,0 +1,37 @@
+{
+  "topic_id": "debtors_operating_leases",
+  "topic_label": "Debtors Operating Leases",
+  "source_hypercubes": [
+    "core:Debtors-OperatingLeasesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Debtors-OperatingLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Debtors-OperatingLeases",
+      "elr_definition": "9188 - Hypercube - Debtors - Operating Leases",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:AllowanceAccountMeasurementTypeDimension",
+    "core:AllowanceForImpairmentDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:CurrencyDenominationFinancialInstrumentsDimension",
+    "core:FinancialAssetsImpairmentStageDimension",
+    "core:FinancialInstrumentCurrentNon-currentDimension",
+    "core:FinancialInstrumentLevelDimension",
+    "core:FinancialInstrumentValueTypeDimension",
+    "core:FinancialInstrumentsClassesCategoriesDimension",
+    "core:FinancialInstrumentsHeldForSaleDimension",
+    "core:MaturitiesOrExpirationPeriodsDimension",
+    "core:OperatingLeasePurposeDimension",
+    "core:RegionCountryIssuerRiskDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 19
+}

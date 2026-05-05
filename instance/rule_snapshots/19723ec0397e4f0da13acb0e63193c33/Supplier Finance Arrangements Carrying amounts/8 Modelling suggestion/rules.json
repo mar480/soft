@@ -1,0 +1,32 @@
+{
+  "topic_id": "supplier_finance_arrangements_carrying_amounts",
+  "topic_label": "Supplier Finance Arrangements Carrying amounts",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SUPPLIERFINANCEARRANGEMENTSCARRYINGAMOUNTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "supplier_finance_arrangements_carrying_amounts",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:SupplierFinanceArrangements-CarryingAmountsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SupplierFinanceArrangementsCarryingStatusDimension",
+          "core:SupplierFinanceArrangementsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Supplier Finance Arrangements Carrying amounts. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

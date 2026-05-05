@@ -1,0 +1,66 @@
+{
+  "topic_id": "equity_and_soci",
+  "topic_label": "Equity and SOCI",
+  "source_hypercubes": [
+    "core:EquitySOCI-PPEHypercube",
+    "core:EquitySOCI-SegmentsHypercube",
+    "core:EquitySOCI-SharesHypercube",
+    "core:EquitySOCIHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:EquitySOCIHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Analysis1",
+      "elr_definition": "92401 - Hypercube - Equity and SOCI Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:EquitySOCIHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI",
+      "elr_definition": "9240 - Hypercube - Equity and SOCI",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:EquitySOCI-PPEHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-PPE",
+      "elr_definition": "9241 - Hypercube - Equity and SOCI - PPE",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:EquitySOCI-SharesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Shares",
+      "elr_definition": "9242 - Hypercube - Equity and SOCI - Shares",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:EquitySOCI-SegmentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-EquitySOCI-Segments",
+      "elr_definition": "9243 - Hypercube - Equity and SOCI - Segments",
+      "occurrence_type": "segments",
+      "variant_label": "Segments"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:EntityShareClassesDimension",
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "bus:ShareTypesDimension",
+    "common:X-AnalysisDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:EquityClassesDimension",
+    "core:GeographicSegmentsDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:ProductsServicesDimension",
+    "core:PropertyPlantEquipmentClassesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 28
+}

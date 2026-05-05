@@ -1,0 +1,103 @@
+{
+  "topic_id": "cash_flow",
+  "topic_label": "Cash Flow",
+  "source_hypercubes": [
+    "core:CashFlow-AssociatesHypercube",
+    "core:CashFlow-FinanceLeasesHypercube",
+    "core:CashFlow-JointVenturesHypercube",
+    "core:CashFlow-OtherRelatedPartiesHypercube",
+    "core:CashFlow-ParentsHypercube",
+    "core:CashFlow-ShareClassesHypercube",
+    "core:CashFlow-SubsidiariesHypercube",
+    "core:CashFlowHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:CashFlowHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-Analysis1",
+      "elr_definition": "92501 - Hypercube - Cash Flow Analysis 1",
+      "occurrence_type": "analysis",
+      "variant_label": "Analysis 1"
+    },
+    {
+      "hypercube": "core:CashFlowHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow",
+      "elr_definition": "9250 - Hypercube - Cash Flow",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:CashFlow-OtherRelatedPartiesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-OtherRelatedParties",
+      "elr_definition": "9255 - Hypercube - Cash Flow - Other Related Parties",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:CashFlow-ShareClassesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-ShareClasses",
+      "elr_definition": "9257 - Hypercube - Cash Flow - Share Classes",
+      "occurrence_type": "base",
+      "variant_label": null
+    },
+    {
+      "hypercube": "core:CashFlow-AssociatesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-Associates",
+      "elr_definition": "9253 - Hypercube - Cash Flow - Associates",
+      "occurrence_type": "variant",
+      "variant_label": "Associates"
+    },
+    {
+      "hypercube": "core:CashFlow-FinanceLeasesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-FinanceLeases",
+      "elr_definition": "9256 - Hypercube - Cash Flow - Finance Leases",
+      "occurrence_type": "variant",
+      "variant_label": "Finance Leases"
+    },
+    {
+      "hypercube": "core:CashFlow-JointVenturesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-JointVentures",
+      "elr_definition": "9254 - Hypercube - Cash Flow - Joint Ventures",
+      "occurrence_type": "variant",
+      "variant_label": "Joint Ventures"
+    },
+    {
+      "hypercube": "core:CashFlow-ParentsHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-Parents",
+      "elr_definition": "9251 - Hypercube - Cash Flow - Parents",
+      "occurrence_type": "variant",
+      "variant_label": "Parents"
+    },
+    {
+      "hypercube": "core:CashFlow-SubsidiariesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-CashFlow-Subsidiaries",
+      "elr_definition": "9252 - Hypercube - Cash Flow - Subsidiaries",
+      "occurrence_type": "variant",
+      "variant_label": "Subsidiaries"
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:EntityShareClassesDimension",
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "bus:ShareTypesDimension",
+    "common:X-AnalysisDimension",
+    "core:AssociatesDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:ExceptionalsDimension",
+    "core:FinanceLeaseContractTypeDimension",
+    "core:GeographicSegmentsDimension",
+    "core:JointVenturesDimension",
+    "core:MajorCustomersDimension",
+    "core:OperatingSegmentsDimension",
+    "core:OtherRelatedPartyTypeDimension",
+    "core:ParentEntitiesDimension",
+    "core:ProductsServicesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension",
+    "core:SegmentReconciliationDimension",
+    "core:SubsidiariesDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 30
+}

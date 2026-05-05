@@ -1,0 +1,26 @@
+{
+  "topic_id": "business_combinations_inventories",
+  "topic_label": "Business Combinations Inventories",
+  "source_hypercubes": [
+    "core:BusinessCombinations-InventoriesHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:BusinessCombinations-InventoriesHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-BusinessCombinations-Inventories",
+      "elr_definition": "9157 - Hypercube - Business Combinations - Inventories",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:BusinessCombinationsDimension",
+    "core:CurrentNon-currentInventoriesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 8
+}

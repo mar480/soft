@@ -1,0 +1,32 @@
+{
+  "topic_id": "share_based_payments",
+  "topic_label": "Share based Payments",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.SHAREBASEDPAYMENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "share_based_payments",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Share-basedPaymentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:Share-basedPaymentArrangementsDimension",
+          "core:Share-basedPaymentGrantsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Share based Payments. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

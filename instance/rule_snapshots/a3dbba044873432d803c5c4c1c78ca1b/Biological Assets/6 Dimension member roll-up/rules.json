@@ -1,0 +1,38 @@
+{
+  "topic_id": "biological_assets",
+  "topic_label": "Biological Assets",
+  "rule_family": "6 Dimension member roll-up",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.BIOLOGICALASSETS.DIM_ROLLUP.001",
+      "type": "dimension_member_rollup_candidate",
+      "topic": "biological_assets",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "dimension": "core:BiologicalAssetClassesDimension",
+      "head_member": "core:TotalBiologicalAssets",
+      "component_members": {
+        "from_domain_member_children": true,
+        "members": [
+          "core:ConsumableBiologicalAssets",
+          "core:BearerBiologicalAssets"
+        ],
+        "domain_root": "core:TotalBiologicalAssetsDefault"
+      },
+      "match": {
+        "primary_item": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "safe_only": true,
+      "taxonomy_basis": {
+        "domain_root": "core:TotalBiologicalAssetsDefault",
+        "dimension_label": "Biological asset classes [Dimension]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "topic_id": "business_combinations_derivatives",
+  "topic_label": "Business Combinations Derivatives",
+  "rule_family": "6 Dimensional aggregation relationships",
+  "rule_count": 4,
+  "rules": [
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.DIMAGG.001",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_derivatives",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:BusinessCombinationsDimension",
+      "head_member": "core:TotalBusinessCombinationsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:SpecificBusinessCombination1",
+          "core:SpecificBusinessCombination10",
+          "core:SpecificBusinessCombination2",
+          "core:SpecificBusinessCombination3",
+          "core:SpecificBusinessCombination4",
+          "core:SpecificBusinessCombination5",
+          "core:SpecificBusinessCombination6",
+          "core:SpecificBusinessCombination7",
+          "core:SpecificBusinessCombination8",
+          "core:SpecificBusinessCombination9",
+          "core:TotalIndividuallyImmaterialBusinessCombinations"
+        ],
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "member_descendants": {
+          "core:TotalIndividuallyImmaterialBusinessCombinations": [],
+          "core:SpecificBusinessCombination1": [],
+          "core:SpecificBusinessCombination2": [],
+          "core:SpecificBusinessCombination3": [],
+          "core:SpecificBusinessCombination4": [],
+          "core:SpecificBusinessCombination5": [],
+          "core:SpecificBusinessCombination6": [],
+          "core:SpecificBusinessCombination7": [],
+          "core:SpecificBusinessCombination8": [],
+          "core:SpecificBusinessCombination9": [],
+          "core:SpecificBusinessCombination10": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Business combinations [Dimension]",
+        "default_member": "core:TotalBusinessCombinationsDefault",
+        "domain_root": "core:TotalBusinessCombinationsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.DIMAGG.002",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_derivatives",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:DerivativesContractsDimension",
+      "head_member": "core:TotalForAllDerivativesContractsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CapFloorContract",
+          "core:CommodityContract",
+          "core:CommoditySwapContract",
+          "core:CompoundContractsHeading",
+          "core:EmbeddedDerivativeContract",
+          "core:ForwardContract",
+          "core:ForwardFuturesContract",
+          "core:ForwardOptionContract",
+          "core:ForwardSwapContract",
+          "core:FuturesContract",
+          "core:Non-standardDerivativeContract1ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract2ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract3ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract4ComponentTotalForDerivativeContracts",
+          "core:Non-standardDerivativeContract5ComponentTotalForDerivativeContracts",
+          "core:OptionContract",
+          "core:OptionContractPurchased",
+          "core:OptionContractWritten",
+          "core:OptionFuturesContract",
+          "core:OptionSwapContract",
+          "core:SpotForwardFuturesContract",
+          "core:SwapContract",
+          "core:SwapForwardContract"
+        ],
+        "domain_root": "core:TotalForAllDerivativesContractsDefault",
+        "member_descendants": {
+          "core:OptionContractWritten": [],
+          "core:OptionContractPurchased": [],
+          "core:OptionContract": [
+            "core:OptionContractPurchased",
+            "core:OptionContractWritten"
+          ],
+          "core:FuturesContract": [],
+          "core:ForwardContract": [],
+          "core:SwapContract": [],
+          "core:CommodityContract": [],
+          "core:CapFloorContract": [],
+          "core:EmbeddedDerivativeContract": [],
+          "core:CommoditySwapContract": [],
+          "core:ForwardFuturesContract": [],
+          "core:ForwardOptionContract": [],
+          "core:ForwardSwapContract": [],
+          "core:OptionFuturesContract": [],
+          "core:OptionSwapContract": [],
+          "core:SpotForwardFuturesContract": [],
+          "core:SwapForwardContract": [],
+          "core:CompoundContractsHeading": [
+            "core:CommoditySwapContract",
+            "core:ForwardFuturesContract",
+            "core:ForwardOptionContract",
+            "core:ForwardSwapContract",
+            "core:OptionFuturesContract",
+            "core:OptionSwapContract",
+            "core:SpotForwardFuturesContract",
+            "core:SwapForwardContract"
+          ],
+          "core:Non-standardDerivativeContract1ComponentTotalForDerivativeContracts": [],
+          "core:Non-standardDerivativeContract2ComponentTotalForDerivativeContracts": [],
+          "core:Non-standardDerivativeContract3ComponentTotalForDerivativeContracts": [],
+          "core:Non-standardDerivativeContract4ComponentTotalForDerivativeContracts": [],
+          "core:Non-standardDerivativeContract5ComponentTotalForDerivativeContracts": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Derivatives contracts [Dimension]",
+        "default_member": "core:TotalForAllDerivativesContractsDefault",
+        "domain_root": "core:TotalForAllDerivativesContractsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.DIMAGG.003",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_derivatives",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:DerivativesTypesDimension",
+      "head_member": "core:DerivativeFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CashFlowHedge",
+          "core:DerivativesHeldForRiskManagement",
+          "core:DerivativesHeldForTradingHedgeAccountingNotApplied",
+          "core:FairValueHedge",
+          "core:HedgeNetInvestment"
+        ],
+        "domain_root": "core:DerivativeFinancialInstrumentsDefault",
+        "member_descendants": {
+          "core:CashFlowHedge": [],
+          "core:FairValueHedge": [],
+          "core:HedgeNetInvestment": [],
+          "core:DerivativesHeldForRiskManagement": [
+            "core:CashFlowHedge",
+            "core:FairValueHedge",
+            "core:HedgeNetInvestment"
+          ],
+          "core:DerivativesHeldForTradingHedgeAccountingNotApplied": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Derivatives types [Dimension]",
+        "default_member": "core:DerivativeFinancialInstrumentsDefault",
+        "domain_root": "core:DerivativeFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    },
+    {
+      "id": "AUTO.BUSINESSCOMBINATIONSDERIVATIVES.DIMAGG.004",
+      "type": "dimensional_aggregation_relationship",
+      "topic": "business_combinations_derivatives",
+      "severity": "warning",
+      "confidence": "medium",
+      "requires_review": true,
+      "aggregation_type": "plain",
+      "dimension": "core:FinancialInstrumentCurrentNon-currentDimension",
+      "head_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+      "head_modes": [
+        "dimension_omitted",
+        "default_member"
+      ],
+      "component_members": {
+        "from_domain_descendants": true,
+        "members": [
+          "core:CurrentFinancialInstruments",
+          "core:Non-currentFinancialInstruments"
+        ],
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "member_descendants": {
+          "core:CurrentFinancialInstruments": [],
+          "core:Non-currentFinancialInstruments": []
+        },
+        "intermediate_total_policy": "allow_intermediate_totals"
+      },
+      "match": {
+        "concept": "same",
+        "period": "same",
+        "unit": "same",
+        "all_other_dimensions": "same"
+      },
+      "missing_policy": "do_not_treat_missing_as_zero",
+      "taxonomy_basis": {
+        "dimension_label": "Financial instrument current and non-current [Dimension]",
+        "default_member": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "domain_root": "core:TotalCurrentNon-currentFinancialInstrumentsDefault",
+        "reason_type": "default_member_total",
+        "reason": "The taxonomy dimension provides a default or total-style member with multiple component members under the domain tree."
+      }
+    }
+  ]
+}

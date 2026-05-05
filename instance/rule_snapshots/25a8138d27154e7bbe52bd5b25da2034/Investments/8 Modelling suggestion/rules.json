@@ -1,0 +1,49 @@
+{
+  "topic_id": "investments",
+  "topic_label": "Investments",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.INVESTMENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "investments",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "core:Investments-AssociatesHypercube",
+          "core:Investments-EquitiesHypercube",
+          "core:Investments-JointVenturesHypercube",
+          "core:Investments-OtherPartiesHypercube",
+          "core:Investments-ParentsHypercube",
+          "core:Investments-SubsidiariesHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ShareTypesDimension",
+          "core:AssociatesDimension",
+          "core:ContinuingDiscontinuedOperationsDimension",
+          "core:EquityClassesHeldDimension",
+          "core:FinancialAssetsClassesCategoriesDimension",
+          "core:FinancialInstrumentCurrentNon-currentDimension",
+          "core:InvestmentsMovementsDimension",
+          "core:JointVenturesDimension",
+          "core:Listed-unlistedDimension",
+          "core:OtherRelatedPartyTypeDimension",
+          "core:ParentEntitiesDimension",
+          "core:PositionTypeDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "core:SecuredStatusDimension",
+          "core:SubsidiariesDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Investments. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -2,10 +2,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 import re
+import stat
 import shutil
 
+from .mandatory_tags import MANDATORY_TAGS, MANDATORY_TAGS_TOPIC_ID, MANDATORY_TAGS_TOPIC_LABEL
+from .pfs_statement_basis import STATEMENT_ROLE_URIS
 from .rule_ids import build_rule_id
 from .rule_schema import CandidateRule
 
@@ -18,6 +22,8 @@ RULE_FAMILY_LAYOUT = {
     "dimensional_aggregation_relationship": (6, "Dimensional aggregation relationships"),
     "movement_reconciliation": (7, "Movement reconciliation"),
     "modelling_suggestion": (8, "Modelling suggestion"),
+    "mandatory_concept_presence": (9, "Mandatory tags"),
+    "mandatory_concept_dimensional_conformity": (9, "Mandatory tags"),
     "blocked_inference": (9, "Anti-rules"),
 }
 
@@ -31,6 +37,41 @@ _AGGREGATION_BLOCKED_DIMENSIONS = {
     "core:ProductsServicesDimension",
     "core:RestatementsFirstTimeAdoptionDimension",
     "core:SegmentReconciliationDimension",
+}
+
+_MOVEMENT_HEADING_QNAMES = {
+    "core:MovementAnalysisInsurance-NetInsuranceHeading",
+    "core:BiologicalAssetsCostModel-MovementAnalysisHeading",
+    "core:ContingentLiabilitiesRecognisedInBusinessCombination-MovementAnalysisHeading",
+    "core:ContractAssets-MovementAnalysisHeading",
+    "core:ContractLiabilities-MovementAnalysisHeading",
+    "core:EffectAssetCeilingOnDefinedBenefitPlan-MovementAnalysisHeading",
+    "core:Equity-MovementAnalysisHeading",
+    "core:GrossDeferredTaxAssets-MovementAnalysisHeading",
+    "core:GrossDeferredTaxLiabilities-MovementAnalysisHeading",
+    "core:IntangibleAssets-MovementAnalysisAdditionalExtractiveIndustryItemsHeading",
+    "core:IntangibleAssets-MovementAnalysisHeading",
+    "core:Level3-MovementAnalysisHeading",
+    "core:NetAssetsAttributableToShareholders-MovementAnalysisHeading",
+    "core:NetDeferredIncomeTaxLiabilityAsset-MovementAnalysisHeading",
+    "core:NumberEquityInstrumentsInShare-basedPaymentArrangement-MovementAnalysisHeading",
+    "core:PropertyPlantEquipment-MovementAnalysisAdditionalExtractiveIndustryItemsHeading",
+    "core:PropertyPlantEquipment-MovementAnalysisHeading",
+    "core:Provisions-MovementAnalysisHeading",
+    "core:ReconciliationFairValueAssetsDefinedBenefitPlan-MovementAnalysisHeading",
+    "core:ReconciliationPresentValueLiabilitiesDefinedBenefitPlan-MovementAnalysisHeading",
+    "core:ReimbursementRightsRecognisedAsAssetsDefinedBenefitPlan-MovementAnalysisHeading",
+    "core:RetirementBenefitObligations-MovementAnalysisHeading",
+    "core:WeightedAverageExercisePrice-MovementAnalysisHeading",
+    "core:FairValueHierarchyAnalysisMovementsAmongLevel123Heading",
+    "core:AnalysisImpairedPastDueButNotImpairedFinancialAssetsHeading",
+    "core:GeneralMarketRiskSensitivityAnalysisHeading",
+    "core:Insurance-NetInsuranceContractAssetsLiabilitiesAnalysisHeading",
+    "core:MovementInAllowanceForImpairmentLossAllowanceAccountHeading",
+    "core:NetInsuranceContractLiabilitiesAssets-AnalysisByRemainingCoverageIncurredClaimsHeading",
+    "core:NetReinsuranceContractAssetsLiabilities-AnalysisByRemainingCoverageIncurredClaimsHeading",
+    "core:NetReinsuranceContractsHeldAnalysisHeading",
+    "core:Value-at-riskSensitivityAnalysisHeading",
 }
 
 
@@ -48,6 +89,10 @@ def _load_concepts(concepts_path: Path) -> list[dict]:
 
 def _load_roles(roles_path: Path) -> dict:
     return json.loads(roles_path.read_text(encoding="utf-8"))
+
+
+def _load_statement_basis(statement_basis_path: Path) -> dict:
+    return json.loads(statement_basis_path.read_text(encoding="utf-8"))
 
 
 def _topic_primary_items(topic: dict) -> list[str]:
@@ -85,7 +130,170 @@ def _family_dir_name(rule_type: str) -> str:
 
 
 def _safe_rmtree(path: Path) -> None:
-    shutil.rmtree(path, ignore_errors=True)
+    def _onerror(func, target, exc_info):
+        os.chmod(target, stat.S_IWRITE)
+        try:
+            func(target)
+        except PermissionError:
+            return
+
+    if path.exists():
+        try:
+            shutil.rmtree(path, onerror=_onerror)
+        except PermissionError:
+            return
+
+
+def _presentation_parent_child_graph(roles_payload: dict) -> dict[str, set[str]]:
+    graph: dict[str, set[str]] = {}
+    for relationship in roles_payload.get("relationships", []):
+        if relationship.get("arcrole_name") != "parent_child":
+            continue
+        parent = relationship.get("from_qname")
+        child = relationship.get("to_qname")
+        if not parent or not child or parent == child:
+            continue
+        graph.setdefault(parent, set()).add(child)
+    return graph
+
+
+def _statement_roles_by_concept(roles_payload: dict) -> dict[str, set[str]]:
+    mapping: dict[str, set[str]] = {}
+    statement_roles_by_uri = {role_uri: role_name for role_name, role_uri in STATEMENT_ROLE_URIS.items()}
+    for relationship in roles_payload.get("relationships", []):
+        role_name = statement_roles_by_uri.get(relationship.get("role_uri"))
+        if not role_name:
+            continue
+        for key in ("from_qname", "to_qname"):
+            qname = relationship.get(key)
+            if not qname:
+                continue
+            mapping.setdefault(qname, set()).add(role_name)
+    return mapping
+
+
+def _topic_concept_pool(topic: dict, parent_child_graph: dict[str, set[str]]) -> set[str]:
+    pool: set[str] = set(_topic_primary_items(topic))
+    stack = list(pool)
+    while stack:
+        concept = stack.pop()
+        for child in parent_child_graph.get(concept, set()):
+            if child in pool:
+                continue
+            pool.add(child)
+            stack.append(child)
+    return pool
+
+
+def _topic_specific_dimension_map(topics_payload: dict) -> dict[str, set[str]]:
+    dimension_topics: dict[str, set[str]] = {}
+    for topic in topics_payload["topics"]:
+        if not _is_business_facing_topic(topic):
+            continue
+        for dimension in _topic_dimensions(topic):
+            dimension_qname = dimension.get("dimension_qname")
+            if not dimension_qname:
+                continue
+            dimension_topics.setdefault(dimension_qname, set()).add(topic["topic_id"])
+
+    mapping: dict[str, set[str]] = {}
+    for topic in topics_payload["topics"]:
+        if not _is_business_facing_topic(topic):
+            continue
+        mapping[topic["topic_id"]] = {
+            dimension["dimension_qname"]
+            for dimension in _topic_dimensions(topic)
+            if dimension.get("dimension_qname") and len(dimension_topics.get(dimension["dimension_qname"], set())) == 1
+        }
+    return mapping
+
+
+def _non_generic_topic_dimensions(topic: dict) -> list[str]:
+    return sorted(
+        dimension["dimension_qname"]
+        for dimension in _topic_dimensions(topic)
+        if dimension.get("dimension_qname") not in _AGGREGATION_BLOCKED_DIMENSIONS
+        and dimension.get("dimension_qname") not in {"bus:GroupCompanyDataDimension", "bus:OriginalRevisedDataDimension"}
+    )
+
+
+def _preferred_topic_evidence_dimensions(topic: dict, topic_specific_dimensions: set[str]) -> list[str]:
+    if topic_specific_dimensions:
+        return sorted(topic_specific_dimensions)
+    return _non_generic_topic_dimensions(topic)
+
+
+def _topic_supports_arithmetic(
+    topic: dict,
+    *,
+    concept_index: dict[str, dict],
+    parent_child_graph: dict[str, set[str]],
+) -> bool:
+    if any(_is_dimensional_aggregation_candidate(dimension) for dimension in _topic_dimensions(topic)):
+        return True
+    for concept_qname in _topic_concept_pool(topic, parent_child_graph):
+        concept = concept_index.get(concept_qname)
+        if not concept or concept.get("abstract"):
+            continue
+        if concept.get("is_numeric"):
+            return True
+    return False
+
+
+def _concept_allowed_dimension_sets(
+    concept_qname: str,
+    *,
+    topics: list[dict],
+    topic_concept_pools: dict[str, set[str]],
+) -> tuple[list[list[str]], list[dict[str, str]]]:
+    allowed_sets: list[list[str]] = []
+    matched_topics: list[dict[str, str]] = []
+    seen_sets: set[tuple[str, ...]] = set()
+    seen_topics: set[str] = set()
+    for topic in topics:
+        if concept_qname not in topic_concept_pools.get(topic["topic_id"], set()):
+            continue
+        if topic["topic_id"] not in seen_topics:
+            matched_topics.append({"topic_id": topic["topic_id"], "topic_label": topic["topic_label"]})
+            seen_topics.add(topic["topic_id"])
+        for cube in topic["hypercubes"]:
+            dims = tuple(sorted(dimension["dimension_qname"] for dimension in cube["dimensions"] if dimension.get("dimension_qname")))
+            if dims in seen_sets:
+                continue
+            allowed_sets.append(list(dims))
+            seen_sets.add(dims)
+    return allowed_sets, matched_topics
+
+
+def _global_allowed_dimension_sets(topics: list[dict]) -> list[list[str]]:
+    allowed_sets: list[list[str]] = []
+    seen_sets: set[tuple[str, ...]] = set()
+    for topic in topics:
+        for cube in topic["hypercubes"]:
+            dims = tuple(sorted(dimension["dimension_qname"] for dimension in cube["dimensions"] if dimension.get("dimension_qname")))
+            if dims in seen_sets:
+                continue
+            allowed_sets.append(list(dims))
+            seen_sets.add(dims)
+    return allowed_sets
+
+
+def _topic_matches_movement_heading(topic: dict, parent_child_graph: dict[str, set[str]]) -> list[str]:
+    def stem(qname: str) -> str:
+        local_name = qname.split(":", 1)[-1]
+        local_name = re.sub(r"PrimaryItems$", "", local_name)
+        local_name = re.sub(r"-?MovementAnalysis.*$", "", local_name)
+        local_name = re.sub(r"Heading$", "", local_name)
+        local_name = re.sub(r"Analysis.*$", "", local_name)
+        return local_name.lower()
+
+    topic_stems = {stem(qname) for qname in _topic_concept_pool(topic, parent_child_graph)}
+    matched_headings = {
+        heading_qname
+        for heading_qname in _MOVEMENT_HEADING_QNAMES
+        if any(topic_stem and topic_stem in stem(heading_qname) for topic_stem in topic_stems)
+    }
+    return sorted(matched_headings)
 
 
 def _is_dimensional_aggregation_candidate(dimension: dict) -> bool:
@@ -232,8 +440,10 @@ def _ppe_scoped_aggregation(topic: dict, dimension: dict) -> dict | None:
     }
 
 
-def _dimensional_aggregation_rules(topic: dict) -> list[CandidateRule]:
+def _dimensional_aggregation_rules(topic: dict, *, arithmetic_eligible: bool) -> list[CandidateRule]:
     rules: list[CandidateRule] = []
+    if not arithmetic_eligible:
+        return rules
     for dimension in _topic_dimensions(topic):
         if not _is_dimensional_aggregation_candidate(dimension):
             continue
@@ -295,8 +505,8 @@ def _dimensional_aggregation_rules(topic: dict) -> list[CandidateRule]:
     return rules
 
 
-def _concept_arithmetic_rule(topic: dict) -> CandidateRule | None:
-    if not topic.get("hypercubes"):
+def _concept_arithmetic_rule(topic: dict, *, arithmetic_eligible: bool) -> CandidateRule | None:
+    if not topic.get("hypercubes") or not arithmetic_eligible:
         return None
     return CandidateRule(
         id=build_rule_id(topic_id=topic["topic_id"], rule_kind="ARITH", index=1),
@@ -333,7 +543,13 @@ def _concept_arithmetic_rule(topic: dict) -> CandidateRule | None:
     )
 
 
-def _movement_reconciliation_rule(topic: dict, concept_index: dict[str, dict]) -> CandidateRule | None:
+def _movement_reconciliation_rule(
+    topic: dict,
+    concept_index: dict[str, dict],
+    *,
+    arithmetic_eligible: bool,
+    parent_child_graph: dict[str, set[str]],
+) -> CandidateRule | None:
     primary_items = _topic_primary_items(topic)
     instant_primary_items = sorted(
         concept
@@ -347,7 +563,10 @@ def _movement_reconciliation_rule(topic: dict, concept_index: dict[str, dict]) -
         if concept_index.get(concept, {}).get("period_type") == "duration"
         and not concept_index.get(concept, {}).get("abstract")
     )
-    if not topic.get("hypercubes"):
+    if not topic.get("hypercubes") or not arithmetic_eligible:
+        return None
+    matched_headings = _topic_matches_movement_heading(topic, parent_child_graph)
+    if not matched_headings:
         return None
     return CandidateRule(
         id=build_rule_id(topic_id=topic["topic_id"], rule_kind="MOVE", index=1),
@@ -373,6 +592,7 @@ def _movement_reconciliation_rule(topic: dict, concept_index: dict[str, dict]) -
                 "reason": "The topic is modelled as a disclosure family with reusable dimensional contexts, so a same-scope opening/closing bridge with signed duration movements is a viable arithmetic motif to test when both instant and duration facts are observed in the report.",
                 "instant_primary_items": instant_primary_items,
                 "duration_primary_items": duration_primary_items,
+                "movement_headings": matched_headings,
             },
         },
     )
@@ -406,8 +626,8 @@ def _cube_conformity_rules(topic: dict) -> list[CandidateRule]:
     return rules
 
 
-def _expected_dimension_usage_rule(topic: dict) -> CandidateRule | None:
-    dimensions = _topic_dimensions(topic)
+def _expected_dimension_usage_rule(topic: dict, *, preferred_dimensions: list[str]) -> CandidateRule | None:
+    dimensions = preferred_dimensions
     primary_items = _topic_primary_items(topic)
     if not dimensions or len(primary_items) < 1:
         return None
@@ -429,7 +649,7 @@ def _expected_dimension_usage_rule(topic: dict) -> CandidateRule | None:
                 "at_least_one_dimension_from_topic_used": True,
             },
             "taxonomy_basis": {
-                "dimensions": [dimension["dimension_qname"] for dimension in dimensions],
+                "dimensions": dimensions,
             },
         },
     )
@@ -485,12 +705,11 @@ def _modelling_suggestion_rule(topic: dict) -> CandidateRule | None:
     )
 
 
-def _pfs_note_presence_rule(topic: dict, review_entry: dict) -> CandidateRule:
+def _pfs_note_presence_rule(topic: dict, review_entry: dict, *, preferred_dimensions: list[str]) -> CandidateRule:
     statement_concepts = sorted({review_entry["qname"]})
     source_statement_roles = sorted(review_entry.get("source_statement_roles", []))
     headline_statement_roles = sorted(review_entry.get("headline_statement_roles", []))
     topic_primary_items = _topic_primary_items(topic)
-    topic_dimensions = [dimension["dimension_qname"] for dimension in _topic_dimensions(topic)]
     source_hypercubes = sorted({cube["cube_qname"] for cube in topic["hypercubes"]})
     return CandidateRule(
         id=build_rule_id(topic_id=topic["topic_id"], rule_kind="TOPIC_NOTE", index=1),
@@ -520,7 +739,7 @@ def _pfs_note_presence_rule(topic: dict, review_entry: dict) -> CandidateRule:
                 "supplementary_non_statement_presentation_roles": review_entry[
                     "supplementary_non_statement_presentation_roles"
                 ],
-                "topic_dimensions": topic_dimensions,
+                "topic_dimensions": preferred_dimensions,
             },
         },
     )
@@ -532,21 +751,33 @@ def _topic_rules(
     pfs_note_review_index: dict[str, dict],
     concept_index: dict[str, dict],
     parent_child_graph: dict[str, set[str]],
+    topic_specific_dimensions: set[str],
 ) -> list[dict]:
     rules: list[CandidateRule] = []
+    arithmetic_eligible = _topic_supports_arithmetic(
+        topic,
+        concept_index=concept_index,
+        parent_child_graph=parent_child_graph,
+    )
+    preferred_dimensions = _preferred_topic_evidence_dimensions(topic, topic_specific_dimensions)
     review_entry = pfs_note_review_index.get(topic["topic_id"])
     if review_entry:
-        rules.append(_pfs_note_presence_rule(topic, review_entry))
+        rules.append(_pfs_note_presence_rule(topic, review_entry, preferred_dimensions=preferred_dimensions))
     rules.extend(_cube_conformity_rules(topic))
-    expected = _expected_dimension_usage_rule(topic)
+    expected = _expected_dimension_usage_rule(topic, preferred_dimensions=preferred_dimensions)
     if expected:
         rules.append(expected)
     rules.extend(_member_validity_rules(topic))
-    concept_arithmetic = _concept_arithmetic_rule(topic)
+    concept_arithmetic = _concept_arithmetic_rule(topic, arithmetic_eligible=arithmetic_eligible)
     if concept_arithmetic:
         rules.append(concept_arithmetic)
-    rules.extend(_dimensional_aggregation_rules(topic))
-    movement = _movement_reconciliation_rule(topic, concept_index)
+    rules.extend(_dimensional_aggregation_rules(topic, arithmetic_eligible=arithmetic_eligible))
+    movement = _movement_reconciliation_rule(
+        topic,
+        concept_index,
+        arithmetic_eligible=arithmetic_eligible,
+        parent_child_graph=parent_child_graph,
+    )
     if movement:
         rules.append(movement)
     modelling = _modelling_suggestion_rule(topic)
@@ -565,22 +796,83 @@ def _pfs_note_review_index(review_payload: dict) -> dict[str, dict]:
     return index
 
 
+def _mandatory_tag_rules(
+    *,
+    topics: list[dict],
+    topic_concept_pools: dict[str, set[str]],
+    statement_roles_by_concept: dict[str, set[str]],
+) -> list[dict]:
+    rules: list[CandidateRule] = []
+    global_allowed_dimension_sets = _global_allowed_dimension_sets(topics)
+    for index, entry in enumerate(MANDATORY_TAGS, start=1):
+        concept_qname = entry["concept_qname"]
+        required_roles = sorted(entry.get("required_statement_roles", []))
+        taxonomy_statement_roles = sorted(statement_roles_by_concept.get(concept_qname, set()))
+        _, matched_topics = _concept_allowed_dimension_sets(
+            concept_qname,
+            topics=topics,
+            topic_concept_pools=topic_concept_pools,
+        )
+        common_payload = {
+            "concept_qname": concept_qname,
+            "concept_label": entry["label"],
+            "required_statement_roles": required_roles,
+            "notes": entry.get("notes", ""),
+            "taxonomy_basis": {
+                "statement_roles_for_concept": taxonomy_statement_roles,
+                "matched_topics": matched_topics,
+                "allowed_dimension_sets": global_allowed_dimension_sets,
+            },
+        }
+        rules.append(
+            CandidateRule(
+                id=build_rule_id(topic_id=MANDATORY_TAGS_TOPIC_ID, rule_kind="MANDATORY_PRESENT", index=index),
+                type="mandatory_concept_presence",
+                topic=MANDATORY_TAGS_TOPIC_ID,
+                severity="error",
+                confidence="high",
+                requires_review=False,
+                payload=common_payload,
+            )
+        )
+        rules.append(
+            CandidateRule(
+                id=build_rule_id(topic_id=MANDATORY_TAGS_TOPIC_ID, rule_kind="MANDATORY_DIM", index=index),
+                type="mandatory_concept_dimensional_conformity",
+                topic=MANDATORY_TAGS_TOPIC_ID,
+                severity="error",
+                confidence="high",
+                requires_review=False,
+                payload=common_payload,
+            )
+        )
+    return [rule.to_dict() for rule in rules]
+
+
 def generate_candidate_pack(
     *,
     topics_payload: dict,
     selected_topic_ids: list[str],
     pfs_note_review_payload: dict,
+    pfs_statement_basis_payload: dict,
     concepts_payload: list[dict],
     roles_payload: dict,
 ) -> dict:
     topic_lookup = {topic["topic_id"]: topic for topic in topics_payload["topics"]}
     pfs_note_review_index = _pfs_note_review_index(pfs_note_review_payload)
     concept_index = {concept["qname"]: concept for concept in concepts_payload if concept.get("qname")}
+    parent_child_graph = _presentation_parent_child_graph(roles_payload)
+    topic_specific_dimension_map = _topic_specific_dimension_map(topics_payload)
     selected_topics = [
         topic_lookup[topic_id]
         for topic_id in selected_topic_ids
         if topic_id in topic_lookup and _is_business_facing_topic(topic_lookup[topic_id])
     ]
+    topic_concept_pools = {
+        topic["topic_id"]: _topic_concept_pool(topic, parent_child_graph)
+        for topic in selected_topics
+    }
+    statement_roles_by_concept = _statement_roles_by_concept(roles_payload)
 
     topics = []
     for topic in selected_topics:
@@ -601,14 +893,37 @@ def generate_candidate_pack(
                 "topic_label": topic["topic_label"],
                 "source_hypercubes": source_hypercubes,
                 "source_hypercube_occurrences": source_hypercube_occurrences,
+                "topic_specific_dimensions": sorted(topic_specific_dimension_map.get(topic["topic_id"], set())),
+                "shared_dimensions": sorted(
+                    set(dimension["dimension_qname"] for dimension in _topic_dimensions(topic))
+                    - set(topic_specific_dimension_map.get(topic["topic_id"], set()))
+                ),
                 "candidate_rules": _topic_rules(
                     topic,
                     pfs_note_review_index=pfs_note_review_index,
                     concept_index=concept_index,
-                    parent_child_graph={},
+                    parent_child_graph=parent_child_graph,
+                    topic_specific_dimensions=topic_specific_dimension_map.get(topic["topic_id"], set()),
                 ),
             }
         )
+
+    topics.append(
+        {
+            "topic_id": MANDATORY_TAGS_TOPIC_ID,
+            "topic_label": MANDATORY_TAGS_TOPIC_LABEL,
+            "source_hypercubes": [],
+            "source_hypercube_occurrences": [],
+            "topic_specific_dimensions": [],
+            "shared_dimensions": [],
+            "always_relevant": True,
+            "candidate_rules": _mandatory_tag_rules(
+                topics=selected_topics,
+                topic_concept_pools=topic_concept_pools,
+                statement_roles_by_concept=statement_roles_by_concept,
+            ),
+        }
+    )
 
     anti_rules = [
         {
@@ -677,6 +992,9 @@ def write_split_candidate_pack(*, candidate_pack: dict, output_root: Path) -> No
             "topic_label": topic["topic_label"],
             "source_hypercubes": topic["source_hypercubes"],
             "source_hypercube_occurrences": topic["source_hypercube_occurrences"],
+            "topic_specific_dimensions": topic.get("topic_specific_dimensions", []),
+            "shared_dimensions": topic.get("shared_dimensions", []),
+            "always_relevant": topic.get("always_relevant", False),
             "rule_count": len(topic["candidate_rules"]),
         }
         (topic_dir / "topic.json").write_text(json.dumps(topic_metadata, indent=2), encoding="utf-8")
@@ -723,6 +1041,10 @@ def parse_args() -> argparse.Namespace:
         "--pfs-note-review",
         default="backend/validation_rules/generated/2026/frs102/pfs_note_linkages_review.json",
     )
+    parser.add_argument(
+        "--pfs-statement-concepts",
+        default="backend/validation_rules/generated/2026/frs102/pfs_statement_concepts.json",
+    )
     parser.add_argument("--concepts", default="backend/validation_rules/generated/2026/frs102/concepts.json")
     parser.add_argument("--roles", default="backend/validation_rules/generated/2026/frs102/roles.json")
     parser.add_argument("--output", default="backend/validation_rules/rule_packs/2026/auto/frs102_candidates.json")
@@ -736,6 +1058,7 @@ def main() -> int:
     topics_path = Path(args.topics)
     payload = _load_topics(topics_path)
     pfs_note_review_payload = _load_pfs_note_review(Path(args.pfs_note_review))
+    pfs_statement_basis_payload = _load_statement_basis(Path(args.pfs_statement_concepts))
     concepts_payload = _load_concepts(Path(args.concepts))
     roles_payload = _load_roles(Path(args.roles))
     selected = args.topics_filter or [topic["topic_id"] for topic in payload["topics"]]
@@ -743,6 +1066,7 @@ def main() -> int:
         topics_payload=payload,
         selected_topic_ids=selected,
         pfs_note_review_payload=pfs_note_review_payload,
+        pfs_statement_basis_payload=pfs_statement_basis_payload,
         concepts_payload=concepts_payload,
         roles_payload=roles_payload,
     )

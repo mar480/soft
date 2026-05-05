@@ -28,6 +28,9 @@
         <dl class="meta-list">
             <div><dt>Topic ID</dt><dd>{{ view.topic.topic_id }}</dd></div>
             <div><dt>Source hypercubes</dt><dd>{{ view.topic_metadata.source_hypercubes|join(", ") }}</dd></div>
+            {% if view.topic_metadata.topic_specific_dimensions %}
+                <div><dt>Topic-specific dimensions</dt><dd>{{ view.topic_metadata.topic_specific_dimensions|join(", ") }}</dd></div>
+            {% endif %}
         </dl>
     </div>
     <div class="panel">

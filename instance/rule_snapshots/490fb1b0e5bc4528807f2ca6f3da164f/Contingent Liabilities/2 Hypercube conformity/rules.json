@@ -1,0 +1,31 @@
+{
+  "topic_id": "contingent_liabilities",
+  "topic_label": "Contingent Liabilities",
+  "rule_family": "2 Hypercube conformity",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.CONTINGENTLIABILITIES.CUBE_CONFORMITY.001",
+      "type": "hypercube_conformity",
+      "topic": "contingent_liabilities",
+      "severity": "warning",
+      "confidence": "high",
+      "requires_review": false,
+      "hypercube": "core:ContingentLiabilitiesHypercube",
+      "check": {
+        "dimensions_must_be_from_cube": true,
+        "members_must_be_in_domain_tree": true
+      },
+      "taxonomy_basis": {
+        "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-ContingentLiabilities",
+        "elr_definition": "9151 - Hypercube - Contingent Liabilities",
+        "dimensions": [
+          "core:ContingentLiabilitiesClassesDimension",
+          "bus:GroupCompanyDataDimension",
+          "core:RestatementsFirstTimeAdoptionDimension",
+          "bus:OriginalRevisedDataDimension"
+        ]
+      }
+    }
+  ]
+}

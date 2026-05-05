@@ -1,0 +1,31 @@
+{
+  "topic_id": "third_party_agents",
+  "topic_label": "Third Party Agents",
+  "rule_family": "8 Modelling suggestion",
+  "rule_count": 1,
+  "rules": [
+    {
+      "id": "AUTO.THIRDPARTYAGENTS.MODELLING.001",
+      "type": "modelling_suggestion",
+      "topic": "third_party_agents",
+      "severity": "info",
+      "confidence": "medium",
+      "requires_review": true,
+      "finding": {
+        "flat_note_detected": true
+      },
+      "suggest": {
+        "use_hypercubes": [
+          "bus:ThirdPartyAgentsHypercube"
+        ],
+        "dimensions": [
+          "bus:GroupCompanyDataDimension",
+          "bus:OriginalRevisedDataDimension",
+          "bus:ThirdPartyAgentStatusDimension",
+          "core:ContinuingDiscontinuedOperationsDimension"
+        ]
+      },
+      "message": "The taxonomy provides dimensional modelling for Third Party Agents. Consider using the available hypercube and dimensions where flat tagging is used."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "topic_id": "derivatives_simple",
+  "topic_label": "Derivatives Simple",
+  "source_hypercubes": [
+    "core:Derivatives-SimpleHypercube"
+  ],
+  "source_hypercube_occurrences": [
+    {
+      "hypercube": "core:Derivatives-SimpleHypercube",
+      "elr": "http://xbrl.frc.org.uk/fr/core/roles/Hypercube-Derivatives-Simple",
+      "elr_definition": "9077 - Hypercube - Derivatives - Simple",
+      "occurrence_type": "base",
+      "variant_label": null
+    }
+  ],
+  "topic_specific_dimensions": [],
+  "shared_dimensions": [
+    "bus:GroupCompanyDataDimension",
+    "bus:OriginalRevisedDataDimension",
+    "core:ContinuingDiscontinuedOperationsDimension",
+    "core:DerivativePurposeDimension",
+    "core:DerivativesContractsDimension",
+    "core:DerivativesTypesDimension",
+    "core:FinancialInstrumentsClassesCategoriesDimension",
+    "core:RestatementsFirstTimeAdoptionDimension"
+  ],
+  "always_relevant": false,
+  "rule_count": 11
+}
